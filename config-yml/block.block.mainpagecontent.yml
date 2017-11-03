@@ -1,0 +1,20 @@
+uuid: eeae429f-a1b1-41c1-98f3-a99b1cc2e394
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - emmr_lib_unb_ca
+id: mainpagecontent
+theme: emmr_lib_unb_ca
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: visible
+visibility: {  }

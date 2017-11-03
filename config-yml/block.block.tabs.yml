@@ -1,0 +1,20 @@
+uuid: d1c4df76-3f92-43d7-97b4-cf961e568e01
+langcode: en
+status: true
+dependencies:
+  theme:
+    - emmr_lib_unb_ca
+id: tabs
+theme: emmr_lib_unb_ca
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

@@ -1,0 +1,24 @@
+uuid: c35a2c6f-6324-4fe0-828f-6c994b0b0595
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - emmr_lib_unb_ca
+id: mainnavigation
+theme: emmr_lib_unb_ca
+region: navigation_collapsible
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }
