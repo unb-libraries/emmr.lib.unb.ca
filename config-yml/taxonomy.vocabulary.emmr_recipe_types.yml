@@ -1,0 +1,9 @@
+uuid: 233318a0-5daf-49ce-8cd5-be1db3848ab3
+langcode: en
+status: true
+dependencies: {  }
+name: 'EMMR Recipe Types'
+vid: emmr_recipe_types
+description: 'EMMR Recipe Types'
+hierarchy: 0
+weight: 0

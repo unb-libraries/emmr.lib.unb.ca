@@ -1,0 +1,9 @@
+uuid: b531230a-c214-4401-bda3-742b8d62eaf6
+langcode: en
+status: true
+dependencies: {  }
+name: 'EMMR Recipe Formats'
+vid: emmr_recipe_formats
+description: 'EMMR Recipe Formats'
+hierarchy: 0
+weight: 0
