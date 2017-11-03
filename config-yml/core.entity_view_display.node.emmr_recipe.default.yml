@@ -1,0 +1,26 @@
+uuid: 53859a08-0a5a-4bae-b914-b6b9534dde96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.emmr_recipe.field_recipe_title
+    - node.type.emmr_recipe
+  module:
+    - user
+id: node.emmr_recipe.default
+targetEntityType: node
+bundle: emmr_recipe
+mode: default
+content:
+  field_recipe_title:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,9 @@
+uuid: 261792e0-8364-4ed0-87d3-d84d656943c7
+langcode: en
+status: true
+dependencies: {  }
+name: 'EMMR Institutions'
+vid: emmr_institutions
+description: 'EMMR Recipe Origin Institutions'
+hierarchy: 0
+weight: 0

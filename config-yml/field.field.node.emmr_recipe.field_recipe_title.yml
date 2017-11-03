@@ -1,0 +1,19 @@
+uuid: d6c25c63-7ab2-45e8-8b84-d0fe09c985a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipe_title
+    - node.type.emmr_recipe
+id: node.emmr_recipe.field_recipe_title
+field_name: field_recipe_title
+entity_type: node
+bundle: emmr_recipe
+label: 'Recipe Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
