@@ -1,0 +1,33 @@
+uuid: 02f945f5-41fe-47ff-8c45-e707f0deaa5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contributor_role
+    - node.type.emmr_contributor
+    - taxonomy.vocabulary.emmr_contributor_roles
+  content:
+    - 'taxonomy_term:emmr_contributor_roles:b6ff0df4-1cdf-4eb3-8da9-ae91938a5cb5'
+id: node.emmr_contributor.field_contributor_role
+field_name: field_contributor_role
+entity_type: node
+bundle: emmr_contributor
+label: 'Contributor Role'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: b6ff0df4-1cdf-4eb3-8da9-ae91938a5cb5
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      emmr_contributor_roles: emmr_contributor_roles
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

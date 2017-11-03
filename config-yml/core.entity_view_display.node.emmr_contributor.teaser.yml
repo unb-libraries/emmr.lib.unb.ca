@@ -1,0 +1,18 @@
+uuid: 07eb7daa-74af-4c8f-b0a3-cf54b86c9579
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.emmr_contributor
+  module:
+    - user
+id: node.emmr_contributor.teaser
+targetEntityType: node
+bundle: emmr_contributor
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden: {  }

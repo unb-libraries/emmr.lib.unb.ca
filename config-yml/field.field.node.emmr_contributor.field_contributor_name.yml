@@ -1,0 +1,19 @@
+uuid: 25cd87ee-4e8f-4eb3-a1cd-962496109eab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contributor_name
+    - node.type.emmr_contributor
+id: node.emmr_contributor.field_contributor_name
+field_name: field_contributor_name
+entity_type: node
+bundle: emmr_contributor
+label: 'Contributor Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
