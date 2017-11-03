@@ -1,6 +1,6 @@
 core: 8.x
 type: theme
-base theme: unb_lib_theme
+base theme: bootstrap
 
 name: 'emmr_lib_unb_ca'
 description: 'For emmr_lib_unb_ca'
