@@ -1,0 +1,21 @@
+uuid: 58fd1e31-b335-4ab3-9b2e-7a063701c4c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_transcription
+    - node.type.emmr_recipe
+  module:
+    - text
+id: node.emmr_recipe.field_transcription
+field_name: field_transcription
+entity_type: node
+bundle: emmr_recipe
+label: Transcription
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

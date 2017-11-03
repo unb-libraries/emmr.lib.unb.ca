@@ -1,0 +1,21 @@
+uuid: f9f2220a-be37-4e85-8376-f3b754e7d90c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_abstract
+    - node.type.emmr_recipe
+  module:
+    - text
+id: node.emmr_recipe.field_abstract
+field_name: field_abstract
+entity_type: node
+bundle: emmr_recipe
+label: Abstract
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

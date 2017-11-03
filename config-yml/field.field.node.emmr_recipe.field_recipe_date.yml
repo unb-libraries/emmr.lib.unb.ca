@@ -1,0 +1,21 @@
+uuid: d29622aa-838f-47e3-ac2f-15cd35706a41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipe_date
+    - node.type.emmr_recipe
+  module:
+    - datetime
+id: node.emmr_recipe.field_recipe_date
+field_name: field_recipe_date
+entity_type: node
+bundle: emmr_recipe
+label: 'Recipe Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,29 @@
+uuid: d57fd68d-7f45-466e-9d1c-f799d10b2d28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_format
+    - node.type.emmr_recipe
+    - taxonomy.vocabulary.emmr_publication_formats
+id: node.emmr_recipe.field_publication_format
+field_name: field_publication_format
+entity_type: node
+bundle: emmr_recipe
+label: 'Publication Format'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      emmr_publication_formats: emmr_publication_formats
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,23 @@
+uuid: 551e43cb-8a5f-4081-8c15-065e9be8b079
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_digitized
+    - node.type.emmr_recipe
+id: node.emmr_recipe.field_digitized
+field_name: field_digitized
+entity_type: node
+bundle: emmr_recipe
+label: 'Digitized From Original'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

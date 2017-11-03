@@ -1,0 +1,29 @@
+uuid: eb4336ea-9198-4b19-bd45-f407527e429f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contributors
+    - node.type.emmr_contributor
+    - node.type.emmr_recipe
+id: node.emmr_recipe.field_contributors
+field_name: field_contributors
+entity_type: node
+bundle: emmr_recipe
+label: Contributors
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      emmr_contributor: emmr_contributor
+    sort:
+      field: field_contributor_name
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

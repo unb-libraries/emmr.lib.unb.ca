@@ -3,15 +3,114 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.emmr_recipe.field_abstract
+    - field.field.node.emmr_recipe.field_annotations
+    - field.field.node.emmr_recipe.field_contributors
+    - field.field.node.emmr_recipe.field_digitized
+    - field.field.node.emmr_recipe.field_ingredients
+    - field.field.node.emmr_recipe.field_place
+    - field.field.node.emmr_recipe.field_publication_format
+    - field.field.node.emmr_recipe.field_publication_title
+    - field.field.node.emmr_recipe.field_recipe_date
+    - field.field.node.emmr_recipe.field_recipe_images
     - field.field.node.emmr_recipe.field_recipe_title
+    - field.field.node.emmr_recipe.field_recipe_type
+    - field.field.node.emmr_recipe.field_source_institution
+    - field.field.node.emmr_recipe.field_source_shelf
+    - field.field.node.emmr_recipe.field_source_sublocation
+    - field.field.node.emmr_recipe.field_symptoms
+    - field.field.node.emmr_recipe.field_transcription
     - node.type.emmr_recipe
   module:
+    - datetime
+    - file
+    - text
     - user
 id: node.emmr_recipe.default
 targetEntityType: node
 bundle: emmr_recipe
 mode: default
 content:
+  field_abstract:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_annotations:
+    weight: 118
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_contributors:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_digitized:
+    weight: 112
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ingredients:
+    weight: 108
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_place:
+    weight: 109
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_publication_format:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_publication_title:
+    weight: 111
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_recipe_date:
+    weight: 110
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_recipe_images:
+    weight: 117
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
   field_recipe_title:
     weight: 102
     label: above
@@ -19,6 +118,53 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_recipe_type:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_source_institution:
+    weight: 113
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_source_shelf:
+    weight: 115
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_source_sublocation:
+    weight: 114
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_symptoms:
+    weight: 107
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_transcription:
+    weight: 116
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   links:
     weight: 100

@@ -1,0 +1,19 @@
+uuid: 5c13f8bf-c85c-4636-9c3b-1bc2d1c0202b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ingredients
+    - node.type.emmr_recipe
+id: node.emmr_recipe.field_ingredients
+field_name: field_ingredients
+entity_type: node
+bundle: emmr_recipe
+label: Ingredients
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

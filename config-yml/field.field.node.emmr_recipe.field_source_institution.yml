@@ -1,0 +1,33 @@
+uuid: 9731087d-be02-4537-b05d-8c2e372769c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source_institution
+    - node.type.emmr_recipe
+    - taxonomy.vocabulary.emmr_institutions
+  content:
+    - 'taxonomy_term:emmr_institutions:5a83e499-c8b0-45e8-8c72-0b9afb105095'
+id: node.emmr_recipe.field_source_institution
+field_name: field_source_institution
+entity_type: node
+bundle: emmr_recipe
+label: 'Source Institution'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 5a83e499-c8b0-45e8-8c72-0b9afb105095
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      emmr_institutions: emmr_institutions
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
