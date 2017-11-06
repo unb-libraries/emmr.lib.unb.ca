@@ -15,4 +15,6 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_contributor_name: true
+  field_contributor_role: true

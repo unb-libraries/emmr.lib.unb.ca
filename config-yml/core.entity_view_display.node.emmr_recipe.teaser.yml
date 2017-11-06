@@ -17,4 +17,20 @@ content:
     weight: 100
     region: content
 hidden:
+  field_abstract: true
+  field_annotations: true
+  field_contributors: true
+  field_digitized: true
+  field_ingredients: true
+  field_place: true
+  field_publication_format: true
+  field_publication_title: true
+  field_recipe_date: true
+  field_recipe_images: true
   field_recipe_title: true
+  field_recipe_type: true
+  field_source_institution: true
+  field_source_shelf: true
+  field_source_sublocation: true
+  field_symptoms: true
+  field_transcription: true

@@ -1,0 +1,7 @@
+emmr_core.home:
+  path: '/intro'
+  defaults:
+    _controller: '\Drupal\emmr_core\Controller\EmmrCoreController:home'
+    _title: 'Early Modern Maritime Recipes'
+  requirements:
+    _permission: 'access content'

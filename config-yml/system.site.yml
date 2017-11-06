@@ -1,11 +1,11 @@
 uuid: 'NULL'
-name: Site-Install
+name: 'Early Modern Maritime Recipes'
 mail: admin@example.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /user/login
+  front: /intro
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
