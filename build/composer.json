@@ -73,7 +73,7 @@
         "drupal/bootstrap": "3.6",
         "drupal/config_update": "1.1",
         "drupal/console": "~1.0",
-        "drupal/core": "8.4.0",
+        "drupal/core": "8.4.2",
         "drupal/externalauth": "1.0",
         "drupal/features": "3.0-beta8",
         "drupal/google_analytics": "2.1",
@@ -82,6 +82,7 @@
         "drupal/redis": "1.0-rc2",
         "drupal/search_api": "1.0",
         "drupal/token_filter": "1.0-beta1",
+        "drush/drush": "^8.1.15",
         "unb-libraries/unb_lib_theme": "dev-8.x-bootstrap-3.x",
         "webflo/drupal-finder": "^0.3.0",
         "webmozart/path-util": "^2.3"
