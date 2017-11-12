@@ -11,6 +11,9 @@ cache:
   directories:
         - $HOME/.composer/cache
 
+git:
+  depth: 1
+
 env:
   global:
     - SERVICE_NAME=emmr.lib.unb.ca
@@ -27,8 +30,9 @@ before_install:
   - CargoDock/travis/installDockerCompose.sh
 
 before_script:
-  - CargoDock/travis/setComposePort.sh
+  - cp docker-compose.yml.travis docker-compose.yml
   - CargoDock/travis/setDockerComposeEnv.sh
+  - CargoDock/travis/buildInstanceTheme.sh
   - CargoDock/travis/buildInstanceForTesting.sh
   - CargoDock/travis/waitForDeploy.sh
   - CargoDock/travis/checkStartupForErrors.sh
@@ -38,7 +42,6 @@ script:
 
 after_success:
   - CargoDock/aws/installAuthAws.sh
-  - CargoDock/travis/buildInstanceTheme.sh
   - CargoDock/travis/buildImagePushToRepo.sh
   - CargoDock/travis/cleanupOldImages.sh
   - CargoDock/travis/triggerKubeDeploy.sh
