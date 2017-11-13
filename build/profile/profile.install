@@ -16,9 +16,6 @@ function emmr_lib_unb_ca_install() {
   include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
   standard_install();
 
-  // Remove shortcut set as per https://www.drupal.org/node/2583113
-  \Drupal::entityManager()->getStorage("shortcut_set")->load("default")->delete();
-
   // Set our default theme
   \Drupal::configFactory()
   ->getEditable('system.theme')
