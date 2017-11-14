@@ -7,7 +7,7 @@ use Drupal\Core\Routing\TrustedRedirectResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
- * Controller for EMMR Core.
+ * Controller for Datasets navigation.
  */
 class EmmrCoreController extends ControllerBase {
 

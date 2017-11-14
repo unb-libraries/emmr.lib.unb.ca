@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Contains emmr_core.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function emmr_core_theme($existing, $type, $theme, $path) {
+  return [
+    'emmr_intro' => [
+      'variables' => [],
+    ],
+  ];
+}
