@@ -1,18 +1,18 @@
-uuid: b0dbd8e1-dae8-4bb3-b19b-62998233b0bc
+uuid: a2eaf339-9321-4105-ad49-faffdbd73430
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_contributors
-field_name: field_contributors
+id: node.field_source_origin
+field_name: field_source_origin
 entity_type: node
-type: entity_reference
+type: string_long
 settings:
-  target_type: node
+  case_sensitive: false
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

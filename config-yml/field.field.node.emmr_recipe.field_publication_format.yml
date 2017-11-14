@@ -1,11 +1,11 @@
-uuid: d57fd68d-7f45-466e-9d1c-f799d10b2d28
+uuid: 5b3e8d45-18a8-48af-af4c-faa4d71d06de
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_publication_format
     - node.type.emmr_recipe
-    - taxonomy.vocabulary.emmr_publication_formats
+    - taxonomy.vocabulary.publication_format
 id: node.emmr_recipe.field_publication_format
 field_name: field_publication_format
 entity_type: node
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      emmr_publication_formats: emmr_publication_formats
+      publication_format: publication_format
     sort:
       field: name
       direction: asc

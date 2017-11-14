@@ -1,9 +1,0 @@
-uuid: 50f10b83-7382-4a61-9ac0-5be89d38b496
-langcode: en
-status: true
-dependencies: {  }
-name: 'EMMR Publication Formats'
-vid: emmr_publication_formats
-description: 'EMMR Publication Formats'
-hierarchy: 0
-weight: 0

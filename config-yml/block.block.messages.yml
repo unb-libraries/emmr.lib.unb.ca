@@ -1,4 +1,4 @@
-uuid: bad2e428-9dec-4af5-8898-829b2922f420
+uuid: 443dbf8b-8163-47de-a4f6-cd6c463807fc
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
 id: messages
 theme: emmr_lib_unb_ca
 region: header
-weight: -2
+weight: 0
 provider: null
 plugin: system_messages_block
 settings:

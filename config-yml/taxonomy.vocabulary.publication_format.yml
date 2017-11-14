@@ -1,0 +1,9 @@
+uuid: 657c15d5-85de-4d6c-bd19-cdc742cdfc61
+langcode: en
+status: true
+dependencies: {  }
+name: 'EMMR Publication Formats'
+vid: publication_format
+description: ''
+hierarchy: 0
+weight: 0

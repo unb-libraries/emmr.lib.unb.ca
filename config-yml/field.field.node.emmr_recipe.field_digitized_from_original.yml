@@ -1,12 +1,12 @@
-uuid: 551e43cb-8a5f-4081-8c15-065e9be8b079
+uuid: f4023325-0026-4570-ba25-168fd739b282
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_digitized
+    - field.storage.node.field_digitized_from_original
     - node.type.emmr_recipe
-id: node.emmr_recipe.field_digitized
-field_name: field_digitized
+id: node.emmr_recipe.field_digitized_from_original
+field_name: field_digitized_from_original
 entity_type: node
 bundle: emmr_recipe
 label: 'Digitized From Original'

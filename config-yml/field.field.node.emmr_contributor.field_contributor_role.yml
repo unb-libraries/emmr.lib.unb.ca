@@ -1,4 +1,4 @@
-uuid: 02f945f5-41fe-47ff-8c45-e707f0deaa5b
+uuid: 3aa605ca-ca4b-4afb-bd9a-3d82ad9314a0
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
     - node.type.emmr_contributor
     - taxonomy.vocabulary.emmr_contributor_roles
   content:
-    - 'taxonomy_term:emmr_contributor_roles:b6ff0df4-1cdf-4eb3-8da9-ae91938a5cb5'
+    - 'taxonomy_term:emmr_contributor_roles:f57f5feb-4ede-426e-befc-b83a9b556d86'
 id: node.emmr_contributor.field_contributor_role
 field_name: field_contributor_role
 entity_type: node
@@ -18,7 +18,7 @@ required: false
 translatable: false
 default_value:
   -
-    target_uuid: b6ff0df4-1cdf-4eb3-8da9-ae91938a5cb5
+    target_uuid: f57f5feb-4ede-426e-befc-b83a9b556d86
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

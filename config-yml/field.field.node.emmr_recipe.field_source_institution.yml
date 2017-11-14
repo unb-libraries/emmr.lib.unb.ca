@@ -1,13 +1,11 @@
-uuid: 9731087d-be02-4537-b05d-8c2e372769c7
+uuid: 8c2134cb-7370-4233-a875-2a8faaa519f6
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_source_institution
     - node.type.emmr_recipe
-    - taxonomy.vocabulary.emmr_institutions
-  content:
-    - 'taxonomy_term:emmr_institutions:5a83e499-c8b0-45e8-8c72-0b9afb105095'
+    - taxonomy.vocabulary.emmr_source_institutions
 id: node.emmr_recipe.field_source_institution
 field_name: field_source_institution
 entity_type: node
@@ -16,15 +14,13 @@ label: 'Source Institution'
 description: ''
 required: false
 translatable: false
-default_value:
-  -
-    target_uuid: 5a83e499-c8b0-45e8-8c72-0b9afb105095
+default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      emmr_institutions: emmr_institutions
+      emmr_source_institutions: emmr_source_institutions
     sort:
       field: name
       direction: asc

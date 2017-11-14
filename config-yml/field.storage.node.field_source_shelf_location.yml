@@ -1,11 +1,11 @@
-uuid: 4287e0d4-c657-444d-a28c-1a984ef7a5c0
+uuid: 90e29fc3-7e1e-49a1-8e91-43951fb3e89e
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_source_shelf
-field_name: field_source_shelf
+id: node.field_source_shelf_location
+field_name: field_source_shelf_location
 entity_type: node
 type: string
 settings:

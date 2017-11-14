@@ -1,4 +1,4 @@
-uuid: 26dcb059-6e38-47e4-8c07-3294bd8242b6
+uuid: 965206b7-5ef2-467f-a441-dc0dba46e9a8
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
 id: pagetitle
 theme: emmr_lib_unb_ca
 region: header
-weight: -1
+weight: 0
 provider: null
 plugin: page_title_block
 settings:

@@ -1,4 +1,4 @@
-uuid: a88169df-9947-4c20-ad1d-2a4245370b2e
+uuid: 61f2c58b-50fd-49c0-817d-e519cb1a8082
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ field_name: field_publication_title
 entity_type: node
 bundle: emmr_recipe
 label: 'Publication Title'
-description: ''
+description: 'For "Periodical" format.'
 required: false
 translatable: false
 default_value: {  }

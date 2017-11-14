@@ -1,9 +1,8 @@
-uuid: eb59bd52-0fc6-4b93-b863-a2eaecc50b11
+uuid: 683ecfe2-6953-48c6-9c07-aa195f120171
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.emmr_contributor.field_contributor_name
     - field.field.node.emmr_contributor.field_contributor_role
     - node.type.emmr_contributor
   module:
@@ -19,16 +18,8 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_contributor_name:
-    weight: 121
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_contributor_role:
-    weight: 122
+    weight: 121
     settings:
       match_operator: CONTAINS
       size: 60

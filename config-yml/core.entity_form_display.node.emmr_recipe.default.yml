@@ -1,29 +1,25 @@
-uuid: 8ae795a2-3561-415a-be72-b2686ec38b48
+uuid: b98561ed-682e-450e-842a-50157cc608e5
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.emmr_recipe.field_abstract
-    - field.field.node.emmr_recipe.field_annotations
-    - field.field.node.emmr_recipe.field_contributors
-    - field.field.node.emmr_recipe.field_digitized
+    - field.field.node.emmr_recipe.field_contributor
+    - field.field.node.emmr_recipe.field_digitized_from_original
     - field.field.node.emmr_recipe.field_ingredients
-    - field.field.node.emmr_recipe.field_place
+    - field.field.node.emmr_recipe.field_original_location
     - field.field.node.emmr_recipe.field_publication_format
     - field.field.node.emmr_recipe.field_publication_title
     - field.field.node.emmr_recipe.field_recipe_date
-    - field.field.node.emmr_recipe.field_recipe_images
-    - field.field.node.emmr_recipe.field_recipe_title
     - field.field.node.emmr_recipe.field_recipe_type
     - field.field.node.emmr_recipe.field_source_institution
-    - field.field.node.emmr_recipe.field_source_shelf
+    - field.field.node.emmr_recipe.field_source_origin
+    - field.field.node.emmr_recipe.field_source_shelf_location
     - field.field.node.emmr_recipe.field_source_sublocation
     - field.field.node.emmr_recipe.field_symptoms
-    - field.field.node.emmr_recipe.field_transcription
     - node.type.emmr_recipe
   module:
     - datetime
-    - file
     - path
     - text
 id: node.emmr_recipe.default
@@ -38,22 +34,46 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_abstract:
-    weight: 124
+    weight: 122
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_annotations:
-    weight: 138
+  field_contributor:
+    weight: 121
     settings:
-      rows: 5
+      match_operator: CONTAINS
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
+    type: entity_reference_autocomplete
     region: content
-  field_contributors:
+  field_digitized_from_original:
+    weight: 130
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_ingredients:
+    weight: 126
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_original_location:
+    weight: 132
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_publication_format:
     weight: 123
     settings:
       match_operator: CONTAINS
@@ -62,22 +82,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_digitized:
-    weight: 132
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_ingredients:
-    weight: 128
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_place:
+  field_publication_title:
     weight: 129
     settings:
       size: 60
@@ -85,46 +90,14 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_publication_format:
-    weight: 125
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_publication_title:
-    weight: 131
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_recipe_date:
-    weight: 130
+    weight: 128
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_recipe_images:
-    weight: 137
-    settings:
-      progress_indicator: throbber
-    third_party_settings: {  }
-    type: file_generic
-    region: content
-  field_recipe_title:
-    weight: 122
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_recipe_type:
-    weight: 126
+    weight: 124
     settings:
       match_operator: CONTAINS
       size: 60
@@ -133,7 +106,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_source_institution:
-    weight: 133
+    weight: 131
     settings:
       match_operator: CONTAINS
       size: 60
@@ -141,15 +114,15 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_source_shelf:
+  field_source_origin:
     weight: 135
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: string_textarea
     region: content
-  field_source_sublocation:
+  field_source_shelf_location:
     weight: 134
     settings:
       size: 60
@@ -157,21 +130,21 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_symptoms:
-    weight: 127
+  field_source_sublocation:
+    weight: 133
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_transcription:
-    weight: 136
+  field_symptoms:
+    weight: 125
     settings:
-      rows: 5
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
+    type: string_textfield
     region: content
   path:
     type: path

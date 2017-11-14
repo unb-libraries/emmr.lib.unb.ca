@@ -1,10 +1,9 @@
-uuid: 1922708f-3ac6-4d36-9441-de0ba4671a19
+uuid: 40da768a-c10f-479f-a36b-11601d12ffd9
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.emmr_recipe.field_recipe_title
     - node.type.emmr_recipe
   module:
     - user
@@ -16,21 +15,4 @@ content:
   links:
     weight: 100
     region: content
-hidden:
-  field_abstract: true
-  field_annotations: true
-  field_contributors: true
-  field_digitized: true
-  field_ingredients: true
-  field_place: true
-  field_publication_format: true
-  field_publication_title: true
-  field_recipe_date: true
-  field_recipe_images: true
-  field_recipe_title: true
-  field_recipe_type: true
-  field_source_institution: true
-  field_source_shelf: true
-  field_source_sublocation: true
-  field_symptoms: true
-  field_transcription: true
+hidden: {  }

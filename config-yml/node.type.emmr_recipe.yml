@@ -1,4 +1,4 @@
-uuid: 5dabcbea-c940-48b8-b22e-138a6c65e654
+uuid: 5459e964-1aa5-49fd-a360-a62ebe76bab6
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: 'EMMR Recipe'
 type: emmr_recipe
-description: 'EMMR Recipe'
+description: ''
 help: ''
 new_revision: true
 preview_mode: 1

@@ -1,12 +1,12 @@
-uuid: 6ccfc4e3-9738-44e5-be16-7636e45fcc29
+uuid: 6888345f-4e38-491b-9bb5-5ac59450c29a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_source_shelf
+    - field.storage.node.field_source_shelf_location
     - node.type.emmr_recipe
-id: node.emmr_recipe.field_source_shelf
-field_name: field_source_shelf
+id: node.emmr_recipe.field_source_shelf_location
+field_name: field_source_shelf_location
 entity_type: node
 bundle: emmr_recipe
 label: 'Source Shelf Location'

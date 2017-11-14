@@ -1,21 +1,19 @@
-uuid: 58fd1e31-b335-4ab3-9b2e-7a063701c4c8
+uuid: 361794b1-9423-45d8-ae41-a16d6f254335
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_transcription
+    - field.storage.node.field_source_origin
     - node.type.emmr_recipe
-  module:
-    - text
-id: node.emmr_recipe.field_transcription
-field_name: field_transcription
+id: node.emmr_recipe.field_source_origin
+field_name: field_source_origin
 entity_type: node
 bundle: emmr_recipe
-label: Transcription
+label: 'Source Origin'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text_long
+field_type: string_long

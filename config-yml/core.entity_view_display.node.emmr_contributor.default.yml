@@ -1,9 +1,8 @@
-uuid: a197e62c-fb26-4b9b-815a-388447937c0e
+uuid: ab93a24f-1350-434a-8fb0-4ff88b860259
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.emmr_contributor.field_contributor_name
     - field.field.node.emmr_contributor.field_contributor_role
     - node.type.emmr_contributor
   module:
@@ -13,16 +12,8 @@ targetEntityType: node
 bundle: emmr_contributor
 mode: default
 content:
-  field_contributor_name:
-    weight: 101
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_contributor_role:
-    weight: 102
+    weight: 101
     label: above
     settings:
       link: true

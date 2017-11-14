@@ -1,4 +1,4 @@
-uuid: 07eb7daa-74af-4c8f-b0a3-cf54b86c9579
+uuid: b10f2142-20a5-4d40-8fa0-aae9d7cedcb6
 langcode: en
 status: true
 dependencies:
@@ -15,6 +15,4 @@ content:
   links:
     weight: 100
     region: content
-hidden:
-  field_contributor_name: true
-  field_contributor_role: true
+hidden: {  }

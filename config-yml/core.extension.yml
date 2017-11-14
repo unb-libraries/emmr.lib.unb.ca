@@ -11,6 +11,7 @@ module:
   contextual: 0
   datetime: 0
   dblog: 0
+  devel: 0
   dynamic_page_cache: 0
   editor: 0
   emmr_core: 0
@@ -29,6 +30,7 @@ module:
   path: 0
   quickedit: 0
   rdf: 0
+  redis: 0
   search: 0
   shortcut: 0
   system: 0
@@ -43,10 +45,9 @@ module:
   views: 10
   emmr: 1000
 theme:
-  bootstrap: 0
   stable: 0
+  bootstrap: 0
   classy: 0
-  unb_lib_theme: 0
   bartik: 0
   emmr_lib_unb_ca: 0
   seven: 0

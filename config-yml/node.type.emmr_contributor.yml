@@ -1,4 +1,4 @@
-uuid: 2765a09c-6e7a-4b75-ba5c-ed29eeea6499
+uuid: 5a342ce7-abce-419f-b3cd-2a683425d9b2
 langcode: en
 status: true
 dependencies:
@@ -11,8 +11,8 @@ third_party_settings:
     parent: 'main:'
 name: 'EMMR Contributor'
 type: emmr_contributor
-description: 'EMMR Contributor'
-help: ''
+description: ''
+help: "If known: \"Family Name, Given Name\".\r\nOtherwise \"Unknown\"."
 new_revision: true
 preview_mode: 1
 display_submitted: true

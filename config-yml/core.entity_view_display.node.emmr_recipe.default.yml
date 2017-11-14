@@ -1,29 +1,25 @@
-uuid: 53859a08-0a5a-4bae-b914-b6b9534dde96
+uuid: 4725d5c2-ba31-4eac-9cfd-b80bd9580645
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.emmr_recipe.field_abstract
-    - field.field.node.emmr_recipe.field_annotations
-    - field.field.node.emmr_recipe.field_contributors
-    - field.field.node.emmr_recipe.field_digitized
+    - field.field.node.emmr_recipe.field_contributor
+    - field.field.node.emmr_recipe.field_digitized_from_original
     - field.field.node.emmr_recipe.field_ingredients
-    - field.field.node.emmr_recipe.field_place
+    - field.field.node.emmr_recipe.field_original_location
     - field.field.node.emmr_recipe.field_publication_format
     - field.field.node.emmr_recipe.field_publication_title
     - field.field.node.emmr_recipe.field_recipe_date
-    - field.field.node.emmr_recipe.field_recipe_images
-    - field.field.node.emmr_recipe.field_recipe_title
     - field.field.node.emmr_recipe.field_recipe_type
     - field.field.node.emmr_recipe.field_source_institution
-    - field.field.node.emmr_recipe.field_source_shelf
+    - field.field.node.emmr_recipe.field_source_origin
+    - field.field.node.emmr_recipe.field_source_shelf_location
     - field.field.node.emmr_recipe.field_source_sublocation
     - field.field.node.emmr_recipe.field_symptoms
-    - field.field.node.emmr_recipe.field_transcription
     - node.type.emmr_recipe
   module:
     - datetime
-    - file
     - text
     - user
 id: node.emmr_recipe.default
@@ -32,29 +28,22 @@ bundle: emmr_recipe
 mode: default
 content:
   field_abstract:
-    weight: 104
+    weight: 102
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_annotations:
-    weight: 118
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
-    region: content
-  field_contributors:
-    weight: 103
+  field_contributor:
+    weight: 101
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_digitized:
-    weight: 112
+  field_digitized_from_original:
+    weight: 110
     label: above
     settings:
       format: default
@@ -64,15 +53,15 @@ content:
     type: boolean
     region: content
   field_ingredients:
-    weight: 108
+    weight: 106
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-  field_place:
-    weight: 109
+  field_original_location:
+    weight: 112
     label: above
     settings:
       link_to_entity: false
@@ -80,7 +69,7 @@ content:
     type: string
     region: content
   field_publication_format:
-    weight: 105
+    weight: 103
     label: above
     settings:
       link: true
@@ -88,7 +77,7 @@ content:
     type: entity_reference_label
     region: content
   field_publication_title:
-    weight: 111
+    weight: 109
     label: above
     settings:
       link_to_entity: false
@@ -96,7 +85,7 @@ content:
     type: string
     region: content
   field_recipe_date:
-    weight: 110
+    weight: 108
     label: above
     settings:
       format_type: medium
@@ -104,23 +93,8 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_recipe_images:
-    weight: 117
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: file_default
-    region: content
-  field_recipe_title:
-    weight: 102
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_recipe_type:
-    weight: 106
+    weight: 104
     label: above
     settings:
       link: true
@@ -128,22 +102,21 @@ content:
     type: entity_reference_label
     region: content
   field_source_institution:
-    weight: 113
+    weight: 111
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_source_shelf:
+  field_source_origin:
     weight: 115
     label: above
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    type: string
+    type: basic_string
     region: content
-  field_source_sublocation:
+  field_source_shelf_location:
     weight: 114
     label: above
     settings:
@@ -151,20 +124,21 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_symptoms:
-    weight: 107
+  field_source_sublocation:
+    weight: 113
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-  field_transcription:
-    weight: 116
+  field_symptoms:
+    weight: 105
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    type: text_default
+    type: string
     region: content
   links:
     weight: 100
