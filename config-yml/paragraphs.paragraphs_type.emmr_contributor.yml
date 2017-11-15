@@ -1,0 +1,9 @@
+uuid: f7ce11f9-cea4-4ce7-be8b-cd621b98d1f5
+langcode: en
+status: true
+dependencies: {  }
+id: emmr_contributor
+label: 'EMMR Contributor'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

@@ -1,24 +1,20 @@
-uuid: 3aa605ca-ca4b-4afb-bd9a-3d82ad9314a0
+uuid: 0cfa9070-658f-4ae2-88ff-0edf807a4106
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_contributor_role
-    - node.type.emmr_contributor
+    - field.storage.paragraph.field_contributor_role
+    - paragraphs.paragraphs_type.emmr_contributor
     - taxonomy.vocabulary.emmr_contributor_roles
-  content:
-    - 'taxonomy_term:emmr_contributor_roles:f57f5feb-4ede-426e-befc-b83a9b556d86'
-id: node.emmr_contributor.field_contributor_role
+id: paragraph.emmr_contributor.field_contributor_role
 field_name: field_contributor_role
-entity_type: node
+entity_type: paragraph
 bundle: emmr_contributor
 label: 'Contributor Role'
 description: ''
 required: false
 translatable: false
-default_value:
-  -
-    target_uuid: f57f5feb-4ede-426e-befc-b83a9b556d86
+default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

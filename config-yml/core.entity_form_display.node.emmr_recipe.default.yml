@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.emmr_recipe.field_abstract
-    - field.field.node.emmr_recipe.field_contributor
+    - field.field.node.emmr_recipe.field_contributors
     - field.field.node.emmr_recipe.field_digitized_from_original
     - field.field.node.emmr_recipe.field_ingredients
     - field.field.node.emmr_recipe.field_original_location
@@ -20,6 +20,7 @@ dependencies:
     - node.type.emmr_recipe
   module:
     - datetime
+    - paragraphs
     - text
 id: node.emmr_recipe.default
 targetEntityType: node
@@ -27,21 +28,24 @@ bundle: emmr_recipe
 mode: default
 content:
   field_abstract:
-    weight: 3
+    weight: 4
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_contributor:
-    weight: 6
+  field_contributors:
+    type: entity_reference_paragraphs
+    weight: 1
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
     region: content
   field_digitized_from_original:
     weight: 10
@@ -51,7 +55,7 @@ content:
     type: boolean_checkbox
     region: content
   field_ingredients:
-    weight: 4
+    weight: 5
     settings:
       size: 60
       placeholder: ''
@@ -81,13 +85,13 @@ content:
     type: string_textfield
     region: content
   field_recipe_date:
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_recipe_type:
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -123,7 +127,7 @@ content:
     type: string_textfield
     region: content
   field_symptoms:
-    weight: 5
+    weight: 6
     settings:
       size: 60
       placeholder: ''

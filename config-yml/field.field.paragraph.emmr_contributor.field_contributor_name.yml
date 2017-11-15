@@ -1,0 +1,19 @@
+uuid: 8d7e6309-e2f9-4cde-a431-c4d3d5cf6e22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contributor_name
+    - paragraphs.paragraphs_type.emmr_contributor
+id: paragraph.emmr_contributor.field_contributor_name
+field_name: field_contributor_name
+entity_type: paragraph
+bundle: emmr_contributor
+label: 'Contributor Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

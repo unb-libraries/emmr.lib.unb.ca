@@ -1,13 +1,13 @@
-uuid: e670f96c-ab4e-4856-8dca-9e76d2e8d3b9
+uuid: 031d8a30-7204-42aa-97fe-6191ecb117b9
 langcode: en
 status: true
 dependencies:
   module:
-    - node
+    - paragraphs
     - taxonomy
-id: node.field_contributor_role
+id: paragraph.field_contributor_role
 field_name: field_contributor_role
-entity_type: node
+entity_type: paragraph
 type: entity_reference
 settings:
   target_type: taxonomy_term
