@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Contains emmr_core.install.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function hook_install() {
+  $contrib_roles = [
+    'Author',
+    'Compiler',
+    'Other',
+  ];
+
+  foreach ($contrib_roles as $role) {
+    $term = \Drupal\taxonomy\Entity\Term::create([
+      'vid' => 'emmr_contributor_roles',
+      'name' => $role,
+    ]);
+
+    $term->save();
+  }
+}
