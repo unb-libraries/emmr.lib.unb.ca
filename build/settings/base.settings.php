@@ -13,7 +13,7 @@ if (isset($_SERVER['APPLICATION_ENV'])) {
   }
 }
 
-// Add common includes below.
+// Redis Config.
 if (isset($conf['chq_redis_cache_enabled']) && $conf['chq_redis_cache_enabled']) {
   $settings['cache']['default'] = 'cache.backend.redis';
   $settings['redis.connection']['interface'] = 'PhpRedis';
@@ -23,3 +23,5 @@ if (isset($conf['chq_redis_cache_enabled']) && $conf['chq_redis_cache_enabled'])
   // actually store cache_class_cache_form in the default cache.
   $conf['cache_class_cache'] = 'Redis_Cache';
 }
+
+// Add common includes below.
