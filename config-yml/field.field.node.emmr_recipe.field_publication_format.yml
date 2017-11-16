@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_publication_format
     - node.type.emmr_recipe
-    - taxonomy.vocabulary.publication_format
 id: node.emmr_recipe.field_publication_format
 field_name: field_publication_format
 entity_type: node
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      publication_format: publication_format
+    target_bundles: {  }
     sort:
       field: name
       direction: asc

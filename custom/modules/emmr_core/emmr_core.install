@@ -8,19 +8,48 @@
 /**
  * Implements hook_install().
  */
-function hook_install() {
+function emmr_core_install() {
+  $pub_formats = [
+    'Manuscript',
+    'Periodical',
+  ];
+
+  $src_institutions = [
+    'University Of New Brunswick',
+    'Dalhousie University',
+  ];
+
   $contrib_roles = [
     'Author',
     'Compiler',
     'Other',
   ];
 
-  foreach ($contrib_roles as $role) {
-    $term = \Drupal\taxonomy\Entity\Term::create([
-      'vid' => 'emmr_contributor_roles',
-      'name' => $role,
+  $recipe_types = [
+    'Agriculture',
+    'Food',
+    'Drink',
+    'Cosmetic',
+    'Household',
+    'Medicine',
+    'Veterinary Medicine',
+    'Miscellaneous',
+  ];
+
+  addTerms('emmr_publication_formats', $pub_formats);
+  addTerms('emmr_source_institutions', $src_institutions);
+  addTerms('emmr_contributor_roles', $contrib_roles);
+  addTerms('emmr_recipe_types', $recipe_types);
+}
+
+function addTerms($voc, $terms) {
+
+  foreach ($terms as $term) {
+    $new_term = \Drupal\taxonomy\Entity\Term::create([
+      'vid' => $voc,
+      'name' => $term,
     ]);
 
-    $term->save();
+    $new_term->save();
   }
 }

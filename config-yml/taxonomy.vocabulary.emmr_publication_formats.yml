@@ -1,9 +1,9 @@
-uuid: 657c15d5-85de-4d6c-bd19-cdc742cdfc61
+uuid: 04ce98d9-bad1-437a-95c3-93e3f345e03e
 langcode: en
 status: true
 dependencies: {  }
 name: 'EMMR Publication Formats'
-vid: publication_format
+vid: emmr_publication_formats
 description: ''
 hierarchy: 0
 weight: 0
