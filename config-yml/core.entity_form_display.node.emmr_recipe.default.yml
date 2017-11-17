@@ -10,7 +10,10 @@ dependencies:
     - field.field.node.emmr_recipe.field_original_location
     - field.field.node.emmr_recipe.field_publication_format
     - field.field.node.emmr_recipe.field_publication_title
+    - field.field.node.emmr_recipe.field_recipe_annotations
     - field.field.node.emmr_recipe.field_recipe_date
+    - field.field.node.emmr_recipe.field_recipe_images
+    - field.field.node.emmr_recipe.field_recipe_transcription
     - field.field.node.emmr_recipe.field_recipe_type
     - field.field.node.emmr_recipe.field_source_institution
     - field.field.node.emmr_recipe.field_source_origin
@@ -20,6 +23,7 @@ dependencies:
     - node.type.emmr_recipe
   module:
     - datetime
+    - file
     - paragraphs
     - text
 id: node.emmr_recipe.default
@@ -84,11 +88,34 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_recipe_annotations:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
   field_recipe_date:
     weight: 3
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_recipe_images:
+    weight: 27
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_recipe_transcription:
+    weight: 26
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
     region: content
   field_recipe_type:
     weight: 2

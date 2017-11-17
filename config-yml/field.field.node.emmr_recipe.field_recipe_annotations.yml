@@ -1,0 +1,21 @@
+uuid: bfc6d4f5-65db-4aa1-aae0-3c69afbfaf94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipe_annotations
+    - node.type.emmr_recipe
+  module:
+    - text
+id: node.emmr_recipe.field_recipe_annotations
+field_name: field_recipe_annotations
+entity_type: node
+bundle: emmr_recipe
+label: 'Recipe Annotations'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

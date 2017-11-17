@@ -1,0 +1,27 @@
+uuid: f8c01032-cd66-4f97-9103-80648d7b2429
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipe_images
+    - node.type.emmr_recipe
+  module:
+    - file
+id: node.emmr_recipe.field_recipe_images
+field_name: field_recipe_images
+entity_type: node
+bundle: emmr_recipe
+label: 'Recipe Images'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'pdf jpg'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file
