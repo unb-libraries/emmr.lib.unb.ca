@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: emmr_contributor
-label: 'EMMR Contributor'
+label: 'Recipe Contributor'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }
