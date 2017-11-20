@@ -6,7 +6,7 @@ emmr_core.home:
   requirements:
     _permission: 'access content'
 emmr_core.search:
-  path: '/recipe-search'
+  path: '/browse-recipes'
   defaults:
     _title: 'Browse Recipes'
   requirements:
