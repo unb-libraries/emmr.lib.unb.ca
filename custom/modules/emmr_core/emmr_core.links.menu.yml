@@ -1,0 +1,29 @@
+
+menu.search:
+  title: 'Search'
+  description: 'Main recipe search.'
+  parent: main
+  menu_name: main
+  route_name: emmr_core.search
+  weight: 10
+menu.sources:
+  title: 'Sources'
+  description: 'Lookup by source collection.'
+  parent: main
+  menu_name: main
+  route_name: emmr_core.sources
+  weight: 20
+menu.contexts:
+  title: 'Contexts'
+  description: 'Contexts.'
+  parent: main
+  menu_name: main
+  route_name: emmr_core.contexts
+  weight: 30
+menu.about:
+  title: 'About'
+  description: 'About the site.'
+  parent: main
+  menu_name: main
+  route_name: emmr_core.about
+  weight: 40

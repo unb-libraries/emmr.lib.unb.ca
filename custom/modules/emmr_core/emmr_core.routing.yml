@@ -5,3 +5,27 @@ emmr_core.home:
     _title: 'Early Modern Maritime Recipes'
   requirements:
     _permission: 'access content'
+emmr_core.search:
+  path: '/recipe-search'
+  defaults:
+    _title: 'Browse Recipes'
+  requirements:
+    _permission: 'access content'
+emmr_core.sources:
+  path: '/sources'
+  defaults:
+    _title: 'Sources'
+  requirements:
+    _permission: 'access content'
+emmr_core.contexts:
+  path: '/contexts'
+  defaults:
+    _title: 'Contexts'
+  requirements:
+    _permission: 'access content'
+emmr_core.about:
+  path: '/about'
+  defaults:
+    _title: 'About The Site'
+  requirements:
+    _permission: 'access content'
