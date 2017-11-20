@@ -6,6 +6,8 @@ dependencies:
     - field.storage.paragraph.field_contributor_role
     - paragraphs.paragraphs_type.emmr_contributor
     - taxonomy.vocabulary.emmr_contributor_roles
+  content:
+    - 'taxonomy_term:emmr_contributor_roles:243803ea-5ace-4bde-8bd6-8ac96d750d1f'
 id: paragraph.emmr_contributor.field_contributor_role
 field_name: field_contributor_role
 entity_type: paragraph
@@ -14,7 +16,9 @@ label: 'Contributor Role'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: 243803ea-5ace-4bde-8bd6-8ac96d750d1f
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
