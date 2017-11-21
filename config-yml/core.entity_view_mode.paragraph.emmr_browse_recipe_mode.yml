@@ -1,0 +1,10 @@
+uuid: 39463e5d-9361-4910-ac37-7069bf9e52ae
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.emmr_browse_recipe_mode
+label: 'EMMR Browse Recipe Mode'
+targetEntityType: paragraph
+cache: true
