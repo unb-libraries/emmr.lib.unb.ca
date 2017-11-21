@@ -1,0 +1,6 @@
+
+name: EMMR Recipe Search
+type: module
+description: Additional functionality for search.
+core: 8.x
+package: EMMR Custom Modules
