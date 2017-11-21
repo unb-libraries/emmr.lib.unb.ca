@@ -408,7 +408,7 @@ display:
           field: nothing
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: recipe-row
           label: ''
           exclude: false
           alter:
@@ -472,6 +472,49 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
+        combine:
+          id: combine
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: allwords
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: combine_op
+            label: Keyword
+            description: ''
+            use_operator: false
+            operator: combine_op
+            identifier: combine
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          fields:
+            title: title
+            field_publication_title: field_publication_title
+            field_publication_format: field_publication_format
+            field_recipe_date: field_recipe_date
+          plugin_id: combine
       sorts: {  }
       title: 'Browse Recipes'
       header: {  }
@@ -485,6 +528,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
@@ -506,6 +550,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
