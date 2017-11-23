@@ -4,14 +4,21 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_contributors
+    - field.storage.node.field_plain_contributors
     - field.storage.node.field_publication_format
     - field.storage.node.field_publication_title
     - field.storage.node.field_recipe_date
+    - field.storage.paragraph.field_contributor_name
     - node.type.emmr_recipe
+    - taxonomy.vocabulary.emmr_publication_formats
+    - taxonomy.vocabulary.emmr_recipe_types
+    - taxonomy.vocabulary.emmr_source_institutions
   module:
     - datetime
     - entity_reference_revisions
     - node
+    - paragraphs
+    - taxonomy
     - user
 id: emmr_browse_recipes
 label: 'Browse Recipes'
@@ -39,7 +46,7 @@ display:
         type: views_query
         options:
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_comment: ''
           query_tags: {  }
@@ -76,7 +83,7 @@ display:
         options:
           grouping: {  }
           row_class: ''
-          default_row_class: true
+          default_row_class: false
       row:
         type: fields
         options:
@@ -202,7 +209,7 @@ display:
           type: entity_reference_revisions_entity_view
           settings:
             view_mode: emmr_browse_recipe_mode
-          group_column: ''
+          group_column: entity_id
           group_columns: {  }
           group_rows: true
           delta_limit: 1
@@ -210,6 +217,69 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: ul
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_contributor_name:
+          id: field_contributor_name
+          table: paragraph__field_contributor_name
+          field: field_contributor_name
+          relationship: field_contributors
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: entity_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
           separator: ', '
           field_api_classes: false
           plugin_id: field
@@ -402,6 +472,68 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_plain_contributors:
+          id: field_plain_contributors
+          table: node__field_plain_contributors
+          field: field_plain_contributors
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -472,8 +604,9 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-        combine:
-          id: combine
+          group: 1
+        combine_2:
+          id: combine_2
           table: views
           field: combine
           relationship: none
@@ -484,12 +617,12 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: combine_op
+            operator_id: combine_2_op
             label: Keyword
             description: ''
             use_operator: false
-            operator: combine_op
-            identifier: combine
+            operator: combine_2_op
+            identifier: combine_2
             required: false
             remember: false
             multiple: false
@@ -511,18 +644,402 @@ display:
             group_items: {  }
           fields:
             title: title
+            field_contributor_name: field_contributor_name
             field_publication_title: field_publication_title
             field_publication_format: field_publication_format
             field_recipe_date: field_recipe_date
+          plugin_id: combine
+        field_contributor_name_value:
+          id: field_contributor_name_value
+          table: paragraph__field_contributor_name
+          field: field_contributor_name_value
+          relationship: field_contributors
+          group_type: group
+          admin_label: ''
+          operator: allwords
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_contributor_name_value_op
+            label: Name
+            description: ''
+            use_operator: false
+            operator: field_contributor_name_value_op
+            identifier: field_contributor_name_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: string
+        field_publication_format_target_id:
+          id: field_publication_format_target_id
+          table: node__field_publication_format
+          field: field_publication_format_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_publication_format_target_id_op
+            label: 'Source Type'
+            description: ''
+            use_operator: false
+            operator: field_publication_format_target_id_op
+            identifier: field_publication_format_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: emmr_publication_formats
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_recipe_type_target_id:
+          id: field_recipe_type_target_id
+          table: node__field_recipe_type
+          field: field_recipe_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_recipe_type_target_id_op
+            label: 'Recipe Type'
+            description: ''
+            use_operator: false
+            operator: field_recipe_type_target_id_op
+            identifier: field_recipe_type_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: emmr_recipe_types
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_original_location_value:
+          id: field_original_location_value
+          table: node__field_original_location
+          field: field_original_location_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: allwords
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_original_location_value_op
+            label: Location
+            description: ''
+            use_operator: false
+            operator: field_original_location_value_op
+            identifier: field_original_location_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: string
+        field_recipe_date_value:
+          id: field_recipe_date_value
+          table: node__field_recipe_date
+          field: field_recipe_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_recipe_date_value_op
+            label: Date
+            description: ''
+            use_operator: false
+            operator: field_recipe_date_value_op
+            identifier: field_recipe_date_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: datetime
+        field_recipe_date_value_1:
+          id: field_recipe_date_value_1
+          table: node__field_recipe_date
+          field: field_recipe_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_recipe_date_value_1_op
+            label: To
+            description: ''
+            use_operator: false
+            operator: field_recipe_date_value_1_op
+            identifier: field_recipe_date_value_1
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: datetime
+        field_source_institution_target_id:
+          id: field_source_institution_target_id
+          table: node__field_source_institution
+          field: field_source_institution_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_source_institution_target_id_op
+            label: 'Held By'
+            description: ''
+            use_operator: false
+            operator: field_source_institution_target_id_op
+            identifier: field_source_institution_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: emmr_source_institutions
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        combine:
+          id: combine
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          fields: {  }
+          plugin_id: combine
+        combine_1:
+          id: combine_1
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          fields: {  }
           plugin_id: combine
       sorts: {  }
       title: 'Browse Recipes'
       header: {  }
       footer: {  }
       empty: {  }
-      relationships: {  }
+      relationships:
+        field_contributors:
+          id: field_contributors
+          table: node__field_contributors
+          field: field_contributors
+          relationship: none
+          group_type: group
+          admin_label: 'field_contributors: Paragraph'
+          required: false
+          plugin_id: standard
       arguments: {  }
       display_extenders: {  }
+      group_by: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -530,13 +1047,16 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_contributors'
+        - 'config:field.storage.node.field_plain_contributors'
         - 'config:field.storage.node.field_publication_format'
         - 'config:field.storage.node.field_publication_title'
         - 'config:field.storage.node.field_recipe_date'
+        - 'config:field.storage.paragraph.field_contributor_name'
   page_1:
     display_plugin: page
     id: page_1
@@ -552,10 +1072,13 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_contributors'
+        - 'config:field.storage.node.field_plain_contributors'
         - 'config:field.storage.node.field_publication_format'
         - 'config:field.storage.node.field_publication_title'
         - 'config:field.storage.node.field_recipe_date'
+        - 'config:field.storage.paragraph.field_contributor_name'

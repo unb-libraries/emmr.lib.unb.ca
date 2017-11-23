@@ -1,0 +1,19 @@
+uuid: fa83af18-df56-4d7d-bd88-a613389d0d42
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_plain_contributors
+    - node.type.emmr_recipe
+id: node.emmr_recipe.field_plain_contributors
+field_name: field_plain_contributors
+entity_type: node
+bundle: emmr_recipe
+label: 'Plain Contributors (for filtering)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
