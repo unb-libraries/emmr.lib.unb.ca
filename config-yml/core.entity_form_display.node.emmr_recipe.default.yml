@@ -110,7 +110,7 @@ content:
     type: file_generic
     region: content
   field_recipe_transcription:
-    weight: 5
+    weight: 7
     settings:
       rows: 5
       placeholder: ''
@@ -154,7 +154,7 @@ content:
     type: string_textfield
     region: content
   field_symptoms:
-    weight: 7
+    weight: 5
     settings:
       size: 60
       placeholder: ''
