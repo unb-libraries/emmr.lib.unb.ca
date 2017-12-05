@@ -1,1 +1,20 @@
 @import '../../../../../vendor/unb-libraries/unb_lib_theme/assets/stylesheets/unblib';
+
+// Footer
+#dal-footer-logo {
+  max-height: 40px;
+}
+
+#unb-footer-logo {
+  position: relative;
+  top: -10px;
+  max-height: 60px;
+}
+
+#sshrc-footer-logo {
+  max-width: 440px;
+}
+
+footer.footer.container {
+  padding-left: 0px;
+}
