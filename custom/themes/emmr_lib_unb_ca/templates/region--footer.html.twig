@@ -31,3 +31,9 @@
   </div>
 </footer><div><!-- /#{{ id }}, /#{{ id }}-wrapper -->
 {% endif %}
+
+{% if logged_in %}
+  <a href="/logout">Log out</a>
+{% else %}
+  <a href="/user">Log in</a>
+{% endif %}
