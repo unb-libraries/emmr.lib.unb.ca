@@ -52,7 +52,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Search
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -881,80 +881,6 @@ display:
           hierarchy: false
           error_message: true
           plugin_id: taxonomy_index_tid
-        combine:
-          id: combine
-          table: views
-          field: combine
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value: ''
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          fields: {  }
-          plugin_id: combine
-        combine_1:
-          id: combine_1
-          table: views
-          field: combine
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value: ''
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          fields: {  }
-          plugin_id: combine
       sorts: {  }
       title: 'Browse Recipes'
       header: {  }
@@ -1009,6 +935,104 @@ display:
         - url
         - url.query_args
         - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_contributors'
+        - 'config:field.storage.node.field_publication_format'
+        - 'config:field.storage.node.field_publication_title'
+        - 'config:field.storage.node.field_recipe_date'
+        - 'config:field.storage.paragraph.field_contributor_name'
+  page_2:
+    display_plugin: page
+    id: page_2
+    display_title: global_search
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      path: global-search
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            emmr_recipe: emmr_recipe
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          group: 1
+        combine_2:
+          id: combine_2
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: allwords
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: combine_2_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: combine_2_op
+            identifier: combine_2
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          fields:
+            title: title
+            field_contributor_name: field_contributor_name
+            field_publication_title: field_publication_title
+            field_publication_format: field_publication_format
+            field_recipe_date: field_recipe_date
+          plugin_id: combine
+      defaults:
+        filters: false
+        filter_groups: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      exposed_block: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:

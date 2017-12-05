@@ -1,0 +1,23 @@
+uuid: 7f3edeed-d793-44ff-bf90-bc005b485e02
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.emmr_browse_recipes
+  module:
+    - views
+  theme:
+    - emmr_lib_unb_ca
+id: exposedformemmr_browse_recipespage_2
+theme: emmr_lib_unb_ca
+region: content
+weight: 1
+provider: null
+plugin: 'views_exposed_filter_block:emmr_browse_recipes-page_2'
+settings:
+  id: 'views_exposed_filter_block:emmr_browse_recipes-page_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility: {  }
