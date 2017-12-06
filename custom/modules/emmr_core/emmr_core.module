@@ -5,6 +5,18 @@
  * Contains emmr_core.module.
  */
 
+ use Drupal\block\Entity\Block;
+
+/**
+ * Implements hook_theme().
+ */
+function emmr_core_preprocess_emmr_intro(&$variables) {
+  $block = Block::load('exposedformemmr_browse_recipespage_2');
+  $variables['search_block_output'] = \Drupal::entityTypeManager()
+    ->getViewBuilder('block')
+    ->view($block);
+}
+
 /**
  * Implements hook_theme().
  */
