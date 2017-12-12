@@ -1,16 +1,14 @@
-uuid: 4d1376ee-483d-4ce5-a804-e85781653297
+uuid: 8575e3ab-fa44-4a81-bc0f-b176dd7c1d86
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_source_origin
-field_name: field_source_origin
+id: node.field_source_desc
+field_name: field_source_desc
 entity_type: node
-type: string
+type: string_long
 settings:
-  max_length: 255
-  is_ascii: false
   case_sensitive: false
 module: core
 locked: false

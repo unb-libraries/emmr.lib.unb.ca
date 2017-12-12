@@ -13,12 +13,9 @@ dependencies:
     - field.field.node.emmr_recipe.field_recipe_annotations
     - field.field.node.emmr_recipe.field_recipe_date
     - field.field.node.emmr_recipe.field_recipe_images
+    - field.field.node.emmr_recipe.field_recipe_source
     - field.field.node.emmr_recipe.field_recipe_transcription
     - field.field.node.emmr_recipe.field_recipe_type
-    - field.field.node.emmr_recipe.field_source_institution
-    - field.field.node.emmr_recipe.field_source_origin
-    - field.field.node.emmr_recipe.field_source_shelf_location
-    - field.field.node.emmr_recipe.field_source_sublocation
     - field.field.node.emmr_recipe.field_symptoms
     - node.type.emmr_recipe
   module:
@@ -109,6 +106,15 @@ content:
     third_party_settings: {  }
     type: file_generic
     region: content
+  field_recipe_source:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_recipe_transcription:
     weight: 7
     settings:
@@ -122,36 +128,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-    region: content
-  field_source_institution:
-    weight: 12
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
-  field_source_origin:
-    weight: 15
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
-    region: content
-  field_source_shelf_location:
-    weight: 14
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_source_sublocation:
-    weight: 13
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
   field_symptoms:
     weight: 5

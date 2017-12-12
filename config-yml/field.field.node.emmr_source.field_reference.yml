@@ -1,0 +1,19 @@
+uuid: 33485520-e819-4a8e-a93d-2cea904adf2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reference
+    - node.type.emmr_source
+id: node.emmr_source.field_reference
+field_name: field_reference
+entity_type: node
+bundle: emmr_source
+label: Reference
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

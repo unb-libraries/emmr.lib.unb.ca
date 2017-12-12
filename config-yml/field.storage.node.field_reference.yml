@@ -1,11 +1,11 @@
-uuid: 4d1376ee-483d-4ce5-a804-e85781653297
+uuid: 19666cc6-8477-4e98-a7ab-1ed7617a2227
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_source_origin
-field_name: field_source_origin
+id: node.field_reference
+field_name: field_reference
 entity_type: node
 type: string
 settings:

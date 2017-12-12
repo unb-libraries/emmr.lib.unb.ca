@@ -1,16 +1,16 @@
-uuid: 8c2134cb-7370-4233-a875-2a8faaa519f6
+uuid: 969c4bf8-de9b-40b3-891f-60553958407d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_source_institution
-    - node.type.emmr_recipe
+    - field.storage.node.field_institution
+    - node.type.emmr_source
     - taxonomy.vocabulary.emmr_source_institutions
-id: node.emmr_recipe.field_source_institution
-field_name: field_source_institution
+id: node.emmr_source.field_institution
+field_name: field_institution
 entity_type: node
-bundle: emmr_recipe
-label: 'Source Institution'
+bundle: emmr_source
+label: Institution
 description: ''
 required: false
 translatable: false
