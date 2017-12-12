@@ -1,16 +1,17 @@
-uuid: 8c248e1a-ae8e-4d28-994d-fe658fc8e840
+uuid: f011b6f4-797a-483b-b6ad-95eeb4eed820
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
-id: node.field_source_institution
-field_name: field_source_institution
+id: node.field_sublocation
+field_name: field_sublocation
 entity_type: node
-type: entity_reference
+type: string
 settings:
-  target_type: taxonomy_term
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1

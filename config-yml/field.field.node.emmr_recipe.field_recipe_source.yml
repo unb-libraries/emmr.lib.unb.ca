@@ -1,0 +1,28 @@
+uuid: 1ef7b9d9-bd76-41bf-af82-847de81850b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipe_source
+    - node.type.emmr_recipe
+    - node.type.emmr_source
+id: node.emmr_recipe.field_recipe_source
+field_name: field_recipe_source
+entity_type: node
+bundle: emmr_recipe
+label: 'Recipe Source'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      emmr_source: emmr_source
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

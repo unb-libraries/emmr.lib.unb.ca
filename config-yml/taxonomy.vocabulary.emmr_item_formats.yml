@@ -1,0 +1,9 @@
+uuid: c235d22f-b413-40b4-9b91-599294f3136a
+langcode: en
+status: true
+dependencies: {  }
+name: 'EMMR Item Formats'
+vid: emmr_item_formats
+description: ''
+hierarchy: 0
+weight: 0

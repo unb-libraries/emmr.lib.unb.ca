@@ -1,0 +1,19 @@
+uuid: 432d6210-1be4-4fa5-b9d6-68fde1495659
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sublocation
+    - node.type.emmr_source
+id: node.emmr_source.field_sublocation
+field_name: field_sublocation
+entity_type: node
+bundle: emmr_source
+label: Sublocation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
