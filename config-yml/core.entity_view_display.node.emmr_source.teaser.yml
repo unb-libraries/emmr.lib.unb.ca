@@ -15,4 +15,10 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_institution: true
+  field_item_format: true
+  field_reference: true
+  field_source_desc: true
+  field_source_origin: true
+  field_sublocation: true
