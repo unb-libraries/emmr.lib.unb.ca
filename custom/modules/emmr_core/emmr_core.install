@@ -11,12 +11,12 @@
 function emmr_core_install() {
   $pub_formats = [
     'Manuscript',
-    'Periodical',
+    'Print',
   ];
 
   $item_formats = [
     'Manuscript',
-    'Periodical',
+    'Print',
     'Microfilm',
   ];
 
