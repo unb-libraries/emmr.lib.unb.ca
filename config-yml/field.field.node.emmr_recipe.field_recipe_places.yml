@@ -1,15 +1,15 @@
-uuid: f1e35714-bb49-44f3-b172-e26a68c4205b
+uuid: 24532db4-dfd7-4fb2-acbe-3966a462fb3d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_original_location
+    - field.storage.node.field_recipe_places
     - node.type.emmr_recipe
-id: node.emmr_recipe.field_original_location
-field_name: field_original_location
+id: node.emmr_recipe.field_recipe_places
+field_name: field_recipe_places
 entity_type: node
 bundle: emmr_recipe
-label: 'Original Location'
+label: Places
 description: ''
 required: false
 translatable: false

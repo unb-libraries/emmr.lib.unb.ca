@@ -11,7 +11,7 @@ id: node.emmr_recipe.field_recipe_date
 field_name: field_recipe_date
 entity_type: node
 bundle: emmr_recipe
-label: 'Recipe Date'
+label: Date
 description: ''
 required: false
 translatable: false
