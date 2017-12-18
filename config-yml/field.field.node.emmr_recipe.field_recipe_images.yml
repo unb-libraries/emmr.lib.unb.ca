@@ -11,7 +11,7 @@ id: node.emmr_recipe.field_recipe_images
 field_name: field_recipe_images
 entity_type: node
 bundle: emmr_recipe
-label: 'Recipe Images'
+label: Images
 description: ''
 required: false
 translatable: false

@@ -11,7 +11,7 @@ id: node.emmr_recipe.field_recipe_annotations
 field_name: field_recipe_annotations
 entity_type: node
 bundle: emmr_recipe
-label: 'Recipe Annotations'
+label: Annotations
 description: ''
 required: false
 translatable: false

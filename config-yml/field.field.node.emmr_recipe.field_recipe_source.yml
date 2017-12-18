@@ -10,7 +10,7 @@ id: node.emmr_recipe.field_recipe_source
 field_name: field_recipe_source
 entity_type: node
 bundle: emmr_recipe
-label: 'Recipe Source'
+label: Source
 description: ''
 required: false
 translatable: false

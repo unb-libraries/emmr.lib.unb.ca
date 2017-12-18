@@ -11,7 +11,7 @@ id: node.emmr_recipe.field_recipe_transcription
 field_name: field_recipe_transcription
 entity_type: node
 bundle: emmr_recipe
-label: 'Recipe Transcription'
+label: Transcription
 description: ''
 required: false
 translatable: false
