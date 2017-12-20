@@ -28,6 +28,7 @@ hidden:
   field_recipe_annotations: true
   field_recipe_date: true
   field_recipe_images: true
+  field_recipe_places: true
   field_recipe_source: true
   field_recipe_transcription: true
   field_recipe_type: true
