@@ -1,0 +1,34 @@
+uuid: b28ea7ff-5597-49db-948c-fa9572b4cf53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_annotations
+    - node.type.emmr_recipe
+    - paragraphs.paragraphs_type.emmr_annotation
+  module:
+    - entity_reference_revisions
+id: node.emmr_recipe.field_annotations
+field_name: field_annotations
+entity_type: node
+bundle: emmr_recipe
+label: Annotations
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      emmr_annotation: emmr_annotation
+    target_bundles_drag_drop:
+      emmr_annotation:
+        enabled: true
+        weight: 3
+      emmr_contributor:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions
