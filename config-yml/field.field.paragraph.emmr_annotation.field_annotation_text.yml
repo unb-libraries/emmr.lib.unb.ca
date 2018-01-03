@@ -1,0 +1,19 @@
+uuid: c9f2869a-fe05-4547-9cf5-606bce538749
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_annotation_text
+    - paragraphs.paragraphs_type.emmr_annotation
+id: paragraph.emmr_annotation.field_annotation_text
+field_name: field_annotation_text
+entity_type: paragraph
+bundle: emmr_annotation
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

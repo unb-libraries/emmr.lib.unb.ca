@@ -1,0 +1,30 @@
+uuid: ac0db4ce-e087-45d3-be68-3f4f1874c0fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.emmr_annotation.field_annotation_body
+    - field.field.paragraph.emmr_annotation.field_annotation_text
+    - paragraphs.paragraphs_type.emmr_annotation
+id: paragraph.emmr_annotation.default
+targetEntityType: paragraph
+bundle: emmr_annotation
+mode: default
+content:
+  field_annotation_body:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_annotation_text:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }
