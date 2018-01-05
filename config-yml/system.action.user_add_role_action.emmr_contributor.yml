@@ -1,0 +1,14 @@
+uuid: f670c9c1-5629-4d1a-9dc7-0f6e3b37ca29
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.emmr_contributor
+  module:
+    - user
+id: user_add_role_action.emmr_contributor
+label: 'Add the EMMR Contributor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: emmr_contributor

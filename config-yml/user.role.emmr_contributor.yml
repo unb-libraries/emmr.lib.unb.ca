@@ -1,0 +1,15 @@
+uuid: 9a838c25-b410-43fa-84e6-fdc8e827b6f4
+langcode: en
+status: true
+dependencies: {  }
+id: emmr_contributor
+label: 'EMMR Contributor'
+weight: 3
+is_admin: null
+permissions:
+  - 'create emmr_recipe content'
+  - 'create emmr_source content'
+  - 'delete any emmr_recipe content'
+  - 'delete any emmr_source content'
+  - 'edit any emmr_recipe content'
+  - 'edit any emmr_source content'
