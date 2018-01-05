@@ -17,6 +17,7 @@ content:
     region: content
 hidden:
   field_abstract: true
+  field_annotations: true
   field_contributor: true
   field_contributors: true
   field_digitized_from_original: true

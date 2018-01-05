@@ -1,0 +1,14 @@
+uuid: 6b6f6321-8382-4db4-a317-394d110a4479
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.emmr_contributor
+  module:
+    - user
+id: user_remove_role_action.emmr_contributor
+label: 'Remove the EMMR Contributor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: emmr_contributor
