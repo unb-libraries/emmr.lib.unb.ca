@@ -730,7 +730,17 @@ display:
           plugin_id: datetime
       sorts: {  }
       title: 'Browse Recipes'
-      header: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: 'Displaying @start - @end of @total'
+          plugin_id: result
       footer: {  }
       empty: {  }
       relationships:
