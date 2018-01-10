@@ -18,3 +18,18 @@
 footer.footer.container {
   padding-left: 0px;
 }
+
+// Browse-Recipes Form
+#views-exposed-form-emmr-browse-recipes-page-1 div.form-item {
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+#views-exposed-form-emmr-browse-recipes-page-1 label {
+  width: 100px;
+}
+
+#views-exposed-form-emmr-browse-recipes-page-1 input,
+#views-exposed-form-emmr-browse-recipes-page-1 select {
+  width: 300px;
+}
