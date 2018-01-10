@@ -17,3 +17,5 @@ logo:
   use_default: 0
 table_responsive: '-1'
 table: ''
+button_colorize: 0
+button_iconize: 0
