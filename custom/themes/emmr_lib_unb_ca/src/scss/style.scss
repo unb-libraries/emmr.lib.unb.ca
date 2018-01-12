@@ -19,7 +19,7 @@ footer.footer.container {
   padding-left: 0px;
 }
 
-// Browse-Recipes Form
+// Browse Recipes Form
 #views-exposed-form-emmr-browse-recipes-page-1 div.form-item {
   padding-right: 20px;
   padding-bottom: 10px;
@@ -34,7 +34,7 @@ footer.footer.container {
   width: 310px;
 }
 
-// Browse-Recipes results
+// Browse Recipes results
 #browse-recipes-header {
   padding-bottom: 10px;
   border-bottom: 1px solid #e5e5e5 !important;
@@ -42,4 +42,10 @@ footer.footer.container {
 
 .emmr-recipe-row {
   padding-left: 20px;
+}
+
+// Create Source Form
+#node-emmr-source-form > div.form-item.js-form-item.form-type-vertical-tabs,
+#node-emmr-recipe-form > div.form-item.js-form-item.form-type-vertical-tabs {
+  display: none;
 }
