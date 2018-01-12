@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.emmr_source.field_institution
-    - field.field.node.emmr_source.field_item_format
     - field.field.node.emmr_source.field_reference
     - field.field.node.emmr_source.field_source_desc
     - field.field.node.emmr_source.field_source_origin
@@ -17,12 +16,6 @@ mode: default
 content:
   field_institution:
     weight: 2
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
-  field_item_format:
-    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select
