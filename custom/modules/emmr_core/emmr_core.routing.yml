@@ -29,3 +29,10 @@ emmr_core.about:
     _title: 'About The Site'
   requirements:
     _permission: 'access content'
+emmr_core.user:
+  path: '/user/{uid}'
+  defaults:
+    _controller: '\Drupal\emmr_core\Controller\EmmrCoreController:user'
+    _title: 'User'
+  requirements:
+    _permission: 'access content'

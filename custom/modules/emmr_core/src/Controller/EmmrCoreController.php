@@ -22,4 +22,11 @@ class EmmrCoreController extends ControllerBase {
     return $element;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function user() {
+    return new RedirectResponse("/");
+  }
+
 }
