@@ -20,7 +20,7 @@ dependencies:
   module:
     - datetime
     - entity_reference_revisions
-    - file
+    - image
     - text
     - user
 id: node.emmr_recipe.default
@@ -89,11 +89,13 @@ content:
     type: datetime_default
     region: content
   field_recipe_images:
-    weight: 16
+    weight: 21
     label: above
-    settings: {  }
+    settings:
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
-    type: file_default
+    type: image
     region: content
   field_recipe_places:
     weight: 19

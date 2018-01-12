@@ -16,10 +16,11 @@ dependencies:
     - field.field.node.emmr_recipe.field_recipe_transcription
     - field.field.node.emmr_recipe.field_recipe_type
     - field.field.node.emmr_recipe.field_symptoms
+    - image.style.thumbnail
     - node.type.emmr_recipe
   module:
     - datetime
-    - file
+    - image
     - paragraphs
     - text
 id: node.emmr_recipe.default
@@ -87,11 +88,12 @@ content:
     type: datetime_default
     region: content
   field_recipe_images:
-    weight: 12
+    weight: 27
     settings:
       progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
-    type: file_generic
+    type: image_image
     region: content
   field_recipe_places:
     weight: 4
