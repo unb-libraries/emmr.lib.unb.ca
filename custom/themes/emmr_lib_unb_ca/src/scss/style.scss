@@ -49,3 +49,9 @@ footer.footer.container {
 #node-emmr-recipe-form > div.form-item.js-form-item.form-type-vertical-tabs {
   display: none;
 }
+
+// Create Recipe Form
+.filter-wrapper.form-inline.form-group.js-form-wrapper.form-wrapper,
+div > div > div.table-responsive > button {
+  display: none;
+}
