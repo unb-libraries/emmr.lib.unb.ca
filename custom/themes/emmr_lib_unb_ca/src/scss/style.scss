@@ -60,3 +60,15 @@ div > div > div.table-responsive > button {
 #edit-combine {
   width: 360px;
 }
+
+// Homepage
+#home-explore,
+#home-featured {
+  padding: 10px;
+  border: 1px solid #e5e5e5;
+}
+
+#home-explore > ul > li,
+#home-featured > ul > li {
+  margin-left: 10px;
+}
