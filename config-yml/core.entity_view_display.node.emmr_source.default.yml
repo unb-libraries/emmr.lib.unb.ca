@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.emmr_source.field_featured_source
     - field.field.node.emmr_source.field_institution
     - field.field.node.emmr_source.field_reference
     - field.field.node.emmr_source.field_source_desc
@@ -16,6 +17,16 @@ targetEntityType: node
 bundle: emmr_source
 mode: default
 content:
+  field_featured_source:
+    weight: 107
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_institution:
     weight: 102
     label: above

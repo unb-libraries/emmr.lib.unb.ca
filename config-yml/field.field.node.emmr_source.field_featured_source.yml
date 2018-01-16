@@ -1,0 +1,23 @@
+uuid: 08942a12-bfa1-42de-9a0a-4037c24c12db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_source
+    - node.type.emmr_source
+id: node.emmr_source.field_featured_source
+field_name: field_featured_source
+entity_type: node
+bundle: emmr_source
+label: 'Featured Source'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean
