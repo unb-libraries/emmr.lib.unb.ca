@@ -4,7 +4,7 @@ schemas:
 favicon:
   mimetype: image/png
   path: themes/custom/emmr_lib_unb_ca/images/favicon.png
-  url: 'http://192.168.99.100:3093/themes/contrib/bootstrap/favicon.ico'
+  url: 'http://localhost:3093/themes/custom/emmr_lib_unb_ca/images/favicon.png'
   use_default: 0
 features:
   comment_user_picture: 0
