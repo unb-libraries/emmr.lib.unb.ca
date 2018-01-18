@@ -3,18 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_annotations
     - field.storage.node.field_contributors
     - field.storage.node.field_ingredients
     - field.storage.node.field_publication_format
     - field.storage.node.field_recipe_date
+    - field.storage.node.field_recipe_images
     - field.storage.node.field_recipe_places
+    - field.storage.node.field_recipe_transcription
     - field.storage.node.field_recipe_type
     - field.storage.node.field_symptoms
     - node.type.emmr_recipe
   module:
     - datetime
     - entity_reference_revisions
+    - image
     - node
+    - text
     - user
 id: emmr_view_recipe
 label: 'View Recipe'
@@ -76,6 +81,10 @@ display:
             next: ››
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: false
       row:
         type: fields
       fields:
@@ -585,18 +594,215 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_recipe_transcription:
+          id: field_recipe_transcription
+          table: node__field_recipe_transcription
+          field: field_recipe_transcription
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_annotations:
+          id: field_annotations
+          table: node__field_annotations
+          field: field_annotations
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_revisions_entity_view
+          settings:
+            view_mode: default
+          group_column: entity_id
+          group_columns:
+            entity_id: entity_id
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ''
+          field_api_classes: false
+          set_precision: false
+          precision: 0
+          decimal: .
+          format_plural: false
+          format_plural_string: !!binary MQNAY291bnQ=
+          prefix: ''
+          suffix: ''
+          plugin_id: field
+        field_recipe_images:
+          id: field_recipe_images
+          table: node__field_recipe_images
+          field: field_recipe_images
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: ''
+            image_link: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ''
+          field_api_classes: false
+          plugin_id: field
         nothing:
           id: nothing
           table: views
           field: nothing
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: view-recipe-row
           label: ''
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"container\">\n<div class=\"row\" id=\"recipe-title\">\n<div class=\"col-md-6\">\n<h2>{{ field_contributors|striptags }} [{{ title|striptags[7:] }}]</h2>\n</div>\n</div>\n<div class=\"row\" id=\"recipe-details-header\">\n<div class=\"col-md-12\">\n<h4>Details <span class=\"glyphicon glyphicon-triangle-right\" id=\"recipe-collapse\"></span></h4> \n</div>\n</div>\n<div class=\"row\" id=\"recipe-details\">\n<div class=\"col-md-12\">\n<p>{{ field_contributors | striptags }}</p>\n<p>{{ title | striptags }}</p>\n<p>{{ field_publication_format | striptags }}</p>\n<p>{{ field_recipe_type | striptags }}</p>\n<p>{{ field_symptoms | striptags }}</p>\n<p>{{ field_ingredients | striptags }}</p>\n<p>{{ field_recipe_places | striptags }}</p>\n<p>{{ field_recipe_date | striptags }}</p>\n</div>\n</div>\n</div>"
+            text: "<div class=\"container\">\n<div class=\"row\" id=\"recipe-title\">\n<div class=\"col-md-6\">\n<h2>{{ field_contributors|striptags }} [{{ title|striptags[7:] }}]</h2>\n</div>\n</div>\n<div class=\"row\" id=\"recipe-details-header\">\n<div class=\"col-md-12\">\n<h4>Details <span class=\"glyphicon glyphicon-triangle-right\" id=\"recipe-collapse\"></span></h4> \n<br>\n</div>\n</div>\n<div class=\"row\" id=\"recipe-details\">\n<div class=\"col-md-12\">\n<p>{{ field_contributors | striptags }}</p>\n<p>{{ title | striptags }}</p>\n<p>{{ field_publication_format | striptags }}</p>\n<p>{{ field_recipe_type | striptags }}</p>\n<p>{{ field_symptoms | striptags }}</p>\n<p>{{ field_ingredients | striptags }}</p>\n<p>{{ field_recipe_places | striptags }}</p>\n<p>{{ field_recipe_date | striptags }}</p>\n</div>\n</div>\n<br>\n<div class=\"row\" id=\"pages-trans-anno\">\n<div class=\"col-md-2\" id=\"recipe-pages\">\n<h5 id=\"pages-title\">Pages</h5>\n{{ field_recipe_images }}\n</div>\n<div class=\"col-md-6\" id=\"recipe-trans\">\n<br>\n{{ field_recipe_transcription }}\n</div>\n<div class=\"col-md-4\" id=\"recipe-anno\">\n{{ field_annotations }}\n</div>\n</div>\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -663,6 +869,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      group_by: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -672,11 +879,14 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_annotations'
         - 'config:field.storage.node.field_contributors'
         - 'config:field.storage.node.field_ingredients'
         - 'config:field.storage.node.field_publication_format'
         - 'config:field.storage.node.field_recipe_date'
+        - 'config:field.storage.node.field_recipe_images'
         - 'config:field.storage.node.field_recipe_places'
+        - 'config:field.storage.node.field_recipe_transcription'
         - 'config:field.storage.node.field_recipe_type'
         - 'config:field.storage.node.field_symptoms'
   page_1:
@@ -696,10 +906,13 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_annotations'
         - 'config:field.storage.node.field_contributors'
         - 'config:field.storage.node.field_ingredients'
         - 'config:field.storage.node.field_publication_format'
         - 'config:field.storage.node.field_recipe_date'
+        - 'config:field.storage.node.field_recipe_images'
         - 'config:field.storage.node.field_recipe_places'
+        - 'config:field.storage.node.field_recipe_transcription'
         - 'config:field.storage.node.field_recipe_type'
         - 'config:field.storage.node.field_symptoms'
