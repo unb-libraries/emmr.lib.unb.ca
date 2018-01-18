@@ -89,8 +89,8 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: 'Title: {{ title }}'
             make_link: false
             path: ''
             absolute: false
@@ -154,8 +154,8 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: 'Author: {{ field_contributors }}'
             make_link: false
             path: ''
             absolute: false
@@ -218,7 +218,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: '{{ field_recipe_date | date(''d F Y'') }}'
+            text: 'Date: {{ field_recipe_date | date(''d F Y'') }}'
             make_link: false
             path: ''
             absolute: false
@@ -280,8 +280,8 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: 'Ingredients: {{ field_ingredients }}'
             make_link: false
             path: ''
             absolute: false
@@ -343,8 +343,8 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: 'Places: {{ field_recipe_places }}'
             make_link: false
             path: ''
             absolute: false
@@ -406,8 +406,8 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: 'Publication Format: {{ field_publication_format }}'
             make_link: false
             path: ''
             absolute: false
@@ -469,8 +469,8 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: 'Symptoms: {{ field_symptoms }}'
             make_link: false
             path: ''
             absolute: false
@@ -532,8 +532,8 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: 'Recipe Type: {{ field_recipe_type }}'
             make_link: false
             path: ''
             absolute: false
@@ -596,7 +596,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"container\">\n<div class=\"row\" id=\"recipe-title\">\n<div class=\"col-md-6\">\n<h2>{{ field_contributors | striptags }} [{{ title | striptags }}]</h2>\n</div>\n</div>\n<div class=\"row\" id=\"recipe-details-header\">\n<div class=\"col-md-12\">\n<h4>Details <span class=\"glyphicon glyphicon-triangle-right\" id=\"recipe-collapse\"></span></h4> \n</div>\n</div>\n<div class=\"row\" id=\"recipe-details\">\n<div class=\"col-md-12\">\n<p>Author: {{ field_contributors | striptags }}</p>\n<p>Title: {{ title | striptags }}</p>\n<p>Publication Format: {{ field_publication_format | striptags }}</p>\n<p>Recipe Type: {{ field_recipe_type | striptags }}</p>\n<p>Symptoms: {{ field_symptoms | striptags }}</p>\n<p>Ingredients: {{ field_ingredients | striptags }}</p>\n<p>Places: {{ field_recipe_places | striptags }}</p>\n</div>\n</div>\n</div>"
+            text: "<div class=\"container\">\n<div class=\"row\" id=\"recipe-title\">\n<div class=\"col-md-6\">\n<h2>{{ field_contributors|striptags }} [{{ title|striptags[7:] }}]</h2>\n</div>\n</div>\n<div class=\"row\" id=\"recipe-details-header\">\n<div class=\"col-md-12\">\n<h4>Details <span class=\"glyphicon glyphicon-triangle-right\" id=\"recipe-collapse\"></span></h4> \n</div>\n</div>\n<div class=\"row\" id=\"recipe-details\">\n<div class=\"col-md-12\">\n<p>{{ field_contributors | striptags }}</p>\n<p>{{ title | striptags }}</p>\n<p>{{ field_publication_format | striptags }}</p>\n<p>{{ field_recipe_type | striptags }}</p>\n<p>{{ field_symptoms | striptags }}</p>\n<p>{{ field_ingredients | striptags }}</p>\n<p>{{ field_recipe_places | striptags }}</p>\n<p>{{ field_recipe_date | striptags }}</p>\n</div>\n</div>\n</div>"
             make_link: false
             path: ''
             absolute: false
