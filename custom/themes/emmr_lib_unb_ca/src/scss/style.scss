@@ -78,6 +78,26 @@ div > div > div.table-responsive > button {
   padding-left: 20px;
 }
 
+#recipe-pages {
+  text-align: center;
+}
+
+#recipe-pages-images {
+  padding-left: 6px;
+
+  > img {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border: 2px solid #e5e5e5;
+  }
+}
+
+#recipe-trans {
+  max-width: 464px;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
 #recipe-details,
 #pages-trans-anno {
   padding-left: 40px;
@@ -85,15 +105,9 @@ div > div > div.table-responsive > button {
 
 #recipe-anno {
   background-color: #f3f3f3;
-}
-
-#recipe-anno > div {
-  padding-top: 20px;
-}
-
-#recipe-pages,
-#recipe-trans {
-  text-align: center;
+  > div {
+    padding-top: 20px;
+  }
 }
 
 #recipe-trans,
