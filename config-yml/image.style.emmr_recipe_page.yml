@@ -1,0 +1,14 @@
+uuid: d096ee1f-fe05-4aff-9194-ce1fe08832f6
+langcode: en
+status: true
+dependencies: {  }
+name: emmr_recipe_page
+label: 'emmr_recipe_page (112x192)'
+effects:
+  9cff881b-73fc-43ff-8f69-1807ceb75537:
+    uuid: 9cff881b-73fc-43ff-8f69-1807ceb75537
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 112
+      height: 192
