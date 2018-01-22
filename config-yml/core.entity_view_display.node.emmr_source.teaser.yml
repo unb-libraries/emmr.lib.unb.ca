@@ -16,6 +16,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_featured_source: true
   field_institution: true
   field_item_format: true
   field_reference: true
