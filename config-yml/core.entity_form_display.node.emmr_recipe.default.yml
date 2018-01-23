@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.emmr_recipe.field_ingredients
     - field.field.node.emmr_recipe.field_publication_format
     - field.field.node.emmr_recipe.field_recipe_date
+    - field.field.node.emmr_recipe.field_recipe_date_mid
+    - field.field.node.emmr_recipe.field_recipe_date_to
     - field.field.node.emmr_recipe.field_recipe_images
     - field.field.node.emmr_recipe.field_recipe_places
     - field.field.node.emmr_recipe.field_recipe_source
@@ -83,6 +85,18 @@ content:
     region: content
   field_recipe_date:
     weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_recipe_date_mid:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_recipe_date_to:
+    weight: 28
     settings: {  }
     third_party_settings: {  }
     type: datetime_default

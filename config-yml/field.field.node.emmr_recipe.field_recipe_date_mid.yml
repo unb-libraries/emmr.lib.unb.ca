@@ -1,0 +1,21 @@
+uuid: a31b72a4-522f-49d8-8d72-ab2231187c8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipe_date_mid
+    - node.type.emmr_recipe
+  module:
+    - datetime
+id: node.emmr_recipe.field_recipe_date_mid
+field_name: field_recipe_date_mid
+entity_type: node
+bundle: emmr_recipe
+label: 'Date (mid)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
