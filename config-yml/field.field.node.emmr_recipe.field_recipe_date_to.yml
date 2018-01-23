@@ -1,0 +1,21 @@
+uuid: 7787153e-37e4-4cef-89d2-97f086ce18e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipe_date_to
+    - node.type.emmr_recipe
+  module:
+    - datetime
+id: node.emmr_recipe.field_recipe_date_to
+field_name: field_recipe_date_to
+entity_type: node
+bundle: emmr_recipe
+label: 'Date (to)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
