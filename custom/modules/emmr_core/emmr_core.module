@@ -41,4 +41,7 @@ function emmr_core_node_presave($node) {
 
     $node->get('field_recipe_date_mid')->setValue($date_mid);
   }
+  else {
+    $node->get('field_recipe_date_mid')->setValue("");
+  }
 }
