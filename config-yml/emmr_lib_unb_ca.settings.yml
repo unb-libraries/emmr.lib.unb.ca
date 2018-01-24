@@ -19,3 +19,4 @@ table_responsive: '-1'
 table: ''
 button_colorize: 0
 button_iconize: 0
+tooltip_enabled: 0
