@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_contributors
     - field.storage.node.field_publication_format
     - field.storage.node.field_recipe_date
+    - field.storage.node.field_recipe_date_to
     - field.storage.paragraph.field_contributor_name
     - node.type.emmr_recipe
     - taxonomy.vocabulary.emmr_publication_formats
@@ -343,6 +344,69 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_recipe_date_to:
+          id: field_recipe_date_to
+          table: node__field_recipe_date_to
+          field: field_recipe_date_to
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_plain
+          settings:
+            timezone_override: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_recipe_date:
           id: field_recipe_date
           table: node__field_recipe_date
@@ -354,7 +418,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: '{{ field_recipe_date | date(''d F Y'') }}.'
+            text: "{% if field_recipe_date_to|striptags|raw %}\n{{ field_recipe_date | date('d F Y') }} - {{ field_recipe_date_to | date('d F Y') }}.\n{% else %}\n{{ field_recipe_date | date('d F Y') }}.\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -774,6 +838,7 @@ display:
         - 'config:field.storage.node.field_contributors'
         - 'config:field.storage.node.field_publication_format'
         - 'config:field.storage.node.field_recipe_date'
+        - 'config:field.storage.node.field_recipe_date_to'
         - 'config:field.storage.paragraph.field_contributor_name'
   page_1:
     display_plugin: page
@@ -1013,10 +1078,10 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: string
-        field_recipe_date_value:
-          id: field_recipe_date_value
-          table: node__field_recipe_date
-          field: field_recipe_date_value
+        field_recipe_date_mid_value:
+          id: field_recipe_date_mid_value
+          table: node__field_recipe_date_mid
+          field: field_recipe_date_mid_value
           relationship: none
           group_type: group
           admin_label: ''
@@ -1029,12 +1094,12 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: field_recipe_date_value_op
+            operator_id: field_recipe_date_mid_value_op
             label: 'Date (from)'
             description: ''
             use_operator: false
-            operator: field_recipe_date_value_op
-            identifier: field_recipe_date_value
+            operator: field_recipe_date_mid_value_op
+            identifier: field_recipe_date_mid_value
             required: false
             remember: false
             multiple: false
@@ -1056,10 +1121,10 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: datetime
-        field_recipe_date_value_1:
-          id: field_recipe_date_value_1
-          table: node__field_recipe_date
-          field: field_recipe_date_value
+        field_recipe_date_mid_value_1:
+          id: field_recipe_date_mid_value_1
+          table: node__field_recipe_date_mid
+          field: field_recipe_date_mid_value
           relationship: none
           group_type: group
           admin_label: ''
@@ -1072,12 +1137,12 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: field_recipe_date_value_1_op
+            operator_id: field_recipe_date_mid_value_1_op
             label: 'Date (to)'
             description: ''
             use_operator: false
-            operator: field_recipe_date_value_1_op
-            identifier: field_recipe_date_value_1
+            operator: field_recipe_date_mid_value_1_op
+            identifier: field_recipe_date_mid_value_1
             required: false
             remember: false
             multiple: false
@@ -1121,6 +1186,7 @@ display:
         - 'config:field.storage.node.field_contributors'
         - 'config:field.storage.node.field_publication_format'
         - 'config:field.storage.node.field_recipe_date'
+        - 'config:field.storage.node.field_recipe_date_to'
         - 'config:field.storage.paragraph.field_contributor_name'
   page_2:
     display_plugin: page
@@ -1218,4 +1284,5 @@ display:
         - 'config:field.storage.node.field_contributors'
         - 'config:field.storage.node.field_publication_format'
         - 'config:field.storage.node.field_recipe_date'
+        - 'config:field.storage.node.field_recipe_date_to'
         - 'config:field.storage.paragraph.field_contributor_name'
