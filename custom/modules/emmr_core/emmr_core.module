@@ -45,3 +45,20 @@ function emmr_core_node_presave($node) {
     $node->get('field_recipe_date_mid')->setValue("");
   }
 }
+
+/**
+ * Implements hook_FORM_ID_alter().
+ */
+function emmr_core_form_node_emmr_recipe_form_alter(&$form,
+  &$form_state,
+  $form_id) {
+
+  $form['date_range'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Imprecise Date'),
+    '#weight' => 6,
+  ];
+
+  $form['field_recipe_date_to']['#states']['invisible'][':input[name="date_range"]']
+    = ['checked' => FALSE];
+}
