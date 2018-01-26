@@ -61,4 +61,6 @@ function emmr_core_form_node_emmr_recipe_form_alter(&$form,
 
   $form['field_recipe_date_to']['#states']['invisible'][':input[name="date_range"]']
     = ['checked' => FALSE];
+  $form['field_recipe_date_to']['#states']['enabled'][':input[name="date_range"]']
+    = ['checked' => TRUE];
 }
