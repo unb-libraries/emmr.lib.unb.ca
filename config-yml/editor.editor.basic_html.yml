@@ -23,6 +23,7 @@ settings:
             - Strike
             - Superscript
             - Subscript
+            - trxn_insert
         -
           name: Linking
           items:
