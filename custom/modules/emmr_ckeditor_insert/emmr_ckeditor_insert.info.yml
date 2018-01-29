@@ -1,0 +1,7 @@
+name: emmr_ckeditor_insert
+type: module
+description: Adds an above-line insert widget.
+core: 8.x
+package: EMMR Custom Modules
+dependencies:
+  - ckeditor
