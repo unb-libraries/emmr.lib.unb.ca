@@ -1,6 +1,6 @@
 name: emmr_ckeditor_insert
 type: module
-description: Adds an above-line insert widget.
+description: Contains trxn_insert, a CKEditor plugin for transcription inserts.
 core: 8.x
 package: EMMR Custom Modules
 dependencies:
