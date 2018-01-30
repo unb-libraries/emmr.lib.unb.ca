@@ -9,7 +9,12 @@ CKEDITOR.dialog.add('trxn_insertDialog', function(editor) {
         id: 'tab-insert',
         label: '',
         elements: [
-          // UI elements of the first tab    will be defined here.
+          {
+          type: 'text',
+          id: 'to-insert',
+          label: 'Text to insert',
+          validate: CKEDITOR.dialog.validate.notEmpty( "Text to insert cannot be empty." )
+          }
         ]
       }
     ]
