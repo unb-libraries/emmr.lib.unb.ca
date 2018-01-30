@@ -32,17 +32,20 @@ function emmr_core_theme($existing, $type, $theme, $path) {
  * Implements hook_ENTITY_TYPE_presave().
  */
 function emmr_core_node_presave($node) {
-  // Generate mid date on entity save.
-  if ($node->get('field_recipe_date_to')->getValue()) {
-    $date = strtotime($node->get('field_recipe_date')->getValue()[0]['value']);
-    $date_to = strtotime($node->get('field_recipe_date_to')
-      ->getValue()[0]['value']);
-    $date_mid = date("Y-m-d", ($date + $date_to) / 2);
+  // Generate mid date on recipe save.
+  if ($node->bundle() == "emmr_recipe") {
 
-    $node->get('field_recipe_date_mid')->setValue($date_mid);
-  }
-  else {
-    $node->get('field_recipe_date_mid')->setValue("");
+    if ($node->get('field_recipe_date_to')->getValue()) {
+      $date = strtotime($node->get('field_recipe_date')->getValue()[0]['value']);
+      $date_to = strtotime($node->get('field_recipe_date_to')
+        ->getValue()[0]['value']);
+      $date_mid = date("Y-m-d", ($date + $date_to) / 2);
+
+      $node->get('field_recipe_date_mid')->setValue($date_mid);
+    }
+    else {
+      $node->get('field_recipe_date_mid')->setValue("");
+    }
   }
 }
 
