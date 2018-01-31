@@ -5,6 +5,9 @@ CKEDITOR.plugins.add('trxn_insert', {
     editor.addCommand('trxn_insert',
       new CKEDITOR.dialogCommand('trxn_insertDialog'));
 
+    var pluginDirectory = this.path;
+    editor.addContentsCss( pluginDirectory + 'styles/trxn_insert.css' );
+
     editor.ui.addButton('trxn_insert', {
       label: 'Transcription Insert',
       command: 'trxn_insert',
