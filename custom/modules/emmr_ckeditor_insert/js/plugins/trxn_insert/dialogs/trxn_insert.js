@@ -21,12 +21,21 @@ CKEDITOR.dialog.add('trxn_insertDialog', function(editor) {
       var dialog = this;
       var insertText = dialog.getValueOf('tab-insert', 'to-insert');
       var insertDiv = editor.document.createElement('div');
+      var insertSpan = editor.document.createElement('span');
+      var divID = 'trxn-div-' + Date.now().toString();
+      var spanID = 'trxn-span-' + Date.now().toString();
+      var insertAfterStyle = editor.document.createElement('style');
 
-      insertDiv.setAttribute('id', 'trxn-insert');
-      insertDiv.setAttribute('class', 'trxn-insert');
+      insertDiv.setAttribute('id', spanID);
+      insertDiv.setAttribute('class', 'trxn-div');
       insertDiv.setText(insertText);
 
-      editor.insertElement(insertDiv);
+      insertSpan.setAttribute('id', spanID);
+      insertSpan.setAttribute('class', 'trxn-span');
+      insertSpan.setText('^');
+      insertSpan.$.appendChild(insertDiv.$);
+
+      editor.insertElement(insertSpan);
     }
   };
 });
