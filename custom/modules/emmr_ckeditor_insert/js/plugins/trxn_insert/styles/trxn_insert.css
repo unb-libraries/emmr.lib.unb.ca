@@ -1,4 +1,6 @@
 /* Transcription Inserts */
-#trxn-insert {
+.trxn-span {
+  position: relative;
+  bottom: -1.1em;
   color: red;
 }
