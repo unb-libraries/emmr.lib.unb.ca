@@ -20,22 +20,17 @@ CKEDITOR.dialog.add('trxn_insertDialog', function(editor) {
     onOk: function() {
       var dialog = this;
       var insertText = dialog.getValueOf('tab-insert', 'to-insert');
-      var insertDiv = editor.document.createElement('div');
-      var insertSpan = editor.document.createElement('span');
-      var divID = 'trxn-div-' + Date.now().toString();
-      var spanID = 'trxn-span-' + Date.now().toString();
-      var insertAfterStyle = editor.document.createElement('style');
+      var textSpan = editor.document.createElement('span');
+      var caretSpan = editor.document.createElement('span');
 
-      insertDiv.setAttribute('id', spanID);
-      insertDiv.setAttribute('class', 'trxn-div');
-      insertDiv.setText(insertText);
+      textSpan.setAttribute('class', 'trxn-text');
+      textSpan.setText(insertText);
 
-      insertSpan.setAttribute('id', spanID);
-      insertSpan.setAttribute('class', 'trxn-span');
-      insertSpan.setText('^');
-      insertSpan.$.appendChild(insertDiv.$);
+      caretSpan.setAttribute('class', 'trxn-caret');
+      caretSpan.setText('^');
+      caretSpan.$.appendChild(textSpan.$);
 
-      editor.insertElement(insertSpan);
+      editor.insertElement(caretSpan);
     }
   };
 });
