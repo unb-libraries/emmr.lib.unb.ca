@@ -1,0 +1,7 @@
+/* Transcription Replacement */
+.trxn-replace-text {
+  position: absolute;
+  display: inline;
+  bottom: 2em;
+  font-size: .9em;
+}

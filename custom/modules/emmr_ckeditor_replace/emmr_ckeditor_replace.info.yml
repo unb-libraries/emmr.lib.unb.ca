@@ -1,0 +1,7 @@
+name: emmr_ckeditor_replace
+type: module
+description: Contains trxn_replace, a CKEditor plugin for transcription replacement.
+core: 8.x
+package: EMMR Custom Modules
+dependencies:
+  - ckeditor
