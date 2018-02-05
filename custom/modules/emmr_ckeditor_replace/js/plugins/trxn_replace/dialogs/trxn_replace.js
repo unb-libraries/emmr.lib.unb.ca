@@ -21,14 +21,14 @@ CKEDITOR.dialog.add('trxn_replaceDialog', function(editor) {
       var dialog = this;
       var replaceText = dialog.getValueOf('tab-replace', 'to-replace');
       var textSpan = editor.document.createElement('span');
-      var caretSpan = editor.document.createElement('span');
+      var cursorSpan = editor.document.createElement('span');
 
       textSpan.setAttribute('class', 'trxn-text');
       textSpan.setText(replaceText);
 
-      caretSpan.$.appendChild(textSpan.$);
+      cursorSpan.$.appendChild(textSpan.$);
 
-      editor.replaceElement(caretSpan);
+      editor.insertElement(cursorSpan);
     }
   };
 });
