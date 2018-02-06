@@ -24,6 +24,7 @@ settings:
             - Superscript
             - Subscript
             - trxn_insert
+            - trxn_replace
         -
           name: Linking
           items:
