@@ -117,15 +117,30 @@ div > div > div.table-responsive > button {
   border: 2px solid #e5e5e5;
 }
 
-// CKEditor: Transcription Insert
+/* Transcription */
 .trxn-caret {
   position: relative;
   bottom: -.9em;
-  font-size: .9em;
   color: red;
+  font-size: .9em;
 }
 
 .trxn-text {
+  position: absolute;
+  display: inline;
+  bottom: 2em;
+  left: -1em;
+  font-size: .9em;
+}
+
+.trxn-replace {
+  position: relative;
+  bottom: -.9em;
+  color: red;
+  font-size: .9em;
+}
+
+.trxn-retext {
   position: absolute;
   display: inline;
   bottom: 2em;

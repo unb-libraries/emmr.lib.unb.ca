@@ -22,13 +22,21 @@ CKEDITOR.dialog.add('trxn_replaceDialog', function(editor) {
       var replaceText = dialog.getValueOf('tab-replace', 'to-replace');
       var textSpan = editor.document.createElement('span');
       var cursorSpan = editor.document.createElement('span');
+      var selectedStrike = editor.document.createElement('s');
+      var selectedText = editor.getSelection().getSelectedText();
 
-      textSpan.setAttribute('class', 'trxn-text');
+      window.alert(selectedText);
+
+      textSpan.setAttribute('class', 'trxn-retext');
       textSpan.setText(replaceText);
 
+      cursorSpan.$.setAttribute('class', 'trxn-replace');
       cursorSpan.$.appendChild(textSpan.$);
 
+      selectedStrike.setText(selectedText);
+
       editor.insertElement(cursorSpan);
+      editor.insertElement(selectedStrike);
     }
   };
 });
