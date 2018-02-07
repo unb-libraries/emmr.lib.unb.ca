@@ -52,18 +52,22 @@ function emmr_core_node_presave($node) {
 /**
  * Implements hook_FORM_ID_alter().
  */
-function emmr_core_form_node_emmr_recipe_form_alter(&$form,
+function emmr_core_form_alter(&$form,
   &$form_state,
   $form_id) {
 
-  $form['date_range'] = [
-    '#type' => 'checkbox',
-    '#title' => t('Imprecise Date'),
-    '#weight' => 6,
-  ];
+  if ($form_id == "node_emmr_recipe_form" ||
+  $form_id == "node_emmr_recipe_edit_form") {
 
-  $form['field_recipe_date_to']['#states']['invisible'][':input[name="date_range"]']
-    = ['checked' => FALSE];
-  $form['field_recipe_date_to']['#states']['enabled'][':input[name="date_range"]']
-    = ['checked' => TRUE];
+    $form['date_range'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Imprecise Date'),
+      '#weight' => 6,
+    ];
+
+    $form['field_recipe_date_to']['#states']['invisible'][':input[name="date_range"]']
+      = ['checked' => FALSE];
+    $form['field_recipe_date_to']['#states']['enabled'][':input[name="date_range"]']
+      = ['checked' => TRUE];
+  }
 }
