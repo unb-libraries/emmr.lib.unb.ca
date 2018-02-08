@@ -25,6 +25,17 @@ function emmr_core_theme($existing, $type, $theme, $path) {
     'emmr_intro' => [
       'variables' => [],
     ],
+    'node__emmr_recipe__full' => [
+      'arguments' => [
+        'view' => NULL,
+        'field' => NULL,
+        'row' => NULL,
+        'output' => NULL,
+      ],
+      'template' => 'node--emmr-recipe--full',
+      'path' => drupal_get_path('module', 'emmr_core') . '/templates',
+      'base hook' => 'node__emmr_recipe__full',
+    ],
   ];
 }
 
