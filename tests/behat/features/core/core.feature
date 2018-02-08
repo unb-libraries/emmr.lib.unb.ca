@@ -21,3 +21,15 @@ Feature: Core
       Given I am logged in as a user with the "administrator" role
       When I am viewing a "tags" term with the name "My tag"
       Then I should see the heading "My tag"
+
+    Scenario: Anonymous homepage
+      Given I am not logged in
+      When I visit "/"
+      Then I should see the link "Early Modern Maritime Recipes"
+      And I should not see the link "Add Recipe"
+
+    Scenario: Contributor homepage
+      Given I am logged in as a user with the "emmr_contributor" role
+      When I visit "/"
+      Then I should see the link "Early Modern Maritime Recipes"
+      And I should see the link "Add Recipe"
