@@ -1,17 +1,18 @@
-uuid: 021b6891-0f4f-4b06-878f-3280cd393829
+uuid: b1d52754-dcef-4beb-8a1e-5e0d9c753710
 langcode: en
 status: true
 dependencies:
   module:
-    - datetime
     - node
-id: node.field_recipe_date_mid
-field_name: field_recipe_date_mid
+id: node.field_date_text_
+field_name: field_date_text_
 entity_type: node
-type: datetime
+type: string
 settings:
-  datetime_type: date
-module: datetime
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true
