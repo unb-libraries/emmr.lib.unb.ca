@@ -1,11 +1,11 @@
-uuid: b1d52754-dcef-4beb-8a1e-5e0d9c753710
+uuid: b45a8f7a-82ea-42db-a445-efedecc4ade0
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_date_text_
-field_name: field_date_text_
+id: node.field_recipe_date_text
+field_name: field_recipe_date_text
 entity_type: node
 type: string
 settings:
