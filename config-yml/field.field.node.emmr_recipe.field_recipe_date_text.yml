@@ -1,12 +1,12 @@
-uuid: abacc783-680b-44d3-944f-8e00ab8b8f45
+uuid: 7d53f7d9-8b32-40ca-8ad1-d61e54f1d2b0
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_date_text_
+    - field.storage.node.field_recipe_date_text
     - node.type.emmr_recipe
-id: node.emmr_recipe.field_date_text_
-field_name: field_date_text_
+id: node.emmr_recipe.field_recipe_date_text
+field_name: field_recipe_date_text
 entity_type: node
 bundle: emmr_recipe
 label: 'Date (text)'
