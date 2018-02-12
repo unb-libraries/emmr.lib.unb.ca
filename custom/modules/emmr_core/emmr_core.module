@@ -45,9 +45,14 @@ function emmr_core_theme($existing, $type, $theme, $path) {
 function emmr_core_node_presave($node) {
   // Generate mid date on recipe save.
   if ($node->bundle() == "emmr_recipe") {
-    $date_to = $node->get('field_recipe_date_to')->getValue() ?:
-      $node->get('field_recipe_date')->getValue();
-    $node->get('field_recipe_date_to')->setValue($date_to);
+
+    $imprecise = $node->get('field_imprecise_date')->getValue()[0]['value'];
+    $date = $node->get('field_recipe_date')->getValue();
+
+    if (!$imprecise) {
+      $node->get('field_recipe_date_text')->setValue("");
+      $node->get('field_recipe_date_to')->setValue("");
+    }
   }
 }
 
