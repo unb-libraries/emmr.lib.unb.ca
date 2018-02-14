@@ -1040,66 +1040,28 @@ display:
           hierarchy: false
           error_message: true
           plugin_id: taxonomy_index_tid
-        field_original_location_value:
-          id: field_original_location_value
-          table: node__field_original_location
-          field: field_original_location_value
+        field_recipe_date_value:
+          id: field_recipe_date_value
+          table: node__field_recipe_date
+          field: field_recipe_date_value
           relationship: none
           group_type: group
           admin_label: ''
-          operator: allwords
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_original_location_value_op
-            label: Location
-            description: ''
-            use_operator: false
-            operator: field_original_location_value_op
-            identifier: field_original_location_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: string
-        field_recipe_date_mid_value:
-          id: field_recipe_date_mid_value
-          table: node__field_recipe_date_mid
-          field: field_recipe_date_mid_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '>='
+          operator: between
           value:
             min: ''
             max: ''
             value: ''
             type: date
-          group: 1
+          group: 2
           exposed: true
           expose:
-            operator_id: field_recipe_date_mid_value_op
-            label: 'Date (from)'
+            operator_id: field_recipe_date_value_op
+            label: 'Date (between)'
             description: ''
             use_operator: false
-            operator: field_recipe_date_mid_value_op
-            identifier: field_recipe_date_mid_value
+            operator: field_recipe_date_value_op
+            identifier: field_recipe_date_value
             required: false
             remember: false
             multiple: false
@@ -1110,39 +1072,42 @@ display:
               emmr_contributor: '0'
           is_grouped: false
           group_info:
-            label: ''
-            description: ''
-            identifier: ''
+            label: 'Date (field_recipe_date)'
+            description: null
+            identifier: field_recipe_date_value
             optional: true
             widget: select
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items: {  }
+            group_items:
+              1: {  }
+              2: {  }
+              3: {  }
           plugin_id: datetime
-        field_recipe_date_mid_value_1:
-          id: field_recipe_date_mid_value_1
-          table: node__field_recipe_date_mid
-          field: field_recipe_date_mid_value
+        field_recipe_date_to_value:
+          id: field_recipe_date_to_value
+          table: node__field_recipe_date_to
+          field: field_recipe_date_to_value
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '<='
+          operator: between
           value:
             min: ''
             max: ''
             value: ''
             type: date
-          group: 1
+          group: 2
           exposed: true
           expose:
-            operator_id: field_recipe_date_mid_value_1_op
-            label: 'Date (to)'
+            operator_id: field_recipe_date_to_value_op
+            label: 'Date To (between)'
             description: ''
             use_operator: false
-            operator: field_recipe_date_mid_value_1_op
-            identifier: field_recipe_date_mid_value_1
+            operator: field_recipe_date_to_value_op
+            identifier: field_recipe_date_to_value
             required: false
             remember: false
             multiple: false
@@ -1172,6 +1137,7 @@ display:
         operator: AND
         groups:
           1: AND
+          2: OR
     cache_metadata:
       max-age: -1
       contexts:
