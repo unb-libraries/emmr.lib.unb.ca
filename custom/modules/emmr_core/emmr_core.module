@@ -75,7 +75,7 @@ function emmr_core_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_views_query_alter().
  */
 function emmr_core_views_query_alter($view, $query) {
-  $view_id = $query->view->id());
+  $view_id = $query->view->id();
 
   if ($view_id = "emmr_browse_recipes") {
     $date_where = $query->where['2']['conditions'];
