@@ -70,3 +70,27 @@ function emmr_core_form_alter(&$form, &$form_state, $form_id) {
       = ['checked' => FALSE];
   }
 }
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function emmr_core_views_query_alter($view, $query) {
+  $date_where = $query->where['2']['conditions'];
+  $date_min = date('c',
+    strtotime($query->view->exposed_data['field_recipe_date_value']['min']));
+
+  if (count($date_where)) {
+    $where2 = str_replace('date', 'date_to',
+      $date_where[0]);
+    $query->where['2']['conditions'][] = $where2;
+
+    $where3 = $date_where[0];
+    $where3['field'] =
+      "DATE_FORMAT('" . $date_min . "', '%Y-%m-%d')
+      BETWEEN
+      DATE_FORMAT(node__field_recipe_date.field_recipe_date_value, '%Y-%m-%d')
+      AND DATE_FORMAT(node__field_recipe_date_to.field_recipe_date_to_value, '%Y-%m-%d')";
+
+    $query->where['2']['conditions'][] = $where3;
+  }
+}
