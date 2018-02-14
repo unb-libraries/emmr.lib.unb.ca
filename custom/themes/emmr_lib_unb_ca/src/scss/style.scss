@@ -34,6 +34,11 @@ footer.footer.container {
   width: 310px;
 }
 
+div.form-item-field-recipe-date-to-value-min,
+div.form-item-field-recipe-date-to-value-max {
+  display: none !important;
+}
+
 // Browse Recipes results
 #browse-recipes-header {
   padding-bottom: 10px;
