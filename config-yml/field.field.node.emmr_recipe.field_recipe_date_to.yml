@@ -12,7 +12,7 @@ field_name: field_recipe_date_to
 entity_type: node
 bundle: emmr_recipe
 label: 'Date (to)'
-description: 'Only for imprecise dates. '
+description: 'End of date range for imprecise dates. '
 required: false
 translatable: false
 default_value: {  }
