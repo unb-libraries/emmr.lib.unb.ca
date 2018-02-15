@@ -65,12 +65,16 @@ div > div > div.table-responsive > button {
 #edit-field-imprecise-date-wrapper,
 #edit-field-recipe-date-to-wrapper,
 #edit-field-recipe-date-text-wrapper {
-  background-color: #e5e5e5;
+  background-color: #f9f9f9;
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+#edit-field-recipe-date-wrapper {
+  border-top: 2px solid #e5e5e5 !important;
 }
 
 #edit-field-imprecise-date-wrapper {
