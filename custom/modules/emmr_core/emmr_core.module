@@ -64,6 +64,8 @@ function emmr_core_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == "node_emmr_recipe_form" ||
   $form_id == "node_emmr_recipe_edit_form") {
 
+    $form['#validate'][] = 'validate_date_text';
+
     $form['field_recipe_date_text']['#states']['required'][':input[name="field_imprecise_date[value]"]']
       = ['checked' => TRUE];
     $form['field_recipe_date_to']['#states']['invisible'][':input[name="field_imprecise_date[value]"]']
@@ -71,6 +73,14 @@ function emmr_core_form_alter(&$form, &$form_state, $form_id) {
     $form['field_recipe_date_text']['#states']['invisible'][':input[name="field_imprecise_date[value]"]']
       = ['checked' => FALSE];
   }
+}
+
+/**
+ * Callback validation function for recipe-edit.
+ */
+function validate_date_text(&$form, $form_state) {
+  kint($form_state);
+  exit;
 }
 
 /**
