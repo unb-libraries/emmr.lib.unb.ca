@@ -74,6 +74,8 @@
  */
 #}
 
+{{ kint(content.field_contributors['0']['#paragraph'].get('field_contributor_name').getValue()[0]['value']) }}
+
 <article{{ attributes }}>
 
   {{ title_prefix }}
@@ -102,7 +104,7 @@
 
 <div class="container">
   <div class="row" id="recipe-title">
-    <h2>{{ content.field_contributors[8:] }} [{{ label[7:] }}]</h2>
+    <h2>[{{ label[7:] }}] {{ content.field_contributors['0']['#paragraph'].get('field_contributor_name').getValue()[0]['value'] }}</h2>
   </div>
 </div>
 
@@ -118,11 +120,11 @@
     <p>{{ content.field_contributors }}</p>
     <p>{{ label }}</p>
     <p>{{ content.field_publication_format }}</p>
-    <p>{{ content.field_recipe_type }}</p>
+    <p>{{ content.field_recipe_type }}</p><br>
     <p>{{ content.field_symptoms }}</p>
     <p>{{ content.field_ingredients }}</p>
-    <p>{{ content.field_recipe_places }}</p>
-    <p>{{ content.field_recipe_date }}</p>
+    <p>{{ content.field_recipe_places }}</p><br>
+    <p>{{ content.field_recipe_date_text }}</p>
   </div>
 </div>
 
@@ -138,7 +140,7 @@
     <br>
     {{ content.field_recipe_transcription }}
   </div>
-  {% if content.field_annotations|trim != "" %}
+  {% if content.field_annotations['0'] %}
   <div class="col-md-3" id="recipe-anno">
     <br>
     {{ content.field_annotations }}
