@@ -22,6 +22,7 @@ hidden:
   field_contributors: true
   field_date_text_: true
   field_digitized_from_original: true
+  field_imprecise_date: true
   field_ingredients: true
   field_original_location: true
   field_plain_contributors: true
@@ -30,6 +31,7 @@ hidden:
   field_recipe_annotations: true
   field_recipe_date: true
   field_recipe_date_mid: true
+  field_recipe_date_text: true
   field_recipe_date_to: true
   field_recipe_images: true
   field_recipe_places: true
