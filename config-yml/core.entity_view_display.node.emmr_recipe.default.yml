@@ -41,7 +41,7 @@ content:
   field_annotations:
     type: entity_reference_revisions_entity_view
     weight: 20
-    label: above
+    label: visually_hidden
     settings:
       view_mode: default
       link: ''
@@ -86,7 +86,7 @@ content:
     region: content
   field_publication_format:
     weight: 9
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
@@ -103,7 +103,7 @@ content:
     region: content
   field_recipe_date_text:
     weight: 23
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -120,7 +120,7 @@ content:
     region: content
   field_recipe_images:
     weight: 21
-    label: above
+    label: visually_hidden
     settings:
       image_style: ''
       image_link: ''
@@ -129,7 +129,7 @@ content:
     region: content
   field_recipe_places:
     weight: 19
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -145,16 +145,16 @@ content:
     region: content
   field_recipe_transcription:
     weight: 5
-    label: above
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_recipe_type:
     weight: 2
-    label: above
+    label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
