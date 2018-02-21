@@ -12,8 +12,8 @@ bundle: emmr_contributor
 mode: default
 content:
   field_contributor_name:
-    weight: 0
-    label: above
+    weight: 1
+    label: visually_hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -21,10 +21,10 @@ content:
     region: content
   field_contributor_role:
     type: entity_reference_label
-    weight: 1
+    weight: 0
     region: content
-    label: above
+    label: visually_hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
 hidden: {  }
