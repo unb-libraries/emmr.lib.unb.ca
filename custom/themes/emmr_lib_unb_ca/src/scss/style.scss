@@ -110,11 +110,11 @@ div > div > div.table-responsive > button {
 
 #recipe-pages-images {
   padding-left: 6px;
+  border: 2px solid #e5e5e5;
 
   > img {
     margin-top: 16px;
     margin-bottom: 16px;
-    border: 2px solid #e5e5e5;
   }
 }
 
@@ -122,6 +122,8 @@ div > div > div.table-responsive > button {
   max-width: 464px;
   padding-left: 120px;
   padding-right: 120px;
+  line-height: 200%;
+  font-size: 12px;
 }
 
 #recipe-details,
@@ -129,10 +131,16 @@ div > div > div.table-responsive > button {
   padding-left: 40px;
 }
 
+#recipe-details div.field.field--name-field-contributor-role {
+    font-weight: 500;
+}
+
 #recipe-anno {
   background-color: #f3f3f3;
   > div {
     padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
@@ -141,6 +149,10 @@ div > div > div.table-responsive > button {
   min-height: 480px;
   margin: 10px;
   border: 2px solid #e5e5e5;
+}
+
+#recipe-anno > div > div.field--items > div > div {
+  padding-bottom: 10px;
 }
 
 /* Transcription */
