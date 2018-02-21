@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.emmr_recipe.field_recipe_transcription
     - field.field.node.emmr_recipe.field_recipe_type
     - field.field.node.emmr_recipe.field_symptoms
+    - image.style.emmr_recipe_page
     - node.type.emmr_recipe
   module:
     - datetime
@@ -88,7 +89,7 @@ content:
     weight: 9
     label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
@@ -122,8 +123,8 @@ content:
     weight: 21
     label: visually_hidden
     settings:
-      image_style: ''
-      image_link: ''
+      image_style: emmr_recipe_page
+      image_link: file
     third_party_settings: {  }
     type: image
     region: content
