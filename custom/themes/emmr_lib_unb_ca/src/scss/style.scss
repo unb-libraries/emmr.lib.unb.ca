@@ -110,11 +110,11 @@ div > div > div.table-responsive > button {
 
 #recipe-pages-images {
   padding-left: 6px;
-  border: 2px solid #e5e5e5;
 
-  > img {
+  img {
     margin-top: 16px;
     margin-bottom: 16px;
+    border: 2px solid #e5e5e5;
   }
 }
 
@@ -122,6 +122,7 @@ div > div > div.table-responsive > button {
   max-width: 464px;
   padding-left: 120px;
   padding-right: 120px;
+  padding-bottom: 20px;
   line-height: 200%;
   font-size: 12px;
 }
