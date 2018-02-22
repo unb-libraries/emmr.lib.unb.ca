@@ -153,7 +153,7 @@ content:
     region: content
   field_recipe_type:
     weight: 2
-    label: inline
+    label: above
     settings:
       link: false
     third_party_settings: {  }
