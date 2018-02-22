@@ -109,7 +109,9 @@ div > div > div.table-responsive > button {
 }
 
 #recipe-pages-images {
+  max-height: 570px;
   padding-left: 6px;
+  overflow: scroll;
 
   img {
     margin-top: 16px;
@@ -120,9 +122,11 @@ div > div > div.table-responsive > button {
 
 #recipe-trans {
   max-width: 464px;
+  max-height: 600px;
   padding-left: 120px;
   padding-right: 120px;
   padding-bottom: 20px;
+  overflow: scroll;
   line-height: 200%;
   font-size: 12px;
 }
