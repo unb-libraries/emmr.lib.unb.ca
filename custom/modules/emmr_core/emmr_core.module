@@ -53,6 +53,24 @@ function emmr_core_node_presave($node) {
       $node->get('field_recipe_date_text')->setValue("");
       $node->get('field_recipe_date_to')->setValue("");
     }
+
+    if ($node->get('field_annotations')->getValue()) {
+      $anno = $node->get('field_annotations')
+        ->getValue()[0]['subform']['field_annotation_body'][0]['value'];
+
+      if ($anno == "") {
+        $node->get('field_annotations')->setValue(NULL);
+      }
+    }
+
+    if ($node->get('field_contributors')->getValue()) {
+      $contrib = $node->get('field_contributors')
+        ->getValue()[0]['subform']['field_contributor_name'][0]['value'];
+
+      if ($contrib == "") {
+        $node->get('field_contributors')->setValue(NULL);
+      }
+    }
   }
 }
 
