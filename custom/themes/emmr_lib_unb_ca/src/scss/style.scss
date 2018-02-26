@@ -109,7 +109,6 @@ div > div > div.table-responsive > button {
 }
 
 #recipe-pages-images {
-  max-height: 570px;
   padding-left: 6px;
   overflow: scroll;
 
@@ -122,13 +121,15 @@ div > div > div.table-responsive > button {
 
 #recipe-trans {
   max-width: 464px;
-  max-height: 600px;
   padding-left: 120px;
   padding-right: 120px;
   padding-bottom: 20px;
-  overflow: scroll;
   line-height: 200%;
   font-size: 12px;
+}
+
+#pages-trans-anno {
+  max-height: 70vw;
 }
 
 #recipe-details,
@@ -151,13 +152,22 @@ div > div > div.table-responsive > button {
 
 #recipe-trans,
 #recipe-anno {
-  min-height: 480px;
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
   margin: 10px;
   border: 2px solid #e5e5e5;
 }
 
 #recipe-anno > div > div.field--items > div > div {
   padding-bottom: 10px;
+}
+
+#recipe-pages,
+#recipe-trans,
+#recipe-anno {
+  max-height: inherit;
+  overflow: scroll;
 }
 
 /* Transcription */
