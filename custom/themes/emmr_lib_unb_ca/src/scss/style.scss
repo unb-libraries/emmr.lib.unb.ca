@@ -109,6 +109,12 @@ h1.js-quickedit-page-title.page-header {
   padding-left: 20px;
 }
 
+#recipe-collapse,
+#recipe-collapse:hover,
+#recipe-collapse:focus {
+  text-decoration: none;
+}
+
 #recipe-pages {
   text-align: center;
 }
