@@ -139,10 +139,6 @@ h1.js-quickedit-page-title.page-header {
   font-size: 12px;
 }
 
-#pages-trans-anno {
-  max-height: 70vw;
-}
-
 #recipe-details,
 #pages-trans-anno {
   padding-left: 40px;
@@ -209,4 +205,11 @@ h1.js-quickedit-page-title.page-header {
   display: inline;
   bottom: 2em;
   font-size: .9em;
+}
+
+/* Responsive */
+@media (min-width: 991px) {  
+  #pages-trans-anno {
+    max-height: 70vw;
+  }
 }
