@@ -130,7 +130,7 @@ content:
     region: content
   field_recipe_places:
     weight: 19
-    label: inline
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -138,7 +138,7 @@ content:
     region: content
   field_recipe_source:
     weight: 18
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
