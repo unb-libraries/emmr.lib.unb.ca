@@ -25,8 +25,6 @@ CKEDITOR.dialog.add('trxn_replaceDialog', function(editor) {
       var selectedStrike = editor.document.createElement('s');
       var selectedText = editor.getSelection().getSelectedText();
 
-      window.alert(selectedText);
-
       textSpan.setAttribute('class', 'trxn-retext');
       textSpan.setText(replaceText);
 
