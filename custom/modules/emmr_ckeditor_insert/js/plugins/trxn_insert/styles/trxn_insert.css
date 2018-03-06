@@ -9,6 +9,7 @@
 .trxn-text {
   position: absolute;
   display: inline;
+  width: max-content;
   bottom: 2em;
   left: -1em;
   font-size: .9em;
@@ -24,6 +25,7 @@
 .trxn-retext {
   position: absolute;
   display: inline;
+  width: max-content;
   bottom: 2em;
   font-size: .9em;
 }
