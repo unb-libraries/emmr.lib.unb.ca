@@ -20,6 +20,21 @@ footer.footer.container {
 }
 
 // Browse Recipes Form
+
+#views-exposed-form-emmr-browse-recipes-page-1 {
+  padding-left: 40px;
+}
+
+#views-exposed-form-emmr-browse-recipes-page-1 > div >
+div.form-item.js-form-item {
+  display: table;
+}
+
+#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(5),
+#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(6) {
+  display: inline-block !important;
+}
+
 #views-exposed-form-emmr-browse-recipes-page-1 div.form-item {
   padding-right: 20px;
   padding-bottom: 10px;
@@ -32,6 +47,24 @@ footer.footer.container {
 #views-exposed-form-emmr-browse-recipes-page-1 input,
 #views-exposed-form-emmr-browse-recipes-page-1 select {
   width: 310px;
+}
+
+#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(5) > input,
+#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(6) > input {
+  width: 124px;
+}
+
+#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(5) > input {
+  position: relative;
+  left: -4px;
+}
+
+#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(6) > label {
+  width: 30px;
+}
+
+#views-exposed-form-emmr-browse-recipes-page-1  > div > div:nth-child(9) {
+  display: table;
 }
 
 div.form-item-field-recipe-date-to-value-min,
@@ -100,10 +133,6 @@ div > div > div.table-responsive > button {
 }
 
 // View Recipe
-h1.js-quickedit-page-title.page-header {
-    display: none !important;
-}
-
 #recipe-details-header {
   padding-left: 20px;
 }
