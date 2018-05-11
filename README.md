@@ -1,7 +1,5 @@
 # emmr.lib.unb.ca
-## Site repository.
-
-emmr.lib.unb.ca site build repository.
+## Lean Instance Repository
 
 ## Build Status
 | Branch | Status |
@@ -9,7 +7,6 @@ emmr.lib.unb.ca site build repository.
 | dev | [![Build Status](https://travis-ci.org/unb-libraries/emmr.lib.unb.ca.svg?branch=dev)](https://travis-ci.org/unb-libraries/emmr.lib.unb.ca) |
 | prod | [![Build Status](https://travis-ci.org/unb-libraries/emmr.lib.unb.ca.svg?branch=prod)](https://travis-ci.org/unb-libraries/emmr.lib.unb.ca) |
 
-## Getting Started
 ### Requirements
 The following packages are required to be globally installed on your development instance:
 
