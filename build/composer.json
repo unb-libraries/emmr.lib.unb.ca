@@ -84,7 +84,8 @@
         "drush/drush": "^8.1.15",
         "unb-libraries/unb_lib_theme": "dev-8.x-bootstrap-3.x",
         "webflo/drupal-finder": "^0.3.0",
-        "webmozart/path-util": "^2.3"
+        "webmozart/path-util": "^2.3",
+        "drupal/entity_print": "2.x"
     },
     "require-dev": {
         "unb-libraries/drupal-development-libraries": "^8.0.0"
