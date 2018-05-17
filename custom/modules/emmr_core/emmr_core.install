@@ -21,8 +21,15 @@ function emmr_core_install() {
   ];
 
   $src_institutions = [
-    'University Of New Brunswick',
+    'Acadia University Archives',
     'Dalhousie University',
+    'Mount Allison University Archives',
+    'New Brunswick Museum Archives and Research Library',
+    'Nova Scotia Archives',
+    'Prince Edward Island Public Archives',
+    'Provincial Archives of New Brunswick',
+    'University of New Brunswick',
+    'University of New Brunswick Archives and Special Collections',
   ];
 
   $contrib_roles = [
