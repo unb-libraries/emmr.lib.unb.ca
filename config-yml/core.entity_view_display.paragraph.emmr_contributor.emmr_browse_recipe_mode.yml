@@ -21,4 +21,7 @@ content:
     type: string
     region: content
 hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   field_contributor_role: true
