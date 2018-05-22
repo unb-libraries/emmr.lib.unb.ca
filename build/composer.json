@@ -88,7 +88,7 @@
         "drupal/entity_print": "2.x",
         "tecnickcom/tcpdf": "~6",
         "mikehaertl/phpwkhtmltopdf": "~2.1",
-        "dompdf/dompdf": "^0.8.2"
+        "dompdf/dompdf": "0.8.0"
     },
     "require-dev": {
         "unb-libraries/drupal-development-libraries": "^8.0.0"
