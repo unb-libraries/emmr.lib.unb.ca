@@ -2,3 +2,8 @@ global-styling:
   css:
     base:
       dist/css/style.css: {}
+
+print-styling:
+  css:
+    theme:
+      dist/css/style.css: {}
