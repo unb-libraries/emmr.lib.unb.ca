@@ -1,3 +1,40 @@
-<h1>Hello World!</h1>
+<h1>Early Modern Maritime Recipes</h1>
 
-{{ content[0][0]['#node'].get('title').getValue()[0]['value'] }}
+{% set node = content[0][0]['#node'] %}
+{% set title = node.get('title').getValue()[0]['value'] %}
+{% set abstract = node.get('field_abstract').getValue()[0]['value'] %}
+{% set anno = node.get('field_annotations').getValue()[0]['value'] %}
+{% set contrib = node.get('field_contributors').getValue()[0]['value'] %}
+{% set digitized = node.get('field_digitized_from_original').getValue()[0]['value'] %}
+{% set imp_date = node.get('field_imprecise_date').getValue()[0]['value'] %}
+{% set ingredients = node.get('field_ingredients').getValue()[0]['value'] %}
+{% set pub_format = node.get('field_publication_format').getValue()[0]['value'] %}
+{% set date = node.get('field_recipe_date').getValue()[0]['value'] %}
+{% set places = node.get('field_recipe_places').getValue()[0]['value'] %}
+{% set sources = node.get('field_recipe_source').getValue()[0]['value'] %}
+{% set transcript = node.get('field_recipe_transcription').getValue()[0]['value'] %}
+{% set type = node.get('field_recipe_type').getValue()[0]['value'] %}
+{% set symptoms = node.get('field_symptoms').getValue()[0]['value'] %}
+
+<style>
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+a,
+#recipe-details-header {
+  display: none;
+}
+
+.field--label {
+  font-weight: bold;
+}
+
+.paragraph .sr-only {
+  display: none;
+}
+
+</style>
+
+{{ content }}
