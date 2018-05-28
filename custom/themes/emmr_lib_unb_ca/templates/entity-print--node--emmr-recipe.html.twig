@@ -16,6 +16,8 @@
 {% set type = node.get('field_recipe_type').getValue()[0]['value'] %}
 {% set symptoms = node.get('field_symptoms').getValue()[0]['value'] %}
 
+{{ entity_print_css }}
+
 <style>
 
 body {

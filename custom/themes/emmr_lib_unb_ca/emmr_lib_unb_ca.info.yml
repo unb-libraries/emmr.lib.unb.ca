@@ -21,3 +21,7 @@ regions:
   footer: 'Footer'
   page_top: 'Page top'
   page_bottom: 'Page bottom'
+
+entity_print:
+  node:
+    all: 'emmr_lib_unb_ca/print-styling'
