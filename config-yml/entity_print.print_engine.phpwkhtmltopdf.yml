@@ -1,0 +1,11 @@
+uuid: 8d250298-aa6f-4598-a582-4569e7e21902
+langcode: en
+status: true
+dependencies: {  }
+id: phpwkhtmltopdf
+settings:
+  orientation: portrait
+  default_paper_size: letter
+  username: ''
+  password: ''
+  binary_location: /app/html/vendor/mikehaertl/phpwkhtmltopdf
