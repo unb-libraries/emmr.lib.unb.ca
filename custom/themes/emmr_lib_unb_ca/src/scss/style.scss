@@ -164,11 +164,11 @@ div > div > div.table-responsive > button {
 }
 
 #recipe-trans {
-  max-width: 464px;
-  padding-left: 120px;
-  padding-right: 120px;
+  max-width: 536px;
+  padding-left: 80px;
+  padding-right: 80px;
   padding-bottom: 20px;
-  line-height: 200%;
+  line-height: 300%;
   font-size: 12px;
 }
 
@@ -210,6 +210,33 @@ div > div > div.table-responsive > button {
   overflow: scroll;
 }
 
+/* Transcription */
+.trxn-caret {
+  position: relative;
+  bottom: -.9em;
+  color: red;
+}
+
+.trxn-text {
+  position: absolute;
+  display: inline;
+  width: max-content;
+  bottom: 1.5em;
+}
+
+.trxn-replace {
+  position: relative;
+  bottom: -.9em;
+  color: red;
+}
+
+.trxn-retext {
+  position: absolute;
+  display: inline;
+  width: max-content;
+  bottom: 1.5em;
+}
+
 /* Adcanced Sources View */
 .view-id-emmr_adv_sources.view-display-id-page_1 > div {
   padding-left: 4vw;
@@ -238,38 +265,6 @@ h3 {
 
 .view-id-emmr_adv_sources.view-display-id-page_1 > .view-content > .item-list {
   margin-bottom: 36px;
-}
-
-/* Transcription */
-.trxn-caret {
-  position: relative;
-  bottom: -.9em;
-  color: red;
-  font-size: .9em;
-}
-
-.trxn-text {
-  position: absolute;
-  display: inline;
-  width: max-content;
-  bottom: 2em;
-  left: -1em;
-  font-size: .9em;
-}
-
-.trxn-replace {
-  position: relative;
-  bottom: -.9em;
-  color: red;
-  font-size: .9em;
-}
-
-.trxn-retext {
-  position: absolute;
-  display: inline;
-  width: max-content;
-  bottom: 2em;
-  font-size: .9em;
 }
 
 /* Responsive */
