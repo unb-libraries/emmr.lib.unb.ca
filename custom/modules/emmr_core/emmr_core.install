@@ -56,6 +56,57 @@ function emmr_core_install() {
   addTerms('emmr_recipe_types', $recipe_types);
 }
 
+/**
+ * Implements hook_update_N().
+ */
+function emmr_core_update_8101() {
+  $pub_formats = [
+    'Manuscript',
+    'Print',
+  ];
+
+  $item_formats = [
+    'Manuscript',
+    'Print',
+    'Microfilm',
+  ];
+
+  $src_institutions = [
+    'Acadia University Archives',
+    'Dalhousie University',
+    'Mount Allison University Archives',
+    'New Brunswick Museum Archives and Research Library',
+    'Nova Scotia Archives',
+    'Prince Edward Island Public Archives',
+    'Provincial Archives of New Brunswick',
+    'University of New Brunswick',
+    'University of New Brunswick Archives and Special Collections',
+  ];
+
+  $contrib_roles = [
+    'Author',
+    'Compiler',
+    'Other',
+  ];
+
+  $recipe_types = [
+    'Agriculture',
+    'Food',
+    'Drink',
+    'Cosmetic',
+    'Household',
+    'Medicine',
+    'Veterinary Medicine',
+    'Miscellaneous',
+  ];
+
+  addTerms('emmr_publication_formats', $pub_formats);
+  addTerms('emmr_item_formats', $item_formats);
+  addTerms('emmr_source_institutions', $src_institutions);
+  addTerms('emmr_contributor_roles', $contrib_roles);
+  addTerms('emmr_recipe_types', $recipe_types);
+}
+
 function addTerms($voc, $terms) {
 
   foreach ($terms as $term) {
