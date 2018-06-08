@@ -22,6 +22,9 @@ regions:
   page_top: 'Page top'
   page_bottom: 'Page bottom'
 
+ckeditor_stylesheets:
+  - css/ckeditor-styles.css
+
 entity_print:
   node:
     all: 'emmr_lib_unb_ca/print-styling'
