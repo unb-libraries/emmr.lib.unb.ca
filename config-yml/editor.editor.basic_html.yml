@@ -25,6 +25,9 @@ settings:
             - Subscript
             - trxn_insert
             - trxn_replace
+            - Undo
+            - Redo
+            - RemoveFormat
         -
           name: Linking
           items:
@@ -53,10 +56,10 @@ settings:
           items:
             - Source
   plugins:
-    stylescombo:
-      styles: ''
     language:
       language_list: un
+    stylescombo:
+      styles: ''
 image_upload:
   status: true
   scheme: public
