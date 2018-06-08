@@ -221,6 +221,7 @@ div > div > div.table-responsive > button {
   position: absolute;
   display: inline;
   width: max-content;
+  width: -moz-max-content;
   bottom: 1.5em;
 }
 
@@ -234,6 +235,7 @@ div > div > div.table-responsive > button {
   position: absolute;
   display: inline;
   width: max-content;
+  width: -moz-max-content;
   bottom: 1.5em;
 }
 
