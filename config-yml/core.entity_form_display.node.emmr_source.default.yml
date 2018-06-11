@@ -3,18 +3,30 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.emmr_source.field_featured_image
     - field.field.node.emmr_source.field_featured_source
     - field.field.node.emmr_source.field_institution
     - field.field.node.emmr_source.field_reference
     - field.field.node.emmr_source.field_source_desc
     - field.field.node.emmr_source.field_source_origin
     - field.field.node.emmr_source.field_sublocation
+    - image.style.thumbnail
     - node.type.emmr_source
+  module:
+    - image
 id: node.emmr_source.default
 targetEntityType: node
 bundle: emmr_source
 mode: default
 content:
+  field_featured_image:
+    weight: 27
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
   field_featured_source:
     weight: 26
     settings:
