@@ -19,6 +19,7 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_featured_image: true
   field_featured_source: true
   field_institution: true
   field_item_format: true
