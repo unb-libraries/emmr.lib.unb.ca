@@ -88,7 +88,8 @@
         "tecnickcom/tcpdf": "~6",
         "unb-libraries/unb_lib_theme": "dev-8.x-bootstrap-3.x",
         "webflo/drupal-finder": "^0.3.0",
-        "webmozart/path-util": "^2.3"
+        "webmozart/path-util": "^2.3",
+        "drupal/twig_tweak": "2.0",
     },
     "require-dev": {
         "unb-libraries/drupal-development-libraries": "^8.0.0"
