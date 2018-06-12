@@ -25,7 +25,6 @@ footer.footer.container {
 }
 
 // Browse Recipes Form
-
 #views-exposed-form-emmr-browse-recipes-page-1 {
   padding-left: 40px;
 }
@@ -135,6 +134,19 @@ div > div > div.table-responsive > button {
 #home-explore > ul > li,
 #home-featured > ul > li {
   margin-left: 10px;
+}
+
+#home-explore {
+  margin-right: 10px;
+}
+
+#home-featured {
+  margin-left: 10px;
+}
+
+#home-featured td {
+  width: 40%;
+  padding: 4px;
 }
 
 // View Recipe
