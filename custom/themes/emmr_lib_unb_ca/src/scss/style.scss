@@ -129,6 +129,7 @@ div > div > div.table-responsive > button {
 #home-featured {
   padding: 10px;
   border: 1px solid #e5e5e5;
+  height: 200px;
 }
 
 #home-explore > ul > li,
@@ -137,16 +138,18 @@ div > div > div.table-responsive > button {
 }
 
 #home-explore {
-  margin-right: 10px;
-}
-
-#home-featured {
-  margin-left: 10px;
+  margin-right: 20px;
 }
 
 #home-featured td {
   width: 40%;
   padding: 4px;
+}
+
+#featured-image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // View Recipe
@@ -285,5 +288,12 @@ h3 {
 @media (min-width: 992px) {
   #pages-trans-anno {
     max-height: 70vw;
+  }
+}
+
+@media (max-width: 992px) {
+  #home-explore {
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 }

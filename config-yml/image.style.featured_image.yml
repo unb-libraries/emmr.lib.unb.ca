@@ -1,0 +1,14 @@
+uuid: 653b17dc-4ebb-4aec-a891-c65c6e4a0591
+langcode: en
+status: true
+dependencies: {  }
+name: featured_image
+label: 'Featured Image'
+effects:
+  ac2cd83e-79cf-4bbe-bb64-3954b49432c1:
+    uuid: ac2cd83e-79cf-4bbe-bb64-3954b49432c1
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 120

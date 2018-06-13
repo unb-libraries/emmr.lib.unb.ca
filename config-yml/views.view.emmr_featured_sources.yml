@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_featured_image
     - field.storage.node.field_institution
     - field.storage.node.field_source_desc
+    - image.style.featured_image
     - node.type.emmr_source
   module:
     - image
@@ -300,7 +301,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: ''
+            image_style: featured_image
             image_link: ''
           group_column: ''
           group_columns: {  }
@@ -324,7 +325,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<table>\n<tr>\n<td>\n{{ title }} ({{ field_institution }}). {{ field_source_desc[:50] }}...\n</td>\n<td>\n{{ field_featured_image }}\n</td>\n</tr>\n</table>"
+            text: "<table>\n<tr>\n<td>\n{{ title }} ({{ field_institution }}). {{ field_source_desc[:100] }}...\n</td>\n<td id=\"featured-image\">\n{{ field_featured_image }}\n</td>\n</tr>\n</table>"
             make_link: false
             path: ''
             absolute: false
