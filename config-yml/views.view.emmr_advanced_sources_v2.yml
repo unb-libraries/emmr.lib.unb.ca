@@ -194,7 +194,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a data-toggle=\"collapse\" data-target=\".collapsed-recipes-{{ nid }}\">Recipes from this collection <span class=\"glyphicon glyphicon-triangle-right\"></span></a>\n<div class=\"row collapse .collapsed-recipes-{{ nid }}\">\n<dd>{{ drupal_view('emmr_recipes_by_source', 'block_1', nid) }}</dd>\n</div>"
+            text: "<a data-toggle=\"collapse\" data-target=\".collapsed-recipes-{{ nid }}\">Recipes from this collection <span class=\"glyphicon glyphicon-triangle-right\"></span></a>\n<div class=\"row collapse collapsed-recipes-{{ nid }}\">\n<dd>{{ drupal_view('emmr_recipes_by_source', 'block_1', nid) }}</dd>\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -291,7 +291,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: advanced-sources-v2
+      path: sources
     cache_metadata:
       max-age: -1
       contexts:

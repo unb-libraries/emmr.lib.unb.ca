@@ -368,7 +368,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: sources
+      path: sources-advanced-v1
     cache_metadata:
       max-age: -1
       contexts:
