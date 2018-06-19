@@ -5,6 +5,14 @@ a:hover {
   text-decoration: none !important;
 }
 
+.name.navbar-brand {
+  font-size: 26px;
+}
+
+.js-quickedit-page-title.page-header {
+  font-size: 24px;
+}
+
 // Footer
 #dal-footer-logo {
   max-height: 40px;
@@ -270,6 +278,13 @@ div > div > div.table-responsive > button {
 }
 
 .collapsed-recipes {
+  padding-left: 36px;
+}
+
+/* Recipes For View */
+.recipes-for-row {
+  display: inline;
+  font-size: 18px;
   padding-left: 36px;
 }
 
