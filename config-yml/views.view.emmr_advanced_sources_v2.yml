@@ -28,7 +28,7 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: tag
+        type: none
         options: {  }
       query:
         type: views_query
@@ -275,7 +275,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"advanced-source-row\">\n<div class=\"advanced-source-title\">{{ title }}\n<div class=\"source-desc-recipes\">\n<p>{{ field_source_desc }}<p>\n<a data-toggle=\"collapse\" data-target=\".collapsed-recipes-{{ nid }}\">Recipes from this collection <span class=\"glyphicon glyphicon-triangle-right\"></span></a>\n<div class=\"row collapse collapsed-recipes-{{ nid }} collapsed-recipes\">\n<dd>{{ drupal_view('emmr_recipes_by_source', 'block_1', nid) }}</dd>\n</div>\n</div>\n</div>"
+            text: "<div class=\"advanced-source-row\">\n<div class=\"advanced-source-title\">{{ title }}\n<div class=\"source-desc-recipes\">\n<p>{{ field_source_desc }}<p>\n<a data-toggle=\"collapse\" data-target=\".collapsed-recipes-{{ nid }}\">Recipes from this collection <span class=\"glyphicon glyphicon-triangle-right\"></span></a>\n<div class=\"row collapse collapsed-recipes-{{ nid }} collapsed-recipes\">\n<dd>{{ drupal_view('emmr_recipes_by_source', 'block_1', nid) }}</dd>\n<a href=\"/recipes-for/{{ nid }}\">More...</a>\n</div>\n</div>\n</div>"
             make_link: false
             path: ''
             absolute: false
