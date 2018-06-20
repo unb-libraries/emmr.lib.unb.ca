@@ -281,11 +281,35 @@ div > div > div.table-responsive > button {
   padding-left: 36px;
 }
 
+.source-desc-recipes a:hover {
+  cursor: pointer;
+}
+
 /* Recipes For View */
 .recipes-for-row {
   display: inline;
   font-size: 18px;
   padding-left: 36px;
+}
+
+.full-recipes-for-row > ul > li {
+  padding-bottom: 4px;
+}
+
+.full-recipes-for-row > ul > li:hover {
+  background-color: #e5e5e5;
+}
+
+.full-recipes-for-row .paragraph-formatter .paragraph-info.form-group {
+  margin-bottom: 0px;
+}
+
+.full-recipes-for-row .paragraph-formatter.form-group {
+  display: inline-table;
+}
+
+.full-recipes-for-row .paragraphs-collapsed-description::after {
+  content: "";
 }
 
 /* Responsive */
