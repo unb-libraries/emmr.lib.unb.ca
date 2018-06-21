@@ -233,6 +233,16 @@ div > div > div.table-responsive > button {
   overflow: scroll;
 }
 
+// View Source
+article.contextual-region.emmr-source.full > div > div {
+  padding: 10px;
+}
+
+article.contextual-region.emmr-source.full > div > div img {
+  float: right;
+  padding: 20px;
+}
+
 /* Transcription */
 .trxn-caret {
   position: relative;
