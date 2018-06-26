@@ -2,18 +2,18 @@ CKEDITOR.plugins.add('trxn_undo', {
   icons: 'trxn_undo',
 
   init: function(editor) {
-    editor.addCommand('trxn_undo',
-      new CKEDITOR.dialogCommand('trxn_undoDialog'));
+    editor.addCommand('trxn_undo', {
+      exec: function(editor) {
+        alert("Hello World!");
+      }
+    });
 
     var pluginDirectory = this.path;
-    editor.addContentsCss( pluginDirectory + 'styles/trxn_undo.css' );
 
     editor.ui.addButton('trxn_undo', {
-      label: 'Transcription undo',
+      label: 'Transcription Undo',
       command: 'trxn_undo',
       toolbar: 'formatting'
     });
-
-    CKEDITOR.dialog.add('trxn_undoDialog', this.path + 'dialogs/trxn_undo.js');
   }
 });

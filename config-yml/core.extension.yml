@@ -15,6 +15,7 @@ module:
   editor: 0
   emmr_ckeditor_insert: 0
   emmr_ckeditor_replace: 0
+  emmr_ckeditor_undo: 0
   emmr_core: 0
   entity_print: 0
   entity_print_views: 0

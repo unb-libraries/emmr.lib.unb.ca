@@ -1,21 +1,21 @@
 <?php
 
-namespace Drupal\emmr_ckeditor_replace\Plugin\CKEditorPlugin;
+namespace Drupal\emmr_ckeditor_undo\Plugin\CKEditorPlugin;
 
 use Drupal\ckeditor\CKEditorPluginBase;
 use Drupal\ckeditor\CKEditorPluginCssInterface;
 use Drupal\editor\Entity\Editor;
 
 /**
- * Defines the "Transcription Replace" plugin.
+ * Defines the "Transcription Undo" plugin.
  *
  * @CKEditorPlugin(
- *   id = "trxn_replace",
- *   label = @Translation("Transcription Replace"),
- *   module = "emmr_ckeditor_replace"
+ *   id = "trxn_undo",
+ *   label = @Translation("Transcription Undo"),
+ *   module = "emmr_ckeditor_undo"
  * )
  */
-class Trxnrundo extends CKEditorPluginBase implements CKEditorPluginCssInterface {
+class TrxnUndo extends CKEditorPluginBase implements CKEditorPluginCssInterface {
 
   /**
    * {@inheritdoc}
@@ -35,7 +35,7 @@ class Trxnrundo extends CKEditorPluginBase implements CKEditorPluginCssInterface
    * {@inheritdoc}
    */
   public function getFile() {
-    return drupal_get_path('module', 'emmr_ckeditor_replace') . '/js/plugins/trxn_replace/plugin.js';
+    return drupal_get_path('module', 'emmr_ckeditor_undo') . '/js/plugins/trxn_undo/plugin.js';
   }
 
   /**
@@ -43,10 +43,10 @@ class Trxnrundo extends CKEditorPluginBase implements CKEditorPluginCssInterface
    */
   public function getButtons() {
     return [
-      'trxn_replace' => [
-        'label' => t('Transcription Replace'),
-        'image' => drupal_get_path('module', 'emmr_ckeditor_replace') .
-        '/js/plugins/trxn_replace/icons/trxn_replace.png',
+      'trxn_undo' => [
+        'label' => t('Transcription Undo'),
+        'image' => drupal_get_path('module', 'emmr_ckeditor_undo') .
+        '/js/plugins/trxn_undo/icons/trxn_undo.png',
       ],
     ];
   }
