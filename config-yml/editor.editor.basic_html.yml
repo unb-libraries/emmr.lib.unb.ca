@@ -25,6 +25,7 @@ settings:
             - Subscript
             - trxn_insert
             - trxn_replace
+            - trxn_undo
             - Undo
             - Redo
             - RemoveFormat

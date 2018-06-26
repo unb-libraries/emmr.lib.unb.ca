@@ -1,6 +1,6 @@
 name: emmr_ckeditor_undo
 type: module
-description: Contains trxn_undo, a CKEditor plugin for undoing transcription changes.
+description: Contains trxn_undo, a CKEditor plugin for transcription undos.
 core: 8.x
 package: EMMR Custom Modules
 dependencies:
