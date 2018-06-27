@@ -23,12 +23,15 @@ settings:
             - Strike
             - Superscript
             - Subscript
-            - trxn_insert
-            - trxn_replace
-            - trxn_undo
             - Undo
             - Redo
             - RemoveFormat
+        -
+          name: Transcription
+          items:
+            - trxn_insert
+            - trxn_replace
+            - trxn_undo
         -
           name: Linking
           items:
