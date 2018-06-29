@@ -233,6 +233,15 @@ div > div > div.table-responsive > button {
   overflow: scroll;
 }
 
+.emmr-anno {
+  color: red;
+}
+
+.emmr-anno:hover {
+  color: red;
+  font-weight: bold;
+}
+
 // View Source
 article.contextual-region.emmr-source.full > div > div {
   padding: 10px;
