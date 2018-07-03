@@ -1,21 +1,21 @@
 <?php
 
-namespace Drupal\emmr_ckeditor_insert\Plugin\CKEditorPlugin;
+namespace Drupal\emmr_ckeditor_margin\Plugin\CKEditorPlugin;
 
 use Drupal\ckeditor\CKEditorPluginBase;
 use Drupal\ckeditor\CKEditorPluginCssInterface;
 use Drupal\editor\Entity\Editor;
 
 /**
- * Defines the "Transcription Insert" plugin.
+ * Defines the "Transcription Margin" plugin.
  *
  * @CKEditorPlugin(
- *   id = "trxn_insert",
- *   label = @Translation("Transcription Insert"),
- *   module = "emmr_ckeditor_insert"
+ *   id = "trxn_margin",
+ *   label = @Translation("Transcription Marginalia"),
+ *   module = "emmr_ckeditor_margin"
  * )
  */
-class TrxnInsert extends CKEditorPluginBase implements CKEditorPluginCssInterface {
+class TrxnMargin extends CKEditorPluginBase implements CKEditorPluginCssInterface {
 
   /**
    * {@inheritdoc}
@@ -35,7 +35,7 @@ class TrxnInsert extends CKEditorPluginBase implements CKEditorPluginCssInterfac
    * {@inheritdoc}
    */
   public function getFile() {
-    return drupal_get_path('module', 'emmr_ckeditor_insert') . '/js/plugins/trxn_insert/plugin.js';
+    return drupal_get_path('module', 'emmr_ckeditor_margin') . '/js/plugins/trxn_margin/plugin.js';
   }
 
   /**
@@ -43,10 +43,10 @@ class TrxnInsert extends CKEditorPluginBase implements CKEditorPluginCssInterfac
    */
   public function getButtons() {
     return [
-      'trxn_insert' => [
-        'label' => t('Transcription Insert'),
-        'image' => drupal_get_path('module', 'emmr_ckeditor_insert') .
-        '/js/plugins/trxn_insert/icons/trxn_insert.png',
+      'trxn_margin' => [
+        'label' => t('Transcription Marginalia'),
+        'image' => drupal_get_path('module', 'emmr_ckeditor_margin') .
+        '/js/plugins/trxn_margin/icons/trxn_margin.png',
       ],
     ];
   }

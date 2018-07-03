@@ -12,7 +12,7 @@ CKEDITOR.dialog.add('trxn_marginDialog', function(editor) {
           {
           type: 'text',
           id: 'to-margin',
-          label: 'Text to margin'          }
+          label: 'Marginalia Text'          }
         ]
       }
     ],
@@ -21,16 +21,20 @@ CKEDITOR.dialog.add('trxn_marginDialog', function(editor) {
       var dialog = this;
       var marginText = dialog.getValueOf('tab-margin', 'to-margin');
       var textSpan = editor.document.createElement('span');
-      var caretSpan = editor.document.createElement('span');
+      var numberSpan = editor.document.createElement('span');
+      var margin# = 0;
 
       textSpan.setAttribute('class', 'trxn-text');
       textSpan.setText(marginText);
 
-      caretSpan.setAttribute('class', 'trxn-caret');
-      caretSpan.setText('^');
-      caretSpan.$.appendChild(textSpan.$);
+      var margins = editor.document.getElementsByClassName('trxn-margin');
+      alert(margins); 
 
-      editor.marginElement(caretSpan);
+      numberSpan.setAttribute('class', 'trxn-margin');
+      numberSpan.setText('^');
+      numberSpan.$.appendChild(textSpan.$);
+
+      editor.insertElement(numberSpan);
     }
   };
 });

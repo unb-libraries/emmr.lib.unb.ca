@@ -1,7 +1,0 @@
-name: emmr_ckeditor_insert
-type: module
-description: Contains trxn_insert, a CKEditor plugin for transcription inserts.
-core: 8.x
-package: EMMR Custom Modules
-dependencies:
-  - ckeditor
