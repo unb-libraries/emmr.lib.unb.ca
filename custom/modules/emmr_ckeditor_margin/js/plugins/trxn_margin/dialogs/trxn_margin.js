@@ -22,16 +22,15 @@ CKEDITOR.dialog.add('trxn_marginDialog', function(editor) {
       var marginText = dialog.getValueOf('tab-margin', 'to-margin');
       var textSpan = editor.document.createElement('span');
       var numberSpan = editor.document.createElement('span');
-      var margin# = 0;
+      var margins = editor.document.find('.trxn-margin').count();
+      newMargin = (margins + 1).toString();
+      alert(newMargin);
 
       textSpan.setAttribute('class', 'trxn-text');
       textSpan.setText(marginText);
 
-      var margins = editor.document.getElementsByClassName('trxn-margin');
-      alert(margins); 
-
       numberSpan.setAttribute('class', 'trxn-margin');
-      numberSpan.setText('^');
+      numberSpan.setText(newMargin);
       numberSpan.$.appendChild(textSpan.$);
 
       editor.insertElement(numberSpan);
