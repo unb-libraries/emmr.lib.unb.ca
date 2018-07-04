@@ -1,28 +1,7 @@
 /* Transcription */
-.trxn-caret {
+.trxn-margin {
   position: relative;
-  bottom: -.9em;
-  color: red;
-}
-
-.trxn-text {
-  position: absolute;
-  display: inline;
-  width: max-content;
-  width: -moz-max-content;
   bottom: 1.5em;
-}
-
-.trxn-replace {
-  position: relative;
-  bottom: -.9em;
-  color: red;
-}
-
-.trxn-retext {
-  position: absolute;
-  display: inline;
-  width: max-content;
-  width: -moz-max-content;
-  bottom: 1.5em;
+  color: white;
+  background: red;
 }

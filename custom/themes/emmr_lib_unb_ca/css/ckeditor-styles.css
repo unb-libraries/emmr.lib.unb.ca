@@ -1,3 +1,21 @@
 body {
   line-height: 200%;
 }
+
+/* Transcription */
+.trxn-text {
+  position: absolute;
+  display: inline;
+  width: max-content;
+  width: -moz-max-content;
+  bottom: 1.5em;
+  color: red;
+}
+
+.trxn-margin > .trxn-text {
+  bottom: -0.5em !important;
+}
+
+.trxn-margin > .trxn-text::before {
+  content: " ";
+}
