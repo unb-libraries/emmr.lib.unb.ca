@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Contains emmr_ckeditor_margin.module.
+ */
+
+/**
+ * Implements hook_preprocess_hook().
+ */
+function emmr_ckeditor_margin_page_attachments(&$variables) : void {
+  $variables['#attached']['library'][] =
+    'emmr_ckeditor_margin/emmr_ckeditor_margin';
+}

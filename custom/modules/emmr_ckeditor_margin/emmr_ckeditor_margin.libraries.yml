@@ -1,0 +1,4 @@
+emmr_ckeditor_margin:
+  version: 1.x
+  js:
+    js/emmr_ckeditor_margin.js: {}
