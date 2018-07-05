@@ -1,3 +1,6 @@
+// On document ready.
 jQuery(document).ready(function() {
-  alert("TEST!!!");
+  if (jQuery('#recipe-details-header').length != 0) {
+    alert("TEST!!!");
+  }
 });
