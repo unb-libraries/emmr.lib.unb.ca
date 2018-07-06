@@ -72,7 +72,7 @@
         "drupal/bootstrap": "3.11",
         "drupal/config_update": "1.1",
         "drupal/console": "~1.0",
-        "drupal/core": "8.5.4",
+        "drupal/core": "8.5.5",
         "drupal/entity_print": "2.x",
         "drupal/entity_reference_revisions": "1.5",
         "drupal/externalauth": "1.1",
@@ -83,13 +83,13 @@
         "drupal/pathauto": "1.0-rc1",
         "drupal/search_api": "1.0",
         "drupal/token_filter": "1.0",
+        "drupal/twig_tweak": "2.0",
         "drush/drush": "^8.1.15",
         "mikehaertl/phpwkhtmltopdf": "~2.1",
         "tecnickcom/tcpdf": "~6",
         "unb-libraries/unb_lib_theme": "dev-8.x-bootstrap-3.x",
         "webflo/drupal-finder": "^0.3.0",
-        "webmozart/path-util": "^2.3",
-        "drupal/twig_tweak": "2.0"
+        "webmozart/path-util": "^2.3"
     },
     "require-dev": {
         "unb-libraries/drupal-development-libraries": "^8.0.0"
