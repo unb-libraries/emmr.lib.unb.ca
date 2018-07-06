@@ -281,6 +281,17 @@ article.contextual-region.emmr-source.full > div > div img {
   bottom: 1.5em;
 }
 
+#recipe-trans .trxn-margin {
+  position: relative;
+  bottom: 1.1em;
+  color: white;
+  background: red;
+}
+
+#recipe-trans .trxn-margin > .trxn-text {
+  display: none !important;
+}
+
 /* Adcanced Sources View */
 .advanced-source-row {
   padding-bottom: 20px;
