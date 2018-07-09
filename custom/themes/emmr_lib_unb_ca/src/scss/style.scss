@@ -233,15 +233,6 @@ div > div > div.table-responsive > button {
   overflow: scroll;
 }
 
-.emmr-anno {
-  color: red;
-}
-
-.emmr-anno:hover {
-  color: red;
-  font-weight: bold;
-}
-
 // View Source
 article.contextual-region.emmr-source.full > div > div {
   padding: 10px;
@@ -281,15 +272,21 @@ article.contextual-region.emmr-source.full > div > div img {
   bottom: 1.5em;
 }
 
-#recipe-trans .trxn-margin {
+#recipe-trans .trxn-margin, .emmr-anno {
   position: relative;
+  color: red;
+    &:hover {
+      color: white;
+      background: red;
+    }
+}
+
+#recipe-trans .trxn-margin {
   bottom: 1.1em;
-  color: white;
-  background: red;
 }
 
 #recipe-trans .trxn-margin > .trxn-text {
-  display: none !important;
+  visibility: hidden !important;
 }
 
 /* Adcanced Sources View */
