@@ -16,7 +16,9 @@ jQuery(document).ready(function() {
       }
 
       // Append marginalia tittle and items
-      jQuery("<p><b>Marginalia</b></p>").appendTo(destin);
+      jQuery("<br><p><b>Marginalia</b></p>").appendTo(destin);
+      jQuery("<div id='marginalia'></div>").appendTo(destin);
+      destin += " > div#marginalia";
       jQuery(origin).clone().appendTo(destin);
     }
   }

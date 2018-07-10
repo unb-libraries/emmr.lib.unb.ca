@@ -289,6 +289,23 @@ article.contextual-region.emmr-source.full > div > div img {
   visibility: hidden !important;
 }
 
+#recipe-anno .field--name-field-annotation-text {
+  font-weight: bold;
+}
+
+#marginalia .trxn-text {
+  position: relative !important;
+  bottom: 0px !important;
+
+    &::before {
+      content: ". ";
+    }
+}
+
+#marginalia {
+  padding-top: 10px !important;
+}
+
 /* Adcanced Sources View */
 .advanced-source-row {
   padding-bottom: 20px;
