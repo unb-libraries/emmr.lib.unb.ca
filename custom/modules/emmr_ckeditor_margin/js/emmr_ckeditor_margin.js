@@ -7,6 +7,8 @@ jQuery(document).ready(function() {
     destin = "#recipe-anno";
 
     // If marginalia found
+    var margins = jQuery(origin).clone();
+    jQuery("<br><br>").appendTo(margins);
     if ( jQuery(origin).length != 0 ) {
       // If annotations panel not found
       if ( jQuery(destin).length === 0 ) {
@@ -19,7 +21,7 @@ jQuery(document).ready(function() {
       jQuery("<br><p><b>Marginalia</b></p>").appendTo(destin);
       jQuery("<div id='marginalia'></div>").appendTo(destin);
       destin += " > div#marginalia";
-      jQuery(origin).clone().appendTo(destin);
+      jQuery(margins).clone().appendTo(destin);
     }
   }
 });
