@@ -24,7 +24,6 @@ CKEDITOR.dialog.add('trxn_marginDialog', function(editor) {
       var numberSpan = editor.document.createElement('span');
       var margins = editor.document.find('.trxn-margin').count();
       newMargin = (margins + 1).toString();
-      alert(newMargin);
 
       textSpan.setAttribute('class', 'trxn-text');
       textSpan.setText(marginText);
