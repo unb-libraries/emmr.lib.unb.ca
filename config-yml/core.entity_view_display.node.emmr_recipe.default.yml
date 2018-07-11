@@ -146,7 +146,7 @@ content:
     region: content
   field_recipe_transcription:
     weight: 4
-    label: visually_hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
