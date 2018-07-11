@@ -195,6 +195,11 @@ div > div > div.table-responsive > button {
     font-size: 13px;
 }
 
+#pages-trans-anno {
+  display: -webkit-box;
+  display: -ms-flexbox;
+}
+
 #recipe-details,
 #pages-trans-anno {
   padding-left: 40px;
@@ -215,9 +220,6 @@ div > div > div.table-responsive > button {
 
 #recipe-trans,
 #recipe-anno {
-  min-height: -moz-available;
-  min-height: -webkit-fill-available;
-  min-height: fill-available;
   margin: 10px;
   border: 2px solid #e5e5e5;
 }
@@ -227,9 +229,7 @@ div > div > div.table-responsive > button {
 }
 
 #recipe-pages,
-#recipe-trans,
 #recipe-anno {
-  max-height: inherit;
   overflow: scroll;
 }
 
@@ -357,12 +357,6 @@ article.contextual-region.emmr-source.full > div > div img {
 }
 
 /* Responsive */
-@media (min-width: 992px) {
-  #pages-trans-anno {
-    max-height: 70vw;
-  }
-}
-
 @media (max-width: 992px) {
   #home-explore {
     margin-right: 0;

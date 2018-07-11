@@ -94,67 +94,69 @@
     </footer>
   {% endif %}
 
-{#
-  <div{{ content_attributes }}>
-    {{ content }}
-  </div>
-#}
+  {#
+    <div{{ content_attributes }}>
+      {{ content }}
+    </div>
+  #}
 
-<div class="container">
-  <div class="row" id="recipe-title">
-    <h2>[{{ label[7:] }}] {{ content.field_contributors['0']['#paragraph'].get('field_contributor_name').getValue()[0]['value'] }}</h2>
+  <div class="container">
+    <div class="row" id="recipe-title">
+      <h2>[{{ label[7:] }}] {{ content.field_contributors['0']['#paragraph'].get('field_contributor_name').getValue()[0]['value'] }}</h2>
+    </div>
   </div>
-</div>
 
-<div class="row" id="recipe-details-header">
-  <div class="col-md-12">
-    <h4>
-      <a id="recipe-collapse"
-      data-toggle="collapse" data-target="#recipe-details">
-        Details<span class="glyphicon glyphicon-triangle-right"></span>
-      </a>
+  <div class="row" id="recipe-details-header">
+    <div class="col-md-12">
+      <h4>
+        <a id="recipe-collapse"
+        data-toggle="collapse" data-target="#recipe-details">
+          Details<span class="glyphicon glyphicon-triangle-right"></span>
+        </a>
 
-      <svg height="8" width="800">
-        <line x1="0" y1="0" x2="800" y2="0"
-        style="stroke:#ddd;stroke-width:2;"/>
-      </svg>
-    </h4>
+        <svg height="8" width="800">
+          <line x1="0" y1="0" x2="800" y2="0"
+          style="stroke:#ddd;stroke-width:2;"/>
+        </svg>
+      </h4>
+    </div>
   </div>
-</div>
 
-<div class="row collapse" id="recipe-details">
-  <div class="col-md-12">
-    <p>{{ content.field_contributors }}</p>
-    <p><b>Title:&nbsp</b>{{ label }}</p>
-    <p>{{ content.field_publication_format }}</p>
-    <p>{{ content.field_recipe_type }}</p>
-    <p>{{ content.field_symptoms }}</p>
-    <p>{{ content.field_ingredients }}</p>
-    <p>{{ content.field_recipe_places }}</p>
-    <p>{{ content.field_recipe_date_text }}</p>
-    <p>{{ content.field_recipe_source }}</p>
-    <p>{{ content.field_abstract }}</p>
+  <div class="row collapse" id="recipe-details">
+    <div class="col-md-12">
+      <p>{{ content.field_contributors }}</p>
+      <p><b>Title:&nbsp</b>{{ label }}</p>
+      <p>{{ content.field_publication_format }}</p>
+      <p>{{ content.field_recipe_type }}</p>
+      <p>{{ content.field_symptoms }}</p>
+      <p>{{ content.field_ingredients }}</p>
+      <p>{{ content.field_recipe_places }}</p>
+      <p>{{ content.field_recipe_date_text }}</p>
+      <p>{{ content.field_recipe_source }}</p>
+      <p>{{ content.field_abstract }}</p>
+    </div>
   </div>
-</div>
 
-<br>
-<div class="row" id="pages-trans-anno">
-  <div class="col-md-2" id="recipe-pages">
-    <h5 id="pages-title">Pages</h5>
-    <div id="recipe-pages-images">{{ content.field_recipe_images }}</div>
+  <br>
+  <div class="row row-eq-height" id="pages-trans-anno">
+    <div class="col-md-2" id="recipe-pages">
+      <h5 id="pages-title">Pages</h5>
+      <div id="recipe-pages-images">{{ content.field_recipe_images }}</div>
+    </div>
+    <div class="col-md-8" id="recipe-trans">
+      <br>
+      <br>
+      {{ content.field_recipe_transcription }}
+    </div>
+
+    {% if content.field_annotations['0'] %}
+      <div class="col-md-2" id="recipe-anno">
+        <br>
+        <b>Annotations</b>
+        {{ content.field_annotations }}
+      </div>
+    {% endif %}
+    
   </div>
-  <div class="col-md-8" id="recipe-trans">
-    <br>
-    <br>
-    {{ content.field_recipe_transcription }}
-  </div>
-  {% if content.field_annotations['0'] %}
-  <div class="col-md-2" id="recipe-anno">
-    <br>
-    <b>Annotations</b>
-    {{ content.field_annotations }}
-  </div>
-{% endif %}
-</div>
 
 </article>
