@@ -22,17 +22,22 @@ CKEDITOR.dialog.add('trxn_marginDialog', function(editor) {
       var marginText = dialog.getValueOf('tab-margin', 'to-margin');
       var textSpan = editor.document.createElement('span');
       var numberSpan = editor.document.createElement('span');
-      var margins = editor.document.find('.trxn-margin').count();
-      newMargin = (margins + 1).toString();
 
       textSpan.setAttribute('class', 'trxn-text');
       textSpan.setText(marginText);
 
       numberSpan.setAttribute('class', 'trxn-margin');
-      numberSpan.setText(newMargin);
+      numberSpan.setText('X');
       numberSpan.$.appendChild(textSpan.$);
 
       editor.insertElement(numberSpan);
+
+      // Re-number marginalia
+      var margins = editor.document.find('.trxn-margin');
+
+      for (var i = 0; i < margins.$.length; i++) {
+        margins.$[i].firstChild.data = (i + 1).toString();
+      }
     }
   };
 });
