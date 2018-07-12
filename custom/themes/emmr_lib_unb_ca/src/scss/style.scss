@@ -171,14 +171,7 @@ div > div > div.table-responsive > button {
   text-decoration: none;
 }
 
-#recipe-pages {
-  text-align: center;
-}
-
 #recipe-pages-images {
-  padding-left: 6px;
-  overflow: scroll;
-
   img {
     margin-top: 16px;
     margin-bottom: 16px;
@@ -192,7 +185,6 @@ div > div > div.table-responsive > button {
     padding-right: 40px;
     padding-bottom: 20px;
     line-height: 340%;
-    font-size: 13px;
 }
 
 #pages-trans-anno {
@@ -210,27 +202,26 @@ div > div > div.table-responsive > button {
 }
 
 #recipe-anno {
-  background-color: #f3f3f3;
-  > div {
-    padding-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+  border-left: 2px solid #e5e5e5;
+
+  .field--items {
+    padding-top: 1em;
   }
 }
 
+#recipe-pages,
 #recipe-trans,
 #recipe-anno {
   margin: 10px;
-  border: 2px solid #e5e5e5;
 }
 
 #recipe-anno > div > div.field--items > div > div {
-  padding-bottom: 10px;
+  padding-bottom: 1em;
 }
 
 #recipe-pages,
 #recipe-anno {
-  overflow: scroll;
+  padding-top: 1em;
 }
 
 // View Source
