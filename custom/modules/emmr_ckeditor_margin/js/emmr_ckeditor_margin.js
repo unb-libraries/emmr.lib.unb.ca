@@ -6,7 +6,10 @@ jQuery(document).ready(function() {
 
     // If annotations panel present
     if (jQuery("#recipe-anno").length != 0) {
+      // If marginalia present
+      if (jQuery(".trxn-margin").length != 0) {
 
+      }
     }
   }
 });

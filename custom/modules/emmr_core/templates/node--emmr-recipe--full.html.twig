@@ -140,23 +140,18 @@
   <br>
   <div class="row row-eq-height" id="pages-trans-anno">
     <div class="col-md-2" id="recipe-pages">
-      <h5 id="pages-title">Pages</h5>
       <div id="recipe-pages-images">{{ content.field_recipe_images }}</div>
     </div>
     <div class="col-md-8" id="recipe-trans">
-      <br>
-      <br>
       {{ content.field_recipe_transcription }}
     </div>
 
     {% if content.field_annotations['0'] %}
       <div class="col-md-2" id="recipe-anno">
-        <br>
-        <b>Annotations</b>
         {{ content.field_annotations }}
       </div>
     {% endif %}
-    
+
   </div>
 
 </article>
