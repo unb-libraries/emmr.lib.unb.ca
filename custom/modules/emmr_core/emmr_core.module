@@ -72,7 +72,22 @@ function emmr_core_node_presave($node) {
       }
     }
 
+    // Update annotations.
     $trans = $node->get('field_recipe_transcription')->getValue()[0]['value'];
+
+    // Remove all annotations.
+    $matches = [];
+    preg_match_all('/<span class="emmr-anno">([^<]+)<\/span>/', $trans,
+      $matches);
+    $match_count = count($matches[0]);
+
+    if ($match_count != 0) {
+      for ($i = 0; $i < $match_count; $i++) {
+        $trans = str_replace($matches[0][$i], $matches[1][$i], $trans);
+      }
+    }
+
+    // Update annotations.
     $annos = $node->get('field_annotations')->getValue();
     $annos_val = [];
 
@@ -90,10 +105,11 @@ function emmr_core_node_presave($node) {
 
       if ($pre_tail != '<span class="emmr-anno">') {
         $trans = $pre . '<span class="emmr-anno">' . $mid . '</span>' . $end;
-        $trans_full = ['format' => "basic_html", 'value' => $trans];
-        $node->set('field_recipe_transcription', $trans_full);
       }
     }
+
+    $trans_full = ['format' => "basic_html", 'value' => $trans];
+    $node->set('field_recipe_transcription', $trans_full);
   }
 }
 
