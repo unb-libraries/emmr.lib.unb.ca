@@ -24,17 +24,22 @@ CKEDITOR.dialog.add('trxn_replaceDialog', function(editor) {
       var cursorSpan = editor.document.createElement('span');
       var selectedStrike = editor.document.createElement('s');
       var selectedText = editor.getSelection().getSelectedText();
+      var trxnTag = editor.document.createElement('trxn');
 
       textSpan.setAttribute('class', 'trxn-retext');
       textSpan.setText(replaceText);
 
       cursorSpan.$.setAttribute('class', 'trxn-replace');
       cursorSpan.$.appendChild(textSpan.$);
+      trxnTag.$.appendChild(cursorSpan.$);
 
       selectedStrike.setText(selectedText);
 
-      editor.insertElement(cursorSpan);
-      editor.insertElement(selectedStrike);
+      // editor.insertElement(cursorSpan);
+      // editor.insertElement(selectedStrike);
+
+      trxnTag.$.appendChild(selectedStrike.$);
+      editor.insertElement(trxnTag);
     }
   };
 });
