@@ -4,6 +4,7 @@
 
 // Global
 html {
+    height: 100%;
     background-image: url("/themes/custom/emmr_lib_unb_ca/images/emmr_bg.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
@@ -50,6 +51,7 @@ a:hover {
 }
 
 footer.footer.container {
+  height: 100%;
   margin-top: 0px !important;
   padding-left: 0px;
   background: white;

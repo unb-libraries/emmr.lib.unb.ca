@@ -22,6 +22,7 @@ CKEDITOR.dialog.add('trxn_insertDialog', function(editor) {
       var insertText = dialog.getValueOf('tab-insert', 'to-insert');
       var textSpan = editor.document.createElement('span');
       var caretSpan = editor.document.createElement('span');
+      var trxnTag = editor.document.createElement('trxn');
 
       textSpan.setAttribute('class', 'trxn-text');
       textSpan.setText(insertText);
@@ -29,8 +30,9 @@ CKEDITOR.dialog.add('trxn_insertDialog', function(editor) {
       caretSpan.setAttribute('class', 'trxn-caret');
       caretSpan.setText('^');
       caretSpan.$.appendChild(textSpan.$);
+      trxnTag.$.appendChild(caretSpan.$);
 
-      editor.insertElement(caretSpan);
+      editor.insertElement(trxnTag);
     }
   };
 });

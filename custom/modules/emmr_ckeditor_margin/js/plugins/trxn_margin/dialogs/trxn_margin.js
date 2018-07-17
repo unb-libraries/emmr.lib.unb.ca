@@ -22,6 +22,7 @@ CKEDITOR.dialog.add('trxn_marginDialog', function(editor) {
       var marginText = dialog.getValueOf('tab-margin', 'to-margin');
       var textSpan = editor.document.createElement('span');
       var numberSpan = editor.document.createElement('span');
+      var trxnTag = editor.document.createElement('trxn');
 
       textSpan.setAttribute('class', 'trxn-text');
       textSpan.setText(marginText);
@@ -29,8 +30,9 @@ CKEDITOR.dialog.add('trxn_marginDialog', function(editor) {
       numberSpan.setAttribute('class', 'trxn-margin');
       numberSpan.setText('X');
       numberSpan.$.appendChild(textSpan.$);
+      trxnTag.$.appendChild(numberSpan.$);
 
-      editor.insertElement(numberSpan);
+      editor.insertElement(trxnTag);
 
       // Re-number marginalia
       var margins = editor.document.find('.trxn-margin');

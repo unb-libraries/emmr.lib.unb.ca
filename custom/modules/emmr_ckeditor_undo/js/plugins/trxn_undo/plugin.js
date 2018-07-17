@@ -4,21 +4,31 @@ CKEDITOR.plugins.add('trxn_undo', {
   init: function(editor) {
     editor.addCommand('trxn_undo', {
       exec: function(editor) {
-        var selection =
-          editor.getSelectedHtml(true);
+        var err = "Please select a complete transcription-formatted segment.";
+        var er2 = "Please include strike-through text in selection to undo replacement.";
+        var selHtml = editor.getSelectedHtml(true);
+        var re = /<span class="trxn-text">([^<]+)<\/span>/;
+        console.log(selHtml);
 
-        var err = "No transcription content found in selection. " +
-          "Please make sure all elements (red text) are selected, or use the " +
-          "default [Undo] button to reverse formatting step-by-step.";
+        var re_trxn = /<trxn>(.*)<\/trxn>/;
+        var trxn = selHtml.match(re_trxn);
 
-        if (selection.indexOf("trxn-replace") > 0) {
-          editor.execCommand('undo');
-          editor.execCommand('undo');
-        }
-        else if (selection.indexOf("trxn-caret") > 0) {
-          editor.execCommand('undo');
+        if (trxn) {
+
+          if (selHtml.indexOf("trxn-replace") > 0) {
+            var re_strike = /<s>([^<]+)<\/s>/;
+            var strike = selHtml.match(re_strike);
+
+            if (strike) {
+              console.log(strike[1]);
+              editor.insertHtml(strike[1]);
+            }
+            else alert(er2);
+          }
+          else editor.insertHtml("");
         }
         else alert(err);
+
       }
     });
 
