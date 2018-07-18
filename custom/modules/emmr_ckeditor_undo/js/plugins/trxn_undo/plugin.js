@@ -8,8 +8,6 @@ CKEDITOR.plugins.add('trxn_undo', {
         var er2 = "Please include strike-through text in selection to undo replacement.";
         var selHtml = editor.getSelectedHtml(true);
         var re = /<span class="trxn-text">([^<]+)<\/span>/;
-        console.log(selHtml);
-
         var re_trxn = /<trxn>(.*)<\/trxn>/;
         var trxn = selHtml.match(re_trxn);
 

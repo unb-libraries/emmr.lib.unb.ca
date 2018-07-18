@@ -32,6 +32,7 @@ CKEDITOR.dialog.add('trxn_insertDialog', function(editor) {
       caretSpan.$.appendChild(textSpan.$);
       trxnTag.$.appendChild(caretSpan.$);
 
+      editor.insertHtml(editor.getSelectedHtml(true));
       editor.insertElement(trxnTag);
     }
   };
