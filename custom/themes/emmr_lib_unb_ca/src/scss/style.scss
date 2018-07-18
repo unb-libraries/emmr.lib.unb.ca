@@ -260,13 +260,13 @@ article.contextual-region.emmr-source.full > div > div img {
 }
 
 /* Transcription */
-.trxn-caret {
+#recipe-trans .trxn-caret {
   position: relative;
   bottom: -.9em;
   color: red;
 }
 
-.trxn-text {
+#recipe-trans .trxn-text {
   position: absolute;
   display: inline;
   width: max-content;
@@ -274,13 +274,13 @@ article.contextual-region.emmr-source.full > div > div img {
   bottom: 1.5em;
 }
 
-.trxn-replace {
+#recipe-trans .trxn-replace {
   position: relative;
   bottom: -.9em;
   color: red;
 }
 
-.trxn-retext {
+#recipe-trans .trxn-retext {
   position: absolute;
   display: inline;
   width: max-content;
@@ -288,13 +288,9 @@ article.contextual-region.emmr-source.full > div > div img {
   bottom: 1.5em;
 }
 
-#recipe-trans .trxn-margin, .emmr-anno {
+#recipe-trans .trxn-margin, p > .emmr-anno {
   position: relative;
   color: red;
-    &:hover {
-      color: white;
-      background: red;
-    }
 }
 
 #recipe-trans .trxn-margin {
