@@ -72,7 +72,8 @@ function emmr_core_node_presave($node) {
       }
     }
 
-    // Update annotations.
+    // Process annotations.
+    // Recover transcription.
     $trans = $node->get('field_recipe_transcription')->getValue()[0]['value'];
 
     // Remove all annotations.
@@ -98,13 +99,16 @@ function emmr_core_node_presave($node) {
     foreach ($annos_val as $val) {
       $len = strlen($val);
       $pos = strpos(strtoupper($trans), strtoupper($val));
-      $pre = substr($trans, 0, $pos);
-      $mid = substr($trans, $pos, $len);
-      $end = substr($trans, $pos + $len);
-      $pre_tail = substr($pre, -24);
 
-      if ($pre_tail != '<span class="emmr-anno">') {
-        $trans = $pre . '<span class="emmr-anno">' . $mid . '</span>' . $end;
+      if ($pos !== FALSE) {
+        $pre = substr($trans, 0, $pos);
+        $mid = substr($trans, $pos, $len);
+        $end = substr($trans, $pos + $len);
+        $pre_tail = substr($pre, -24);
+
+        if ($pre_tail != '<span class="emmr-anno">') {
+          $trans = $pre . '<span class="emmr-anno">' . $mid . '</span>' . $end;
+        }
       }
     }
 
