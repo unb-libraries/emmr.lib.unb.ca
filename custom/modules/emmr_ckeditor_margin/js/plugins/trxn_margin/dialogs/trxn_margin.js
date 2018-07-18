@@ -32,6 +32,7 @@ CKEDITOR.dialog.add('trxn_marginDialog', function(editor) {
       numberSpan.$.appendChild(textSpan.$);
       trxnTag.$.appendChild(numberSpan.$);
 
+      editor.insertHtml(editor.getSelectedHtml(true));
       editor.insertElement(trxnTag);
 
       // Re-number marginalia
