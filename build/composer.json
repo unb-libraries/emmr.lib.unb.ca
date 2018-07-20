@@ -83,7 +83,7 @@
         "drupal/pathauto": "1.0-rc1",
         "drupal/search_api": "1.0",
         "drupal/token_filter": "1.0",
-        "drupal/twig_tweak": "2.0",
+        "drupal/twig_tweak": "2.1",
         "drush/drush": "^8.1.15",
         "mikehaertl/phpwkhtmltopdf": "~2.1",
         "tecnickcom/tcpdf": "~6",
