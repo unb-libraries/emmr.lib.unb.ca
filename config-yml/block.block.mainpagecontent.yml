@@ -9,7 +9,7 @@ dependencies:
 id: mainpagecontent
 theme: emmr_lib_unb_ca
 region: content
-weight: 0
+weight: -4
 provider: null
 plugin: system_main_block
 settings:

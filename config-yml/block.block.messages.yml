@@ -9,7 +9,7 @@ dependencies:
 id: messages
 theme: emmr_lib_unb_ca
 region: header
-weight: 0
+weight: -4
 provider: null
 plugin: system_messages_block
 settings:
