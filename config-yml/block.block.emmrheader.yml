@@ -11,8 +11,8 @@ dependencies:
     - emmr_lib_unb_ca
 id: emmrheader
 theme: emmr_lib_unb_ca
-region: navigation_collapsible
-weight: -3
+region: header
+weight: 0
 provider: null
 plugin: 'block_content:cbba5717-ceac-408d-a832-9665c05a7bba'
 settings:
