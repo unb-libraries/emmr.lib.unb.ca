@@ -3,6 +3,7 @@ global-styling:
     base:
       dist/css/style.css: {}
       '//fonts.googleapis.com/css?family=Great+Vibes': { type: external, minified: true }
+      '//fonts.googleapis.com/css?family=Avenir': { type: external, minified: true }
 
 print-styling:
   css:
