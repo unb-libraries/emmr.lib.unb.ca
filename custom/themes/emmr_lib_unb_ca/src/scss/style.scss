@@ -3,7 +3,8 @@
 // Variables
 $color-dark-gray: #4a4a4a;
 $color-red: #c71b1b;
-$color-mint: #cfd7cd;
+$color-mint: #cfdfcd;
+$color-dark-mint: #9faf9d;
 
 // Global
 body {
@@ -233,6 +234,20 @@ div > div > div.table-responsive > button {
     color: $color-dark-gray;
     font-size: 50px;
   }
+}
+
+#search-recipes {
+  text-align: center;
+  color: $color-dark-mint;
+
+    h2 {
+      font-size: 14px;
+      font-weight: 990;
+    }
+}
+
+#edit-submit-emmr-browse-recipes {
+  display: none;
 }
 
 #intro-text {
