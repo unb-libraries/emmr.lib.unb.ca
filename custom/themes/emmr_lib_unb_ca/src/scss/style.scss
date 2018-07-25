@@ -221,16 +221,17 @@ div > div > div.table-responsive > button {
   margin-bottom: 80px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 20px;
+  padding-top: 10px;
   height: 100px;
   background-color: #cfd7cd;
   text-align: center;
   font-family: 'Great Vibes', cursive;
-  font-size: 50px;
   opacity: 0.8;
 
   h1 {
     min-width: 600px;
+    color: $color-dark-gray;
+    font-size: 50px;
   }
 }
 

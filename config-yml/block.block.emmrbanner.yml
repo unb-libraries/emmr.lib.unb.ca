@@ -1,0 +1,26 @@
+uuid: 1dc0671b-a526-4bcc-bff4-4b2defa589c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - emmr_core
+    - system
+  theme:
+    - emmr_lib_unb_ca
+id: emmrbanner
+theme: emmr_lib_unb_ca
+region: header
+weight: 0
+provider: null
+plugin: emmr_banner
+settings:
+  id: emmr_banner
+  label: 'EMMR Banner'
+  provider: emmr_core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /intro
+    negate: false
+    context_mapping: {  }
