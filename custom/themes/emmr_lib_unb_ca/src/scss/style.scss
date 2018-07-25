@@ -3,7 +3,7 @@
 // Variables
 $color-dark-gray: #4a4a4a;
 $color-red: #c71b1b;
-$color-mint: #cfdfcd;
+$color-mint: #dfefdd;
 $color-dark-mint: #9faf9d;
 
 // Global
@@ -43,6 +43,16 @@ body > div.dialog-off-canvas-main-canvas > div.main-container {
   }
 }
 
+a {
+  color: $color-red;
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer !important;
+    color: $color-red;
+  }
+}
+
 #navbar {
   max-width: 100% !important;
   width: 100% !important;
@@ -79,11 +89,6 @@ body > div.dialog-off-canvas-main-canvas > div.main-container {
     font-size: 14px;
     text-transform: uppercase;
   }
-}
-
-a:hover {
-  text-decoration: none !important;
-  cursor: pointer !important;
 }
 
 .name.navbar-brand {
@@ -274,21 +279,20 @@ div.form-item-combine:focus-within::before {
 
 #home-explore,
 #home-featured {
-  padding: 10px;
+  padding: 16px;
   height: 200px;
-}
-
-#home-explore {
-  border-right: white solid 10px;
-}
-
-#home-featured {
-  border-left: white solid 10px;
+  background-color: $color-mint;
 }
 
 #home-explore > ul > li,
 #home-featured > ul > li {
   margin-left: 10px;
+}
+
+#home-explore {
+  position: relative;
+  right: 10px;
+  margin-right: 10px;
 }
 
 #home-featured td {
@@ -300,6 +304,7 @@ div.form-item-combine:focus-within::before {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  border: 1px solid $color-dark-gray;
 }
 
 // View Recipe
