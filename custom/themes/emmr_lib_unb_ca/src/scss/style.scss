@@ -216,6 +216,20 @@ div > div > div.table-responsive > button {
   width: 360px;
 }
 
+#views-exposed-form-emmr-browse-recipes-page-2 > div >
+div.form-item-combine::before {
+  visibility: visible;
+  position: relative;
+  top: 2px;
+  left: 24px;
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f002"
+}
+
+#views-exposed-form-emmr-browse-recipes-page-2 > div >
+div.form-item-combine:focus-within::before {
+  visibility: hidden;
+}
+
 // Homepage
 #emmr-header {
   margin-top: 60px;
