@@ -3,3 +3,5 @@ type: module
 description: Core functionality extension for emmr.lib.unb.ca
 core: 8.x
 package: EMMR Custom Modules
+dependencies:
+  - block
