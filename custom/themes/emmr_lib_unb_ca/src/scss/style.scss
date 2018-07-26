@@ -514,6 +514,14 @@ article.contextual-region.emmr-source.full > div > div img {
   div.form-item-combine::before {
     display: none;
   }
+
+  #search-recipes {
+    text-align: justify;
+  }
+
+  #edit-combine {
+    width: 100%;
+  }
 }
 
 @media (max-width: 992px) {
