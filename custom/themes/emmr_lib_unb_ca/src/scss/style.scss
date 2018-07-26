@@ -13,7 +13,7 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     background-color: $color-mint;
-    font-family: 'Avenir', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 body > div.dialog-off-canvas-main-canvas > div.main-container {
@@ -34,6 +34,7 @@ body > div.dialog-off-canvas-main-canvas > div.main-container {
   }
 
   .region.region-header h1 {
+    margin-bottom: 10px;
     border-bottom: 0px;
     color: white;
   }
@@ -43,9 +44,8 @@ body > div.dialog-off-canvas-main-canvas > div.main-container {
   }
 }
 
-a {
+a, a:active, a:focus, a:visited {
   color: $color-red;
-  font-weight: bold;
 
   &:hover {
     cursor: pointer !important;
@@ -261,7 +261,7 @@ div.form-item-combine:focus-within::before {
 
     h2 {
       font-size: 14px;
-      font-weight: 990;
+      font-weight: bold;
     }
 }
 
@@ -308,6 +308,24 @@ div.form-item-combine:focus-within::before {
 }
 
 // View Recipe
+ul.tabs--primary.nav.nav-tabs > li:not(.active) {
+
+  a {
+    background-color: white;
+    opacity: .8;
+
+    &:hover {
+      opacity: 1;
+      border-color: transparent;
+    }
+  }
+}
+
+ul.tabs--primary.nav.nav-tabs > li.active a {
+  font-weight: bold;
+}
+
+body > div.dialog-off-canvas-main-canvas > div > div > div > div > nav > ul
 #recipe-details-header {
   padding-left: 20px;
 }
