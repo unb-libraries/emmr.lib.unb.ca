@@ -509,9 +509,17 @@ article.contextual-region.emmr-source.full > div > div img {
 }
 
 /* Responsive */
+@media (max-width: 768px) {
+  #views-exposed-form-emmr-browse-recipes-page-2 > div >
+  div.form-item-combine::before {
+    display: none;
+  }
+}
+
 @media (max-width: 992px) {
   #home-explore {
-    margin-right: 0;
+    margin-left: 10px;
     margin-bottom: 20px;
+    width: 100%;
   }
 }
