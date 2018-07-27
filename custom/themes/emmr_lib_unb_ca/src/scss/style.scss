@@ -404,13 +404,21 @@ body > div.dialog-off-canvas-main-canvas > div > div > div > div > nav > ul
 }
 
 // View Source
-article.contextual-region.emmr-source.full > div > div {
+article.contextual-region div#source-content div.field {
   padding: 10px;
 }
 
-article.contextual-region.emmr-source.full > div > div img {
+article.contextual-region div#source-content div.field img {
   float: right;
   padding: 20px;
+}
+
+h1.js-quickedit-page-title.page-header > a {
+  color: white;
+
+  &:hover, &:focus, &:active, &:visited {
+    color: white;
+  }
 }
 
 /* Transcription */
