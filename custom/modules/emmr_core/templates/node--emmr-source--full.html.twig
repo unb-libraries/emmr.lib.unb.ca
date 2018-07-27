@@ -1,15 +1,15 @@
 {#
 /**
  * @file
- * Custon theme implementation to display a recipe node.
+ * Custom theme implementation to display a source node.
  *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
  *   Only method names starting with "get", "has", or "is" and a few common
  *   methods such as "id", "label", and "bundle" are available. For example:
  *   - node.getCreatedTime() will return the node creation timestamp.
- *   - node.hasField('content.field_example') returns TRUE if the node bundle includes
- *     content.field_example. (This does not indicate the presence of a value in this
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
  *     field.)
  *   - node.isPublished() will return whether the node is published or not.
  *   Calling other methods, such as node.delete(), will result in an exception.
@@ -17,8 +17,8 @@
  *   methods for the node object.
  * - label: The title of the node.
  * - content: All node items. Use {{ content }} to print them all,
- *   or print a subset such as {{ content.content.field_example }}. Use
- *   {{ content|without('content.field_example') }} to temporarily suppress the printing
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
  *   of a given child element.
  * - author_picture: The node author user entity, rendered using the "compact"
  *   view mode.
@@ -72,7 +72,6 @@
  * @ingroup themeable
  */
 #}
-
 <article{{ attributes }}>
 
   {{ title_prefix }}
@@ -93,64 +92,14 @@
     </footer>
   {% endif %}
 
-  {#
-    <div{{ content_attributes }}>
-      {{ content }}
+  <div id="source-content" {{ content_attributes }}>
+    {{ content }}
+
+    <div class="field">
+      <a href="/recipes-for/{{ node.id }}">
+        View all recipes for this source...
+      </a>
     </div>
-  #}
-
-  <div class="container">
-    <div class="row" id="recipe-title">
-      <h2>[{{ label[7:] }}] {{ content.field_contributors['0']['#paragraph'].get('field_contributor_name').getValue()[0]['value'] }}</h2>
-    </div>
-  </div>
-
-  <div class="row" id="recipe-details-header">
-    <div class="col-md-12">
-      <h4>
-        <a id="recipe-collapse"
-        data-toggle="collapse" data-target="#recipe-details">
-          Details<span class="glyphicon glyphicon-triangle-right"></span>
-        </a>
-
-        <svg height="8" width="800">
-          <line x1="0" y1="0" x2="800" y2="0"
-          style="stroke:#ddd;stroke-width:2;"/>
-        </svg>
-      </h4>
-    </div>
-  </div>
-
-  <div class="row collapse" id="recipe-details">
-    <div class="col-md-12">
-      <p>{{ content.field_contributors }}</p>
-      <p><b>Title:&nbsp</b>{{ label }}</p>
-      <p>{{ content.field_publication_format }}</p>
-      <p>{{ content.field_recipe_type }}</p>
-      <p>{{ content.field_symptoms }}</p>
-      <p>{{ content.field_ingredients }}</p>
-      <p>{{ content.field_recipe_places }}</p>
-      <p>{{ content.field_recipe_date_text }}</p>
-      <p>{{ content.field_recipe_source }}</p>
-      <p>{{ content.field_abstract }}</p>
-    </div>
-  </div>
-
-  <br>
-  <div class="row row-eq-height" id="pages-trans-anno">
-    <div class="col-md-2" id="recipe-pages">
-      <div id="recipe-pages-images">{{ content.field_recipe_images }}</div>
-    </div>
-    <div class="col-md-8" id="recipe-trans">
-      {{ content.field_recipe_transcription }}
-    </div>
-
-    {% if content.field_annotations['0'] %}
-      <div class="col-md-2" id="recipe-anno">
-        {{ content.field_annotations }}
-      </div>
-    {% endif %}
-
   </div>
 
 </article>
