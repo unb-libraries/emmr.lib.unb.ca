@@ -417,7 +417,7 @@ article.contextual-region.emmr-source.full > div > div img {
 #recipe-trans .trxn-caret {
   position: relative;
   bottom: -.9em;
-  color: red;
+  color: $color-red;
 }
 
 #recipe-trans .trxn-text {
@@ -431,7 +431,7 @@ article.contextual-region.emmr-source.full > div > div img {
 #recipe-trans .trxn-replace {
   position: relative;
   bottom: -.9em;
-  color: red;
+  color: $color-red;
 }
 
 #recipe-trans .trxn-retext {
@@ -444,7 +444,7 @@ article.contextual-region.emmr-source.full > div > div img {
 
 #recipe-trans .trxn-margin, p > .emmr-anno {
   position: relative;
-  color: red;
+  color: $color-red;
 }
 
 #recipe-trans .trxn-margin {
@@ -453,6 +453,11 @@ article.contextual-region.emmr-source.full > div > div img {
 
 #recipe-trans .trxn-margin > .trxn-text {
   visibility: hidden !important;
+}
+
+#recipe-trans .trxn-margin:not(.trxn-text) {
+  background-color: $color-red;
+  color: white;
 }
 
 #recipe-anno .field--name-field-annotation-text {
