@@ -3,7 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_institution
+    - field.storage.node.field_reference
     - field.storage.node.field_source_desc
+    - field.storage.node.field_source_origin
+    - field.storage.node.field_sublocation
     - node.type.emmr_source
   module:
     - node
@@ -250,6 +254,258 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_institution:
+          id: field_institution
+          table: node__field_institution
+          field: field_institution
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Institution
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_reference:
+          id: field_reference
+          table: node__field_reference
+          field: field_reference
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Reference
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_source_origin:
+          id: field_source_origin
+          table: node__field_source_origin
+          field: field_source_origin
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Source Origin'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_sublocation:
+          id: field_sublocation
+          table: node__field_sublocation
+          field: field_sublocation
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Sublocation
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -261,7 +517,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"advanced-source-row\">\n<div class=\"advanced-source-title\">{{ title }}\n<div class=\"source-desc-recipes\">\n<p>{{ field_source_desc }}<p>\n<a class=\"recipe-toggle\" data-toggle=\"collapse\" data-target=\".collapsed-recipes-{{ nid }}\">Recipes from this collection <span class=\"glyphicon glyphicon-triangle-right\"></span></a>\n<div class=\"row collapse collapsed-recipes-{{ nid }} collapsed-recipes\">\n{{ drupal_view('emmr_recipes_by_source', 'block_1', nid) }}\n</div>\n</div>\n</div>"
+            text: "<div class=\"advanced-source-row\">\n<div class=\"advanced-source-title\">{{ title }}</div>\n<div class=\"source-desc-recipes\">\n<p>{{ field_source_desc }}</p>\n<p><b>Institution: </b>{{ field_institution }} |\n<b>Reference: </b>{{ field_reference }} |\n<b>Source Origin: </b>{{ field_source_origin }} |\n<b>Sublocation: </b>{{ field_sublocation }}\n</p>\n<a class=\"recipe-toggle\" data-toggle=\"collapse\" data-target=\".collapsed-recipes-{{ nid }}\">Recipes from this collection <span class=\"glyphicon glyphicon-triangle-right\"></span></a>\n<div class=\"row collapse collapsed-recipes-{{ nid }} collapsed-recipes\">\n{{ drupal_view('emmr_recipes_by_source', 'block_1', nid) }}\n</div>\n</div>\n"
             make_link: false
             path: ''
             absolute: false
@@ -350,7 +606,11 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_institution'
+        - 'config:field.storage.node.field_reference'
         - 'config:field.storage.node.field_source_desc'
+        - 'config:field.storage.node.field_source_origin'
+        - 'config:field.storage.node.field_sublocation'
   page_1:
     display_plugin: page
     id: page_1
@@ -367,4 +627,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_institution'
+        - 'config:field.storage.node.field_reference'
         - 'config:field.storage.node.field_source_desc'
+        - 'config:field.storage.node.field_source_origin'
+        - 'config:field.storage.node.field_sublocation'
