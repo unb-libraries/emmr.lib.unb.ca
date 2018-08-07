@@ -9,3 +9,10 @@ settings:
   username: ''
   password: ''
   binary_location: /app/html/vendor/mikehaertl/phpwkhtmltopdf
+  zoom: 1
+  toc_generate: false
+  toc_enable_back_links: false
+  toc_disable_dotted_lines: false
+  toc_disable_links: false
+  viewport_size: _none
+  remove_pdf_margins: false
