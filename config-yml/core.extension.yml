@@ -18,6 +18,7 @@ module:
   emmr_ckeditor_replace: 0
   emmr_ckeditor_undo: 0
   emmr_core: 0
+  emmr_pdf: 0
   entity_print: 0
   entity_print_views: 0
   entity_reference_revisions: 0
