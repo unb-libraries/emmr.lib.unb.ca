@@ -1,5 +1,0 @@
-name: emmr_pdf
-type: module
-description: Contains emmr_pdf, a sandbox for EMMR pdf functionality tests.
-core: 8.x
-package: EMMR Custom Modules

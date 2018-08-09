@@ -28,6 +28,13 @@ emmr_core.about:
     _title: 'About The Site'
   requirements:
     _permission: 'access content'
+emmr_core.pdf:
+  path: '/pdf'
+  defaults:
+    _controller: '\Drupal\emmr_core\Controller\EmmrCoreController:pdf'
+    _title: 'PDF'
+  requirements:
+    _permission: 'access content'
 emmr_core.user:
   path: '/user/{uid}'
   defaults:
