@@ -67,7 +67,7 @@
     "require": {
         "composer/installers": "^1.2.0",
         "cweagans/composer-patches": "1.6.3",
-        "dompdf/dompdf": "dev-master",
+        "dompdf/dompdf": "~0.8.0",
         "drupal-composer/drupal-scaffold": "~2.2.0",
         "drupal/bootstrap": "3.12",
         "drupal/config_update": "1.1",
