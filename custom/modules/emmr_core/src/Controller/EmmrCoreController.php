@@ -32,19 +32,18 @@ class EmmrCoreController extends ControllerBase {
     // Render node view html to string.
     $node = \Drupal::entityManager()->getStorage('node')->load(2);
     $view_builder = \Drupal::entityManager()->getViewBuilder('node');
-    $renderarray = $view_builder->view($node, 'full');
+    $renderarray = $view_builder->view($node, 'pdf');
     $html = \Drupal::service('renderer')->renderRoot($renderarray);
 
     // Load html into dompdf.
+    $html .= "<head></head>";
     $dompdf->loadHtml($html, "utf-8");
 
     // Render the HTML as PDF.
     $dompdf->render();
 
     // Output the generated PDF to Browser.
-    kint($html);
     $dompdf->stream();
-    exit;
   }
 
   /**
