@@ -26,6 +26,11 @@ class EmmrCoreController extends ControllerBase {
    * {@inheritdoc}
    */
   public function pdf() {
+    $element = [
+      '#theme' => 'emmr_pdf',
+      '#attributes' => [],
+    ];
+
     // Instantiate and use the dompdf class.
     $dompdf = new Dompdf();
 
@@ -35,8 +40,14 @@ class EmmrCoreController extends ControllerBase {
     $renderarray = $view_builder->view($node, 'pdf');
     $html = \Drupal::service('renderer')->renderRoot($renderarray);
 
+    // Get module path.
+    $path = DRUPAL_ROOT . '/' . drupal_get_path("module", "emmr_core");
+
+    // Set base path for CSS.
+    $path .= "/css";
+    $dompdf->setBasePath($path);
+
     // Load html into dompdf.
-    $html .= "<head></head>";
     $dompdf->loadHtml($html, "utf-8");
 
     // Render the HTML as PDF.
@@ -44,6 +55,8 @@ class EmmrCoreController extends ControllerBase {
 
     // Output the generated PDF to Browser.
     $dompdf->stream();
+
+    return $element;
   }
 
   /**

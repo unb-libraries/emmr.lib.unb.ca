@@ -73,15 +73,16 @@
  */
 #}
 
-<article{{ attributes }}>
+<!DOCTYPE html>
+<html>
 
-  {{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
+<head>
+  <link rel="stylesheet" href="print-style.css">
+</head>
+
+<body>
+
+<article{{ attributes }}>
 
   {% if display_submitted %}
     <footer>
@@ -105,27 +106,9 @@
     </div>
   </div>
 
-  <div class="row" id="recipe-details-header">
-    <div class="col-md-12">
-      <h4>
-        <a id="recipe-collapse"
-        data-toggle="collapse" data-target="#recipe-details">
-          Details<span class="glyphicon glyphicon-triangle-right"></span>
-        </a>
-
-        <svg height="8" width="800">
-          <line x1="0" y1="0" x2="800" y2="0"
-          style="stroke:#ddd;stroke-width:2;"/>
-        </svg>
-      </h4>
-    </div>
-  </div>
-
   <div class="row collapse" id="recipe-details">
     <div class="col-md-12">
-      <h1>HELLO!!!!!!</h1>
       <p>{{ content.field_contributors }}</p>
-      <p><b>Title:&nbsp</b>{{ label }}</p>
       <p>{{ content.field_publication_format }}</p>
       <p>{{ content.field_recipe_type }}</p>
       <p>{{ content.field_symptoms }}</p>
@@ -139,9 +122,6 @@
 
   <br>
   <div class="row row-eq-height" id="pages-trans-anno">
-    <div class="col-md-2" id="recipe-pages">
-      <div id="recipe-pages-images">{{ content.field_recipe_images }}</div>
-    </div>
     <div class="col-md-8" id="recipe-trans">
       {{ content.field_recipe_transcription }}
     </div>
@@ -155,3 +135,7 @@
   </div>
 
 </article>
+
+</body>
+
+</html>
