@@ -25,9 +25,9 @@ class EmmrCoreController extends ControllerBase {
   /**
    * {@inheritdoc}
    */
-  public function pdf() {
+  public function recipePdf($nid) {
     $element = [
-      '#theme' => 'emmr_pdf',
+      '#theme' => 'recipe_pdf',
       '#attributes' => [],
     ];
 
@@ -35,7 +35,7 @@ class EmmrCoreController extends ControllerBase {
     $dompdf = new Dompdf();
 
     // Render node view html to string.
-    $node = \Drupal::entityManager()->getStorage('node')->load(2);
+    $node = \Drupal::entityManager()->getStorage('node')->load($nid);
     $view_builder = \Drupal::entityManager()->getViewBuilder('node');
     $renderarray = $view_builder->view($node, 'pdf');
     $html = \Drupal::service('renderer')->renderRoot($renderarray);
