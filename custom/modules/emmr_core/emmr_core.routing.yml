@@ -31,10 +31,11 @@ emmr_core.about:
 emmr_core.recipe_pdf:
   path: '/node/{nid}/emmr_recipe/pdf'
   defaults:
-    _controller: '\Drupal\emmr_core\Controller\EmmrCoreController:recipePdf'
+    _controller: '\Drupal\emmr_core\Controller\EmmrCoreController::recipePdf'
     _title: 'PDF'
   requirements:
     _permission: 'access content'
+    _custom_access: '\Drupal\emmr_core\Controller\EmmrCoreController::checkPdfAccess'
 emmr_core.user:
   path: '/user/{uid}'
   defaults:

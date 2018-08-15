@@ -3,6 +3,8 @@
 namespace Drupal\emmr_core\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Access\AccessResult;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Dompdf\Dompdf;
 
@@ -57,6 +59,14 @@ class EmmrCoreController extends ControllerBase {
     $dompdf->stream();
 
     return $element;
+  }
+
+  /**
+   * Check if node is a recipe.
+   */
+  public function checkPdfAccess($nid) {
+    $node = Node::load($nid);
+    return AccessResult::allowedIf($node->bundle() === 'emmr_recipe');
   }
 
   /**
