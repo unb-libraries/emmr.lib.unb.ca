@@ -28,10 +28,10 @@ emmr_core.about:
     _title: 'About The Site'
   requirements:
     _permission: 'access content'
-emmr_core.pdf:
-  path: '/pdf'
+emmr_core.recipe_pdf:
+  path: '/node/{nid}/emmr_recipe/pdf'
   defaults:
-    _controller: '\Drupal\emmr_core\Controller\EmmrCoreController:pdf'
+    _controller: '\Drupal\emmr_core\Controller\EmmrCoreController:recipePdf'
     _title: 'PDF'
   requirements:
     _permission: 'access content'
