@@ -5,6 +5,7 @@ namespace Drupal\emmr_core\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\node\Entity\Node;
 use Drupal\Core\Access\AccessResult;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Dompdf\Dompdf;
 
@@ -28,11 +29,6 @@ class EmmrCoreController extends ControllerBase {
    * {@inheritdoc}
    */
   public function recipePdf($nid) {
-    $element = [
-      '#theme' => 'recipe_pdf',
-      '#attributes' => [],
-    ];
-
     // Instantiate and use the dompdf class.
     $dompdf = new Dompdf();
 
@@ -55,10 +51,13 @@ class EmmrCoreController extends ControllerBase {
     // Render the HTML as PDF.
     $dompdf->render();
 
-    // Output the generated PDF to Browser.
-    $dompdf->stream();
+    // Name PDF file.
+    $pdf_name = "document";
 
-    return $element;
+    $response = new Response($dompdf->output());
+    $response->headers->set('Content-Type', 'Content-type:application/pdf');
+    $response->headers->set('Content-Disposition', "attachment; filename=\"{$pdf_name}.pdf\"");
+    return $response;
   }
 
   /**
