@@ -52,7 +52,7 @@ class EmmrCoreController extends ControllerBase {
     $dompdf->render();
 
     // Name PDF file.
-    $pdf_name = "document";
+    $pdf_name = $node->getTitle();
 
     $response = new Response($dompdf->output());
     $response->headers->set('Content-Type', 'Content-type:application/pdf');
