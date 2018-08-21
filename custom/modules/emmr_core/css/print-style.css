@@ -1,2 +1,66 @@
+/* PDF Styling */
 body {
+  font-size: 14px;
+}
+
+.field--label, .field--name-field-contributor-role > .field--item {
+  font-weight: bold;
+}
+
+.field--name-field-contributors > .field--label, .field--label.sr-only {
+  display: none;
+}
+
+/* Transcription */
+#recipe-trans .trxn-caret {
+  position: relative;
+  bottom: -.9em;
+}
+
+#recipe-trans .trxn-text {
+  position: absolute;
+  display: inline;
+  width: max-content;
+  bottom: 1.5em;
+}
+
+#recipe-trans .trxn-replace {
+  position: relative;
+  bottom: -.9em;
+}
+
+#recipe-trans .trxn-retext {
+  position: absolute;
+  display: inline;
+  width: max-content;
+  bottom: 1.5em;
+}
+
+#recipe-trans .trxn-margin, p > .emmr-anno {
+  position: relative;
+}
+
+#recipe-trans .trxn-margin {
+  bottom: 1.1em;
+}
+
+#recipe-trans .trxn-margin > .trxn-text {
+  visibility: hidden;
+}
+
+#recipe-trans .trxn-margin:not(.trxn-text) {
+  color: white;
+}
+
+#recipe-anno .field--name-field-annotation-text {
+  font-weight: bold;
+}
+
+#marginalia .trxn-text {
+  position: relative;
+  bottom: 0px ;
+}
+
+#recipe-trans {
+    line-height: 340%;
 }
