@@ -61,9 +61,21 @@ class EmmrCoreController extends ControllerBase {
   }
 
   /**
+   * {@inheritdoc}
+   */
+  public function imageZip($nid) {
+    echo "Hello World! NODE ID: " . $nid;
+    $node = \Drupal::entityManager()->getStorage('node')->load($nid);
+    $zip_name = $node->getTitle() . " - Images";
+    $pdf_filename = tempnam(sys_get_temp_dir(), 'zip_temp');
+
+    exit;
+  }
+
+  /**
    * Check if node is a recipe.
    */
-  public function checkPdfAccess($nid) {
+  public function checkRecipe($nid) {
     $node = Node::load($nid);
     return AccessResult::allowedIf($node->bundle() === 'emmr_recipe');
   }

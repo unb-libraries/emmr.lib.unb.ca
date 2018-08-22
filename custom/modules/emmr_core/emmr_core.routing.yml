@@ -35,7 +35,15 @@ emmr_core.recipe_pdf:
     _title: 'PDF'
   requirements:
     _permission: 'access content'
-    _custom_access: '\Drupal\emmr_core\Controller\EmmrCoreController::checkPdfAccess'
+    _custom_access: '\Drupal\emmr_core\Controller\EmmrCoreController::checkRecipe'
+emmr_core.image_zip:
+  path: '/node/{nid}/emmr_recipe/image_zip'
+  defaults:
+    _controller: '\Drupal\emmr_core\Controller\EmmrCoreController::imageZip'
+    _title: 'ZIP'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\emmr_core\Controller\EmmrCoreController::checkRecipe'
 emmr_core.user:
   path: '/user/{uid}'
   defaults:
