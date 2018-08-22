@@ -116,10 +116,11 @@
       <p>{{ content.field_recipe_places }}</p>
       <p>{{ content.field_recipe_date_text }}</p>
       <p>{{ content.field_recipe_source }}</p>
-      <p>{{ content.field_abstract }}</p>
     </div>
   </div>
 
+  <br>
+  <div><p>{{ content.field_abstract }}</p></div>
   <br>
   <div class="row row-eq-height" id="pages-trans-anno">
     <div class="col-md-8" id="recipe-trans">
@@ -131,6 +132,16 @@
         {{ content.field_annotations }}
       </div>
     {% endif %}
+
+    <br>
+    <div>
+      <p>
+        {{ label }} recipe from Early Modern Maritime Recipes:
+        <a href="{{ url('<front>') }}node/{{ node.id }}">
+          {{ url('<front>') }}node/{{ node.id }}
+        </a>
+      </p>
+    </div>
 
   </div>
 
