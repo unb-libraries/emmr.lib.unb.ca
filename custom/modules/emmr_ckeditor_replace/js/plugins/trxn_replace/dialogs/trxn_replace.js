@@ -35,9 +35,6 @@ CKEDITOR.dialog.add('trxn_replaceDialog', function(editor) {
 
       selectedStrike.setText(selectedText);
 
-      // editor.insertElement(cursorSpan);
-      // editor.insertElement(selectedStrike);
-
       trxnTag.$.appendChild(selectedStrike.$);
       editor.insertElement(trxnTag);
     }
