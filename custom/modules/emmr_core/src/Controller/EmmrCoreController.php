@@ -65,10 +65,21 @@ class EmmrCoreController extends ControllerBase {
    */
   public function imageZip($nid) {
     echo "Hello World! NODE ID: " . $nid;
+
+    // Get node and temporary storage.
     $node = \Drupal::entityManager()->getStorage('node')->load($nid);
     $zip_name = $node->getTitle() . " - Images";
-    $pdf_filename = tempnam(sys_get_temp_dir(), 'zip_temp');
+    $zip_filename = tempnam(sys_get_temp_dir(), 'zip_temp');
+    // $zip_path = DRUPAL_ROOT . $zip_filename . ".zip";
+    $zip_path = $zip_filename . ".zip";
+    $zip_file_ok = file_put_contents($zip_path, '');
+    kint($zip_file_ok);
+    kint($zip_filename);
+    kint($zip_path);
+    $file_system = \Drupal::service('file_system');
 
+    $zip = archiver_get_archiver($zip_path)->getArchive();
+    kint($zip);
     exit;
   }
 
