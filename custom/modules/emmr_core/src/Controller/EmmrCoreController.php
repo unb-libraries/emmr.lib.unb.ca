@@ -7,6 +7,7 @@ use Drupal\node\Entity\Node;
 use Drupal\Core\Access\AccessResult;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Dompdf\Dompdf;
 
 /**
@@ -64,23 +65,53 @@ class EmmrCoreController extends ControllerBase {
    * {@inheritdoc}
    */
   public function imageZip($nid) {
-    echo "Hello World! NODE ID: " . $nid;
-
-    // Get node and temporary storage.
+    // Get node, temporary storage, empty file, file system.
     $node = \Drupal::entityManager()->getStorage('node')->load($nid);
     $zip_name = $node->getTitle() . " - Images";
     $zip_filename = tempnam(sys_get_temp_dir(), 'zip_temp');
-    // $zip_path = DRUPAL_ROOT . $zip_filename . ".zip";
     $zip_path = $zip_filename . ".zip";
     $zip_file_ok = file_put_contents($zip_path, '');
-    kint($zip_file_ok);
-    kint($zip_filename);
-    kint($zip_path);
     $file_system = \Drupal::service('file_system');
 
+    if ($zip_file_ok === FALSE) {
+      drupal_set_message('Can\'t create zip file.', 'error');
+      return;
+    }
+
+    // Get ZipArchive object.
     $zip = archiver_get_archiver($zip_path)->getArchive();
-    kint($zip);
-    exit;
+
+    // Get Drupal file objects from recipe images field.
+    $images = $node->get("field_recipe_images")->getValue();
+    $fids = [];
+
+    foreach ($images as $image) {
+      array_push($fids, $image["target_id"]);
+    }
+
+    $files = \Drupal::entityTypeManager()
+      ->getStorage('file')
+      ->loadMultiple($fids);
+
+    // Add files to ZipArchive.
+    foreach ($files as $file) {
+      // The name of the file inside the ZIP archive. If specified,
+      // it will override filename.
+      $localname = $file->getFilename();
+      // $filename - path to the file to add.
+      $filename = $file_system->realpath($file->getFileUri());
+      $zip->addFile($filename, $localname);
+    }
+
+    // Close ZipArchive.
+    $zip->close();
+
+    // Name ZIP, prepare and return download response.
+    $zip_name = $node->getTitle() . " - Images";
+    $response = new BinaryFileResponse($zip_path);
+    $response->headers->set('Content-Type', 'Content-type:application/zip');
+    $response->headers->set('Content-Disposition', "attachment; filename=\"{$zip_name}.zip\"");
+    return $response;
   }
 
   /**
