@@ -67,7 +67,8 @@ class EmmrCoreController extends ControllerBase {
   public function imageZip($nid) {
     // Get node, temporary storage, empty file, file system.
     $node = \Drupal::entityManager()->getStorage('node')->load($nid);
-    $zip_name = $node->getTitle() . " - Images";
+    $zip_name = "emmr-" . strtolower($this->fNameClean($node->getTitle())) .
+      "-id" . $nid . "-images";
     $zip_filename = tempnam(sys_get_temp_dir(), 'zip_temp');
     $zip_path = $zip_filename . ".zip";
     $zip_file_ok = file_put_contents($zip_path, '');
@@ -93,11 +94,16 @@ class EmmrCoreController extends ControllerBase {
       ->getStorage('file')
       ->loadMultiple($fids);
 
+    $nfile = 0;
+
     // Add files to ZipArchive.
     foreach ($files as $file) {
       // The name of the file inside the ZIP archive. If specified,
       // it will override filename.
-      $localname = $file->getFilename();
+      $nfile++;
+      $localname = $file->getFileName();
+      $ext = substr($localname, -3);
+      $localname = $zip_name . '-' . $nfile . '.' . $ext;
       // $filename - path to the file to add.
       $filename = $file_system->realpath($file->getFileUri());
       $zip->addFile($filename, $localname);
@@ -107,11 +113,19 @@ class EmmrCoreController extends ControllerBase {
     $zip->close();
 
     // Name ZIP, prepare and return download response.
-    $zip_name = $node->getTitle() . " - Images";
     $response = new BinaryFileResponse($zip_path);
     $response->headers->set('Content-Type', 'Content-type:application/zip');
     $response->headers->set('Content-Disposition', "attachment; filename=\"{$zip_name}.zip\"");
     return $response;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function fNameClean($string) {
+    $string = str_replace(' ', '-', $string);
+    $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string);
+    return preg_replace('/-+/', '-', $string);
   }
 
   /**
