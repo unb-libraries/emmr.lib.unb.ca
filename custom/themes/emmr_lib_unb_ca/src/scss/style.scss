@@ -44,6 +44,10 @@ body > div.dialog-off-canvas-main-canvas > div.main-container {
   }
 }
 
+td {
+  padding: 10px;
+}
+
 a, a:active, a:focus, a:visited {
   color: $color-red;
 
@@ -307,7 +311,7 @@ div.form-item-combine:focus-within::before {
 
 #home-featured td {
   width: 40%;
-  padding: 4px;
+  padding: 4px !important;
 }
 
 #featured-image img {

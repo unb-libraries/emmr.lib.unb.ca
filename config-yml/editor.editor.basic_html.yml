@@ -43,6 +43,7 @@ settings:
           items:
             - BulletedList
             - NumberedList
+            - Table
         -
           name: Media
           items:
