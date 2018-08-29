@@ -44,6 +44,8 @@ emmr_core.image_zip:
   requirements:
     _permission: 'access content'
     _custom_access: '\Drupal\emmr_core\Controller\EmmrCoreController::checkRecipe'
+  options:
+    no_cache: 'TRUE'
 emmr_core.user:
   path: '/user/{uid}'
   defaults:

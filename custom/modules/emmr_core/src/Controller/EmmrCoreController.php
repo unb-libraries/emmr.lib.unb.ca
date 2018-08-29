@@ -7,7 +7,6 @@ use Drupal\node\Entity\Node;
 use Drupal\Core\Access\AccessResult;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Dompdf\Dompdf;
 
 /**
@@ -109,11 +108,15 @@ class EmmrCoreController extends ControllerBase {
       $zip->addFile($filename, $localname);
     }
 
+    unset($files);
+    unset($file);
+
     // Close ZipArchive.
     $zip->close();
 
     // Name ZIP, prepare and return download response.
-    $response = new BinaryFileResponse($zip_path);
+    $out_response = file_get_contents($zip_path);
+    $response = new Response($out_response);
     $response->headers->set('Content-Type', 'Content-type:application/zip');
     $response->headers->set('Content-Disposition', "attachment; filename=\"{$zip_name}.zip\"");
     return $response;
