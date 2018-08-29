@@ -3,6 +3,15 @@ body {
   font-size: 14px;
 }
 
+table {
+  border-collapse: collapse !important;
+  border: 1px solid black;
+}
+
+td {
+  padding: 10px;
+}
+
 .field--label, .field--name-field-contributor-role > .field--item {
   font-weight: bold;
 }
