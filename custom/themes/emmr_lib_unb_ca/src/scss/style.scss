@@ -371,8 +371,7 @@ body > div.dialog-off-canvas-main-canvas > div > div > div > div > nav > ul
   display: -ms-flexbox;
 }
 
-#recipe-details,
-#pages-trans-anno {
+#recipe-details {
   padding-left: 40px;
 }
 
@@ -386,12 +385,6 @@ body > div.dialog-off-canvas-main-canvas > div > div > div > div > nav > ul
   .field--items {
     padding-top: 1em;
   }
-}
-
-#recipe-pages,
-#recipe-trans,
-#recipe-anno {
-  margin: 10px;
 }
 
 #recipe-anno > div > div.field--items > div > div {
@@ -467,9 +460,13 @@ h1.js-quickedit-page-title.page-header > a {
   visibility: hidden !important;
 }
 
-#recipe-trans .trxn-margin:not(.trxn-text) {
+.trxn-number {
   background-color: $color-red;
   color: white;
+}
+
+#recipe-anno .trxn-number {
+  margin-right: 6px;
 }
 
 #recipe-anno .field--name-field-annotation-text {
@@ -479,10 +476,6 @@ h1.js-quickedit-page-title.page-header > a {
 #marginalia .trxn-text {
   position: relative !important;
   bottom: 0px !important;
-
-    &::before {
-      content: ". ";
-    }
 }
 
 #marginalia {
