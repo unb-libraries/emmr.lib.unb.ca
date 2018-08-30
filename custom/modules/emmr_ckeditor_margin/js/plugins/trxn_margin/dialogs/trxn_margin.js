@@ -20,6 +20,7 @@ CKEDITOR.dialog.add('trxn_marginDialog', function(editor) {
     onOk: function() {
       var dialog = this;
       var marginText = dialog.getValueOf('tab-margin', 'to-margin');
+      var marginSpan = editor.document.createElement('span');
       var textSpan = editor.document.createElement('span');
       var numberSpan = editor.document.createElement('span');
       var trxnTag = editor.document.createElement('trxn');
@@ -27,16 +28,20 @@ CKEDITOR.dialog.add('trxn_marginDialog', function(editor) {
       textSpan.setAttribute('class', 'trxn-text');
       textSpan.setText(marginText);
 
-      numberSpan.setAttribute('class', 'trxn-margin');
+      numberSpan.setAttribute('class', 'trxn-number');
       numberSpan.setText('X');
-      numberSpan.$.appendChild(textSpan.$);
-      trxnTag.$.appendChild(numberSpan.$);
 
+      marginSpan.setAttribute('class', 'trxn-margin');
+      marginSpan.$.appendChild(numberSpan.$);
+      marginSpan.$.appendChild(textSpan.$);
+      trxnTag.$.appendChild(marginSpan.$);
+
+      editor.insertHtml("&nbsp");
       editor.insertHtml(editor.getSelectedHtml(true));
       editor.insertElement(trxnTag);
 
       // Re-number marginalia
-      var margins = editor.document.find('.trxn-margin');
+      var margins = editor.document.find('.trxn-number');
 
       for (var i = 0; i < margins.$.length; i++) {
         margins.$[i].firstChild.data = (i + 1).toString();
