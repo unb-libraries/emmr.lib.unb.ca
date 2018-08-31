@@ -119,19 +119,9 @@ function emmr_core_node_presave($node) {
     }
 
     foreach ($annos_val as $val) {
-      $len = strlen($val);
-      $pos = strpos(strtoupper($trans), strtoupper($val));
-
-      if ($pos !== FALSE) {
-        $pre = substr($trans, 0, $pos);
-        $mid = substr($trans, $pos, $len);
-        $end = substr($trans, $pos + $len);
-        $pre_tail = substr($pre, -24);
-
-        if ($pre_tail != '<span class="emmr-anno">') {
-          $trans = $pre . '<span class="emmr-anno">' . $mid . '</span>' . $end;
-        }
-      }
+      $pattern = "/(?i)(?<= |^)" . $val . "(?= |$)/";
+      $replacement = "<span class='emmr-anno'>" . strtolower($val) . '</span>';
+      $trans = preg_replace($pattern, $replacement, $trans);
     }
 
     $trans_full = ['format' => "basic_html", 'value' => $trans];
