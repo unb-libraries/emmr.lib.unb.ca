@@ -137,23 +137,22 @@
   </div>
 
   <br>
-  <div class="row row-eq-height" id="pages-trans-anno">
-    <div class="col-md-2" id="recipe-pages">
-      <div id="recipe-pages-images">{{ content.field_recipe_images }}</div>
-    </div>
-    <div class="col-md-8" id="recipe-trans">
-      {{ content.field_recipe_transcription }}
-    </div>
 
-    {% if content.field_annotations['0'] %}
-      <div class="col-md-2" id="recipe-anno">
-        {{ content.field_annotations }}
+  <div class="container" id="pages-trans-anno">
+    <div class="row row-eq-height">
+      <div class="col-md-2" id="recipe-pages">
+        <div id="recipe-pages-images">{{ content.field_recipe_images }}</div>
       </div>
-    {% endif %}
+      <div class="col-md-8" id="recipe-trans">
+        {{ content.field_recipe_transcription }}
+      </div>
 
-  </div>
+      {% if content.field_annotations['0'] %}
+        <div class="col-md-2" id="recipe-anno">
+          {{ content.field_annotations }}
+        </div>
+      {% endif %}
 
-  <div class="container">
     <div class="row">
       <div class="col-md-4 col-sm-offset-7" id="download">
         <p>Download:
