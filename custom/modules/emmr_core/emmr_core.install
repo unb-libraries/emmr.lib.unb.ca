@@ -66,6 +66,33 @@ function emmr_core_update_8101() {
   addTerms('emmr_source_institutions', $src_institutions);
 }
 
+function emmr_core_update_8101() {
+  $src_institutions = [
+    'Acadia University Archives',
+    'Mount Allison University Archives',
+    'New Brunswick Museum Archives and Research Library',
+    'Nova Scotia Archives',
+    'Prince Edward Island Public Archives',
+    'Provincial Archives of New Brunswick',
+    'University of New Brunswick Archives and Special Collections',
+  ];
+
+  addTerms('emmr_source_institutions', $src_institutions);
+}
+
+function custom_update_8002() {
+  // Get an array of all 'recipe' node ids.
+  $article_nids = \Drupal::entityQuery('node')
+    ->condition('type', 'emmr_recipe')
+    ->execute();
+
+  // Load all the articles.
+  $articles = Node::loadMultiple($article_nids);
+  foreach ($articles as $article) {
+    $article->save();
+  }
+}
+
 function addTerms($voc, $terms) {
 
   foreach ($terms as $term) {
