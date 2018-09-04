@@ -65,11 +65,10 @@ function emmr_core_theme($existing, $type, $theme, $path) {
  * Implements hook_ENTITY_TYPE_presave().
  */
 function emmr_core_node_presave($node) {
-  // Generate mid date on recipe save.
+  // Clear imprecise date fields if date not imprecise.
   if ($node->bundle() == "emmr_recipe") {
 
     $imprecise = $node->get('field_imprecise_date')->getValue()[0]['value'];
-    $date = $node->get('field_recipe_date')->getValue();
 
     if (!$imprecise) {
       $node->get('field_recipe_date_text')->setValue("");
@@ -93,6 +92,16 @@ function emmr_core_node_presave($node) {
         $node->get('field_contributors')->setValue(NULL);
       }
     }
+
+    // Update text search ingredient list.
+    $ing_list = $node->get('field_ingredients')->getValue();
+    $ingredients = "";
+
+    foreach ($ing_list as $ing) {
+      $ingredients .= $ing['value'] . " ";
+    }
+
+    $node->get('field_ingredients_search')->setValue($ingredients);
 
     // Process annotations.
     // Recover transcription.
