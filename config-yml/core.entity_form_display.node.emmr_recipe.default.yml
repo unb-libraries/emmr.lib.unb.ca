@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.emmr_recipe.field_digitized_from_original
     - field.field.node.emmr_recipe.field_imprecise_date
     - field.field.node.emmr_recipe.field_ingredients
+    - field.field.node.emmr_recipe.field_ingredients_search
     - field.field.node.emmr_recipe.field_publication_format
     - field.field.node.emmr_recipe.field_recipe_date
     - field.field.node.emmr_recipe.field_recipe_date_text
@@ -168,6 +169,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_ingredients_search: true
   path: true
   promote: true
   status: true

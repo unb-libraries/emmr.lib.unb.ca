@@ -1,0 +1,19 @@
+uuid: cfa31b82-1464-4b4a-8fa4-60033def6889
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ingredients_search
+    - node.type.emmr_recipe
+id: node.emmr_recipe.field_ingredients_search
+field_name: field_ingredients_search
+entity_type: node
+bundle: emmr_recipe
+label: 'Ingredients Search'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
