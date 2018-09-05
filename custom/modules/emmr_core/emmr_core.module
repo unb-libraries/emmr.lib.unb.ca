@@ -128,8 +128,8 @@ function emmr_core_node_presave($node) {
     }
 
     foreach ($annos_val as $val) {
-      $pattern = '/(?<= |^)(' . $val . ')(?= |$)/i';
-      $replacement = '<span class="emmr-anno"> $1 </span>';
+      $pattern = '/(\b\Q' . $val . '\E\b)/mi';
+      $replacement = '<span class="emmr-anno">$1</span>';
       $trans = preg_replace($pattern, $replacement, $trans);
     }
 
