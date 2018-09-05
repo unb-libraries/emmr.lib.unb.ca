@@ -5,19 +5,19 @@ dependencies: {  }
 name: emmr_recipe_page
 label: 'emmr_recipe_page (112x192)'
 effects:
-  bdfb64f6-13a5-4eca-8fbc-c9374962a7b4:
-    uuid: bdfb64f6-13a5-4eca-8fbc-c9374962a7b4
-    id: image_crop
-    weight: -9
-    data:
-      width: 112
-      height: 172
-      anchor: left-top
-  a3c8ae9b-4579-4423-815e-c23040fa8f8f:
-    uuid: a3c8ae9b-4579-4423-815e-c23040fa8f8f
+  0536e792-6c3c-4ffe-aeed-1e7cdd1e31e9:
+    uuid: 0536e792-6c3c-4ffe-aeed-1e7cdd1e31e9
     id: image_scale
-    weight: -10
+    weight: 1
+    data:
+      width: null
+      height: 192
+      upscale: false
+  3badebfe-3899-48ec-b9ed-be88a0d1034b:
+    uuid: 3badebfe-3899-48ec-b9ed-be88a0d1034b
+    id: image_crop
+    weight: 2
     data:
       width: 112
-      height: null
-      upscale: false
+      height: 192
+      anchor: left-bottom
