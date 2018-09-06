@@ -407,9 +407,11 @@ article.contextual-region div#source-content div.field img {
 
 h1.page-header > a {
   color: white !important;
+  text-decoration: underline !important;
 
   &:hover, &:focus, &:active, &:visited {
     color: white !important;
+    text-decoration: underline !important;
   }
 }
 
