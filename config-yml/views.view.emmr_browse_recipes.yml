@@ -978,7 +978,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: browse-recipes
+      path: search-recipes
       filters:
         combine:
           id: combine
@@ -2550,7 +2550,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<br>\n<a href=\"/browse-recipes\">Search Again<a>"
+            value: "<br>\n<a href=\"/search-recipes\">Search Again<a>"
             format: basic_html
           plugin_id: text
     cache_metadata:
