@@ -457,7 +457,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '- {{ field_contributors }}'
+            text: ' - {{ field_contributors }}'
             make_link: false
             path: ''
             absolute: false
