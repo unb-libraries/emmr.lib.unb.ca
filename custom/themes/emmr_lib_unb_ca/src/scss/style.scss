@@ -522,8 +522,9 @@ h1.page-header > a {
   margin-bottom: 0px;
 }
 
-.full-recipes-for-row .paragraph-formatter.form-group {
+.paragraph-formatter.form-group {
   display: inline-table;
+  display: -moz-box;
 }
 
 .full-recipes-for-row .paragraphs-collapsed-description::after {
