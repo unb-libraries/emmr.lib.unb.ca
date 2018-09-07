@@ -33,3 +33,22 @@ Feature: Core
       When I visit "/"
       Then I should see the link "Early Modern Maritime Recipes"
       And I should see the link "Add Recipe"
+
+    Scenario: Create source
+      Given "emmr_source" content:
+      | title             | field_source_desc | field_institution     |
+      | Test Source       | Test Description  | Dalhousie University  |
+      When I visit "/sources"
+      Then I should see the link "Test Source"
+
+    Scenario: Create recipe
+      Given "emmr_source" content:
+      | title             | field_source_desc | field_institution     |
+      | Test Source       | Test Description  | Dalhousie University  |
+      And "emmr_recipe" content:
+      | field_recipe_source | title       | field_recipe_transcription | field_imprecise_date |
+      | Test Source         | Test Recipe | Test Transcription 123     | FALSE                |
+      When I visit "/search-recipes"
+      And I fill in "Keyword" with "123"
+      Then I press "Search"
+      Then I should see the link "Test Recipe"
