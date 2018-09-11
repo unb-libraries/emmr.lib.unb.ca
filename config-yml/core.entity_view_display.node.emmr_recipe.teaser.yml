@@ -27,6 +27,7 @@ hidden:
   field_digitized_from_original: true
   field_imprecise_date: true
   field_ingredients: true
+  field_ingredients_search: true
   field_original_location: true
   field_plain_contributors: true
   field_publication_format: true
