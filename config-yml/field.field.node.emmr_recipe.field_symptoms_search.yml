@@ -1,0 +1,19 @@
+uuid: 082156d9-acea-4c35-9db9-228c8472a4c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_symptoms_search
+    - node.type.emmr_recipe
+id: node.emmr_recipe.field_symptoms_search
+field_name: field_symptoms_search
+entity_type: node
+bundle: emmr_recipe
+label: 'Symptoms Search'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

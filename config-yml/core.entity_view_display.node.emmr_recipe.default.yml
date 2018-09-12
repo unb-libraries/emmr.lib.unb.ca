@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.emmr_recipe.field_recipe_transcription
     - field.field.node.emmr_recipe.field_recipe_type
     - field.field.node.emmr_recipe.field_symptoms
+    - field.field.node.emmr_recipe.field_symptoms_search
     - image.style.emmr_recipe_page
     - node.type.emmr_recipe
   module:
@@ -162,6 +163,14 @@ content:
     region: content
   field_symptoms:
     weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_symptoms_search:
+    weight: 16
     label: above
     settings:
       link_to_entity: false
