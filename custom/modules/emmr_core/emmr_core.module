@@ -111,10 +111,6 @@ function emmr_core_node_presave($node) {
 
     $node->get('field_symptoms_search')->setValue($symptoms);
 
-    kint($symptoms);
-    kint($node->get('field_symptoms_search')->getValue());
-    exit;
-
     // Process annotations.
     // Recover transcription.
     $trans = $node->get('field_recipe_transcription')->getValue()[0]['value'];
