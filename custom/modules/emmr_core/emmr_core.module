@@ -93,7 +93,7 @@ function emmr_core_node_presave($node) {
       }
     }
 
-    // Update text search ingredient list.
+    // Update text search ingredients list.
     $ing_list = $node->get('field_ingredients')->getValue();
     $ingredients = "";
 
@@ -101,7 +101,19 @@ function emmr_core_node_presave($node) {
       $ingredients .= $ing['value'] . " ";
     }
 
-    $node->get('field_ingredients_search')->setValue($ingredients);
+    // Update text search symptoms list.
+    $sym_list = $node->get('field_symptoms')->getValue();
+    $symptoms = "";
+
+    foreach ($sym_list as $sym) {
+      $symptoms .= $sym['value'] . " ";
+    }
+
+    $node->get('field_symptoms_search')->setValue($symptoms);
+
+    kint($symptoms);
+    kint($node->get('field_symptoms_search')->getValue());
+    exit;
 
     // Process annotations.
     // Recover transcription.
