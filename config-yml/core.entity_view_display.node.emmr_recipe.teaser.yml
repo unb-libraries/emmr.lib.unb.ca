@@ -47,3 +47,4 @@ hidden:
   field_source_shelf_location: true
   field_source_sublocation: true
   field_symptoms: true
+  field_symptoms_search: true
