@@ -4,6 +4,8 @@ emmr_core.home:
     _controller: '\Drupal\emmr_core\Controller\EmmrCoreController:home'
   requirements:
     _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
 emmr_core.search:
   path: '/search-recipes'
   defaults:
