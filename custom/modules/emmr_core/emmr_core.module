@@ -84,11 +84,11 @@ function emmr_core_preprocess_node(&$variables) {
     }
 
     foreach ($annos_val as $val) {
+      $val = preg_replace('/$[[:punct:]]$/', '', $val);
       $pattern = '/(\b\Q' . $val . '\E\b)/mi';
       $replacement = '<span class="emmr-anno">$1</span>';
       $trans = preg_replace($pattern, $replacement, $trans);
     }
-
     $variables['content']['field_recipe_transcription'][0]['#text'] = $trans;
   }
 }
