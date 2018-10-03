@@ -125,12 +125,20 @@
     <div class="col-md-12">
       <p>{{ content.field_contributors }}</p>
       <p><b>Title:&nbsp</b>{{ label }}</p>
+
+      <p><b>Date:&nbsp</b>{{ content.field_recipe_date_text.0 }}
+
+      [ {{ node.field_recipe_date.value|date("d/m/Y") }}
+
+      {% if node.field_recipe_date_to.value %}
+        - {{ node.field_recipe_date_to.value|date("d/m/Y") }}
+      {% endif %}]</p>
+
       <p>{{ content.field_publication_format }}</p>
       <p>{{ content.field_recipe_type }}</p>
       <p>{{ content.field_symptoms }}</p>
       <p>{{ content.field_ingredients }}</p>
       <p>{{ content.field_recipe_places }}</p>
-      <p>{{ content.field_recipe_date_text }}</p>
       <p>{{ content.field_recipe_source }}</p>
       <p>{{ content.field_abstract }}</p>
     </div>
