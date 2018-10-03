@@ -126,13 +126,17 @@
       <p>{{ content.field_contributors }}</p>
       <p><b>Title:&nbsp</b>{{ label }}</p>
 
-      <p><b>Date:&nbsp</b>{{ content.field_recipe_date_text.0 }}
+      <p><b>Date:</b>
 
-      [ {{ node.field_recipe_date.value|date("d/m/Y") }}
+      {% if node.field_recipe_date_text.value %}
+        {{ content.field_recipe_date_text.0 }} |
+      {% endif %}
+
+      {{ node.field_recipe_date.value|date("Y/m/d") }}
 
       {% if node.field_recipe_date_to.value %}
-        - {{ node.field_recipe_date_to.value|date("d/m/Y") }}
-      {% endif %}]</p>
+        to {{ node.field_recipe_date_to.value|date("Y/m/d") }}
+      {% endif %}</p>
 
       <p>{{ content.field_publication_format }}</p>
       <p>{{ content.field_recipe_type }}</p>
