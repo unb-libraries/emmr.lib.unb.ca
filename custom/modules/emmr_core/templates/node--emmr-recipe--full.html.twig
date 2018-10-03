@@ -129,10 +129,16 @@
       <p><b>Date:</b>
 
       {% if node.field_recipe_date_text.value %}
-        {{ content.field_recipe_date_text.0 }} |
+        {{ content.field_recipe_date_text.0 }}
+
+        {% if node.field_recipe_date.value or node.field_recipe_date_to.value %}
+          |
+        {% endif %}
       {% endif %}
 
-      {{ node.field_recipe_date.value|date("Y/m/d") }}
+      {% if node.field_recipe_date.value %}
+        {{ node.field_recipe_date.value|date("Y/m/d") }}
+      {% endif %}
 
       {% if node.field_recipe_date_to.value %}
         to {{ node.field_recipe_date_to.value|date("Y/m/d") }}
