@@ -74,22 +74,25 @@ function emmr_core_preprocess_node(&$variables) {
 
     // Update annotations.
     $annos = $node->get('field_annotations')->getValue();
-    $annos_num = count($variables['content']['field_annotations']['#items']);
-    $annos_val = [];
-    $i = 0;
 
-    while ($i < $annos_num) {
-      $annos_val[] = $variables['content']['field_annotations'][$i]['#paragraph']->get('field_annotation_text')->getValue()[0]['value'];
-      $i++;
-    }
+    if ($annos) {
+      $annos_num = count($variables['content']['field_annotations']['#items']);
+      $annos_val = [];
+      $i = 0;
 
-    foreach ($annos_val as $val) {
-      $val = preg_replace('/(^[[:punct:]]|[[:punct:]]$)/', '', $val);
-      $pattern = '/(\b\Q' . $val . '\E\b)/mi';
-      $replacement = '<span class="emmr-anno">$1</span>';
-      $trans = preg_replace($pattern, $replacement, $trans);
+      while ($i < $annos_num) {
+        $annos_val[] = $variables['content']['field_annotations'][$i]['#paragraph']->get('field_annotation_text')->getValue()[0]['value'];
+        $i++;
+      }
+
+      foreach ($annos_val as $val) {
+        $val = preg_replace('/(^[[:punct:]]|[[:punct:]]$)/', '', $val);
+        $pattern = '/(\b\Q' . $val . '\E\b)/mi';
+        $replacement = '<span class="emmr-anno">$1</span>';
+        $trans = preg_replace($pattern, $replacement, $trans);
+      }
+      $variables['content']['field_recipe_transcription'][0]['#text'] = $trans;
     }
-    $variables['content']['field_recipe_transcription'][0]['#text'] = $trans;
   }
 }
 
