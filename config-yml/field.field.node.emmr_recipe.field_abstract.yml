@@ -11,7 +11,7 @@ id: node.emmr_recipe.field_abstract
 field_name: field_abstract
 entity_type: node
 bundle: emmr_recipe
-label: Abstract
+label: Description
 description: ''
 required: false
 translatable: false
