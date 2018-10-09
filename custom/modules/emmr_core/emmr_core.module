@@ -5,7 +5,8 @@
  * Contains emmr_core.module.
  */
 
- use Drupal\block\Entity\Block;
+use Drupal\block\Entity\Block;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_preprocess_hook().
@@ -92,6 +93,13 @@ function emmr_core_preprocess_node(&$variables) {
         $trans = preg_replace($pattern, $replacement, $trans);
       }
       $variables['content']['field_recipe_transcription'][0]['#text'] = $trans;
+    }
+
+    // Add source node.
+    if (!empty($node->get('field_recipe_source')->getValue()[0]['target_id'])) {
+      $rid = intval($node->get('field_recipe_source')->getValue()[0]['target_id']);
+      kint($rid);
+      $source_node = Node::load($rid);
     }
   }
 }
