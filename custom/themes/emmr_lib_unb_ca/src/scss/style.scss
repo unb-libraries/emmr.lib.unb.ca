@@ -197,9 +197,18 @@ div.form-item-field-recipe-date-to-value-max {
   padding-left: 20px;
 }
 
-// Create Source Form
-#node-emmr-source-form > div.form-item.js-form-item.form-type-vertical-tabs,
-#node-emmr-recipe-form > div.form-item.js-form-item.form-type-vertical-tabs {
+// Edit Forms
+ul.nav.nav-tabs.vertical-tabs-list a[href='#edit-meta'],
+ul.nav.nav-tabs.vertical-tabs-list a[href='#edit-menu'] {
+  display: none;
+}
+
+button#edit-preview {
+  display: none;
+}
+
+// Edit Source Form
+form.node-emmr-source-edit-form.node-form ul.nav.nav-tabs.vertical-tabs-list {
   display: none;
 }
 
