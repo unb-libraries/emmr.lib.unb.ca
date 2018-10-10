@@ -15,6 +15,7 @@ permissions:
   - 'edit any emmr_recipe content'
   - 'edit any emmr_source content'
   - 'revert emmr_recipe revisions'
+  - 'view any unpublished emmr_recipe content'
   - 'view emmr_recipe revisions'
   - 'view own unpublished content'
   - 'view unpublished paragraphs'
