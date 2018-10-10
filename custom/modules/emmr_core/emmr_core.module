@@ -7,6 +7,7 @@
 
 use Drupal\block\Entity\Block;
 use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements hook_preprocess_hook().
@@ -95,11 +96,29 @@ function emmr_core_preprocess_node(&$variables) {
       $variables['content']['field_recipe_transcription'][0]['#text'] = $trans;
     }
 
-    // Add source node.
+    // Add source data.
     if (!empty($node->get('field_recipe_source')->getValue()[0]['target_id'])) {
-      $rid = intval($node->get('field_recipe_source')->getValue()[0]['target_id']);
-      kint($rid);
-      $source_node = Node::load($rid);
+      $sid = intval($node->get('field_recipe_source')->getValue()[0]['target_id']);
+
+      if (!empty(Node::load($sid))) {
+        $source = Node::load($sid);
+
+        $iid = !empty($source->get('field_institution')->getValue()[0]['target_id']) ?
+          $source->get('field_institution')->getValue()[0]['target_id'] : NULL;
+        $institution = !empty($iid) ? Term::load($iid)->getName() : "";
+
+        $origin = !empty($source->get('field_source_origin')->getValue()[0]) ?
+          $source->get('field_source_origin')->getValue()[0]['value'] : "";
+        $sublocation = !empty($source->get('field_sublocation')->getValue()) ?
+          $source->get('field_sublocation')->getValue()[0]['value'] : "";
+        $reference = !empty($source->get('field_reference')->getValue()) ?
+          $source->get('field_reference')->getValue()[0]['value'] : "";
+
+        $variables['source']['institution'] = $institution;
+        $variables['source']['origin'] = $origin;
+        $variables['source']['sublocation'] = $sublocation;
+        $variables['source']['reference'] = $reference;
+      }
     }
   }
 }
