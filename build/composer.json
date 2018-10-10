@@ -85,7 +85,7 @@
         "drupal/search_api": "1.0",
         "drupal/token_filter": "1.0",
         "drupal/twig_tweak": "2.1",
-        "drupal/view_unpublished": "1.x-dev",
+        "drupal/view_unpublished": "1.0",
         "drush/drush": "^8.1.15",
         "mikehaertl/phpwkhtmltopdf": "~2.1",
         "tecnickcom/tcpdf": "~6",
