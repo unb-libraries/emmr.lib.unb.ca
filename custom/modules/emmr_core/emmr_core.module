@@ -72,10 +72,12 @@ function emmr_core_preprocess_node(&$variables) {
   if ($node->bundle() == 'emmr_recipe') {
     // Process annotations.
     // Recover transcription.
-    $trans = $node->get('field_recipe_transcription')->getValue()[0]['value'];
+    $trans = !empty($node->get('field_recipe_transcription')->getValue()[0]) ?
+      $node->get('field_recipe_transcription')->getValue()[0]['value'] : "";
 
     // Update annotations.
-    $annos = $node->get('field_annotations')->getValue();
+    $annos = !empty($node->get('field_annotations')->getValue()) ?
+      $node->get('field_annotations')->getValue() : [];
 
     if ($annos) {
       $annos_num = count($variables['content']['field_annotations']['#items']);

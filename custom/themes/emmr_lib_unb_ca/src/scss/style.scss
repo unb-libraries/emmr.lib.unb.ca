@@ -136,49 +136,63 @@ footer.footer.container {
 }
 
 // Browse Recipes Form
-#views-exposed-form-emmr-browse-recipes-page-1 {
+#views-exposed-form-emmr-browse-recipes-page-1,
+#views-exposed-form-emmr-browse-recipes-page-3 {
   padding-left: 40px;
 }
 
 #views-exposed-form-emmr-browse-recipes-page-1 > div >
+div.form-item.js-form-item,
+#views-exposed-form-emmr-browse-recipes-page-3 > div >
 div.form-item.js-form-item {
   display: table;
 }
 
 #views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(6),
-#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(7) {
+#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(7),
+#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(6),
+#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(7) {
   display: inline-block !important;
 }
 
-#views-exposed-form-emmr-browse-recipes-page-1 div.form-item {
+#views-exposed-form-emmr-browse-recipes-page-1 div.form-item,
+#views-exposed-form-emmr-browse-recipes-page-3 div.form-item {
   padding-right: 20px;
   padding-bottom: 10px;
 }
 
-#views-exposed-form-emmr-browse-recipes-page-1 label {
+#views-exposed-form-emmr-browse-recipes-page-1 label,
+#views-exposed-form-emmr-browse-recipes-page-3 label {
   width: 100px;
 }
 
 #views-exposed-form-emmr-browse-recipes-page-1 input,
-#views-exposed-form-emmr-browse-recipes-page-1 select {
+#views-exposed-form-emmr-browse-recipes-page-1 select,
+#views-exposed-form-emmr-browse-recipes-page-3 input,
+#views-exposed-form-emmr-browse-recipes-page-3 select {
   width: 310px;
 }
 
 #views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(6) > input,
-#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(7) > input {
+#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(7) > input,
+#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(6) > input,
+#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(7) > input {
   width: 124px;
 }
 
-#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(6) > input {
+#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(6) > input,
+#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(6) > input {
   position: relative;
   left: -4px;
 }
 
-#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(7) > label {
+#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(7) > label,
+#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(7) > label {
   width: 30px;
 }
 
-#views-exposed-form-emmr-browse-recipes-page-1  > div > div:nth-child(10) {
+#views-exposed-form-emmr-browse-recipes-page-1  > div > div:nth-child(10),
+#views-exposed-form-emmr-browse-recipes-page-3  > div > div:nth-child(10) {
   display: table;
 }
 
@@ -198,26 +212,6 @@ div.form-item-field-recipe-date-to-value-max {
 }
 
 // Edit Forms
-ul.nav.nav-tabs.vertical-tabs-list a[href='#edit-meta'],
-ul.nav.nav-tabs.vertical-tabs-list a[href='#edit-menu'] {
-  display: none;
-}
-
-button#edit-preview {
-  display: none;
-}
-
-// Edit Source Form
-form.node-emmr-source-edit-form.node-form ul.nav.nav-tabs.vertical-tabs-list {
-  display: none;
-}
-
-// Create Recipe Form
-.filter-wrapper.form-inline.form-group.js-form-wrapper.form-wrapper,
-div > div > div.table-responsive > button {
-  display: none;
-}
-
 #edit-field-recipe-date-wrapper,
 #edit-field-imprecise-date-wrapper,
 #edit-field-recipe-date-to-wrapper,
