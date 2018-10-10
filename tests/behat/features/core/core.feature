@@ -46,9 +46,10 @@ Feature: Core
       | title             | field_source_desc | field_institution     |
       | Test Source       | Test Description  | Dalhousie University  |
       And "emmr_recipe" content:
-      | field_recipe_source | title       | field_recipe_transcription | field_imprecise_date |
-      | Test Source         | Test Recipe | Test Transcription 123     | FALSE                |
-      When I visit "/search-recipes"
+      | field_recipe_source | title       | field_recipe_transcription | field_imprecise_date | published |
+      | Test Source         | Test Recipe | Test Transcription 123     | FALSE                | TRUE      |
+      Given I am logged in as a user with the "EMMR Contributor" role
+      When I visit "/all-recipes"
       And I fill in "Keyword" with "123"
       Then I press "Search"
-      Then I should see the link "Test Recipe"
+      Then I should see "Test Recipe"
