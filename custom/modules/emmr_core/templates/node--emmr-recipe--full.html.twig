@@ -150,6 +150,24 @@
       <p>{{ content.field_ingredients }}</p>
       <p>{{ content.field_recipe_places }}</p>
       <p>{{ content.field_recipe_source }}</p>
+
+        {% if source.institution %}
+          <p><b>Source Institution: </b>{{ source.institution }}</p>
+        {% endif %}
+
+        {% if source.origin %}
+          <p><b>Source Origin: </b>{{ source.origin }}</p>
+        {% endif %}
+
+        {% if source.sublocation %}
+          <p><b>Source Sublocation: </b>{{ source.sublocation }}</p>
+        {% endif %}
+
+        {% if source.reference %}
+          <p><b>Source Reference: </b>{{ source.reference }}</p>
+        {% endif %}
+
+      </p>
       <p>{{ content.field_abstract }}</p>
     </div>
   </div>
