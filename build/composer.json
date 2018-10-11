@@ -44,9 +44,6 @@
         "patches": {
             "drupal/core": {
                 "To correct DerivativeDiscoveryDecorator warning": "https://www.drupal.org/files/issues/patch_empty_fix.patch"
-            },
-            "drupal/paragraphs": {
-                "Fix integration with content moderation in multi-lingual scenarios": "https://www.drupal.org/files/issues/2018-10-04/paragraphs-paragraphs-translatable-revision-2951436-129.patch"
             }
         }
     },
