@@ -69,6 +69,10 @@ function emmr_core_theme($existing, $type, $theme, $path) {
 function emmr_core_preprocess_node(&$variables) {
   $node = $variables['node'];
 
+  if ($node->bundle() == 'emmr_source') {
+    drupal_flush_all_caches();
+  }
+
   if ($node->bundle() == 'emmr_recipe') {
     // Process annotations.
     // Recover transcription.
@@ -105,6 +109,8 @@ function emmr_core_preprocess_node(&$variables) {
       if (!empty(Node::load($sid))) {
         $source = Node::load($sid);
 
+        $sname = $source->getTitle();
+
         $iid = !empty($source->get('field_institution')->getValue()[0]['target_id']) ?
           $source->get('field_institution')->getValue()[0]['target_id'] : NULL;
         $institution = !empty($iid) ? Term::load($iid)->getName() : "";
@@ -116,6 +122,7 @@ function emmr_core_preprocess_node(&$variables) {
         $reference = !empty($source->get('field_reference')->getValue()) ?
           $source->get('field_reference')->getValue()[0]['value'] : "";
 
+        $variables['source']['name'] = $sname;
         $variables['source']['institution'] = $institution;
         $variables['source']['origin'] = $origin;
         $variables['source']['sublocation'] = $sublocation;
