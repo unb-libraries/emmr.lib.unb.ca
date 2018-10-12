@@ -55,3 +55,15 @@ emmr_core.user:
     _title: 'User'
   requirements:
     _permission: 'access content'
+emmr_core.user_add:
+  path: '/user/register'
+  defaults:
+    _title: 'Add User'
+  requirements:
+    _role: 'administrator'
+emmr_core.user_pass:
+  path: '/user/password'
+  defaults:
+    _title: 'Reset Password'
+  requirements:
+    _role: 'administrator'
