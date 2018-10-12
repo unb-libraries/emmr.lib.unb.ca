@@ -89,7 +89,10 @@ function emmr_core_preprocess_node(&$variables) {
       $i = 0;
 
       while ($i < $annos_num) {
-        $annos_val[] = $variables['content']['field_annotations'][$i]['#paragraph']->get('field_annotation_text')->getValue()[0]['value'];
+
+        if (!empty($variables['content']['field_annotations'][$i]['#paragraph']->get('field_annotation_text')->getValue()[0]['value'])) {
+          $annos_val[] = $variables['content']['field_annotations'][$i]['#paragraph']->get('field_annotation_text')->getValue()[0]['value'];
+        }
         $i++;
       }
 
@@ -144,8 +147,28 @@ function emmr_core_node_presave($node) {
       $node->get('field_recipe_date_to')->setValue("");
     }
 
-    if (empty($node->get('field_annotations')->getValue()[0]['subform']['field_annotation_text'][0]['value'])) {
-      $node->get('field_annotations')->setValue(NULL);
+    if (!empty($node->get('field_annotations')->getValue())) {
+      $annos = $node->get('field_annotations')->getValue();
+
+      foreach ($annos as $key => $anno) {
+
+        if (empty($annos[$key]['subform']['field_annotation_text'][0]['value'])) {
+          unset($annos[$key]);
+        }
+      }
+      $node->get('field_annotations')->setValue($annos);
+    }
+
+    if (!empty($node->get('field_contributors')->getValue())) {
+      $contribs = $node->get('field_contributors')->getValue();
+
+      foreach ($contribs as $key => $contrib) {
+
+        if (empty($contribs[$key]['subform']['field_contributor_name'][0]['value'])) {
+          unset($contribs[$key]);
+        }
+      }
+      $node->get('field_contributors')->setValue($contribs);
     }
 
     if (empty($node->get('field_contributors')->getValue()[0]['subform']['field_contributor_name'][0]['value'])) {
