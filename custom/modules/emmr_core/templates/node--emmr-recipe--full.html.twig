@@ -151,7 +151,7 @@
       <p>{{ content.field_recipe_places }}</p>
 
         {% if source.name %}
-          <p><b>Source: </b>{{ source.institution }}<br>
+          <p><b>Source: </b>{{ source.name }}<br>
         {% endif %}
 
         {% if source.institution %}
@@ -169,7 +169,6 @@
         {% if source.reference %}
           | <b>Reference: </b>{{ source.reference }}
         {% endif %}
-
       </p>
       <p>{{ content.field_abstract }}</p>
     </div>
