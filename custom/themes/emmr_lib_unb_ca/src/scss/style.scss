@@ -89,6 +89,11 @@ a, a:active, a:focus, a:visited {
   }
 }
 
+a[href="/user/register"],
+a[href="/user/password"] {
+  display: none !important;
+}
+
 @media (min-width: 828px) {
   #navbar {
     min-height: 30px !important;
@@ -111,6 +116,10 @@ a, a:active, a:focus, a:visited {
 
 .js-quickedit-page-title.page-header {
   font-size: 24px;
+}
+
+div.form-item.js-form-item.form-type-vertical-tabs > div {
+  display: none;
 }
 
 // Footer
