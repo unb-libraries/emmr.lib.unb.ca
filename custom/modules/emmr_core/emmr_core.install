@@ -92,6 +92,19 @@ function custom_update_8003() {
   }
 }
 
+function custom_update_8004() {
+  // Get an array of all 'recipe' node ids.
+  $article_nids = \Drupal::entityQuery('node')
+    ->condition('type', 'emmr_recipe')
+    ->execute();
+
+  // Load all the articles.
+  $articles = Node::loadMultiple($article_nids);
+  foreach ($articles as $article) {
+    $article->save();
+  }
+}
+
 function addTerms($voc, $terms) {
 
   foreach ($terms as $term) {
