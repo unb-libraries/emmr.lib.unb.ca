@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.emmr_recipe.field_digitized_from_original
     - field.field.node.emmr_recipe.field_imprecise_date
     - field.field.node.emmr_recipe.field_ingredients
+    - field.field.node.emmr_recipe.field_ingredients_index
     - field.field.node.emmr_recipe.field_ingredients_search
     - field.field.node.emmr_recipe.field_publication_format
     - field.field.node.emmr_recipe.field_recipe_date
@@ -20,6 +21,7 @@ dependencies:
     - field.field.node.emmr_recipe.field_recipe_transcription
     - field.field.node.emmr_recipe.field_recipe_type
     - field.field.node.emmr_recipe.field_symptoms
+    - field.field.node.emmr_recipe.field_symptoms_index
     - field.field.node.emmr_recipe.field_symptoms_search
     - image.style.thumbnail
     - node.type.emmr_recipe
@@ -177,7 +179,9 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_ingredients_index: true
   field_ingredients_search: true
+  field_symptoms_index: true
   field_symptoms_search: true
   path: true
   promote: true
