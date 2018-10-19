@@ -4,12 +4,13 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_contributors
+    - field.storage.node.field_ingredients_index
     - field.storage.node.field_ingredients_search
     - field.storage.node.field_publication_format
     - field.storage.node.field_recipe_date
     - field.storage.node.field_recipe_date_to
     - field.storage.node.field_recipe_transcription
-    - field.storage.node.field_symptoms_search
+    - field.storage.node.field_symptoms_index
     - field.storage.paragraph.field_contributor_name
     - node.type.emmr_recipe
     - taxonomy.vocabulary.emmr_publication_formats
@@ -1025,9 +1026,9 @@ display:
             field_contributor_name: field_contributor_name
             field_publication_format: field_publication_format
             field_recipe_date: field_recipe_date
-            field_ingredients_search: field_ingredients_search
             field_recipe_transcription: field_recipe_transcription
-            field_symptoms_search: field_symptoms_search
+            field_ingredients_index: field_ingredients_index
+            field_symptoms_index: field_symptoms_index
           plugin_id: combine
         status:
           value: '1'
@@ -1755,69 +1756,6 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
-        field_ingredients_search:
-          id: field_ingredients_search
-          table: node__field_ingredients_search
-          field: field_ingredients_search
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         field_recipe_transcription:
           id: field_recipe_transcription
           table: node__field_recipe_transcription
@@ -1880,10 +1818,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_symptoms_search:
-          id: field_symptoms_search
-          table: node__field_symptoms_search
-          field: field_symptoms_search
+        field_ingredients_index:
+          id: field_ingredients_index
+          table: node__field_ingredients_index
+          field: field_ingredients_index
           relationship: none
           group_type: group
           admin_label: ''
@@ -1929,9 +1867,70 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_symptoms_index:
+          id: field_symptoms_index
+          table: node__field_symptoms_index
+          field: field_symptoms_index
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1955,12 +1954,12 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_contributors'
-        - 'config:field.storage.node.field_ingredients_search'
+        - 'config:field.storage.node.field_ingredients_index'
         - 'config:field.storage.node.field_publication_format'
         - 'config:field.storage.node.field_recipe_date'
         - 'config:field.storage.node.field_recipe_date_to'
         - 'config:field.storage.node.field_recipe_transcription'
-        - 'config:field.storage.node.field_symptoms_search'
+        - 'config:field.storage.node.field_symptoms_index'
         - 'config:field.storage.paragraph.field_contributor_name'
   page_2:
     display_plugin: page
@@ -2044,8 +2043,8 @@ display:
             field_publication_format: field_publication_format
             field_recipe_date: field_recipe_date
             field_recipe_transcription: field_recipe_transcription
-            field_ingredients_search: field_ingredients_search
-            field_symptoms_search: field_symptoms_search
+            field_ingredients_index: field_ingredients_index
+            field_symptoms_index: field_symptoms_index
           plugin_id: combine
       filter_groups:
         operator: AND
@@ -2543,10 +2542,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_ingredients_search:
-          id: field_ingredients_search
-          table: node__field_ingredients_search
-          field: field_ingredients_search
+        field_ingredients_index:
+          id: field_ingredients_index
+          table: node__field_ingredients_index
+          field: field_ingredients_index
           relationship: none
           group_type: group
           admin_label: ''
@@ -2592,9 +2591,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
+          type: text_default
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -2606,10 +2604,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_symptoms_search:
-          id: field_symptoms_search
-          table: node__field_symptoms_search
-          field: field_symptoms_search
+        field_symptoms_index:
+          id: field_symptoms_index
+          table: node__field_symptoms_index
+          field: field_symptoms_index
           relationship: none
           group_type: group
           admin_label: ''
@@ -2655,9 +2653,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
+          type: text_default
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -2694,12 +2691,12 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_contributors'
-        - 'config:field.storage.node.field_ingredients_search'
+        - 'config:field.storage.node.field_ingredients_index'
         - 'config:field.storage.node.field_publication_format'
         - 'config:field.storage.node.field_recipe_date'
         - 'config:field.storage.node.field_recipe_date_to'
         - 'config:field.storage.node.field_recipe_transcription'
-        - 'config:field.storage.node.field_symptoms_search'
+        - 'config:field.storage.node.field_symptoms_index'
         - 'config:field.storage.paragraph.field_contributor_name'
   page_3:
     display_plugin: page
@@ -2754,9 +2751,9 @@ display:
             field_contributor_name: field_contributor_name
             field_publication_format: field_publication_format
             field_recipe_date: field_recipe_date
-            field_ingredients_search: field_ingredients_search
             field_recipe_transcription: field_recipe_transcription
-            field_symptoms_search: field_symptoms_search
+            field_ingredients_index: field_ingredients_index
+            field_symptoms_index: field_symptoms_index
           plugin_id: combine
         type:
           id: type
@@ -3475,69 +3472,6 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
-        field_ingredients_search:
-          id: field_ingredients_search
-          table: node__field_ingredients_search
-          field: field_ingredients_search
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         field_recipe_transcription:
           id: field_recipe_transcription
           table: node__field_recipe_transcription
@@ -3600,10 +3534,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_symptoms_search:
-          id: field_symptoms_search
-          table: node__field_symptoms_search
-          field: field_symptoms_search
+        field_ingredients_index:
+          id: field_ingredients_index
+          table: node__field_ingredients_index
+          field: field_ingredients_index
           relationship: none
           group_type: group
           admin_label: ''
@@ -3649,9 +3583,70 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_symptoms_index:
+          id: field_symptoms_index
+          table: node__field_symptoms_index
+          field: field_symptoms_index
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -3681,10 +3676,10 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_contributors'
-        - 'config:field.storage.node.field_ingredients_search'
+        - 'config:field.storage.node.field_ingredients_index'
         - 'config:field.storage.node.field_publication_format'
         - 'config:field.storage.node.field_recipe_date'
         - 'config:field.storage.node.field_recipe_date_to'
         - 'config:field.storage.node.field_recipe_transcription'
-        - 'config:field.storage.node.field_symptoms_search'
+        - 'config:field.storage.node.field_symptoms_index'
         - 'config:field.storage.paragraph.field_contributor_name'
