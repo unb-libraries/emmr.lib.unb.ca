@@ -184,7 +184,7 @@ function emmr_core_node_presave($node) {
       $ingredients .= $ing['value'] . " ";
     }
 
-    $node->get('field_ingredients_search')->setValue($ingredients);
+    $node->get('field_ingredients_index')->setValue($ingredients);
 
     // Update text search symptoms list.
     $sym_list = $node->get('field_symptoms')->getValue();
@@ -194,7 +194,7 @@ function emmr_core_node_presave($node) {
       $symptoms .= $sym['value'] . " ";
     }
 
-    $node->get('field_symptoms_search')->setValue($symptoms);
+    $node->get('field_symptoms_index')->setValue($symptoms);
   }
 }
 
