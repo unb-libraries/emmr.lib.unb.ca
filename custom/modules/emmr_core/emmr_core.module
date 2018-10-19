@@ -152,9 +152,11 @@ function emmr_core_node_presave($node) {
 
       foreach ($annos as $key => $anno) {
 
-        if (empty($annos[$key]['subform']['field_annotation_text'][0]['value'])) {
-          echo "*** ABOUT TO UNSET ANNOTATION " . $key . "IN NODE " . $node->id();
-          unset($annos[$key]);
+        if (!empty($annos[$key]['subform'])) {
+          if (empty($annos[$key]['subform']['field_annotation_text'][0]['value'])) {
+            echo "*** ABOUT TO UNSET ANNOTATION " . $key . "IN NODE " . $node->id();
+            unset($annos[$key]);
+          }
         }
       }
 
@@ -166,8 +168,10 @@ function emmr_core_node_presave($node) {
 
       foreach ($contribs as $key => $contrib) {
 
-        if (empty($contribs[$key]['subform']['field_contributor_name'][0]['value'])) {
-          unset($contribs[$key]);
+        if (!empty($contribs[$key]['subform'])) {
+          if (empty($contribs[$key]['subform']['field_contributor_name'][0]['value'])) {
+            unset($contribs[$key]);
+          }
         }
       }
       $node->get('field_contributors')->setValue($contribs);
