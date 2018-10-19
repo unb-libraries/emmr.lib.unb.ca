@@ -153,9 +153,11 @@ function emmr_core_node_presave($node) {
       foreach ($annos as $key => $anno) {
 
         if (empty($annos[$key]['subform']['field_annotation_text'][0]['value'])) {
+          echo "*** ABOUT TO UNSET ANNOTATION " . $key . "IN NODE " . $node->id();
           unset($annos[$key]);
         }
       }
+
       $node->get('field_annotations')->setValue($annos);
     }
 
@@ -169,10 +171,6 @@ function emmr_core_node_presave($node) {
         }
       }
       $node->get('field_contributors')->setValue($contribs);
-    }
-
-    if (empty($node->get('field_contributors')->getValue()[0]['subform']['field_contributor_name'][0]['value'])) {
-      $node->get('field_contributors')->setValue(NULL);
     }
 
     // Update text search ingredients list.
