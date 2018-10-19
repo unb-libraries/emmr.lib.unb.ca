@@ -154,7 +154,6 @@ function emmr_core_node_presave($node) {
 
         if (!empty($annos[$key]['subform'])) {
           if (empty($annos[$key]['subform']['field_annotation_text'][0]['value'])) {
-            echo "*** ABOUT TO UNSET ANNOTATION " . $key . "IN NODE " . $node->id();
             unset($annos[$key]);
           }
         }
