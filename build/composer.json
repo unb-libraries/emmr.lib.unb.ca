@@ -72,7 +72,7 @@
         "drupal/bootstrap": "3.13",
         "drupal/config_update": "1.1",
         "drupal/console": "~1.0",
-        "drupal/core": "8.6.2",
+        "drupal/core": "8.6.3",
         "drupal/entity_print": "2.x",
         "drupal/entity_reference_revisions": "1.6",
         "drupal/externalauth": "1.1",
