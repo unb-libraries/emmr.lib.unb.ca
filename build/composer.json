@@ -49,7 +49,7 @@
     },
     "license": "MIT",
     "minimum-stability": "stable",
-    "name": "unb-libraries/emmr.lib.unb.ca-drupal8",
+    "name": "unb-libraries/emmr.lib.unb.ca",
     "repositories": [
         {
             "type": "composer",
