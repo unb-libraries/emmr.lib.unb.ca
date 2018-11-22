@@ -54,21 +54,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/unb-libraries/unb_lib_theme.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/unb-libraries/drupal-development-libraries.git"
         }
     ],
     "require": {
-        "composer/installers": "^1.2.0",
-        "cweagans/composer-patches": "1.6.3",
         "dompdf/dompdf": "~0.8.0",
-        "drupal-composer/drupal-scaffold": "~2.2.0",
         "drupal/bootstrap": "3.14",
         "drupal/config_update": "1.1",
         "drupal/console": "~1.0",
@@ -86,12 +75,10 @@
         "drupal/token_filter": "1.0",
         "drupal/twig_tweak": "2.1",
         "drupal/view_unpublished": "1.0.0-alpha1",
-        "drush/drush": "^8.1.15",
         "mikehaertl/phpwkhtmltopdf": "~2.1",
         "tecnickcom/tcpdf": "~6",
         "unb-libraries/unb_lib_theme": "dev-8.x-bootstrap-3.x",
-        "webflo/drupal-finder": "^0.3.0",
-        "webmozart/path-util": "^2.3"
+        "unb-libraries/drupal-builder": "^8.0.0"
     },
     "require-dev": {
         "unb-libraries/drupal-development-libraries": "^8.0.0"
