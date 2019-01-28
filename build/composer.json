@@ -58,7 +58,7 @@
     ],
     "require": {
         "dompdf/dompdf": "~0.8.0",
-        "drupal/bootstrap": "3.16",
+        "drupal/bootstrap": "3.17",
         "drupal/config_update": "1.1",
         "drupal/core": "8.6.7",
         "drupal/entity_print": "2.x",
