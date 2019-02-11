@@ -61,9 +61,3 @@ emmr_core.user_add:
     _title: 'Add User'
   requirements:
     _role: 'administrator'
-emmr_core.user_pass:
-  path: '/user/password'
-  defaults:
-    _title: 'Reset Password'
-  requirements:
-    _role: 'administrator'
