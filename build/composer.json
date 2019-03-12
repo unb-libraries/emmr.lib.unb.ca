@@ -48,7 +48,8 @@
         }
     },
     "license": "MIT",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "name": "unb-libraries/emmr.lib.unb.ca",
     "repositories": [
         {
