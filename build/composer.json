@@ -69,7 +69,7 @@
         "drupal/google_analytics": "2.4",
         "drupal/ldap": "3.0-beta3",
         "drupal/override_node_options": "2.x-dev",
-        "drupal/paragraphs": "1.6",
+        "drupal/paragraphs": "1.7",
         "drupal/pathauto": "1.0-rc1",
         "drupal/search_api": "1.0",
         "drupal/token_filter": "1.0",
