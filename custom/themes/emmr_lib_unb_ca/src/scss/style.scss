@@ -123,9 +123,11 @@ div.form-item.js-form-item.form-type-vertical-tabs > div {
 }
 
 // Avoid Paragraphs module content wrapper unexplainable gradient
-.js.paragraphs-description.paragraphs-content-wrapper::after,
-.js.paragraphs-description .paragraphs-plugin-wrapper::after {
-  background: inherit;
+.paragraphs-content-wrapper::after,
+.paragraphs-content-wrapper,
+.paragraphs-plugin-wrapper::after,
+.paragraphs-plugin-wrapper {
+  background: inherit !important;
 }
 
 // Footer
