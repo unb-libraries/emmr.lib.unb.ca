@@ -122,6 +122,11 @@ div.form-item.js-form-item.form-type-vertical-tabs > div {
   display: none;
 }
 
+// Avoid Paragraphs module content wrapper unexplainable gradient
+div.paragraphs-content-wrapper {
+  background: inherit;
+}
+
 // Footer
 #dal-footer-logo {
   max-height: 40px;
