@@ -123,7 +123,7 @@ div.form-item.js-form-item.form-type-vertical-tabs > div {
 }
 
 // Avoid Paragraphs module content wrapper unexplainable gradient
-div.paragraphs-content-wrapper {
+div.paragraphs-content-wrapper::after {
   background: inherit;
 }
 
