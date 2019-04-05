@@ -4,7 +4,7 @@
 $color-dark-gray: #4a4a4a;
 $color-red: #c71b1b;
 $color-mint: #dfefdd;
-$color-dark-mint: #9faf9d;
+$color-dark-mint: #7f8f7d;
 
 // Global
 body {
@@ -122,12 +122,34 @@ div.form-item.js-form-item.form-type-vertical-tabs > div {
   display: none;
 }
 
+// Remove Bootstrap input glow
+.form-control:focus {
+  border-color: $color-dark-gray;
+  box-shadow: none;
+}
+
 // Avoid Paragraphs module content wrapper unexplainable gradient
 .paragraphs-content-wrapper::after,
 .paragraphs-content-wrapper,
 .paragraphs-plugin-wrapper::after,
 .paragraphs-plugin-wrapper {
   background: inherit !important;
+}
+
+// Pagination
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: $color-dark-mint;
+  border-color: $color-dark-mint;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  color: $color-dark-mint;
 }
 
 // Footer
