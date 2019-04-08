@@ -152,6 +152,12 @@ h1.page-header {
   border-color: $color-dark-mint;
 }
 
+.pagination > li > a:hover,
+.pagination > li > a:focus {
+  color: $color-dark-mint;
+}
+
+
 .pagination > li > a,
 .pagination > li > span {
   color: $color-dark-mint;
