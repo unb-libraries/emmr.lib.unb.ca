@@ -122,6 +122,11 @@ div.form-item.js-form-item.form-type-vertical-tabs > div {
   display: none;
 }
 
+// Select glyph
+div.select-wrapper::after {
+  color: $color-dark-mint;
+}
+
 // Page title drop-shadow
 h1.page-header {
   text-shadow: 2px 2px 2px black;
