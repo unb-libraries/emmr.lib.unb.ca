@@ -122,6 +122,11 @@ div.form-item.js-form-item.form-type-vertical-tabs > div {
   display: none;
 }
 
+// Page title drop-shadow
+h1.js-quickedit-page-title.page-header {
+  text-shadow: 2px 2px 2px black;
+}
+
 // Remove Bootstrap input glow
 .form-control:focus {
   border-color: $color-dark-gray;
