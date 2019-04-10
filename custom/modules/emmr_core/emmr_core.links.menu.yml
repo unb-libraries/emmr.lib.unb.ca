@@ -19,6 +19,28 @@ menu.contexts:
   parent: main
   menu_name: main
   route_name: emmr_core.contexts
+  expanded: TRUE
+  weight: 30
+menu.contexts-areas:
+  title: 'Areas of Recipe Knowledge'
+  description: 'Areas of Recipe Knowledge.'
+  parent: menu.contexts
+  menu_name: main
+  url: internal:/areas
+  weight: 10
+menu.contexts-historical:
+  title: 'Historical Context'
+  description: 'Historical Context.'
+  parent: menu.contexts
+  menu_name: main
+  url: internal:/historical
+  weight: 20
+menu.contexts-further:
+  title: 'Further Reading'
+  description: 'Further Reading.'
+  parent: menu.contexts
+  menu_name: main
+  url: internal:/further
   weight: 30
 menu.about:
   title: 'About'
@@ -26,4 +48,19 @@ menu.about:
   parent: main
   menu_name: main
   route_name: emmr_core.about
+  expanded: TRUE
   weight: 40
+menu.about-who:
+  title: 'Who We Are'
+  description: 'Who We Are.'
+  parent: menu.about
+  menu_name: main
+  url: internal:/who
+  weight: 10
+menu.about-project:
+  title: 'Project Overview'
+  description: 'Project Overview.'
+  parent: menu.about
+  menu_name: main
+  url: internal:/project
+  weight: 20
