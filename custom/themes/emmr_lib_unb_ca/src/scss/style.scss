@@ -74,7 +74,7 @@ a, a:active, a:focus, a:visited {
     float: right;
     height: inherit;
 
-    a:hover, li.active a {
+    a:hover, li.active a, li a[aria-expanded="true"] {
       font-weight: bold;
       color: $color-red;
       background: white;
@@ -120,6 +120,10 @@ a[href="/user/password"] {
 
 div.form-item.js-form-item.form-type-vertical-tabs > div {
   display: none;
+}
+
+.dropdown-menu {
+  background-color: $color-dark-gray;
 }
 
 // Select glyph
