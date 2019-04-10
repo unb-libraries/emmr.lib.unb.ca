@@ -75,7 +75,6 @@ a, a:active, a:focus, a:visited {
     height: inherit;
 
     a:hover, li.active a, li a[aria-expanded="true"] {
-      font-weight: bold;
       color: $color-red;
       background: white;
     }
