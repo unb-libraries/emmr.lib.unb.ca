@@ -125,6 +125,11 @@ div.form-item.js-form-item.form-type-vertical-tabs > div {
   background-color: $color-dark-gray;
 }
 
+// File links
+a.file {
+  font-size: 100% !important;
+}
+
 // Select glyph
 div.select-wrapper::after {
   color: $color-dark-mint;
