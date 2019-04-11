@@ -21,19 +21,19 @@ menu.contexts:
   route_name: emmr_core.contexts
   expanded: TRUE
   weight: 30
-menu.contexts-areas:
-  title: 'Areas of Recipe Knowledge'
-  description: 'Areas of Recipe Knowledge.'
-  parent: menu.contexts
-  menu_name: main
-  url: internal:/areas
-  weight: 10
 menu.contexts-historical:
   title: 'Historical Context'
   description: 'Historical Context.'
   parent: menu.contexts
   menu_name: main
   url: internal:/historical
+  weight: 10
+menu.contexts-essays:
+  title: 'Essays'
+  description: 'Essays.'
+  parent: menu.contexts
+  menu_name: main
+  url: internal:/essays
   weight: 20
 menu.contexts-further:
   title: 'Further Reading'
@@ -64,3 +64,10 @@ menu.about-project:
   menu_name: main
   url: internal:/project
   weight: 20
+menu.about-areas:
+  title: 'Areas of Recipe Knowledge'
+  description: 'Areas of Recipe Knowledge.'
+  parent: menu.about
+  menu_name: main
+  url: internal:/areas
+  weight: 30
