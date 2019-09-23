@@ -211,10 +211,10 @@ div.form-item.js-form-item {
   display: table;
 }
 
-#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(6),
 #views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(7),
-#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(6),
-#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(7) {
+#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(8),
+#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(7),
+#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(8) {
   display: inline-block !important;
 }
 
@@ -236,27 +236,43 @@ div.form-item.js-form-item {
   width: 310px;
 }
 
-#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(6) > input,
 #views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(7) > input,
-#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(6) > input,
-#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(7) > input {
+#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(8) > input,
+#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(7) > input,
+#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(8) > input {
   width: 124px;
 }
 
-#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(6) > input,
-#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(6) > input {
+#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(7) > input,
+#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(7) > input {
   position: relative;
   left: -4px;
 }
 
-#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(7) > label,
-#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(7) > label {
+#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(8) > label,
+#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(8) > label {
   width: 30px;
 }
 
-#views-exposed-form-emmr-browse-recipes-page-1  > div > div:nth-child(10),
-#views-exposed-form-emmr-browse-recipes-page-3  > div > div:nth-child(10) {
+#views-exposed-form-emmr-browse-recipes-page-1  > div > div:nth-child(11),
+#views-exposed-form-emmr-browse-recipes-page-3  > div > div:nth-child(11) {
   display: table;
+}
+
+#views-exposed-form-emmr-browse-recipes-page-1 div.form-item-exact-keyword {
+  padding-left: 100px;
+  line-height: 0;
+  padding-bottom: 10px;
+}
+
+#views-exposed-form-emmr-browse-recipes-page-1 input#edit-exact-keyword {
+  margin-top: 0;
+  top: 6px;
+  left: -60px;
+}
+
+#views-exposed-form-emmr-browse-recipes-page-1 div.form-item-combine {
+  padding-bottom: 0;
 }
 
 div.form-item-field-recipe-date-to-value-min,
