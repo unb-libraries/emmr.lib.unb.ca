@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'EMMR Item Formats'
 vid: emmr_item_formats
 description: ''
-hierarchy: 0
 weight: 0

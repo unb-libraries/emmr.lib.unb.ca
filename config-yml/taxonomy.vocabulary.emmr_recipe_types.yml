@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'EMMR Recipe Types'
 vid: emmr_recipe_types
 description: ''
-hierarchy: 0
 weight: 0
