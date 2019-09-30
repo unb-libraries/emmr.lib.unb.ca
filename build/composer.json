@@ -69,6 +69,7 @@
         "drupal/externalauth": "1.1",
         "drupal/features": "3.0-beta8",
         "drupal/google_analytics": "2.4",
+        "drupal/health_check": "1.1",
         "drupal/ldap": "3.0-beta3",
         "drupal/override_node_options": "2.x-dev",
         "drupal/paragraphs": "1.9",
