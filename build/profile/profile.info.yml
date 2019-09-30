@@ -41,7 +41,19 @@ dependencies:
   - views_ui
 
   # PROFILE_SLUG
+  - automated_cron
+  - editor_advanced_link
+  - editor_file
+  - entity_reference_revisions
+  - google_analytics
+  - override_node_options
+  - paragraphs
+  - quickedit
   - redis
+  - tour
+  - twig_tweak
+  - view_unpublished
+
 
 themes:
   - seven
