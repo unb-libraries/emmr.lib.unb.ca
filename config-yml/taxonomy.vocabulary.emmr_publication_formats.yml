@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'EMMR Publication Formats'
 vid: emmr_publication_formats
 description: ''
-hierarchy: 0
 weight: 0

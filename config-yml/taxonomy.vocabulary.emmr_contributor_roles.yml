@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'EMMR Contributor Roles'
 vid: emmr_contributor_roles
 description: ''
-hierarchy: 0
 weight: 0

@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'EMMR Source Institutions'
 vid: emmr_source_institutions
 description: ''
-hierarchy: 0
 weight: 0
