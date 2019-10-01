@@ -1,5 +1,5 @@
 ![emmr.lib.unb.ca screenshot](screenshot.png "emmr.lib.unb.ca screenshot")
-# emmr.lib.unb.ca : Instance Repository
+# [emmr.lib.unb.ca](https://emmr.lib.unb.ca/) : Instance Repository
 [![Build Status](https://travis-ci.com/unb-libraries/emmr.lib.unb.ca.svg?branch=prod)](https://travis-ci.com/unb-libraries/emmr.lib.unb.ca) [![GitHub license](https://img.shields.io/github/license/unb-libraries/emmr.lib.unb.ca)](https://github.com/unb-libraries/emmr.lib.unb.ca/blob/dev/LICENSE) ![GitHub repo size](https://img.shields.io/github/repo-size/unb-libraries/emmr.lib.unb.ca)
 
 This repository contains all assets used to test, build, and deploy the [emmr.lib.unb.ca](https://emmr.lib.unb.ca) Drupal application. This repository extends the [unb-libraries/docker-drupal](https://github.com/unb-libraries/docker-drupal) base image, which deploys nginx and php-fpm in the service container.
