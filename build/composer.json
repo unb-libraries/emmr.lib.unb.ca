@@ -75,7 +75,7 @@
         "drupal/paragraphs": "1.9",
         "drupal/pathauto": "1.0-rc1",
         "drupal/redis": "1.1",
-        "drupal/search_api": "1.0",
+        "drupal/search_api": "1.14",
         "drupal/search_api_solr": "3.4",
         "drupal/token_filter": "1.0",
         "drupal/twig_tweak": "2.4",
