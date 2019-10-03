@@ -88,8 +88,7 @@ a, a:active, a:focus, a:visited {
   }
 }
 
-a[href="/user/register"],
-a[href="/user/password"] {
+a[href="/user/register"] {
   display: none !important;
 }
 
