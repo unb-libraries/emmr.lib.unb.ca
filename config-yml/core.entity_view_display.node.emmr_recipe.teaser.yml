@@ -4,6 +4,26 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.emmr_recipe.field_abstract
+    - field.field.node.emmr_recipe.field_annotations
+    - field.field.node.emmr_recipe.field_contributors
+    - field.field.node.emmr_recipe.field_digitized_from_original
+    - field.field.node.emmr_recipe.field_imprecise_date
+    - field.field.node.emmr_recipe.field_ingredients
+    - field.field.node.emmr_recipe.field_ingredients_index
+    - field.field.node.emmr_recipe.field_ingredients_search
+    - field.field.node.emmr_recipe.field_publication_format
+    - field.field.node.emmr_recipe.field_recipe_date
+    - field.field.node.emmr_recipe.field_recipe_date_text
+    - field.field.node.emmr_recipe.field_recipe_date_to
+    - field.field.node.emmr_recipe.field_recipe_images
+    - field.field.node.emmr_recipe.field_recipe_places
+    - field.field.node.emmr_recipe.field_recipe_source
+    - field.field.node.emmr_recipe.field_recipe_transcription
+    - field.field.node.emmr_recipe.field_recipe_type
+    - field.field.node.emmr_recipe.field_symptoms
+    - field.field.node.emmr_recipe.field_symptoms_index
+    - field.field.node.emmr_recipe.field_symptoms_search
     - node.type.emmr_recipe
   module:
     - user
@@ -27,6 +47,7 @@ hidden:
   field_digitized_from_original: true
   field_imprecise_date: true
   field_ingredients: true
+  field_ingredients_index: true
   field_ingredients_search: true
   field_original_location: true
   field_plain_contributors: true
@@ -47,4 +68,7 @@ hidden:
   field_source_shelf_location: true
   field_source_sublocation: true
   field_symptoms: true
+  field_symptoms_index: true
   field_symptoms_search: true
+  langcode: true
+  search_api_excerpt: true

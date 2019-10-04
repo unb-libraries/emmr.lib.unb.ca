@@ -4,6 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.emmr_source.field_featured_image
+    - field.field.node.emmr_source.field_featured_source
+    - field.field.node.emmr_source.field_institution
+    - field.field.node.emmr_source.field_reference
+    - field.field.node.emmr_source.field_source_desc
+    - field.field.node.emmr_source.field_source_origin
+    - field.field.node.emmr_source.field_sublocation
     - node.type.emmr_source
   module:
     - user
@@ -27,3 +34,5 @@ hidden:
   field_source_desc: true
   field_source_origin: true
   field_sublocation: true
+  langcode: true
+  search_api_excerpt: true
