@@ -30,7 +30,7 @@ services:
       - emmr.lib.unb.ca
     entrypoint:
       - docker-entrypoint-multiple.sh
-      - emmr_lib_unb_ca:/solr-conf
+      - recipes.emmr.lib.unb.ca:/solr-conf
 
   emmr.lib.unb.ca:
     build:
