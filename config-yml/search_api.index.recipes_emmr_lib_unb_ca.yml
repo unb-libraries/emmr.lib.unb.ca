@@ -11,6 +11,8 @@ dependencies:
   config:
     - field.storage.node.field_contributors
     - field.storage.paragraph.field_contributor_name
+    - field.storage.node.field_recipe_date
+    - field.storage.node.field_recipe_date_to
     - field.storage.node.field_ingredients_index
     - field.storage.node.field_publication_format
     - field.storage.node.field_symptoms_index
@@ -63,7 +65,7 @@ field_settings:
     label: 'Contributors » Paragraph » Contributor Name'
     datasource_id: 'entity:node'
     property_path: 'field_contributors:entity:field_contributor_name'
-    type: string
+    type: text
     dependencies:
       config:
         - field.storage.node.field_contributors
@@ -78,6 +80,22 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_ingredients_index
+  field_recipe_date:
+    label: Date
+    datasource_id: 'entity:node'
+    property_path: field_recipe_date
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_recipe_date
+  field_recipe_date_to:
+    label: 'Date (to)'
+    datasource_id: 'entity:node'
+    property_path: field_recipe_date_to
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_recipe_date_to
   field_recipe_transcription:
     label: Transcription
     datasource_id: 'entity:node'
@@ -98,7 +116,7 @@ field_settings:
     label: 'Publication Format » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'field_publication_format:entity:name'
-    type: string
+    type: text
     dependencies:
       config:
         - field.storage.node.field_publication_format
@@ -109,7 +127,7 @@ field_settings:
     label: Title
     datasource_id: 'entity:node'
     property_path: title
-    type: string
+    type: text
     dependencies:
       module:
         - node
