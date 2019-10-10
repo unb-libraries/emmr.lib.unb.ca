@@ -271,6 +271,9 @@ function emmr_core_views_query_alter($view, $query) {
   $view_id = $view->id();
   $view_disp = $view->current_display;
 
+  kint($query);
+  kint($query->getWhere());
+
   if ($view_id == "emmr_browse_recipes" && $view_disp == "page_1") {
     $date_where = $query->where['2']['conditions'];
     $date_min = date('c',

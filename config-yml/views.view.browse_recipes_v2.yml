@@ -734,6 +734,101 @@ display:
           min_length: null
           fields: {  }
           plugin_id: search_api_fulltext
+        field_recipe_date_1:
+          id: field_recipe_date_1
+          table: search_api_index_recipes_emmr_lib_unb_ca
+          field: field_recipe_date_1
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: between
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 2
+          exposed: true
+          expose:
+            operator_id: field_recipe_date_1_op
+            label: Date
+            description: ''
+            use_operator: false
+            operator: field_recipe_date_1_op
+            identifier: field_recipe_date_1
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              emmr_contributor: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_date
+        field_recipe_date_to_1:
+          id: field_recipe_date_to_1
+          table: search_api_index_recipes_emmr_lib_unb_ca
+          field: field_recipe_date_to_1
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: between
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 2
+          exposed: true
+          expose:
+            operator_id: field_recipe_date_to_1_op
+            label: 'Date (to)'
+            description: ''
+            use_operator: false
+            operator: field_recipe_date_to_1_op
+            identifier: field_recipe_date_to_1
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              emmr_contributor: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: 'Date (to)'
+            description: null
+            identifier: field_recipe_date_to_1
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1: {  }
+              2: {  }
+              3: {  }
+          plugin_id: search_api_date
       sorts: {  }
       title: 'Browse Recipes V2'
       header: {  }
@@ -742,6 +837,11 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+          2: OR
     cache_metadata:
       max-age: -1
       contexts:
