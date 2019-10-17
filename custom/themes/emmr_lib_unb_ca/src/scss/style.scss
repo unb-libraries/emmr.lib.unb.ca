@@ -290,6 +290,80 @@ div.form-item-field-recipe-date-to-value-max {
   padding-left: 100px;
 }
 
+// Browse Recipes Form V2
+#views-exposed-form-browse-recipes-v2-page-1,
+#views-exposed-form-browse-recipes-v2-age-3 {
+  padding-left: 40px;
+}
+
+#views-exposed-form-browse-recipes-v2-page-1 > div >
+div.form-item.js-form-item,
+#views-exposed-form-browse-recipes-v2-page-3 > div >
+div.form-item.js-form-item {
+  display: table;
+}
+
+#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(7),
+#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(8),
+#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(7),
+#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(8) {
+  display: inline-block !important;
+}
+
+#views-exposed-form-browse-recipes-v2-page-1 div.form-item,
+#views-exposed-form-browse-recipes-v2-page-3 div.form-item {
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+#views-exposed-form-browse-recipes-v2-page-1 label,
+#views-exposed-form-browse-recipes-v2-page-3 label {
+  width: 100px;
+}
+
+#views-exposed-form-browse-recipes-v2-page-1 input,
+#views-exposed-form-browse-recipes-v2-page-1 select,
+#views-exposed-form-browse-recipes-v2-page-3 input,
+#views-exposed-form-browse-recipes-v2-page-3 select {
+  width: 310px;
+}
+
+#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(7) > input,
+#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(8) > input,
+#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(7) > input,
+#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(8) > input {
+  width: 124px;
+}
+
+#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(7) > input,
+#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(7) > input {
+  position: relative;
+  left: -4px;
+}
+
+#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(8) > label,
+#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(8) > label {
+  width: 30px;
+}
+
+#views-exposed-form-browse-recipes-v2-page-1  > div > div:nth-child(11),
+#views-exposed-form-browse-recipes-v2-page-3  > div > div:nth-child(11) {
+  display: table;
+}
+
+#views-exposed-form-browse-recipes-v2-page-1 div.form-item-combine {
+  padding-bottom: 0;
+}
+
+div.form-item-field-recipe-date-to-value-min,
+div.form-item-field-recipe-date-to-value-max {
+  display: none !important;
+}
+
+#views-exposed-form-browse-recipes-v2-page-1 div.form-item-exact-keyword {
+  padding-left: 100px;
+}
+
 // Browse Recipes results
 #browse-recipes-header {
   padding-bottom: 10px;
