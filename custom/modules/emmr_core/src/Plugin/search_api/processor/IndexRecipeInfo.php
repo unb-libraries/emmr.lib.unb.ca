@@ -26,7 +26,7 @@ use Drupal\search_api\Processor\ProcessorProperty;
 class IndexRecipeInfo extends ProcessorPluginBase {
 
   /**
-   * Only enabled for an index that indexes the recipe content type.
+   * Only enabled for node indexes.
    *
    * {@inheritdoc}
    */
@@ -43,6 +43,7 @@ class IndexRecipeInfo extends ProcessorPluginBase {
    * {@inheritdoc}
    */
   public function getPropertyDefinitions(DatasourceInterface $datasource = NULL) {
+
     $properties = [];
 
     if (!$datasource) {
@@ -64,21 +65,19 @@ class IndexRecipeInfo extends ProcessorPluginBase {
    */
   public function addFieldValues(ItemInterface $item) {
     $node = $item->getOriginalObject()->getValue();
+
     if ($node instanceof NodeInterface) {
       if ($node->bundle() == 'emmr_recipe') {
-
         // Years published.
         $fields = $this->getFieldsHelper()
-          ->filterForPropertyPath($item->getFields(), NULL, 'field_recipe_date');
-
-        kint($fields);
-        exit;
+          ->filterForPropertyPath($item->getFields(), NULL, 'years_published');
 
         foreach ($fields as $field) {
-          if (!empty($node->get('field_first_issue_search_date')->date) && !empty($node->get('field_last_issue_search_date')->date)) {
-            $pub_start_year = $node->get('field_first_issue_search_date')->date->format('Y');
-            $pub_end_year = $node->get('field_last_issue_search_date')->date->format('Y');
-            for ($year = $pub_start_year; $year <= $pub_end_year; $year++) {
+          if (!empty($node->get('field_recipe_date_to')->date) && !empty($node->get('field_recipe_date')->date)) {
+            $first_year = (int) $node->get('field_recipe_date')->date->format('Y');
+            $last_year = (int) $node->get('field_recipe_date_to')->date->format('Y');
+
+            for ($year = $first_year; $year <= $last_year; $year++) {
               $field->addValue($year);
             }
           }
