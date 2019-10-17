@@ -8,6 +8,7 @@ dependencies:
     - taxonomy
     - node
     - search_api
+    - emmr_core
   config:
     - field.storage.node.field_contributors
     - field.storage.paragraph.field_contributor_name
@@ -17,6 +18,7 @@ dependencies:
     - field.storage.node.field_publication_format
     - field.storage.node.field_symptoms_index
     - field.storage.node.field_recipe_transcription
+    - field.storage.node.field_recipe_type
     - search_api.server.drupal_solr_lib_unb_ca
 third_party_settings:
   search_api_solr:
@@ -80,11 +82,19 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_ingredients_index
+  field_publication_format:
+    label: 'Publication Format'
+    datasource_id: 'entity:node'
+    property_path: field_publication_format
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_publication_format
   field_recipe_date:
     label: Date
     datasource_id: 'entity:node'
     property_path: field_recipe_date
-    type: text
+    type: date
     dependencies:
       config:
         - field.storage.node.field_recipe_date
@@ -92,7 +102,7 @@ field_settings:
     label: 'Date (to)'
     datasource_id: 'entity:node'
     property_path: field_recipe_date_to
-    type: text
+    type: date
     dependencies:
       config:
         - field.storage.node.field_recipe_date_to
@@ -104,6 +114,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_recipe_transcription
+  field_recipe_type:
+    label: Type
+    datasource_id: 'entity:node'
+    property_path: field_recipe_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_recipe_type
   field_symptoms_index:
     label: 'Symptoms Index'
     datasource_id: 'entity:node'
@@ -131,6 +149,10 @@ field_settings:
     dependencies:
       module:
         - node
+  years_published:
+    label: 'Publication Years'
+    property_path: years_published
+    type: integer
 datasource_settings:
   'entity:node':
     bundles:
@@ -143,6 +165,7 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  index_additional_recipe_info: {  }
   rendered_item: {  }
   solr_date_range: {  }
 tracker_settings:
