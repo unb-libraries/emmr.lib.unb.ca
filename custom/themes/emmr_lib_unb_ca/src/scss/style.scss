@@ -292,7 +292,7 @@ div.form-item-field-recipe-date-to-value-max {
 
 // Browse Recipes Form V2
 #views-exposed-form-browse-recipes-v2-page-1,
-#views-exposed-form-browse-recipes-v2-age-3 {
+#views-exposed-form-browse-recipes-v2-page-3 {
   padding-left: 40px;
 }
 
@@ -303,10 +303,10 @@ div.form-item.js-form-item {
   display: table;
 }
 
+#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(6),
 #views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(7),
-#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(8),
-#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(7),
-#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(8) {
+#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(6),
+#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(7) {
   display: inline-block !important;
 }
 
@@ -328,26 +328,26 @@ div.form-item.js-form-item {
   width: 310px;
 }
 
+#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(6) > input,
 #views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(7) > input,
-#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(8) > input,
-#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(7) > input,
-#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(8) > input {
+#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(6) > input,
+#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(7) > input {
   width: 124px;
 }
 
-#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(7) > input,
-#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(7) > input {
+#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(6) > input,
+#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(6) > input {
   position: relative;
   left: -4px;
 }
 
-#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(8) > label,
-#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(8) > label {
+#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(7) > label,
+#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(7) > label {
   width: 30px;
 }
 
-#views-exposed-form-browse-recipes-v2-page-1  > div > div:nth-child(11),
-#views-exposed-form-browse-recipes-v2-page-3  > div > div:nth-child(11) {
+#views-exposed-form-browse-recipes-v2-page-1  > div > div:nth-child(8),
+#views-exposed-form-browse-recipes-v2-page-3  > div > div:nth-child(8) {
   display: table;
 }
 
