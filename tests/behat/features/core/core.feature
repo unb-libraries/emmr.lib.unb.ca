@@ -48,4 +48,4 @@ Feature: Core
       When I visit "/all-recipes"
       And I fill in "Keyword(s)" with "123"
       Then I press "Search"
-      Then I should see "Test Recipe"
+      Then I should see "[Test Recipe]"
