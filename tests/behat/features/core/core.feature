@@ -43,9 +43,10 @@ Feature: Core
       | Test Source       | Test Description  | Dalhousie University  |
       And "emmr_recipe" content:
       | field_recipe_source | title       | field_recipe_transcription | field_imprecise_date | published |
-      | Test Source         | Test Recipe | Test Transcription 123     | FALSE                | TRUE      |
+      | Test Source         | Test Recipe | Test Transcription XYZ     | FALSE                | TRUE      |
       Given I am logged in as a user with the "EMMR Contributor" role
       When I visit "/all-recipes"
-      And I fill in "Keyword(s)" with "123"
+      And I wait 180
+      And I fill in "Keyword(s)" with "XYZ"
       Then I press "Search"
-      Then I should see "[Test Recipe]"
+      Then I should see "Test Recipe"
