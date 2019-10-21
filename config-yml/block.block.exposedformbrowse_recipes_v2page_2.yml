@@ -1,0 +1,23 @@
+uuid: 20fa75b1-bf6c-402b-bf76-f67540f7430c
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.browse_recipes_v2
+  module:
+    - views
+  theme:
+    - emmr_lib_unb_ca
+id: exposedformbrowse_recipes_v2page_2
+theme: emmr_lib_unb_ca
+region: footer
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:browse_recipes_v2-page_2'
+settings:
+  id: 'views_exposed_filter_block:browse_recipes_v2-page_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility: {  }
