@@ -985,7 +985,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: search-recipes
+      path: search-recipes-v1
       filters:
         combine:
           id: combine
@@ -1974,7 +1974,7 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
-      path: global-search
+      path: global-search-v1
       defaults:
         filters: false
         filter_groups: false
@@ -2710,7 +2710,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: all-recipes
+      path: all-recipes-v1
       filters:
         combine:
           id: combine
