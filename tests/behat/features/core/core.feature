@@ -46,6 +46,6 @@ Feature: Core
       | Test Source         | Test Recipe | Test Transcription 123     | FALSE                | TRUE      |
       Given I am logged in as a user with the "EMMR Contributor" role
       When I visit "/all-recipes"
-      And I fill in "Keyword" with "123"
+      And I fill in "Keyword(s)" with "123"
       Then I press "Search"
       Then I should see "Test Recipe"
