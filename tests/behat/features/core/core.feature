@@ -35,4 +35,5 @@ Feature: Core
       | title             | field_source_desc | field_institution     |
       | Test Source       | Test Description  | Dalhousie University  |
       When I visit "/sources"
+      And I wait 30
       Then I should see the link "Test Source"
