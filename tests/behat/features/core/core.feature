@@ -46,7 +46,7 @@ Feature: Core
       | Test Source         | Test Recipe | Test Transcription XYZ     | FALSE                | TRUE      |
       Given I am logged in as a user with the "EMMR Contributor" role
       When I visit "/all-recipes"
-      And I wait 180
+      And I wait 540
       And I fill in "Keyword(s)" with "XYZ"
       Then I press "Search"
       Then I should see "Test Recipe"
