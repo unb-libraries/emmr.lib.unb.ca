@@ -16,6 +16,6 @@
     }
   },
   "require": {
-    "unb-libraries/drupalextension-unb-libraries": "4.x-dev"
+    "unb-libraries/drupal-behat-testing-libraries": "^8.0.6"
   }
 }

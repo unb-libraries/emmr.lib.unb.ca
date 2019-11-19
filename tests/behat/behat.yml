@@ -3,7 +3,7 @@ default:
     core:
       contexts:
         - FeatureContext
-        - Drupal\DrupalExtension\Context\UnbLibDrupalContext
+        - Drupal\DrupalExtension\Context\DrupalContext
         - Drupal\DrupalExtension\Context\MinkContext
   extensions:
     Behat\MinkExtension:

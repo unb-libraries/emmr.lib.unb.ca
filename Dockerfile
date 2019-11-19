@@ -1,16 +1,11 @@
-FROM unblibraries/drupal:8.x-1.x
+FROM unblibraries/dockworker-drupal:latest
 MAINTAINER UNB Libraries <libsupport@unb.ca>
-
-LABEL name="emmr.lib.unb.ca"
-LABEL vcs-ref=""
-LABEL vcs-url="https://github.com/unb-libraries/emmr.lib.unb.ca"
 
 ENV DRUPAL_SITE_ID emmr
 ENV DRUPAL_SITE_URI emmr.lib.unb.ca
 ENV DRUPAL_SITE_UUID 9ae92cc6-c0b6-41d0-b619-778b7e928952
 
-# Deploy upstream scripts, and then override with any local.
-RUN curl -sSL https://raw.githubusercontent.com/unb-libraries/CargoDock/drupal-8.x-1.x/container/deploy.sh | sh
+# Override scripts with any local.
 COPY ./scripts/container /scripts
 
 # Add additional OS packages.
@@ -41,3 +36,20 @@ COPY ./custom/modules ${TMP_DRUPAL_BUILD_DIR}/custom_modules
 ENV DEPLOY_ENV prod
 ENV DRUPAL_DEPLOY_CONFIGURATION TRUE
 ENV DRUPAL_CONFIGURATION_EXPORT_SKIP devel
+
+# Metadata
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VERSION
+LABEL ca.unb.lib.generator="drupal8" \
+      com.microscaling.docker.dockerfile="/Dockerfile" \
+      com.microscaling.license="MIT" \
+      org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.description="emmr.lib.unb.ca examines recipes circulating before 1800 in print and manuscript in the area now defined as Canada's Maritime provinces." \
+      org.label-schema.name="emmr.lib.unb.ca" \
+      org.label-schema.schema-version="1.0" \
+      org.label-schema.url="https://emmr.lib.unb.ca" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="https://github.com/unb-libraries/emmr.lib.unb.ca" \
+      org.label-schema.vendor="University of New Brunswick Libraries" \
+      org.label-schema.version=$VERSION
