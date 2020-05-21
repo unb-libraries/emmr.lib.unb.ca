@@ -61,7 +61,7 @@
         "dompdf/dompdf": "~0.8.0",
         "drupal/bootstrap": "3.21",
         "drupal/config_update": "1.1",
-        "drupal/core": "8.8.5",
+        "drupal/core": "8.8.6",
         "drupal/editor_advanced_link": "1.8",
         "drupal/editor_file": "1.5",
         "drupal/entity_print": "2.x",
