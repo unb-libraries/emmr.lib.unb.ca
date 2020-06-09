@@ -35,6 +35,8 @@ spec:
         vcsRepository: emmr.lib.unb.ca
         vcsRef: prod
     spec:
+      nodeSelector:
+        deployenv: prod
       containers:
         -
           name: emmr-lib-unb-ca
