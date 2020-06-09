@@ -72,7 +72,7 @@
         "drupal/health_check": "1.2",
         "drupal/ldap": "3.0-beta3",
         "drupal/override_node_options": "2.x-dev",
-        "drupal/paragraphs": "1.11",
+        "drupal/paragraphs": "1.12",
         "drupal/pathauto": "1.8",
         "drupal/redis": "1.4",
         "drupal/search_api": "1.17",
