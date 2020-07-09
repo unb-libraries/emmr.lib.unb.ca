@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.emmr_annotation.field_alt_spellings
     - field.field.paragraph.emmr_annotation.field_annotation_body
     - field.field.paragraph.emmr_annotation.field_annotation_text
     - paragraphs.paragraphs_type.emmr_annotation
@@ -11,8 +12,16 @@ targetEntityType: paragraph
 bundle: emmr_annotation
 mode: default
 content:
-  field_annotation_body:
+  field_alt_spellings:
     weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_annotation_body:
+    weight: 2
     settings:
       size: 60
       placeholder: ''

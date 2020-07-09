@@ -1,0 +1,19 @@
+uuid: 5ff34e53-8878-4bc3-835b-99812bc98a1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_alt_spellings
+    - paragraphs.paragraphs_type.emmr_annotation
+id: paragraph.emmr_annotation.field_alt_spellings
+field_name: field_alt_spellings
+entity_type: paragraph
+bundle: emmr_annotation
+label: 'Alternative Spellings'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
