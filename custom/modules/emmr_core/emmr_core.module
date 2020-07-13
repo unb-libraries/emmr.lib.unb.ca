@@ -86,6 +86,7 @@ function emmr_core_preprocess_node(&$variables) {
     if ($annos) {
       $annos_num = count($variables['content']['field_annotations']['#items']);
       $annos_val = [];
+      $annos_alt = [];
       $i = 0;
 
       while ($i < $annos_num) {
@@ -98,7 +99,7 @@ function emmr_core_preprocess_node(&$variables) {
         $alt_spellings = $variables['content']['field_annotations'][$i]['#paragraph']->get('field_alt_spellings')->getValue();
 
         foreach ($alt_spellings as $spelling) {
-          $annos_val[] = $spelling['value'];
+          $annos_alt[] = [$annos_val[$i], $spelling['value']];
         }
 
         $i++;
@@ -108,9 +109,25 @@ function emmr_core_preprocess_node(&$variables) {
       foreach ($annos_val as $val) {
         $val = preg_replace('/(^[[:punct:]]|[[:punct:]]$)/', '', $val);
         $pattern = '/(\b\Q' . $val . '\E\b)/mi';
-        $replacement = '<span class="emmr-anno">$1</span>';
+        $anno_id = 'top-' . $val;
+
+        $replacement = '<span id="' . $anno_id .
+          '" class="emmr-anno"><a href="#anno-' . $val . '">$1</a></span>';
+
         $trans = preg_replace($pattern, $replacement, $trans);
       }
+
+      // Highlight alternative spellings.
+      foreach ($annos_alt as $val) {
+        $pattern = '/(\b\Q' . $val[1] . '\E\b)/mi';
+        $anno_id = 'top-' . $val[0];
+
+        $replacement = '<span id="' . $anno_id .
+          '" class="emmr-anno"><a href="#anno-' . $val[0] . '">$1</a></span>';
+
+        $trans = preg_replace($pattern, $replacement, $trans);
+      }
+
       $variables['content']['field_recipe_transcription'][0]['#text'] = $trans;
     }
 
