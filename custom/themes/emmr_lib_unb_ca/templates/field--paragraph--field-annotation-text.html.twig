@@ -48,8 +48,8 @@
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ attributes }} id = "anno-{{ item.content['#context'].value }}">
-        <a href="{{ '#' ~ 'top-' ~ item.content['#context'].value }}">
+      <div{{ attributes }} id = "anno-{{ item.content['#context'].value|trim }}">
+        <a href="{{ '#' ~ 'top-' ~ item.content['#context'].value|trim }}">
           {{ item.content }}
         </a>
       </div>
