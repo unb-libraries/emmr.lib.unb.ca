@@ -12,8 +12,16 @@ targetEntityType: paragraph
 bundle: emmr_annotation
 mode: default
 content:
-  field_annotation_body:
+  field_alt_spellings:
+    type: string
     weight: 1
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_annotation_body:
+    weight: 2
     label: hidden
     settings:
       link_to_entity: false
@@ -32,5 +40,4 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
-  field_alt_spellings: true
   search_api_excerpt: true

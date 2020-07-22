@@ -50,7 +50,7 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {% set annotation = content.field_annotation_text.0['#context'].value|trim %}
-      {% set spellings = content.field_alt_spellings['#items'].getValue() %}
+      {% set spellings = content.field_alt_spellings['#items'].getValue()|trim %}
 
       <div id="anno-{{ annotation }}">
         <a href="{{ '#top-' ~ annotation }}"><b>
