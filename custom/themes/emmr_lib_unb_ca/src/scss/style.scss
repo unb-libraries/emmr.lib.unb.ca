@@ -536,6 +536,23 @@ body > div.dialog-off-canvas-main-canvas > div > div > div > div > nav > ul
 #recipe-collapse:hover,
 #recipe-collapse:focus {
   text-decoration: none;
+
+  & .glyphicon-triangle-right {
+    display: inline-block;
+  }
+  & .glyphicon-triangle-bottom {
+    display: none;
+  }
+
+  &[aria-expanded="true"] {
+    & .glyphicon-triangle-right {
+      display: none;
+    }
+    & .glyphicon-triangle-bottom {
+      display: inline-block;
+    }
+  }
+
 }
 
 #recipe-pages-images {
@@ -672,6 +689,26 @@ h1.page-header > a {
 .advanced-source-row {
   padding-bottom: 20px;
   padding-left: 36px;
+
+  & .glyphicon {
+    font-size: 0.8em;
+  }
+
+  & .glyphicon-triangle-right {
+    display: inline-block;
+  }
+  & .glyphicon-triangle-bottom {
+    display: none;
+  }
+
+  & [aria-expanded="true"] {
+    & .glyphicon-triangle-right {
+      display: none;
+    }
+    & .glyphicon-triangle-bottom {
+      display: inline-block;
+    }
+  }
 }
 .advanced-source-title {
   font-size: 18px;
