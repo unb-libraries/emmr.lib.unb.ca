@@ -24,6 +24,8 @@ services:
 
   drupal-solr-lib-unb-ca:
     image: unblibraries/solr-drupal:8.x-4.x
+    env_file:
+      - ./env/solr.env
     expose:
       - "8983"
     networks:
@@ -35,8 +37,6 @@ services:
   emmr.lib.unb.ca:
     build:
       context: .
-      args:
-        - COMPOSER_DEPLOY_DEV=dev
     restart: always
     container_name: emmr.lib.unb.ca
     depends_on:
@@ -50,6 +50,7 @@ services:
     env_file:
       - ./env/drupal.env
     volumes:
+      - /app/html/sites/default
       - ./config-yml:/app/configuration
       - ./custom/modules:/app/html/modules/custom
       - ./custom/themes:/app/html/themes/custom

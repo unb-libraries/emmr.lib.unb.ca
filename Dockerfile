@@ -1,7 +1,6 @@
-FROM unblibraries/drupal:dockworker-2.x
+FROM unblibraries/drupal:8.x-3.x-unblib
 MAINTAINER UNB Libraries <libsupport@unb.ca>
 
-ARG COMPOSER_DEPLOY_DEV=no-dev
 ENV DRUPAL_SITE_ID emmr
 ENV DRUPAL_SITE_URI emmr.lib.unb.ca
 ENV DRUPAL_SITE_UUID 9ae92cc6-c0b6-41d0-b619-778b7e928952
