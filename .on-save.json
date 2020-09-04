@@ -1,7 +1,0 @@
-[
-  {
-    "files": "**",
-    "command": "vendor/bin/dockworker drupal:cr",
-    "showOutput": true
-  }
-]
