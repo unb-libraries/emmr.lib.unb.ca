@@ -1,4 +1,4 @@
-![emmr.lib.unb.ca screenshot](https://github.com/unb-libraries/emmr.lib.unb.ca/raw/prod/screenshot.png "emmr.lib.unb.ca screenshot")
+![emmr.lib.unb.ca screenshot](https://github.com/unb-libraries/emmr.lib.unb.ca/raw/prod/.dockworker/screenshot.png "emmr.lib.unb.ca screenshot")
 # [emmr.lib.unb.ca](https://emmr.lib.unb.ca/) : Instance Repository
 [![Build Status](https://travis-ci.com/unb-libraries/emmr.lib.unb.ca.svg?branch=prod)](https://travis-ci.com/unb-libraries/emmr.lib.unb.ca) [![GitHub license](https://img.shields.io/github/license/unb-libraries/emmr.lib.unb.ca)](https://github.com/unb-libraries/emmr.lib.unb.ca/blob/dev/LICENSE) ![GitHub repo size](https://img.shields.io/github/repo-size/unb-libraries/emmr.lib.unb.ca)
 
