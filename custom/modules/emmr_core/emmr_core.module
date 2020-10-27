@@ -229,7 +229,6 @@ function emmr_core_node_presave($node) {
  * Implements hook_FORM_ID_alter().
  */
 function emmr_core_form_alter(&$form, &$form_state, $form_id) {
-
   if ($form_id == "node_emmr_recipe_form" ||
   $form_id == "node_emmr_recipe_edit_form") {
 
@@ -258,6 +257,27 @@ function emmr_core_form_alter(&$form, &$form_state, $form_id) {
 
     array_unshift($form['#submit'], 'search_exact_match');
   }
+}
+
+/**
+ * Implements hook_entity_bundle_field_info_alter().
+ * Attach annotation safety constraint.
+ */
+function emmr_core_entity_bundle_field_info_alter(&$fields, $entity_type, $bundle) {
+  // Target only annotation paragraphs.
+  if ($entity_type->id() === 'paragraph' && $bundle === 'emmr_annotation') {
+
+    if (isset($fields['field_annotation_text'])) {
+    // Add our custom validation to the annotation text field.
+    $fields['field_annotation_text']->addConstraint('AnnoSafe');
+    }
+
+    if (isset($fields['field_alt_spellings'])) {
+    // Add our custom validation to the annotation text field.
+    $fields['field_alt_spellings']->addConstraint('AnnoSafe');
+    }
+  }
+
 }
 
 /**
