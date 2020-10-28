@@ -92,15 +92,20 @@ function emmr_core_preprocess_node(&$variables) {
       while ($i < $annos_num) {
 
         if (!empty($variables['content']['field_annotations'][$i]['#paragraph']->get('field_annotation_text')->getValue()[0]['value'])) {
-          $annos_val[] =
+          $anno =
             trim($variables['content']['field_annotations'][$i]['#paragraph']->get('field_annotation_text')->getValue()[0]['value']);
+
+          $annos_val[] = $anno;
         }
 
         // Include alternative spellings.
         $alt_spellings = $variables['content']['field_annotations'][$i]['#paragraph']->get('field_alt_spellings')->getValue();
 
         foreach ($alt_spellings as $spelling) {
-          $annos_alt[] = [$annos_val[$i], trim($spelling['value'])];
+
+          if (trim($spelling['value']) != $anno) {
+            $annos_alt[] = [$annos_val[$i], trim($spelling['value'])];
+          }
         }
 
         $i++;
