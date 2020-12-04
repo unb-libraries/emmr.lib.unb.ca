@@ -74,7 +74,7 @@ class EmmrCoreController extends ControllerBase {
     $file_system = \Drupal::service('file_system');
 
     if ($zip_file_ok === FALSE) {
-      drupal_set_message('Can\'t create zip file.', 'error');
+      $this->messenger()->addError('Can\'t create zip file.');
       return;
     }
 
