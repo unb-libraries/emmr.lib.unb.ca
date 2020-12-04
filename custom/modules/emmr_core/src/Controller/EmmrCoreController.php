@@ -79,7 +79,7 @@ class EmmrCoreController extends ControllerBase {
     }
 
     // Get ZipArchive object.
-    $zip = archiver_get_archiver($zip_path)->getArchive();
+    $zip = \Drupal::service('plugin.manager.archiver')->getInstance(['filepath' => $zip_path])->getArchive();
 
     // Get Drupal file objects from recipe images field.
     $images = $node->get("field_recipe_images")->getValue();
