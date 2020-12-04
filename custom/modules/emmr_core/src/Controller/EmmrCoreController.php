@@ -33,8 +33,8 @@ class EmmrCoreController extends ControllerBase {
     $dompdf = new Dompdf();
 
     // Render node view html to string.
-    $node = \Drupal::entityManager()->getStorage('node')->load($nid);
-    $view_builder = \Drupal::entityManager()->getViewBuilder('node');
+    $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+    $view_builder = \Drupal::entityTypeManager()->getViewBuilder('node');
     $renderarray = $view_builder->view($node, 'pdf');
     $html = \Drupal::service('renderer')->renderRoot($renderarray);
 
@@ -65,7 +65,7 @@ class EmmrCoreController extends ControllerBase {
    */
   public function imageZip($nid) {
     // Get node, temporary storage, empty file, file system.
-    $node = \Drupal::entityManager()->getStorage('node')->load($nid);
+    $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
     $zip_name = "emmr-" . strtolower($this->fNameClean($node->getTitle())) .
       "-id" . $nid . "-images";
     $zip_filename = tempnam(sys_get_temp_dir(), 'zip_temp');
