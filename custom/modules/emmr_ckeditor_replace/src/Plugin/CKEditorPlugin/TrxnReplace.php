@@ -15,7 +15,7 @@ use Drupal\editor\Entity\Editor;
  *   module = "emmr_ckeditor_replace"
  * )
  */
-class Trxnreplace extends CKEditorPluginBase implements CKEditorPluginCssInterface {
+class TrxnReplace extends CKEditorPluginBase implements CKEditorPluginCssInterface {
 
   /**
    * {@inheritdoc}

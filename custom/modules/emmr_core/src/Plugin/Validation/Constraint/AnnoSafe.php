@@ -15,7 +15,11 @@ use Symfony\Component\Validator\Constraint;
  */
 class AnnoSafe extends Constraint {
 
-  // The message that will be shown if the value contains unsafe characters.
+  /**
+   * The message that will be shown if the value contains unsafe characters.
+   *
+   * @var string
+   */
   public $notSafe =
     'Annotation text cannot contain the following characters: /, <, >.';
 
