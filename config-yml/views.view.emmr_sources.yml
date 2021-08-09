@@ -81,7 +81,10 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<br>\n<br>\n{{ title }}"
+            text: |-
+              <br>
+              <br>
+              {{ title }}
             make_link: false
             path: ''
             absolute: false

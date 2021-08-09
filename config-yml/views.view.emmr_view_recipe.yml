@@ -802,7 +802,50 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"container\">\n<div class=\"row\" id=\"recipe-title\">\n<h2>{{ field_contributors|striptags[8:] }} [{{ title|striptags[7:] }}]</h2>\n</div>\n</div>\n<div class=\"row\" id=\"recipe-details-header\">\n<div class=\"col-md-12\">\n<h4>Details <span class=\"glyphicon glyphicon-triangle-right\" id=\"recipe-collapse\"></span></h4> \n<br>\n</div>\n</div>\n<div class=\"row\" id=\"recipe-details\">\n<div class=\"col-md-12\">\n<p>{{ field_contributors | striptags }}</p>\n<p>{{ title | striptags }}</p>\n<p>{{ field_publication_format | striptags }}</p>\n<p>{{ field_recipe_type | striptags }}</p>\n<p>{{ field_symptoms | striptags }}</p>\n<p>{{ field_ingredients | striptags }}</p>\n<p>{{ field_recipe_places | striptags }}</p>\n<p>{{ field_recipe_date | striptags }}</p>\n</div>\n</div>\n<br>\n<br>\n<div class=\"row\" id=\"pages-trans-anno\">\n<div class=\"col-md-2\" id=\"recipe-pages\">\n<h5 id=\"pages-title\">Pages</h5>\n<div id=\"recipe-pages-images\">{{ field_recipe_images }}</div>\n</div>\n<div class=\"col-md-6\" id=\"recipe-trans\">\n<br>\n<br>\n{{ field_recipe_transcription }}\n</div>\n{% if field_annotations|striptags|trim != \"\" %}\n<div class=\"col-md-3\" id=\"recipe-anno\">\n<br>\n{{ field_annotations }}\n</div>\n{% endif %}\n</div>\n</div>"
+            text: |-
+              <div class="container">
+              <div class="row" id="recipe-title">
+              <h2>{{ field_contributors|striptags[8:] }} [{{ title|striptags[7:] }}]</h2>
+              </div>
+              </div>
+              <div class="row" id="recipe-details-header">
+              <div class="col-md-12">
+              <h4>Details <span class="glyphicon glyphicon-triangle-right" id="recipe-collapse"></span></h4> 
+              <br>
+              </div>
+              </div>
+              <div class="row" id="recipe-details">
+              <div class="col-md-12">
+              <p>{{ field_contributors | striptags }}</p>
+              <p>{{ title | striptags }}</p>
+              <p>{{ field_publication_format | striptags }}</p>
+              <p>{{ field_recipe_type | striptags }}</p>
+              <p>{{ field_symptoms | striptags }}</p>
+              <p>{{ field_ingredients | striptags }}</p>
+              <p>{{ field_recipe_places | striptags }}</p>
+              <p>{{ field_recipe_date | striptags }}</p>
+              </div>
+              </div>
+              <br>
+              <br>
+              <div class="row" id="pages-trans-anno">
+              <div class="col-md-2" id="recipe-pages">
+              <h5 id="pages-title">Pages</h5>
+              <div id="recipe-pages-images">{{ field_recipe_images }}</div>
+              </div>
+              <div class="col-md-6" id="recipe-trans">
+              <br>
+              <br>
+              {{ field_recipe_transcription }}
+              </div>
+              {% if field_annotations|striptags|trim != "" %}
+              <div class="col-md-3" id="recipe-anno">
+              <br>
+              {{ field_annotations }}
+              </div>
+              {% endif %}
+              </div>
+              </div>
             make_link: false
             path: ''
             absolute: false

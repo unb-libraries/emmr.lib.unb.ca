@@ -390,7 +390,8 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "<b>Source Origin: </b>{{ field_source_origin }} |\n"
+            text: |
+              <b>Source Origin: </b>{{ field_source_origin }} |
             make_link: false
             path: ''
             absolute: false
@@ -453,7 +454,8 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "<b>Sublocation: </b>{{ field_sublocation }}\n"
+            text: |
+              <b>Sublocation: </b>{{ field_sublocation }}
             make_link: false
             path: ''
             absolute: false

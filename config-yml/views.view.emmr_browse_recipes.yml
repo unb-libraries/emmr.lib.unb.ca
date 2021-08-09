@@ -430,7 +430,12 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "{% if field_recipe_date_to|striptags|raw %}\n{{ field_recipe_date | date('d F Y') }} - {{ field_recipe_date_to | date('d F Y') }}.\n{% else %}\n{{ field_recipe_date | date('d F Y') }}.\n{% endif %}"
+            text: |-
+              {% if field_recipe_date_to|striptags|raw %}
+              {{ field_recipe_date | date('d F Y') }} - {{ field_recipe_date_to | date('d F Y') }}.
+              {% else %}
+              {{ field_recipe_date | date('d F Y') }}.
+              {% endif %}
             make_link: false
             path: ''
             absolute: false
@@ -959,7 +964,10 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<br>\n<br>\nYour search did not match any recipes in the database."
+          content: |-
+            <br>
+            <br>
+            Your search did not match any recipes in the database.
           plugin_id: text_custom
       relationships:
         field_contributors:
@@ -1697,7 +1705,12 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "{% if field_recipe_date_to|striptags|raw %}\n{{ field_recipe_date | date('d F Y') }} - {{ field_recipe_date_to | date('d F Y') }}.\n{% else %}\n{{ field_recipe_date | date('d F Y') }}.\n{% endif %}"
+            text: |-
+              {% if field_recipe_date_to|striptags|raw %}
+              {{ field_recipe_date | date('d F Y') }} - {{ field_recipe_date_to | date('d F Y') }}.
+              {% else %}
+              {{ field_recipe_date | date('d F Y') }}.
+              {% endif %}
             make_link: false
             path: ''
             absolute: false
@@ -2428,7 +2441,12 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "{% if field_recipe_date_to|striptags|raw %}\n{{ field_recipe_date | date('d F Y') }} - {{ field_recipe_date_to | date('d F Y') }}.\n{% else %}\n{{ field_recipe_date | date('d F Y') }}.\n{% endif %}"
+            text: |-
+              {% if field_recipe_date_to|striptags|raw %}
+              {{ field_recipe_date | date('d F Y') }} - {{ field_recipe_date_to | date('d F Y') }}.
+              {% else %}
+              {{ field_recipe_date | date('d F Y') }}.
+              {% endif %}
             make_link: false
             path: ''
             absolute: false
@@ -2726,7 +2744,9 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<br>\n<a href=\"/search-recipes\">Search Again<a>"
+            value: |-
+              <br>
+              <a href="/search-recipes">Search Again<a>
             format: basic_html
           plugin_id: text
     cache_metadata:
@@ -3439,7 +3459,12 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "{% if field_recipe_date_to|striptags|raw %}\n{{ field_recipe_date | date('d F Y') }} - {{ field_recipe_date_to | date('d F Y') }}.\n{% else %}\n{{ field_recipe_date | date('d F Y') }}.\n{% endif %}"
+            text: |-
+              {% if field_recipe_date_to|striptags|raw %}
+              {{ field_recipe_date | date('d F Y') }} - {{ field_recipe_date_to | date('d F Y') }}.
+              {% else %}
+              {{ field_recipe_date | date('d F Y') }}.
+              {% endif %}
             make_link: false
             path: ''
             absolute: false
