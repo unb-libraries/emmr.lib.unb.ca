@@ -3,16 +3,46 @@
 namespace Drupal\emmr_core\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\node\Entity\Node;
 use Drupal\Core\Access\AccessResult;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Dompdf\Dompdf;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Controller for Datasets navigation.
  */
 class EmmrCoreController extends ControllerBase {
+  /**
+   * For services dependency injection.
+   *
+   * @var Symfony\Component\DependencyInjection\ContainerInterface
+   */
+  protected $service;
+
+  /**
+   * Class constructor.
+   *
+   * @param \Symfony\Component\DependencyInjection\ContainerInterface $service_container
+   *   The container interface for using services via dependency injection.
+   */
+  public function __construct(ContainerInterface $service_container) {
+    $this->service = $service_container;
+  }
+
+  /**
+   * Object create method.
+   *
+   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
+   *   Container interface.
+   *
+   * @return static
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('service_container')
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -33,10 +63,12 @@ class EmmrCoreController extends ControllerBase {
     $dompdf = new Dompdf();
 
     // Render node view html to string.
-    $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
-    $view_builder = \Drupal::entityTypeManager()->getViewBuilder('node');
+    $node =
+      $this->service->get('entity_type.manager')->getStorage('node')->load($nid);
+    $view_builder = $this->service->get('entity_type.manager')->getViewBuilder('node');
     $renderarray = $view_builder->view($node, 'pdf');
-    $html = \Drupal::service('renderer')->renderRoot($renderarray);
+    $html =
+      $this->service->get('renderer')->renderRoot($renderarray);
 
     // Get module path.
     $path = DRUPAL_ROOT . '/' . drupal_get_path("module", "emmr_core");
@@ -65,13 +97,13 @@ class EmmrCoreController extends ControllerBase {
    */
   public function imageZip($nid) {
     // Get node, temporary storage, empty file, file system.
-    $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+    $node = $this->service->get('entity_type.manager')->getStorage('node')->load($nid);
     $zip_name = "emmr-" . strtolower($this->fNameClean($node->getTitle())) .
       "-id" . $nid . "-images";
     $zip_filename = tempnam(sys_get_temp_dir(), 'zip_temp');
     $zip_path = $zip_filename . ".zip";
     $zip_file_ok = file_put_contents($zip_path, '');
-    $file_system = \Drupal::service('file_system');
+    $file_system = $this->service->get('file_system');
 
     if ($zip_file_ok === FALSE) {
       $this->messenger()->addError('Can\'t create zip file.');
@@ -79,7 +111,7 @@ class EmmrCoreController extends ControllerBase {
     }
 
     // Get ZipArchive object.
-    $zip = \Drupal::service('plugin.manager.archiver')->getInstance(['filepath' => $zip_path])->getArchive();
+    $zip = $this->service->get('plugin.manager.archiver')->getInstance(['filepath' => $zip_path])->getArchive();
 
     // Get Drupal file objects from recipe images field.
     $images = $node->get("field_recipe_images")->getValue();
@@ -89,7 +121,7 @@ class EmmrCoreController extends ControllerBase {
       array_push($fids, $image["target_id"]);
     }
 
-    $files = \Drupal::entityTypeManager()
+    $files = $this->service->get('entity_type.manager')
       ->getStorage('file')
       ->loadMultiple($fids);
 
@@ -135,7 +167,8 @@ class EmmrCoreController extends ControllerBase {
    * Check if node is a recipe.
    */
   public function checkRecipe($nid) {
-    $node = Node::load($nid);
+    $node =
+      $this->service->get('entity_type.manager')->getStorage('node')->load($nid);
     return AccessResult::allowedIf($node->bundle() === 'emmr_recipe');
   }
 
