@@ -71,7 +71,7 @@
         "drupal/pathauto": "1.8",
         "drupal/redis": "1.5",
         "drupal/search_api": "1.21",
-        "drupal/search_api_solr": "4.2.2",
+        "drupal/search_api_solr": "4.2.3",
         "drupal/twig_tweak": "2.9",
         "drupal/view_unpublished": "1.0",
         "mikehaertl/phpwkhtmltopdf": "~2.1",
