@@ -11,12 +11,12 @@ pattern: 'sources/[node:title]'
 selection_criteria:
   61ad476b-2e85-42c1-8082-92d8b77e9c84:
     id: node_type
-    bundles:
-      emmr_source: emmr_source
     negate: false
+    uuid: 61ad476b-2e85-42c1-8082-92d8b77e9c84
     context_mapping:
       node: node
-    uuid: 61ad476b-2e85-42c1-8082-92d8b77e9c84
+    bundles:
+      emmr_source: emmr_source
 selection_logic: and
 weight: -5
 relationships: {  }
