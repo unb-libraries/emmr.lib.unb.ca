@@ -157,6 +157,7 @@ function emmr_core_preprocess_node(&$variables) {
         $reference = !empty($source->get('field_reference')->getValue()) ?
           $source->get('field_reference')->getValue()[0]['value'] : "";
 
+        $variables['source']['url'] = $source->toUrl()->toString();
         $variables['source']['name'] = $sname;
         $variables['source']['institution'] = $institution;
         $variables['source']['origin'] = $origin;
