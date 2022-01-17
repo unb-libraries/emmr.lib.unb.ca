@@ -7,16 +7,16 @@ dependencies:
 id: recipes
 label: Recipes
 type: 'canonical_entities:node'
-pattern: 'recipes/[node:nid]'
+pattern: 'recipes/[node:title]'
 selection_criteria:
-  56641b76-31c6-4a13-9d50-e20004e4aab1:
+  b2e222fe-2510-4021-acbb-cd38289d03d5:
     id: node_type
-    bundles:
-      emmr_recipe: emmr_recipe
     negate: false
+    uuid: b2e222fe-2510-4021-acbb-cd38289d03d5
     context_mapping:
       node: node
-    uuid: 56641b76-31c6-4a13-9d50-e20004e4aab1
+    bundles:
+      emmr_recipe: emmr_recipe
 selection_logic: and
 weight: -5
 relationships: {  }
