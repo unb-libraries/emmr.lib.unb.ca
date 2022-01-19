@@ -420,17 +420,30 @@ div.form-item-combine:focus-within::before {
   width: 360px;
 }
 
-#views-exposed-form-browse-recipes-v2-page-2 > div >
-div.form-item-search-api-fulltext::before {
-  visibility: visible;
-  position: relative;
-  top: 2px;
-  left: 24px;
-  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f002"
+#views-exposed-form-browse-recipes-v2-page-2
+#edit-search-api-fulltext {
+  margin-left: 2.5rem;
 }
 
 #views-exposed-form-browse-recipes-v2-page-2 > div >
-div.form-item-search-api-fulltext:focus-within::before {
+div.form-item-search-api-fulltext::after {
+  visibility: visible;
+  position: relative;
+  top: 2px;
+  left: -356px;
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f002"
+}
+
+#views-exposed-form-browse-recipes-v2-page-2
+label[for="edit-search-api-fulltext"] {
+  display: block;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .8rem;
+}
+
+#views-exposed-form-browse-recipes-v2-page-2 > div >
+div.form-item-search-api-fulltext:focus-within::after {
   visibility: hidden;
 }
 
@@ -477,6 +490,10 @@ div.form-item-search-api-fulltext:focus-within::before {
   p {
     text-align: justify;
   }
+}
+
+#home-exp-feat h2 {
+  font-weight: bold;
 }
 
 #home-explore,
@@ -771,6 +788,12 @@ body.path-user div#edit-timezone {
   #views-exposed-form-browse-recipes-v2-page-2 > div >
   div.form-item-combine::before {
     display: none;
+  }
+
+  #views-exposed-form-browse-recipes-v2-page-2
+  #edit-search-api-fulltext {
+    width: 100%;
+    margin-left: inherit !important;
   }
 
   #search-recipes {
