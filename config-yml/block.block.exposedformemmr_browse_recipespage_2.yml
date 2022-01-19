@@ -17,7 +17,7 @@ plugin: 'views_exposed_filter_block:emmr_browse_recipes-page_2'
 settings:
   id: 'views_exposed_filter_block:emmr_browse_recipes-page_2'
   label: ''
-  provider: views
   label_display: '0'
+  provider: views
   views_label: ''
 visibility: {  }

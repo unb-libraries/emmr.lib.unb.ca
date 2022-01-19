@@ -16,11 +16,11 @@ plugin: emmr_banner
 settings:
   id: emmr_banner
   label: 'EMMR Banner'
-  provider: emmr_core
   label_display: '0'
+  provider: emmr_core
 visibility:
   request_path:
     id: request_path
-    pages: /intro
     negate: false
     context_mapping: {  }
+    pages: /intro

@@ -25,58 +25,12 @@ base_table: search_api_index_recipes_emmr_lib_unb_ca
 base_field: search_api_id
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: none
-        options: {  }
-      cache:
-        type: tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          bypass_access: false
-          skip_access: false
-          preserve_facet_query_args: false
-      exposed_form:
-        type: basic
-        options:
-          submit_button: Search
-          reset_button: true
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        type: full
-        options:
-          items_per_page: 25
-          offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: ‹‹
-            next: ››
-            first: '« First'
-            last: 'Last »'
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          quantity: 9
-      style:
-        type: default
-      row:
-        type: fields
+      title: 'Browse Recipes V2'
       fields:
         title:
           id: title
@@ -85,6 +39,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
           label: ''
           exclude: true
           alter:
@@ -147,8 +103,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
         field_contributor_name:
           id: field_contributor_name
           table: search_api_index_recipes_emmr_lib_unb_ca
@@ -156,6 +110,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: true
           alter:
@@ -218,7 +173,6 @@ display:
             use_highlighting: false
             multi_type: ul
             multi_separator: ', '
-          plugin_id: search_api_field
         name:
           id: name
           table: search_api_index_recipes_emmr_lib_unb_ca
@@ -226,6 +180,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: true
           alter:
@@ -288,7 +243,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         field_recipe_date_to:
           id: field_recipe_date_to
           table: search_api_datasource_recipes_emmr_lib_unb_ca_entity_node
@@ -296,6 +250,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
           label: ''
           exclude: true
           alter:
@@ -358,8 +314,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
         field_recipe_date:
           id: field_recipe_date
           table: search_api_datasource_recipes_emmr_lib_unb_ca_entity_node
@@ -367,6 +321,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
           label: ''
           exclude: true
           alter:
@@ -429,8 +385,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
         field_ingredients:
           id: field_ingredients
           table: search_api_datasource_recipes_emmr_lib_unb_ca_entity_node
@@ -438,6 +392,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
           label: ''
           exclude: true
           alter:
@@ -500,8 +456,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
         field_symptoms:
           id: field_symptoms
           table: search_api_datasource_recipes_emmr_lib_unb_ca_entity_node
@@ -509,6 +463,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
           label: ''
           exclude: true
           alter:
@@ -571,8 +527,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
         field_recipe_transcription:
           id: field_recipe_transcription
           table: search_api_datasource_recipes_emmr_lib_unb_ca_entity_node
@@ -580,6 +534,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
           label: ''
           exclude: true
           alter:
@@ -641,8 +597,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
         years_published:
           id: years_published
           table: search_api_index_recipes_emmr_lib_unb_ca
@@ -650,6 +604,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_numeric
           label: ''
           exclude: true
           alter:
@@ -704,7 +659,6 @@ display:
           multi_type: separator
           multi_separator: ', '
           format_plural_values: {  }
-          plugin_id: search_api_numeric
         nothing_1:
           id: nothing_1
           table: views
@@ -712,6 +666,7 @@ display:
           relationship: none
           group_type: group
           admin_label: recipe-row
+          plugin_id: custom
           label: ''
           exclude: false
           alter:
@@ -753,304 +708,43 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-          plugin_id: custom
-      filters:
-        search_api_fulltext:
-          id: search_api_fulltext
-          table: search_api_index_recipes_emmr_lib_unb_ca
-          field: search_api_fulltext
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: and
-          value: ''
-          group: 1
-          exposed: true
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 25
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+            first: '« First'
+            last: 'Last »'
           expose:
-            operator_id: search_api_fulltext_op
-            label: Keyword(s)
-            description: ''
-            use_operator: false
-            operator: search_api_fulltext_op
-            identifier: search_api_fulltext
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              emmr_contributor: '0'
-            placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          parse_mode: terms
-          min_length: null
-          fields: {  }
-          plugin_id: search_api_fulltext
-        title:
-          id: title
-          table: search_api_index_recipes_emmr_lib_unb_ca
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: title_op
-            label: Title
-            description: ''
-            use_operator: false
-            operator: title_op
-            identifier: title
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              emmr_contributor: '0'
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: search_api_text
-        field_contributor_name:
-          id: field_contributor_name
-          table: search_api_index_recipes_emmr_lib_unb_ca
-          field: field_contributor_name
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_contributor_name_op
-            label: Contributors
-            description: ''
-            use_operator: false
-            operator: field_contributor_name_op
-            identifier: field_contributor_name
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              emmr_contributor: '0'
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: search_api_text
-        field_publication_format:
-          id: field_publication_format
-          table: search_api_index_recipes_emmr_lib_unb_ca
-          field: field_publication_format
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_publication_format_op
-            label: 'Source Type'
-            description: ''
-            use_operator: false
-            operator: field_publication_format_op
-            identifier: field_publication_format
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              emmr_contributor: '0'
-            reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: emmr_publication_formats
-          hierarchy: false
-          error_message: true
-          plugin_id: search_api_term
-        field_recipe_type:
-          id: field_recipe_type
-          table: search_api_index_recipes_emmr_lib_unb_ca
-          field: field_recipe_type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_recipe_type_op
-            label: 'Recipe Type'
-            description: ''
-            use_operator: false
-            operator: field_recipe_type_op
-            identifier: field_recipe_type
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              emmr_contributor: '0'
-            reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: emmr_recipe_types
-          hierarchy: false
-          error_message: true
-          plugin_id: search_api_term
-        years_published:
-          id: years_published
-          table: search_api_index_recipes_emmr_lib_unb_ca
-          field: years_published
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: between
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: years_published_op
-            label: 'Year Between'
-            description: ''
-            use_operator: false
-            operator: years_published_op
-            identifier: years_published
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              emmr_contributor: '0'
-            placeholder: From
-            min_placeholder: ''
-            max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: search_api_numeric
-      sorts: {  }
-      title: 'Browse Recipes V2'
-      header:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          content: 'Displaying @start - @end of @total'
-          plugin_id: result
-      footer: {  }
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Search
+          reset_button: true
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: tag
+        options: {  }
       empty:
         area_text_custom:
           id: area_text_custom
@@ -1059,40 +753,12 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: true
-          tokenize: false
-          content: "<br>\r\n<br>\r\nYour search did not match any recipes in the database."
           plugin_id: text_custom
-      relationships: {  }
+          empty: true
+          content: "<br>\r\n<br>\r\nYour search did not match any recipes in the database."
+          tokenize: false
+      sorts: {  }
       arguments: {  }
-      display_extenders: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - user
-      tags:
-        - 'config:field.storage.node.field_ingredients'
-        - 'config:field.storage.node.field_recipe_date'
-        - 'config:field.storage.node.field_recipe_date_to'
-        - 'config:field.storage.node.field_recipe_transcription'
-        - 'config:field.storage.node.field_symptoms'
-        - 'config:field.storage.paragraph.field_contributor_name'
-  page_1:
-    display_plugin: page
-    id: page_1
-    display_title: Page
-    position: 1
-    display_options:
-      display_extenders: {  }
-      path: search-recipes
       filters:
         search_api_fulltext:
           id: search_api_fulltext
@@ -1101,6 +767,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_fulltext
           operator: and
           value: ''
           group: 1
@@ -1111,6 +778,8 @@ display:
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: search_api_fulltext
             required: false
             remember: false
@@ -1121,8 +790,6 @@ display:
               administrator: '0'
               emmr_contributor: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1138,7 +805,6 @@ display:
           parse_mode: terms
           min_length: null
           fields: {  }
-          plugin_id: search_api_fulltext
         title:
           id: title
           table: search_api_index_recipes_emmr_lib_unb_ca
@@ -1146,6 +812,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_text
           operator: '='
           value:
             min: ''
@@ -1159,6 +826,8 @@ display:
             description: ''
             use_operator: false
             operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: title
             required: false
             remember: false
@@ -1168,11 +837,9 @@ display:
               anonymous: '0'
               administrator: '0'
               emmr_contributor: '0'
-            placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -1185,7 +852,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_api_text
         field_contributor_name:
           id: field_contributor_name
           table: search_api_index_recipes_emmr_lib_unb_ca
@@ -1193,6 +859,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_text
           operator: '='
           value:
             min: ''
@@ -1206,6 +873,8 @@ display:
             description: ''
             use_operator: false
             operator: field_contributor_name_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: field_contributor_name
             required: false
             remember: false
@@ -1215,11 +884,9 @@ display:
               anonymous: '0'
               administrator: '0'
               emmr_contributor: '0'
-            placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -1232,7 +899,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_api_text
         field_publication_format:
           id: field_publication_format
           table: search_api_index_recipes_emmr_lib_unb_ca
@@ -1240,6 +906,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1250,6 +917,8 @@ display:
             description: ''
             use_operator: false
             operator: field_publication_format_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: field_publication_format
             required: false
             remember: false
@@ -1260,8 +929,6 @@ display:
               administrator: '0'
               emmr_contributor: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1275,12 +942,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: emmr_publication_formats
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         field_recipe_type:
           id: field_recipe_type
           table: search_api_index_recipes_emmr_lib_unb_ca
@@ -1288,6 +954,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1298,6 +965,8 @@ display:
             description: ''
             use_operator: false
             operator: field_recipe_type_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: field_recipe_type
             required: false
             remember: false
@@ -1308,8 +977,6 @@ display:
               administrator: '0'
               emmr_contributor: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1323,12 +990,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: emmr_recipe_types
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         years_published:
           id: years_published
           table: search_api_index_recipes_emmr_lib_unb_ca
@@ -1336,6 +1002,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_numeric
           operator: between
           value:
             min: ''
@@ -1349,6 +1016,8 @@ display:
             description: ''
             use_operator: false
             operator: years_published_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: years_published
             required: false
             remember: false
@@ -1358,11 +1027,9 @@ display:
               anonymous: '0'
               administrator: '0'
               emmr_contributor: '0'
-            placeholder: From
             min_placeholder: ''
             max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
+            placeholder: From
           is_grouped: false
           group_info:
             label: ''
@@ -1375,16 +1042,34 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_api_numeric
-      defaults:
-        filters: false
-        filter_groups: false
-        title: false
       filter_groups:
         operator: AND
         groups:
           1: AND
-      title: 'Search Recipes'
+      style:
+        type: default
+      row:
+        type: fields
+      query:
+        type: views_query
+        options:
+          bypass_access: false
+          skip_access: false
+          preserve_facet_query_args: false
+      relationships: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: 'Displaying @start - @end of @total'
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -1393,6 +1078,7 @@ display:
         - url
         - url.query_args
         - user
+        - 'user.node_grants:view'
       tags:
         - 'config:field.storage.node.field_ingredients'
         - 'config:field.storage.node.field_recipe_date'
@@ -1400,14 +1086,331 @@ display:
         - 'config:field.storage.node.field_recipe_transcription'
         - 'config:field.storage.node.field_symptoms'
         - 'config:field.storage.paragraph.field_contributor_name'
-  page_2:
+        - 'config:search_api.index.recipes_emmr_lib_unb_ca'
+  page_1:
+    id: page_1
+    display_title: Page
     display_plugin: page
-    id: page_2
-    display_title: global_search
     position: 1
     display_options:
+      title: 'Search Recipes'
+      filters:
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_recipes_emmr_lib_unb_ca
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_fulltext
+          operator: and
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: Keyword(s)
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: search_api_fulltext
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              emmr_contributor: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields: {  }
+        title:
+          id: title
+          table: search_api_index_recipes_emmr_lib_unb_ca
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_text
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              emmr_contributor: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_contributor_name:
+          id: field_contributor_name
+          table: search_api_index_recipes_emmr_lib_unb_ca
+          field: field_contributor_name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_text
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_contributor_name_op
+            label: Contributors
+            description: ''
+            use_operator: false
+            operator: field_contributor_name_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_contributor_name
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              emmr_contributor: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_publication_format:
+          id: field_publication_format
+          table: search_api_index_recipes_emmr_lib_unb_ca
+          field: field_publication_format
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_term
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_publication_format_op
+            label: 'Source Type'
+            description: ''
+            use_operator: false
+            operator: field_publication_format_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_publication_format
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              emmr_contributor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: emmr_publication_formats
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_recipe_type:
+          id: field_recipe_type
+          table: search_api_index_recipes_emmr_lib_unb_ca
+          field: field_recipe_type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_term
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_recipe_type_op
+            label: 'Recipe Type'
+            description: ''
+            use_operator: false
+            operator: field_recipe_type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_recipe_type
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              emmr_contributor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: emmr_recipe_types
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        years_published:
+          id: years_published
+          table: search_api_index_recipes_emmr_lib_unb_ca
+          field: years_published
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_numeric
+          operator: between
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: years_published_op
+            label: 'Year Between'
+            description: ''
+            use_operator: false
+            operator: years_published_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: years_published
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              emmr_contributor: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: From
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
       display_extenders: {  }
-      path: global-search
+      path: search-recipes
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_ingredients'
+        - 'config:field.storage.node.field_recipe_date'
+        - 'config:field.storage.node.field_recipe_date_to'
+        - 'config:field.storage.node.field_recipe_transcription'
+        - 'config:field.storage.node.field_symptoms'
+        - 'config:field.storage.paragraph.field_contributor_name'
+        - 'config:search_api.index.recipes_emmr_lib_unb_ca'
+  page_2:
+    id: page_2
+    display_title: global_search
+    display_plugin: page
+    position: 1
+    display_options:
+      title: 'Search Recipes'
       filters:
         status:
           id: status
@@ -1416,6 +1419,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_numeric
           operator: '!='
           value:
             min: ''
@@ -1429,17 +1433,17 @@ display:
             description: ''
             use_operator: false
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-            placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -1452,7 +1456,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_api_numeric
         search_api_fulltext:
           id: search_api_fulltext
           table: search_api_index_recipes_emmr_lib_unb_ca
@@ -1460,16 +1463,19 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_fulltext
           operator: and
           value: ''
           group: 1
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: ''
+            label: 'Search Recipes'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: search_api_fulltext
             required: false
             remember: false
@@ -1479,9 +1485,9 @@ display:
               anonymous: '0'
               administrator: '0'
               emmr_contributor: '0'
+            expose_fields: false
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
+            searched_fields_id: ''
           is_grouped: false
           group_info:
             label: ''
@@ -1497,19 +1503,16 @@ display:
           parse_mode: terms
           min_length: null
           fields: {  }
-          plugin_id: search_api_fulltext
-      defaults:
-        filters: false
-        filter_groups: false
-        title: false
-        footer: false
       filter_groups:
         operator: AND
         groups:
           1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+        footer: false
       display_description: ''
-      title: 'Search Recipes'
-      exposed_block: true
       footer:
         area:
           id: area
@@ -1518,12 +1521,15 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: text
           empty: false
-          tokenize: false
           content:
             value: "<br>\r\n<a href=\"/search-recipes\">Search Again<a>"
             format: basic_html
-          plugin_id: text
+          tokenize: false
+      exposed_block: true
+      display_extenders: {  }
+      path: global-search
     cache_metadata:
       max-age: -1
       contexts:
@@ -1531,6 +1537,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'user.node_grants:view'
       tags:
         - 'config:field.storage.node.field_ingredients'
         - 'config:field.storage.node.field_recipe_date'
@@ -1538,14 +1545,14 @@ display:
         - 'config:field.storage.node.field_recipe_transcription'
         - 'config:field.storage.node.field_symptoms'
         - 'config:field.storage.paragraph.field_contributor_name'
+        - 'config:search_api.index.recipes_emmr_lib_unb_ca'
   page_3:
-    display_plugin: page
     id: page_3
     display_title: all_recipes
+    display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
-      path: all-recipes
+      title: 'All Recipes'
       filters:
         search_api_fulltext:
           id: search_api_fulltext
@@ -1554,6 +1561,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_fulltext
           operator: and
           value: ''
           group: 1
@@ -1564,6 +1572,8 @@ display:
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: search_api_fulltext
             required: false
             remember: false
@@ -1574,8 +1584,6 @@ display:
               administrator: '0'
               emmr_contributor: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1591,7 +1599,6 @@ display:
           parse_mode: terms
           min_length: null
           fields: {  }
-          plugin_id: search_api_fulltext
         title:
           id: title
           table: search_api_index_recipes_emmr_lib_unb_ca
@@ -1599,6 +1606,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_text
           operator: '='
           value:
             min: ''
@@ -1612,6 +1620,8 @@ display:
             description: ''
             use_operator: false
             operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: title
             required: false
             remember: false
@@ -1621,11 +1631,9 @@ display:
               anonymous: '0'
               administrator: '0'
               emmr_contributor: '0'
-            placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -1638,7 +1646,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_api_text
         field_contributor_name:
           id: field_contributor_name
           table: search_api_index_recipes_emmr_lib_unb_ca
@@ -1646,6 +1653,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_text
           operator: '='
           value:
             min: ''
@@ -1659,6 +1667,8 @@ display:
             description: ''
             use_operator: false
             operator: field_contributor_name_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: field_contributor_name
             required: false
             remember: false
@@ -1668,11 +1678,9 @@ display:
               anonymous: '0'
               administrator: '0'
               emmr_contributor: '0'
-            placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -1685,7 +1693,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_api_text
         field_publication_format:
           id: field_publication_format
           table: search_api_index_recipes_emmr_lib_unb_ca
@@ -1693,6 +1700,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1703,6 +1711,8 @@ display:
             description: ''
             use_operator: false
             operator: field_publication_format_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: field_publication_format
             required: false
             remember: false
@@ -1713,8 +1723,6 @@ display:
               administrator: '0'
               emmr_contributor: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1728,12 +1736,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: emmr_publication_formats
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         field_recipe_type:
           id: field_recipe_type
           table: search_api_index_recipes_emmr_lib_unb_ca
@@ -1741,6 +1748,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1751,6 +1759,8 @@ display:
             description: ''
             use_operator: false
             operator: field_recipe_type_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: field_recipe_type
             required: false
             remember: false
@@ -1761,8 +1771,6 @@ display:
               administrator: '0'
               emmr_contributor: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1776,12 +1784,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: emmr_recipe_types
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         years_published:
           id: years_published
           table: search_api_index_recipes_emmr_lib_unb_ca
@@ -1789,6 +1796,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_numeric
           operator: between
           value:
             min: ''
@@ -1802,6 +1810,8 @@ display:
             description: ''
             use_operator: false
             operator: years_published_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: years_published
             required: false
             remember: false
@@ -1811,11 +1821,9 @@ display:
               anonymous: '0'
               administrator: '0'
               emmr_contributor: '0'
-            placeholder: From
             min_placeholder: ''
             max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
+            placeholder: From
           is_grouped: false
           group_info:
             label: ''
@@ -1828,17 +1836,17 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_api_numeric
-      defaults:
-        filters: false
-        filter_groups: false
-        title: false
       filter_groups:
         operator: AND
         groups:
           1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
       display_description: ''
-      title: 'All Recipes'
+      display_extenders: {  }
+      path: all-recipes
     cache_metadata:
       max-age: -1
       contexts:
@@ -1847,6 +1855,7 @@ display:
         - url
         - url.query_args
         - user
+        - 'user.node_grants:view'
       tags:
         - 'config:field.storage.node.field_ingredients'
         - 'config:field.storage.node.field_recipe_date'
@@ -1854,3 +1863,4 @@ display:
         - 'config:field.storage.node.field_recipe_transcription'
         - 'config:field.storage.node.field_symptoms'
         - 'config:field.storage.paragraph.field_contributor_name'
+        - 'config:search_api.index.recipes_emmr_lib_unb_ca'

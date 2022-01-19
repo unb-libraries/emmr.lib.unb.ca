@@ -2,13 +2,6 @@ uuid: 23b1c04b-5f8a-4846-ae09-ff6a4192f73c
 langcode: en
 status: true
 dependencies:
-  module:
-    - search_api_solr
-    - paragraphs
-    - taxonomy
-    - node
-    - search_api
-    - emmr_core
   config:
     - field.storage.node.field_contributors
     - field.storage.paragraph.field_contributor_name
@@ -20,24 +13,28 @@ dependencies:
     - field.storage.node.field_recipe_transcription
     - field.storage.node.field_recipe_type
     - search_api.server.drupal_solr_lib_unb_ca
+  module:
+    - search_api_solr
+    - paragraphs
+    - taxonomy
+    - node
+    - search_api
+    - emmr_core
 third_party_settings:
   search_api_solr:
     finalize: false
     commit_before_finalize: false
     commit_after_finalize: false
-    multilingual:
-      limit_to_content_language: false
-      include_language_independent: true
     highlighter:
       maxAnalyzedChars: 51200
       fragmenter: gap
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
       regex:
         slop: 0.5
         pattern: blank
         maxAnalyzedChars: 10000
-      usePhraseHighlighter: true
-      highlightMultiTerm: true
-      preserveMulti: false
       highlight:
         mergeContiguous: false
         requireFieldMatch: false
@@ -58,6 +55,9 @@ third_party_settings:
       index_prefix: ''
       collection: ''
       timezone: ''
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
 id: recipes_emmr_lib_unb_ca
 name: recipes.emmr.lib.unb.ca
 description: ''
@@ -180,6 +180,6 @@ tracker_settings:
   default:
     indexing_order: lifo
 options:
-  index_directly: true
   cron_limit: 50
+  index_directly: true
 server: drupal_solr_lib_unb_ca

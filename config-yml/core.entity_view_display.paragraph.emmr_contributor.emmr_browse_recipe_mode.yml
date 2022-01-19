@@ -13,12 +13,12 @@ bundle: emmr_contributor
 mode: emmr_browse_recipe_mode
 content:
   field_contributor_name:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
 hidden:
   entity_print_view_epub: true
