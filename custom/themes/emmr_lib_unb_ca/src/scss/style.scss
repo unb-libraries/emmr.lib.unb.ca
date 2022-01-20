@@ -4,7 +4,7 @@
 $color-dark-gray: #4a4a4a;
 $color-red: #c71b1b;
 $color-mint: #dfefdd;
-$color-dark-mint: #7f8f7d;
+$color-dark-mint: #5f6f5d;
 
 // Global
 input[type="checkbox"] {
@@ -419,6 +419,7 @@ div.form-item-combine:focus-within::before {
 #views-exposed-form-browse-recipes-v2-page-2
 #edit-search-api-fulltext {
   margin-left: 2.5rem;
+  padding-left: 3rem;
 }
 
 #views-exposed-form-browse-recipes-v2-page-2 > div >
@@ -436,11 +437,6 @@ label[for="edit-search-api-fulltext"] {
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: .8rem;
-}
-
-#views-exposed-form-browse-recipes-v2-page-2 > div >
-div.form-item-search-api-fulltext:focus-within::after {
-  visibility: hidden;
 }
 
 #views-exposed-form-browse-recipes-v2-page-1,

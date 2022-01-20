@@ -22,6 +22,7 @@
   <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6" id="search-recipes">
+      <h2 class="sr-only">Search</h2>
       {{ search_block_output }}
     </div>
   </div>
@@ -32,7 +33,7 @@
     <br>
     <div class="col-md-1"></div>
     <div class="col-md-5" id="home-explore">
-      <h2 class="h5">Explore</h2>
+      <h3 class="h5">Explore</h2>
 
       <ul>
         <li>
@@ -50,7 +51,7 @@
     </div>
 
     <div class="col-md-5" id="home-featured">
-      <h2 class="h5">Featured</h2>
+      <h3 class="h5">Featured</h2>
         <dd>{{ drupal_view('emmr_featured_sources', 'block_1') }}</dd>
     </div>
     <div class="col-md-1"></div>
