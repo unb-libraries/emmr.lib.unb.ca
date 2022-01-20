@@ -222,17 +222,15 @@ footer.footer.container {
   padding-left: 40px;
 }
 
-#views-exposed-form-emmr-browse-recipes-page-1 > div >
-div.form-item.js-form-item,
-#views-exposed-form-emmr-browse-recipes-page-3 > div >
-div.form-item.js-form-item {
+#views-exposed-form-emmr-browse-recipes-page-1 div.form-item,
+#views-exposed-form-emmr-browse-recipes-page-3 div.form-item {
   display: table;
 }
 
-#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(7),
-#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(8),
-#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(7),
-#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(8) {
+#views-exposed-form-emmr-browse-recipes-page-1 div.form-item
+#views-exposed-form-emmr-browse-recipes-page-1 div.form-item,
+#views-exposed-form-emmr-browse-recipes-page-3 div.form-item,
+#views-exposed-form-emmr-browse-recipes-page-3 div.form-item {
   display: inline-block !important;
 }
 
@@ -254,26 +252,26 @@ div.form-item.js-form-item {
   width: 310px;
 }
 
-#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(7) > input,
-#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(8) > input,
-#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(7) > input,
-#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(8) > input {
+#views-exposed-form-emmr-browse-recipes-page-1 div.form-item:nth-child(7) > input,
+#views-exposed-form-emmr-browse-recipes-page-1 div.form-item:nth-child(8) > input,
+#views-exposed-form-emmr-browse-recipes-page-3 div.form-item:nth-child(7) > input,
+#views-exposed-form-emmr-browse-recipes-page-3 div.form-item:nth-child(8) > input {
   width: 124px;
 }
 
-#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(7) > input,
-#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(7) > input {
+#views-exposed-form-emmr-browse-recipes-page-1 div.form-item:nth-child(7) > input,
+#views-exposed-form-emmr-browse-recipes-page-3 div.form-item:nth-child(7) > input {
   position: relative;
   left: -4px;
 }
 
-#views-exposed-form-emmr-browse-recipes-page-1 > div > div:nth-child(8) > label,
-#views-exposed-form-emmr-browse-recipes-page-3 > div > div:nth-child(8) > label {
+#views-exposed-form-emmr-browse-recipes-page-1 div.form-item:nth-child(8) > label,
+#views-exposed-form-emmr-browse-recipes-page-3 div.form-item:nth-child(8) > label {
   width: 30px;
 }
 
-#views-exposed-form-emmr-browse-recipes-page-1  > div > div:nth-child(11),
-#views-exposed-form-emmr-browse-recipes-page-3  > div > div:nth-child(11) {
+#views-exposed-form-emmr-browse-recipes-page-1 div.form-item:nth-child(11),
+#views-exposed-form-emmr-browse-recipes-page-3 div.form-item:nth-child(11) {
   display: table;
 }
 
@@ -296,17 +294,15 @@ div.form-item-field-recipe-date-to-value-max {
   padding-left: 40px;
 }
 
-#views-exposed-form-browse-recipes-v2-page-1 > div >
-div.form-item.js-form-item,
-#views-exposed-form-browse-recipes-v2-page-3 > div >
-div.form-item.js-form-item {
+#views-exposed-form-browse-recipes-v2-page-1 div.form-item,
+#views-exposed-form-browse-recipes-v2-page-3 div.form-item {
   display: table;
 }
 
-#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(6),
-#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(7),
-#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(6),
-#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(7) {
+#views-exposed-form-browse-recipes-v2-page-1 div.form-item:nth-child(6),
+#views-exposed-form-browse-recipes-v2-page-1 div.form-item:nth-child(7),
+#views-exposed-form-browse-recipes-v2-page-3 div.form-item:nth-child(6),
+#views-exposed-form-browse-recipes-v2-page-3 div.form-item:nth-child(7) {
   display: inline-block !important;
 }
 
@@ -328,26 +324,26 @@ div.form-item.js-form-item {
   width: 310px;
 }
 
-#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(6) > input,
-#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(7) > input,
-#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(6) > input,
-#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(7) > input {
+#views-exposed-form-browse-recipes-v2-page-1 div.form-item:nth-child(6) > input,
+#views-exposed-form-browse-recipes-v2-page-1 div.form-item:nth-child(7) > input,
+#views-exposed-form-browse-recipes-v2-page-3 div.form-item:nth-child(6) > input,
+#views-exposed-form-browse-recipes-v2-page-3 div.form-item:nth-child(7) > input {
   width: 124px;
 }
 
-#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(6) > input,
-#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(6) > input {
+#views-exposed-form-browse-recipes-v2-page-1 div.form-item:nth-child(6) > input,
+#views-exposed-form-browse-recipes-v2-page-3 div.form-item:nth-child(6) > input {
   position: relative;
   left: -4px;
 }
 
-#views-exposed-form-browse-recipes-v2-page-1 > div > div:nth-child(7) > label,
-#views-exposed-form-browse-recipes-v2-page-3 > div > div:nth-child(7) > label {
+#views-exposed-form-browse-recipes-v2-page-1 div.form-item:nth-child(7) > label,
+#views-exposed-form-browse-recipes-v2-page-3 div.form-item:nth-child(7) > label {
   width: 30px;
 }
 
-#views-exposed-form-browse-recipes-v2-page-1  > div > div:nth-child(8),
-#views-exposed-form-browse-recipes-v2-page-3  > div > div:nth-child(8) {
+#views-exposed-form-browse-recipes-v2-page-1  div.form-item:nth-child(8),
+#views-exposed-form-browse-recipes-v2-page-3  div.form-item:nth-child(8) {
   display: table;
 }
 
@@ -445,6 +441,34 @@ label[for="edit-search-api-fulltext"] {
 #views-exposed-form-browse-recipes-v2-page-2 > div >
 div.form-item-search-api-fulltext:focus-within::after {
   visibility: hidden;
+}
+
+#views-exposed-form-browse-recipes-v2-page-1,
+#views-exposed-form-browse-recipes-v2-page-3 {
+
+  #edit-years-published-wrapper {
+    border: none;
+
+    .panel-heading {
+      padding: 0;
+      border: none;
+      background: none;
+
+      .panel-title {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #4a4a4a;
+      }
+    }
+
+    .panel-body {
+      padding: 1rem 0 0 0;
+    }
+  }
+
+  #edit-actions {
+    display: block;
+  }
 }
 
 // Homepage
