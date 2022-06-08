@@ -1,4 +1,4 @@
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: daily-backup-emmr-lib-unb-ca
@@ -67,7 +67,7 @@ spec:
               persistentVolumeClaim:
                 claimName: backup-emmr-lib-unb-ca
 ---
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: weekly-backup-emmr-lib-unb-ca
@@ -139,7 +139,7 @@ spec:
               persistentVolumeClaim:
                 claimName: backup-emmr-lib-unb-ca
 ---
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: monthly-backup-emmr-lib-unb-ca
