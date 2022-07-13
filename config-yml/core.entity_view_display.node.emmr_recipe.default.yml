@@ -129,6 +129,8 @@ content:
     settings:
       image_link: file
       image_style: emmr_recipe_page
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 12
     region: content

@@ -1,7 +1,15 @@
 uuid: 9a838c25-b410-43fa-84e6-fdc8e827b6f4
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.emmr_recipe
+    - node.type.emmr_source
+  module:
+    - node
+    - override_node_options
+    - paragraphs
+    - view_unpublished
 id: emmr_contributor
 label: 'EMMR Contributor'
 weight: 3
