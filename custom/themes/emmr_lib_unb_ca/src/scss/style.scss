@@ -796,6 +796,20 @@ body.path-user div#edit-timezone {
   display: none;
 }
 
+// Sara Creighton book.
+.scw {
+  width: 100%;
+  width: -moz-available;          /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
+  height: 30vw;
+
+  iframe {
+    height: 100%;
+    width: 100%;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   #views-exposed-form-emmr-browse-recipes-page-2 > div >
