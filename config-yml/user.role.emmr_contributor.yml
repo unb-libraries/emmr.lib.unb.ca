@@ -3,10 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.unb_libraries
     - node.type.emmr_recipe
     - node.type.emmr_source
     - node.type.page
   module:
+    - filter
     - node
     - override_node_options
     - paragraphs
@@ -24,6 +26,7 @@ permissions:
   - 'edit any emmr_source content'
   - 'edit any page content'
   - 'override emmr_recipe published option'
+  - 'use text format unb_libraries'
   - 'view any unpublished emmr_recipe content'
   - 'view own unpublished content'
   - 'view unpublished paragraphs'
