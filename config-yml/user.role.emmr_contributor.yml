@@ -5,6 +5,7 @@ dependencies:
   config:
     - node.type.emmr_recipe
     - node.type.emmr_source
+    - node.type.page
   module:
     - node
     - override_node_options
@@ -21,6 +22,7 @@ permissions:
   - 'delete any emmr_source content'
   - 'edit any emmr_recipe content'
   - 'edit any emmr_source content'
+  - 'edit any page content'
   - 'override emmr_recipe published option'
   - 'view any unpublished emmr_recipe content'
   - 'view own unpublished content'
