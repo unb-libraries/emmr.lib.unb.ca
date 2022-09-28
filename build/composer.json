@@ -67,7 +67,7 @@
   "require": {
     "dompdf/dompdf": "2",
     "drupal/bootstrap": "3.25",
-    "drupal/core": "9.4.5",
+    "drupal/core": "9.4.7",
     "drupal/editor_advanced_link": "1.9",
     "drupal/editor_file": "1.6",
     "drupal/entity_reference_revisions": "1.10",
