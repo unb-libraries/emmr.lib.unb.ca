@@ -79,7 +79,7 @@
     "drupal/redis": "1.5",
     "drupal/search_api": "1.25",
     "drupal/search_api_solr": "4.2.8",
-    "drupal/twig_tweak": "2.9",
+    "drupal/twig_tweak": "2.10",
     "drupal/view_unpublished": "1.0",
     "mikehaertl/phpwkhtmltopdf": "~2.1",
     "tecnickcom/tcpdf": "~6",
