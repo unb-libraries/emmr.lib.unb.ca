@@ -76,7 +76,7 @@
     "drupal/override_node_options": "2.x-dev",
     "drupal/paragraphs": "1.15",
     "drupal/pathauto": "1.11",
-    "drupal/redis": "1.5",
+    "drupal/redis": "1.6",
     "drupal/search_api": "1.26",
     "drupal/search_api_solr": "4.2.8",
     "drupal/twig_tweak": "2.10",
