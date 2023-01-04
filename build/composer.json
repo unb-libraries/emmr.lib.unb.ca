@@ -69,7 +69,7 @@
     "drupal/bootstrap": "3.25",
     "drupal/core": "9.5.1",
     "drupal/editor_advanced_link": "1.9",
-    "drupal/editor_file": "1.6",
+    "drupal/editor_file": "1.7",
     "drupal/entity_reference_revisions": "1.10",
     "drupal/google_analytics": "2.5",
     "drupal/health_check": "1.3",
