@@ -58,6 +58,8 @@ third_party_settings:
     multilingual:
       limit_to_content_language: false
       include_language_independent: true
+      use_language_undefined_as_fallback_language: false
+      use_universal_collation: false
 id: recipes_emmr_lib_unb_ca
 name: recipes.emmr.lib.unb.ca
 description: ''
