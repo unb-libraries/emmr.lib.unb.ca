@@ -81,7 +81,7 @@
     "drupal/search_api": "1.29",
     "drupal/search_api_solr": "4.2.10",
     "drupal/twig_tweak": "2.10",
-    "drupal/view_unpublished": "1.0",
+    "drupal/view_unpublished": "1.1",
     "mikehaertl/phpwkhtmltopdf": "~2.1",
     "tecnickcom/tcpdf": "~6",
     "unb-libraries/drupal-builder": "^9"
