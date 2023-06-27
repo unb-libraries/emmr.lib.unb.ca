@@ -44,7 +44,7 @@ class TrxnMargin extends CKEditorPluginBase implements CKEditorPluginCssInterfac
   public function getButtons() {
     return [
       'trxn_margin' => [
-        'label' => t('Transcription Marginalia'),
+        'label' => $this->t('Transcription Marginalia'),
         'image' => drupal_get_path('module', 'emmr_ckeditor_margin') .
         '/js/plugins/trxn_margin/icons/trxn_margin.png',
       ],

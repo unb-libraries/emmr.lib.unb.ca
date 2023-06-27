@@ -44,7 +44,7 @@ class TrxnUndo extends CKEditorPluginBase implements CKEditorPluginCssInterface 
   public function getButtons() {
     return [
       'trxn_undo' => [
-        'label' => t('Transcription Undo'),
+        'label' => $this->t('Transcription Undo'),
         'image' => drupal_get_path('module', 'emmr_ckeditor_undo') .
         '/js/plugins/trxn_undo/icons/trxn_undo.png',
       ],

@@ -44,7 +44,7 @@ class TrxnInsert extends CKEditorPluginBase implements CKEditorPluginCssInterfac
   public function getButtons() {
     return [
       'trxn_insert' => [
-        'label' => t('Transcription Insert'),
+        'label' => $this->t('Transcription Insert'),
         'image' => drupal_get_path('module', 'emmr_ckeditor_insert') .
         '/js/plugins/trxn_insert/icons/trxn_insert.png',
       ],

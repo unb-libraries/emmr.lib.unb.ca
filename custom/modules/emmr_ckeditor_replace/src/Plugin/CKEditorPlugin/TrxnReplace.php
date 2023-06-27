@@ -44,7 +44,7 @@ class TrxnReplace extends CKEditorPluginBase implements CKEditorPluginCssInterfa
   public function getButtons() {
     return [
       'trxn_replace' => [
-        'label' => t('Transcription Replace'),
+        'label' => $this->t('Transcription Replace'),
         'image' => drupal_get_path('module', 'emmr_ckeditor_replace') .
         '/js/plugins/trxn_replace/icons/trxn_replace.png',
       ],
