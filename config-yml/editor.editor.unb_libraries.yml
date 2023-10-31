@@ -56,6 +56,13 @@ settings:
           items:
             - ShowBlocks
             - Source
+        -
+          name: EMMR
+          items:
+            - trxn_insert
+            - trxn_replace
+            - trxn_undo
+            - trxn_margin
   plugins: {  }
 image_upload:
   status: true
