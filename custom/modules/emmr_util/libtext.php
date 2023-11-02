@@ -9,7 +9,7 @@
 
 // Search for all anniversary node ids.
 $nids = Drupal::entityQuery('node')
-  ->condition('type', 'emmr_recipe')->execute();
+  ->condition('type', 'emmr_recipe')->accessCheck(FALSE)->execute();
 
 echo "\nStarting unb_libraries text format override...\n\n";
 $i = 1;

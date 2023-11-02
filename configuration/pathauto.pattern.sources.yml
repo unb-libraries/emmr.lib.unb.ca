@@ -1,0 +1,22 @@
+uuid: 7c4c035d-ffec-45f6-859f-38435354b796
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: sources
+label: Sources
+type: 'canonical_entities:node'
+pattern: 'sources/[node:title]'
+selection_criteria:
+  61ad476b-2e85-42c1-8082-92d8b77e9c84:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 61ad476b-2e85-42c1-8082-92d8b77e9c84
+    context_mapping:
+      node: node
+    bundles:
+      emmr_source: emmr_source
+selection_logic: and
+weight: -5
+relationships: {  }

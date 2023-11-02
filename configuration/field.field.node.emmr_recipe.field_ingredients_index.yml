@@ -1,0 +1,22 @@
+uuid: 88509490-b222-457f-b48e-6cc602d3630c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ingredients_index
+    - node.type.emmr_recipe
+  module:
+    - text
+id: node.emmr_recipe.field_ingredients_index
+field_name: field_ingredients_index
+entity_type: node
+bundle: emmr_recipe
+label: 'Ingredients Index'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

@@ -1,0 +1,22 @@
+uuid: 678005fc-e23d-4247-9244-cc377ba16536
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: recipes_legacy_
+label: 'Legacy Recipes'
+type: 'canonical_entities:node'
+pattern: 'recipes/[node:nid]'
+selection_criteria:
+  4b7ae49a-a8a5-49b1-845f-8156e40629dc:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 4b7ae49a-a8a5-49b1-845f-8156e40629dc
+    context_mapping:
+      node: node
+    bundles:
+      emmr_recipe: emmr_recipe
+selection_logic: and
+weight: -5
+relationships: {  }

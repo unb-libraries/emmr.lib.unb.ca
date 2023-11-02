@@ -35,7 +35,7 @@ class TrxnInsert extends CKEditorPluginBase implements CKEditorPluginCssInterfac
    * {@inheritdoc}
    */
   public function getFile() {
-    return drupal_get_path('module', 'emmr_ckeditor_insert') . '/js/plugins/trxn_insert/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('emmr_ckeditor_insert') . '/js/plugins/trxn_insert/plugin.js';
   }
 
   /**
@@ -45,7 +45,7 @@ class TrxnInsert extends CKEditorPluginBase implements CKEditorPluginCssInterfac
     return [
       'trxn_insert' => [
         'label' => $this->t('Transcription Insert'),
-        'image' => drupal_get_path('module', 'emmr_ckeditor_insert') .
+        'image' => \Drupal::service('extension.list.module')->getPath('emmr_ckeditor_insert') .
         '/js/plugins/trxn_insert/icons/trxn_insert.png',
       ],
     ];

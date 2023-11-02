@@ -35,7 +35,7 @@ class TrxnUndo extends CKEditorPluginBase implements CKEditorPluginCssInterface 
    * {@inheritdoc}
    */
   public function getFile() {
-    return drupal_get_path('module', 'emmr_ckeditor_undo') . '/js/plugins/trxn_undo/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('emmr_ckeditor_undo') . '/js/plugins/trxn_undo/plugin.js';
   }
 
   /**
@@ -45,7 +45,7 @@ class TrxnUndo extends CKEditorPluginBase implements CKEditorPluginCssInterface 
     return [
       'trxn_undo' => [
         'label' => $this->t('Transcription Undo'),
-        'image' => drupal_get_path('module', 'emmr_ckeditor_undo') .
+        'image' => \Drupal::service('extension.list.module')->getPath('emmr_ckeditor_undo') .
         '/js/plugins/trxn_undo/icons/trxn_undo.png',
       ],
     ];

@@ -1,28 +1,80 @@
 dockworker:
-  version: '5'
+  version: '6'
   application:
-    name: emmr.lib.unb.ca
-    finish_marker: '99_zz_notify_user_URI'
-    project_prefix: EMMR
-    upstream_images:
-      - ghcr.io/unb-libraries/drupal:9.x-2.x-unblib
-    uuid: 3093
-  deployment:
-    environments:
+    name: Early Modern Maritime Recipes
+    uri: https://emmr.lib.unb.ca
+    description: >
+      Early Modern Maritime Recipes examines recipes circulating before 1800 in 
+      print and manuscript in the area now defined as Canada's Maritime provinces. 
+      Early modern recipe writing focused on food and medicine, but recorded a 
+      range of other practices associated with alchemy, cosmetics, veterinary, 
+      medicine, and laundry, amongst other things. These recipes are texts about 
+      knowledge exchange and social networks. They reflect the commercial, social, 
+      and familial relationships involved in the acquisition of knowledge, record 
+      the use of goods in making products, and connect domestic practices and 
+      institutionalized learning. Early Modern Maritime Recipes compiles a record 
+      of extant recipes by digitizing and transcribing recipes from archival 
+      collections throughout the Maritime provinces.
+    topics:
+      - medicine
+      - cooking
+      - history
+      - research
+    identifiers:
+      id: emmr.lib.unb.ca
+      slug: emmr-lib-unb-ca
+      short_slug: emmr
+      uuid: 3093
+    framework:
+      name: Drupal
+      version: 10
+      startup_finished_marker: '99_startup_sequence_complete'
+      endpoint:
+        name: http
+        port: 80
+        readiness_timeout: 15
+    license:
+      license: MIT
+      holder: University of New Brunswick Libraries
+    shell:
+      path: /bin/sh
+  endpoints:
+    env:
       - dev
       - prod
-    workflow:
-      source: dockworker-drupal
-      type: deployment-workflow
-  drupal:
-    major: 9
-  github:
-    repo: emmr.lib.unb.ca
-    owner: unb-libraries
-  image:
-    push_branches:
-      - dev
-      - prod
-    name: ghcr.io/unb-libraries/emmr.lib.unb.ca
-    date_tag_image: true
-    repository: ghcr
+    deployments:
+      emmr-lib-unb-ca:
+        default: true
+        managed: true
+        name: emmr-lib-unb-ca
+      drupal-mysql-lib-unb-ca:
+        managed: false
+        name: mysql
+      drupal-redis-lib-unb-ca:
+        managed: false
+        name: redis
+      drupal-solr-lib-unb-ca:
+        managed: false
+        name: solr
+  workflows:
+    vcs:
+      type: github
+      owner: unb-libraries
+      name: emmr.lib.unb.ca
+    jira:
+      project_keys:
+        - EMMR
+    image:
+      name: ghcr.io/unb-libraries/emmr.lib.unb.ca
+      parent: ghcr.io/unb-libraries/drupal:10.x-1.x-unblib
+      repository: GitHub
+      push-branches:
+        - dev
+        - prod
+    e2e_tests:
+        - id: core
+          frequency: '*/5 * * * *'
+          source_files:
+            - .dockworker/tests/e2e/emmr.lib.unb.ca.yml
+          namespaces:
+            - prod

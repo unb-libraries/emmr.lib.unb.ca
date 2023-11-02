@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\taxonomy\Entity\Term;
 use Drupal\node\Entity\Node;
 
 /**
@@ -98,7 +99,7 @@ function custom_update_8002() {
   // Get an array of all 'recipe' node ids.
   $article_nids = \Drupal::entityQuery('node')
     ->condition('type', 'emmr_recipe')
-    ->execute();
+    ->accessCheck(FALSE)->execute();
 
   // Load all the articles.
   $articles = Node::loadMultiple($article_nids);
@@ -111,7 +112,7 @@ function custom_update_8003() {
   // Get an array of all 'recipe' node ids.
   $article_nids = \Drupal::entityQuery('node')
     ->condition('type', 'emmr_recipe')
-    ->execute();
+    ->accessCheck(FALSE)->execute();
 
   // Load all the articles.
   $articles = Node::loadMultiple($article_nids);
@@ -124,7 +125,7 @@ function custom_update_8004() {
   // Get an array of all 'recipe' node ids.
   $article_nids = \Drupal::entityQuery('node')
     ->condition('type', 'emmr_recipe')
-    ->execute();
+    ->accessCheck(FALSE)->execute();
 
   // Load all the articles.
   $articles = Node::loadMultiple($article_nids);
@@ -136,7 +137,7 @@ function custom_update_8004() {
 function addTerms($voc, $terms) {
 
   foreach ($terms as $term) {
-    $new_term = \Drupal\taxonomy\Entity\Term::create([
+    $new_term = Term::create([
       'vid' => $voc,
       'name' => $term,
     ]);

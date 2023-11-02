@@ -35,7 +35,7 @@ function emmr_core_theme($existing, $type, $theme, $path) {
         'output' => NULL,
       ],
       'template' => 'node--emmr-recipe--full',
-      'path' => drupal_get_path('module', 'emmr_core') . '/templates',
+      'path' => \Drupal::service('extension.list.module')->getPath('emmr_core') . '/templates',
       'base hook' => 'node__emmr_recipe__full',
     ],
     'node__emmr_recipe__pdf' => [
@@ -46,7 +46,7 @@ function emmr_core_theme($existing, $type, $theme, $path) {
         'output' => NULL,
       ],
       'template' => 'node--emmr-recipe--pdf',
-      'path' => drupal_get_path('module', 'emmr_core') . '/templates',
+      'path' => \Drupal::service('extension.list.module')->getPath('emmr_core') . '/templates',
       'base hook' => 'node__emmr_recipe__pdf',
     ],
     'node__emmr_source__full' => [
@@ -57,7 +57,7 @@ function emmr_core_theme($existing, $type, $theme, $path) {
         'output' => NULL,
       ],
       'template' => 'node--emmr-source--full',
-      'path' => drupal_get_path('module', 'emmr_core') . '/templates',
+      'path' => \Drupal::service('extension.list.module')->getPath('emmr_core') . '/templates',
       'base hook' => 'node__emmr_source__full',
     ],
   ];

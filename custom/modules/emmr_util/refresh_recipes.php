@@ -10,7 +10,7 @@ use Drupal\node\Entity\Node;
 // Get an array of all 'recipe' node ids.
 $article_nids = \Drupal::entityQuery('node')
   ->condition('type', 'emmr_recipe')
-  ->execute();
+  ->accessCheck(FALSE)->execute();
 
 // Load all the articles.
 $articles = Node::loadMultiple($article_nids);

@@ -112,7 +112,7 @@ class EmmrCoreController extends ControllerBase {
       $this->renderer->renderRoot($renderarray);
 
     // Get module path.
-    $path = DRUPAL_ROOT . '/' . drupal_get_path("module", "emmr_core");
+    $path = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.module')->getPath("emmr_core");
 
     // Set base path for CSS.
     $path .= "/css";

@@ -35,7 +35,7 @@ class TrxnReplace extends CKEditorPluginBase implements CKEditorPluginCssInterfa
    * {@inheritdoc}
    */
   public function getFile() {
-    return drupal_get_path('module', 'emmr_ckeditor_replace') . '/js/plugins/trxn_replace/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('emmr_ckeditor_replace') . '/js/plugins/trxn_replace/plugin.js';
   }
 
   /**
@@ -45,7 +45,7 @@ class TrxnReplace extends CKEditorPluginBase implements CKEditorPluginCssInterfa
     return [
       'trxn_replace' => [
         'label' => $this->t('Transcription Replace'),
-        'image' => drupal_get_path('module', 'emmr_ckeditor_replace') .
+        'image' => \Drupal::service('extension.list.module')->getPath('emmr_ckeditor_replace') .
         '/js/plugins/trxn_replace/icons/trxn_replace.png',
       ],
     ];
