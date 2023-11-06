@@ -1,4 +1,4 @@
-uuid: 5cc478a9-031d-487d-a17c-1d2dbde2c37b
+uuid: b182505b-e27c-4e35-a904-7d4624d1bbf6
 langcode: en
 status: true
 dependencies:
@@ -20,13 +20,14 @@ settings:
       - code
       - bulletedList
       - numberedList
-      - strikethrough
       - superscript
       - subscript
       - insertTable
-      - horizontalLine
       - codeBlock
+      - strikethrough
+      - horizontalLine
       - sourceEditing
+      - simpleBox
   plugins:
     ckeditor5_codeBlock:
       languages:
