@@ -5,10 +5,10 @@
  *
  * I.e. this file's purpose is to make plugin(s) discoverable.
  */
-// cSpell:ignore simplebox
+// cSpell:ignore annoinsert
 
-import SimpleBox from './simplebox';
+import AnnoInsert from './annoinsert';
 
 export default {
-  SimpleBox,
+  AnnoInsert,
 };

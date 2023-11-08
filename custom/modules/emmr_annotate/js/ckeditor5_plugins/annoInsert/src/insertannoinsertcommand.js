@@ -2,18 +2,18 @@
  * @file defines InsertSimpleBoxCommand, which is executed when the simpleBox
  * toolbar button is pressed.
  */
-// cSpell:ignore simpleboxediting
+// cSpell:ignore annoinsertediting
 
 import { Command } from 'ckeditor5/src/core';
 
-export default class InsertSimpleBoxCommand extends Command {
+export default class InsertAnnoInsertCommand extends Command {
   execute() {
     const { model } = this.editor;
 
     model.change((writer) => {
       // Insert <simpleBox>*</simpleBox> at the current selection position
       // in a way that will result in creating a valid model structure.
-      model.insertContent(createSimpleBox(writer));
+      model.insertContent(createAnnoInsert(writer));
     });
   }
 
@@ -26,7 +26,7 @@ export default class InsertSimpleBoxCommand extends Command {
     // currently containing the cursor.
     const allowedIn = model.schema.findAllowedParent(
       selection.getFirstPosition(),
-      'simpleBox',
+      'annoInsert',
     );
 
     // If the cursor is not in a location where a simpleBox can be added, return
@@ -35,22 +35,20 @@ export default class InsertSimpleBoxCommand extends Command {
   }
 }
 
-function createSimpleBox(writer) {
+function createAnnoInsert(writer) {
   // Create instances of the three elements registered with the editor in
-  // simpleboxediting.js.
-  const simpleBox = writer.createElement('simpleBox');
-  const simpleBoxTitle = writer.createElement('simpleBoxTitle');
-  const simpleBoxDescription = writer.createElement('simpleBoxDescription');
+  // annoinsertediting.js.
+  const annoInsert = writer.createElement('annoInsert');
+  const annoInsertCaret = writer.createElement('annoInsertCaret');
+  writer.appendText('^', {}, annoInsertCaret);
+  const annoInsertText = writer.createElement('annoInsertText');
+  writer.appendText('Type annotation text here', {}, annoInsertText);
 
   // Append the title and description elements to the simpleBox, which matches
   // the parent/child relationship as defined in their schemas.
-  writer.append(simpleBoxTitle, simpleBox);
-  writer.append(simpleBoxDescription, simpleBox);
-
-  // The simpleBoxDescription text content will automatically be wrapped in a
-  // `<p>`.
-  writer.appendElement('paragraph', simpleBoxDescription);
+  writer.append(annoInsertCaret, annoInsert);
+  writer.append(annoInsertText, annoInsert);
 
   // Return the element to be added to the editor.
-  return simpleBox;
+  return annoInsert;
 }

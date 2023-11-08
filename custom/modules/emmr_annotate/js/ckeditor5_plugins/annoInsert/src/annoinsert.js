@@ -6,19 +6,19 @@
  * I.e, this file's purpose is to integrate all the separate parts of the plugin
  * before it's made discoverable via index.js.
  */
-// cSpell:ignore simpleboxediting simpleboxui
+// cSpell:ignore annoinsertediting annoinsertui
 
 // The contents of SimpleBoxUI and SimpleBox editing could be included in this
 // file, but it is recommended to separate these concerns in different files.
-import SimpleBoxEditing from './simpleboxediting';
-import SimpleBoxUI from './simpleboxui';
+import AnnoInsertEditing from './annoinsertediting';
+import AnnoInsertUI from './annoinsertui';
 import { Plugin } from 'ckeditor5/src/core';
 
-export default class SimpleBox extends Plugin {
+export default class AnnoInsert extends Plugin {
   // Note that SimpleBoxEditing and SimpleBoxUI also extend `Plugin`, but these
   // are not seen as individual plugins by CKEditor 5. CKEditor 5 will only
   // discover the plugins explicitly exported in index.js.
   static get requires() {
-    return [SimpleBoxEditing, SimpleBoxUI];
+    return [AnnoInsertEditing, AnnoInsertUI];
   }
 }

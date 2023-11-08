@@ -1,9 +1,9 @@
 import { Plugin } from 'ckeditor5/src/core';
 import { toWidget, toWidgetEditable } from 'ckeditor5/src/widget';
 import { Widget } from 'ckeditor5/src/widget';
-import InsertSimpleBoxCommand from './insertsimpleboxcommand';
+import InsertAnnoInsertCommand from './insertannoinsertcommand';
 
-// cSpell:ignore simplebox insertsimpleboxcommand
+// cSpell:ignore annoinsert insertannoinsertcommand
 
 /**
  * CKEditor 5 plugins do not work directly with the DOM. They are defined as
@@ -25,7 +25,7 @@ import InsertSimpleBoxCommand from './insertsimpleboxcommand';
  * This file has the logic for defining the simpleBox model, and for how it is
  * converted to standard DOM markup.
  */
-export default class SimpleBoxEditing extends Plugin {
+export default class AnnoInsertEditing extends Plugin {
   static get requires() {
     return [Widget];
   }
@@ -34,8 +34,8 @@ export default class SimpleBoxEditing extends Plugin {
     this._defineSchema();
     this._defineConverters();
     this.editor.commands.add(
-      'insertSimpleBox',
-      new InsertSimpleBoxCommand(this.editor),
+      'insertAnnoInsert',
+      new InsertAnnoInsertCommand(this.editor),
     );
   }
 
@@ -53,36 +53,36 @@ export default class SimpleBoxEditing extends Plugin {
     // Schemas are registered via the central `editor` object.
     const schema = this.editor.model.schema;
 
-    schema.register('simpleBox', {
+    schema.register('annoInsert', {
       // Behaves like a self-contained object (e.g. an image).
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
     });
 
-    schema.register('simpleBoxTitle', {
+    schema.register('annoInsertCaret', {
       // This creates a boundary for external actions such as clicking and
       // and keypress. For example, when the cursor is inside this box, the
       // keyboard shortcut for "select all" will be limited to the contents of
       // the box.
       isLimit: true,
       // This is only to be used within simpleBox.
-      allowIn: 'simpleBox',
+      allowIn: 'annoInsert',
       // Allow content that is allowed in blocks (e.g. text with attributes).
       allowContentOf: '$block',
     });
 
-    schema.register('simpleBoxDescription', {
+    schema.register('annoInsertText', {
       isLimit: true,
-      allowIn: 'simpleBox',
+      allowIn: 'annoInsert',
       allowContentOf: '$root',
     });
 
     schema.addChildCheck((context, childDefinition) => {
-      // Disallow simpleBox inside simpleBoxDescription.
+      // Disallow annoInsert inside self or any children.
       if (
-        context.endsWith('simpleBoxDescription') &&
-        childDefinition.name === 'simpleBox'
+        context.startsWith('anno') &&
+        childDefinition.name === 'annoInsert'
       ) {
         return false;
       }
@@ -100,14 +100,13 @@ export default class SimpleBoxEditing extends Plugin {
     // Upcast Converters: determine how existing HTML is interpreted by the
     // editor. These trigger when an editor instance loads.
     //
-    // If <section class="simplebox"> is present in the existing markup
+    // If <span class="annoInsert"> is present in the existing markup
     // processed by CKEditor, then CKEditor recognizes and loads it as a
     // <simpleBox> model.
     conversion.for('upcast').elementToElement({
-      model: 'simpleBox',
+      model: 'annoInsert',
       view: {
-        name: 'section',
-        classes: 'simple-box',
+        name: 'trxn',
       },
     });
 
@@ -116,10 +115,10 @@ export default class SimpleBoxEditing extends Plugin {
     // <simpleBoxTitle> model, provided it is a child element of <simpleBox>,
     // as required by the schema.
     conversion.for('upcast').elementToElement({
-      model: 'simpleBoxTitle',
+      model: 'annoInsertCaret',
       view: {
-        name: 'h2',
-        classes: 'simple-box-title',
+        name: 'span',
+        classes: 'trxn-caret',
       },
     });
 
@@ -128,10 +127,10 @@ export default class SimpleBoxEditing extends Plugin {
     // <simpleBoxDescription> model, provided it is a child element of
     // <simpleBox>, as required by the schema.
     conversion.for('upcast').elementToElement({
-      model: 'simpleBoxDescription',
+      model: 'annoInsertText',
       view: {
-        name: 'div',
-        classes: 'simple-box-description',
+        name: 'span',
+        classes: 'trxn-text',
       },
     });
 
@@ -141,32 +140,31 @@ export default class SimpleBoxEditing extends Plugin {
     // Instances of <simpleBox> are saved as
     // <section class="simple-box">{{inner content}}</section>.
     conversion.for('dataDowncast').elementToElement({
-      model: 'simpleBox',
+      model: 'annoInsert',
       view: {
-        name: 'section',
-        classes: 'simple-box',
+        name: 'trxn',
       },
     });
 
     // Instances of <simpleBoxTitle> are saved as
     // <h2 class="simple-box-title">{{inner content}}</h2>.
     conversion.for('dataDowncast').elementToElement({
-      model: 'simpleBoxTitle',
+      model: 'annoInsertCaret',
       view: {
-        name: 'h2',
-        classes: 'simple-box-title',
+        name: 'span',
+        classes: 'trxn-caret',
       },
     });
 
     // Instances of <simpleBoxDescription> are saved as
     // <div class="simple-box-description">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
-      model: 'simpleBoxDescription',
+      model: 'annoInsertText',
       view: {
-        name: 'div',
-        classes: 'simple-box-description',
+        name: 'span',
+        classes: 'trxn-text',
       },
-    });
+   });
 
     // Editing Downcast Converters. These render the content to the user for
     // editing, i.e. this determines what gets seen in the editor. These trigger
@@ -175,35 +173,34 @@ export default class SimpleBoxEditing extends Plugin {
     //
     // Convert the <simpleBox> model into a container widget in the editor UI.
     conversion.for('editingDowncast').elementToElement({
-      model: 'simpleBox',
+      model: 'annoInsert',
       view: (modelElement, { writer: viewWriter }) => {
-        const section = viewWriter.createContainerElement('section', {
-          class: 'simple-box',
-        });
+        const trxn = viewWriter.createContainerElement('trxn', {});
 
-        return toWidget(section, viewWriter, { label: 'simple box widget' });
+        return toWidget(trxn, viewWriter, { label: 'Annotation insert widget' });
       },
     });
 
     // Convert the <simpleBoxTitle> model into an editable <h2> widget.
     conversion.for('editingDowncast').elementToElement({
-      model: 'simpleBoxTitle',
+      model: 'annoInsertCaret',
       view: (modelElement, { writer: viewWriter }) => {
-        const h2 = viewWriter.createEditableElement('h2', {
-          class: 'simple-box-title',
-        });
-        return toWidgetEditable(h2, viewWriter);
+        const span = viewWriter.createContainerElement('span', 
+          {
+            class: 'trxn-caret'
+          });
+        return toWidget(span, viewWriter);
       },
     });
 
     // Convert the <simpleBoxDescription> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
-      model: 'simpleBoxDescription',
+      model: 'annoInsertText',
       view: (modelElement, { writer: viewWriter }) => {
-        const div = viewWriter.createEditableElement('div', {
-          class: 'simple-box-description',
+        const span = viewWriter.createEditableElement('span', {
+          class: 'trxn-text',
         });
-        return toWidgetEditable(div, viewWriter);
+        return toWidgetEditable(span, viewWriter);
       },
     });
   }
