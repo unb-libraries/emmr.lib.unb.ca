@@ -16,8 +16,8 @@ module:
   dynamic_page_cache: 0
   editor: 0
   editor_advanced_link: 0
-  emmr_annotate: 0
   emmr_core: 0
+  emmr_transcribe: 0
   entity_reference_revisions: 0
   field: 0
   field_ui: 0

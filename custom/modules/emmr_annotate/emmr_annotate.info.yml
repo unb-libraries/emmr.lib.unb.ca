@@ -1,9 +1,0 @@
-# This has 'change-this-to-info' in the filename instead of 'info' so this
-# template isn't discovered as a module.
-name: EMMR Annotate
-type: module
-description: "Annotation tools for UNB Libraries site emmr.lib.unb.ca"
-package: CKEditor 5
-core_version_requirement: ^9 || ^10
-dependencies:
-  - drupal:ckeditor5
