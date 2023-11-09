@@ -1,5 +1,5 @@
 /**
- * @file defines InsertSimpleBoxCommand, which is executed when the simpleBox
+ * @file defines InsertTransInsertCommand, which is executed when the Transcription Insert
  * toolbar button is pressed.
  */
 // cSpell:ignore transinsertediting
@@ -11,7 +11,7 @@ export default class InsertTransInsertCommand extends Command {
     const { model } = this.editor;
 
     model.change((writer) => {
-      // Insert <simpleBox>*</simpleBox> at the current selection position
+      // Insert <trxn>*</trxn> at the current selection position
       // in a way that will result in creating a valid model structure.
       model.insertContent(createTransInsert(writer));
     });
@@ -22,14 +22,14 @@ export default class InsertTransInsertCommand extends Command {
     const { selection } = model.document;
 
     // Determine if the cursor (selection) is in a position where adding a
-    // simpleBox is permitted. This is based on the schema of the model(s)
+    // transInsert is permitted. This is based on the schema of the model(s)
     // currently containing the cursor.
     const allowedIn = model.schema.findAllowedParent(
       selection.getFirstPosition(),
       'transInsert',
     );
 
-    // If the cursor is not in a location where a simpleBox can be added, return
+    // If the cursor is not in a location where a transInsert can be added, return
     // null so the addition doesn't happen.
     this.isEnabled = allowedIn !== null;
   }
@@ -42,9 +42,10 @@ function createTransInsert(writer) {
   const transInsertCaret = writer.createElement('transInsertCaret');
   writer.appendText('^', {}, transInsertCaret);
   const transInsertText = writer.createElement('transInsertText');
-  writer.appendText('Type transcription insert text here', {}, transInsertText);
+  let insertText = prompt("Enter transcription insert text");
+  writer.appendText(insertText, {}, transInsertText);
 
-  // Append the title and description elements to the simpleBox, which matches
+  // Append the title and description elements to the transInsert, which matches
   // the parent/child relationship as defined in their schemas.
   writer.append(transInsertCaret, transInsert);
   writer.append(transInsertText, transInsert);
