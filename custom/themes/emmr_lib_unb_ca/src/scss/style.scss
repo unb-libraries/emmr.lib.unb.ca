@@ -652,6 +652,10 @@ h1.page-header > a {
 }
 
 /* Transcription */
+trxn, trxn + p, p:has(+ trxn) {
+  display: inline;
+}
+
 #recipe-trans .trxn-caret {
   position: relative;
   bottom: -.9em;
@@ -663,7 +667,8 @@ h1.page-header > a {
   display: inline;
   width: max-content;
   width: -moz-max-content;
-  bottom: 1.5em;
+  bottom: 9rem;
+  color: $color-red;
 }
 
 #recipe-trans .trxn-replace {
