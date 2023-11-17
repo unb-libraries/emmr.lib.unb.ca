@@ -1,3 +1,6 @@
 .ckeditor5-toolbar-button-transInsert {
   background-image: url(../icons/transInsert.svg);
 }
+.ckeditor5-toolbar-button-transReplace {
+  background-image: url(../icons/transReplace.svg);
+}

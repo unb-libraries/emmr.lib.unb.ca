@@ -13,6 +13,7 @@ emmr_transcribe_plugins:
   ckeditor5:
     plugins:
       - transInsert.TransInsert
+      - transReplace.TransReplace
     # *Additional configuration properties*
     # config: data sent to the constructor of any CKEditor 5 plugin
     #   editorPluginName:
@@ -30,6 +31,8 @@ emmr_transcribe_plugins:
       # plugin's index.js.
       transInsert:
         label: Transcription Insert
+      transReplace:
+        label: Transcription Replace
     # If the plugin does not provide elements, set this as
     # `elements: false`
     elements:
@@ -40,6 +43,8 @@ emmr_transcribe_plugins:
       - <span>
       - <span class="trxn-caret">
       - <span class="trxn-text">
+      - <span class="trxn-replace">
+      - <span class="trxn-retext">
     # *Additional configuration properties*
     # conditions: for setting additional criteria that must be met for the
     #   plugin to be active.
