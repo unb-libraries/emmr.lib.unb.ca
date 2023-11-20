@@ -34,6 +34,7 @@ settings:
       - sourceEditing
       - '|'
       - transInsert
+      - transReplace
   plugins:
     ckeditor5_heading:
       enabled_headings:

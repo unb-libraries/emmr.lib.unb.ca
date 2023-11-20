@@ -35,7 +35,11 @@ export default class InsertTransInsertCommand extends Command {
   }
 }
 
-function createTransInsert(writer) {
+function createTransInsert(writer) {    
+  const { model } = this.editor;
+  const { selection } = model.document;
+  window.alert(selection);
+
   // Create instances of the three elements registered with the editor in
   // transinsertediting.js.
   const transInsert = writer.createElement('transInsert');
