@@ -1,5 +1,5 @@
 /**
- * @file defines InsertTransReplaceCommand, which is executed when the Transcription Insert
+ * @file defines InsertTransReplaceCommand, which is executed when the Transcription Replace
  * toolbar button is pressed.
  */
 // cSpell:ignore transreplaceediting
@@ -9,11 +9,14 @@ import { Command } from 'ckeditor5/src/core';
 export default class InsertTransReplaceCommand extends Command {
   execute() {
     const { model } = this.editor;
+    const { selection } = model.document;
+    // Get selected text.
+    const selected = selection.getFirstRange().getItems().next().value.data;
 
     model.change((writer) => {
       // Insert <trxn>*</trxn> at the current selection position
       // in a way that will result in creating a valid model structure.
-      model.insertContent(createTransReplace(writer));
+      model.insertContent(createTransReplace(writer, selected));
     });
   }
 
@@ -35,15 +38,16 @@ export default class InsertTransReplaceCommand extends Command {
   }
 }
 
-function createTransReplace(writer) {
+function createTransReplace(writer, selected) {
+  alert(selected);
   // Create instances of the three elements registered with the editor in
   // transreplaceediting.js.
   const transReplace = writer.createElement('transReplace');
   const transReplaceCaret = writer.createElement('transReplaceCaret');
   writer.appendText('^', {}, transReplaceCaret);
   const transReplaceText = writer.createElement('transReplaceText');
-  let insertText = prompt("Enter transcription insert text");
-  writer.appendText(insertText, {}, transReplaceText);
+  let replaceText = prompt("Enter transcription replacement text");
+  writer.appendText(replaceText, {}, transReplaceText);
 
   // Append the title and description elements to the transReplace, which matches
   // the parent/child relationship as defined in their schemas.

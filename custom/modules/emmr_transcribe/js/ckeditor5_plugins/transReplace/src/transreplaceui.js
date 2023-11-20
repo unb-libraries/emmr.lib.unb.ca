@@ -17,7 +17,7 @@ export default class TransReplaceUI extends Plugin {
 
       // Create the toolbar button.
       buttonView.set({
-        label: editor.t('Transcription Insert'),
+        label: editor.t('Transcription Replace'),
         icon,
         tooltip: true,
       });
