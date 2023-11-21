@@ -11,7 +11,7 @@ export default class InsertTransInsertCommand extends Command {
     const { model } = this.editor;
 
     model.change((writer) => {
-      // Insert <trxn>*</trxn> at the current selection position
+      // Insert <trxnin>*</trxnin> at the current selection position
       // in a way that will result in creating a valid model structure.
       model.insertContent(createTransInsert(writer));
     });

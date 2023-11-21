@@ -12,15 +12,15 @@ import InsertTransReplaceCommand from './inserttransreplacecommand';
  *
  * CKEditor 5 internally interacts with transReplace as this model:
  * <transReplace>
- *    <transReplaceCaret></transReplaceCaret>
+ *    <transReplaceOld></transReplaceOld>
  *    <transReplaceText></transReplaceText>
  * </transReplace>
  *
  * Which is converted for the browser/user as this markup
- * <trxn>
- *   <span class="trxn-caret"></span>
- *   <span class="trxn-text"></span>
- * </trxn>
+ * <trxnrep>
+ *   <span class="trxn-replace"></span>
+ *   <span class="trxn-retext"></span>
+ * </trxnrep>
  *
  * This file has the logic for defining the transReplace model, and for how it is
  * converted to standard DOM markup.
@@ -42,7 +42,7 @@ export default class TransReplaceEditing extends Plugin {
   /*
    * This registers the structure that will be seen by CKEditor 5 as
    * <transReplace>
-   *    <transReplaceCaret></transReplaceCaret>
+   *    <transReplaceOld></transReplaceOld>
    *    <transReplaceText></transReplaceText>
    * </transReplace>
    *
@@ -60,7 +60,7 @@ export default class TransReplaceEditing extends Plugin {
       allowWhere: '$block',
     });
 
-    schema.register('transReplaceCaret', {
+    schema.register('transReplaceOld', {
       // This creates a boundary for external actions such as clicking and
       // and keypress. For example, when the cursor is inside this box, the
       // keyboard shortcut for "select all" will be limited to the contents of
@@ -106,16 +106,16 @@ export default class TransReplaceEditing extends Plugin {
     conversion.for('upcast').elementToElement({
       model: 'transReplace',
       view: {
-        name: 'trxn',
+        name: 'trxnrep',
       },
     });
 
     // If <span class="trxn-caret"> is present in the existing markup
     // processed by CKEditor, then CKEditor recognizes and loads it as a
-    // <transReplaceCaret> model, provided it is a child element of <transReplace>,
+    // <transReplaceOld> model, provided it is a child element of <transReplace>,
     // as required by the schema.
     conversion.for('upcast').elementToElement({
-      model: 'transReplaceCaret',
+      model: 'transReplaceOld',
       view: {
         name: 'span',
         classes: 'trxn-caret',
@@ -138,18 +138,18 @@ export default class TransReplaceEditing extends Plugin {
     // These trigger when content is saved.
     //
     // Instances of <transReplace> are saved as
-    // <trxn>{{inner content}}</trxn>.
+    // <trxnrep>{{inner content}}</trxnrep>.
     conversion.for('dataDowncast').elementToElement({
       model: 'transReplace',
       view: {
-        name: 'trxn',
+        name: 'trxnrep',
       },
     });
 
-    // Instances of <transReplaceCaret> are saved as
+    // Instances of <transReplaceOld> are saved as
     // <span class="trxn-caret">{{inner content}}</span>.
     conversion.for('dataDowncast').elementToElement({
-      model: 'transReplaceCaret',
+      model: 'transReplaceOld',
       view: {
         name: 'span',
         classes: 'trxn-caret',
@@ -175,15 +175,15 @@ export default class TransReplaceEditing extends Plugin {
     conversion.for('editingDowncast').elementToElement({
       model: 'transReplace',
       view: (modelElement, { writer: viewWriter }) => {
-        const trxn = viewWriter.createContainerElement('trxn', {});
+        const trxnrep = viewWriter.createContainerElement('trxnrep', {});
 
-        return toWidget(trxn, viewWriter, { label: 'Transtation insert widget' });
+        return toWidget(trxnrep, viewWriter, { label: 'Transtation insert widget' });
       },
     });
 
-    // Convert the <transReplaceCaret> model into an editable <span> widget.
+    // Convert the <transReplaceOld> model into an editable <span> widget.
     conversion.for('editingDowncast').elementToElement({
-      model: 'transReplaceCaret',
+      model: 'transReplaceOld',
       view: (modelElement, { writer: viewWriter }) => {
         const span = viewWriter.createContainerElement('span', 
           {

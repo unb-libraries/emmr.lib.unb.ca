@@ -17,10 +17,10 @@ import InsertTransInsertCommand from './inserttransinsertcommand';
  * </transInsert>
  *
  * Which is converted for the browser/user as this markup
- * <trxn>
+ * <trxnin>
  *   <span class="trxn-caret"></span>
  *   <span class="trxn-text"></span>
- * </trxn>
+ * </trxnin>
  *
  * This file has the logic for defining the transInsert model, and for how it is
  * converted to standard DOM markup.
@@ -100,13 +100,13 @@ export default class TransInsertEditing extends Plugin {
     // Upcast Converters: determine how existing HTML is interpreted by the
     // editor. These trigger when an editor instance loads.
     //
-    // If <span class="transInsert"> is present in the existing markup
+    // If <trxnin> is present in the existing markup
     // processed by CKEditor, then CKEditor recognizes and loads it as a
     // <transInsert> model.
     conversion.for('upcast').elementToElement({
       model: 'transInsert',
       view: {
-        name: 'trxn',
+        name: 'trxnin',
       },
     });
 
@@ -138,7 +138,7 @@ export default class TransInsertEditing extends Plugin {
     // These trigger when content is saved.
     //
     // Instances of <transInsert> are saved as
-    // <trxn>{{inner content}}</trxn>.
+    // <trxnin>{{inner content}}</trxnin>.
     conversion.for('dataDowncast').elementToElement({
       model: 'transInsert',
       view: {
@@ -175,7 +175,7 @@ export default class TransInsertEditing extends Plugin {
     conversion.for('editingDowncast').elementToElement({
       model: 'transInsert',
       view: (modelElement, { writer: viewWriter }) => {
-        const trxn = viewWriter.createContainerElement('trxn', {});
+        const trxnin = viewWriter.createContainerElement('trxnin', {});
 
         return toWidget(trxn, viewWriter, { label: 'Transtation insert widget' });
       },

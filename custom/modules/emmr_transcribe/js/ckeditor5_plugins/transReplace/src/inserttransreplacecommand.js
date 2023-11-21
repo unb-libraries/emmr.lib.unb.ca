@@ -10,11 +10,11 @@ export default class InsertTransReplaceCommand extends Command {
   execute() {
     const { model } = this.editor;
     const { selection } = model.document;
-    // Get selected text.
+    // Get and pass selected text.
     const selected = selection.getFirstRange().getItems().next().value.data;
 
     model.change((writer) => {
-      // Insert <trxn>*</trxn> at the current selection position
+      // Insert <trxnrep>*</trxnrep> at the current selection position
       // in a way that will result in creating a valid model structure.
       model.insertContent(createTransReplace(writer, selected));
     });
@@ -43,15 +43,15 @@ function createTransReplace(writer, selected) {
   // Create instances of the three elements registered with the editor in
   // transreplaceediting.js.
   const transReplace = writer.createElement('transReplace');
-  const transReplaceCaret = writer.createElement('transReplaceCaret');
-  writer.appendText('^', {}, transReplaceCaret);
+  const transReplaceOld = writer.createElement('transReplaceOld');
+  writer.appendText('^', {}, transReplaceOld);
   const transReplaceText = writer.createElement('transReplaceText');
   let replaceText = prompt("Enter transcription replacement text");
   writer.appendText(replaceText, {}, transReplaceText);
 
   // Append the title and description elements to the transReplace, which matches
   // the parent/child relationship as defined in their schemas.
-  writer.append(transReplaceCaret, transReplace);
+  writer.append(transReplaceOld, transReplace);
   writer.append(transReplaceText, transReplace);
 
   // Return the element to be added to the editor.
