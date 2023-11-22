@@ -75,7 +75,7 @@ export default class TransInsertEditing extends Plugin {
     schema.register('transInsertText', {
       isLimit: true,
       allowIn: 'transInsert',
-      allowContentOf: '$root',
+      allowContentOf: '$block',
     });
 
     schema.addChildCheck((context, childDefinition) => {
@@ -142,7 +142,7 @@ export default class TransInsertEditing extends Plugin {
     conversion.for('dataDowncast').elementToElement({
       model: 'transInsert',
       view: {
-        name: 'trxn',
+        name: 'trxnin',
       },
     });
 
@@ -177,7 +177,7 @@ export default class TransInsertEditing extends Plugin {
       view: (modelElement, { writer: viewWriter }) => {
         const trxnin = viewWriter.createContainerElement('trxnin', {});
 
-        return toWidget(trxn, viewWriter, { label: 'Transtation insert widget' });
+        return toWidget(trxnin, viewWriter, { label: 'Transcription insert widget' });
       },
     });
 

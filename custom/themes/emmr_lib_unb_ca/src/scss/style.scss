@@ -652,7 +652,7 @@ h1.page-header > a {
 }
 
 /* Transcription */
-trxn, trxn + p, p:has(+ trxn) {
+trxnin, trxnin + p, p:has(+ trxnin) {
   display: inline;
 }
 
@@ -663,11 +663,11 @@ trxn, trxn + p, p:has(+ trxn) {
 }
 
 #recipe-trans .trxn-text {
-  position: absolute;
+  position: relative;
   display: inline;
   width: max-content;
   width: -moz-max-content;
-  bottom: 9rem;
+  bottom: 2rem;
   color: $color-red;
 }
 

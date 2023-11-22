@@ -39,7 +39,8 @@ emmr_transcribe_plugins:
       # Note that it necessary for elements to separately provide both the tag
       # (f.e. `<h2>`) and the attribute being added to the tag
       # (f.e. `<h2 class="simple-box-title">`).
-      - <trxn>
+      - <trxnin>
+      - <trxnrep>
       - <span>
       - <span class="trxn-caret">
       - <span class="trxn-text">

@@ -177,7 +177,7 @@ export default class TransReplaceEditing extends Plugin {
       view: (modelElement, { writer: viewWriter }) => {
         const trxnrep = viewWriter.createContainerElement('trxnrep', {});
 
-        return toWidget(trxnrep, viewWriter, { label: 'Transtation insert widget' });
+        return toWidget(trxnrep, viewWriter, { label: 'Transcription replacement widget' });
       },
     });
 
