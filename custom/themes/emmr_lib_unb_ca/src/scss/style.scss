@@ -663,11 +663,11 @@ trxnin, trxnin + p, p:has(+ trxnin) {
 }
 
 #recipe-trans .trxn-text {
-  position: relative;
+  position: absolute;
   display: inline;
   width: max-content;
   width: -moz-max-content;
-  bottom: 2rem;
+  line-height: 0;
   color: $color-red;
 }
 
