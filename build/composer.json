@@ -83,6 +83,7 @@
   "require": {
     "dompdf/dompdf": "^2",
     "drupal/bootstrap": "^3",
+    "drupal/ckeditor5_allowed_html": "1.1.x-dev",
     "drupal/color": "^1",
     "drupal/core": "^10",    
     "drupal/core-composer-scaffold": "^10",
