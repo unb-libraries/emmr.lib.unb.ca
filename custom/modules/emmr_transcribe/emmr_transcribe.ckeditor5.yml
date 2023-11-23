@@ -47,6 +47,8 @@ emmr_transcribe_plugins:
       - <span class="trxn-text">
       - <span class="trxn-replace">
       - <span class="trxn-retext">
+      - <span class="trxn-margin">
+      - <span class="trxn-number">
     # *Additional configuration properties*
     # conditions: for setting additional criteria that must be met for the
     #   plugin to be active.
