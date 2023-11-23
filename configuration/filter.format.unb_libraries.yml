@@ -1,7 +1,9 @@
 uuid: d3a03413-af8a-4127-a0b9-09b8ce498bd5
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - ckeditor5_allowed_html
 name: 'UNB Libraries'
 format: unb_libraries
 weight: -50
@@ -21,9 +23,18 @@ filters:
   filter_html:
     id: filter_html
     provider: filter
-    status: true
+    status: false
     weight: -10
     settings:
-      allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <strong> <em> <s> <sub> <sup> <blockquote> <a href class id> <ul> <ol start> <li> <hr> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <img src alt height width data-caption data-align> <trxnin> <trxnrep> <trxnmar> <span class="trxn-caret trxn-text trxn-replace trxn-retext">'
+      allowed_html: ''
       filter_html_help: true
       filter_html_nofollow: false
+  filter_allowed:
+    id: filter_allowed
+    provider: ckeditor5_allowed_html
+    status: true
+    weight: 0
+    settings:
+      allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <strong> <em> <s> <sub> <sup> <blockquote> <a href class id> <ul> <ol start> <li> <hr> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <img src alt height width data-caption data-align> <trxnin> <trxnrep> <trxnmar> <span class="trxn-caret trxn-text trxn-replace trxn-retext trxn-margin trxn-number"><trxn>'
+      filter_html_help: '0'
+      filter_html_nofollow: '0'
