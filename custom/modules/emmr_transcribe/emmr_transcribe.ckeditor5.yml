@@ -41,6 +41,7 @@ emmr_transcribe_plugins:
       # (f.e. `<h2 class="simple-box-title">`).
       - <trxnin>
       - <trxnrep>
+      - <trxnmar>
       - <span>
       - <span class="trxn-caret">
       - <span class="trxn-text">
