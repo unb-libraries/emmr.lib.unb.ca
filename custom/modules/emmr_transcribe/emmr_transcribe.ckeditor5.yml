@@ -14,6 +14,7 @@ emmr_transcribe_plugins:
     plugins:
       - transInsert.TransInsert
       - transReplace.TransReplace
+      - transMargin.TransMargin
     # *Additional configuration properties*
     # config: data sent to the constructor of any CKEditor 5 plugin
     #   editorPluginName:
@@ -33,6 +34,8 @@ emmr_transcribe_plugins:
         label: Transcription Insert
       transReplace:
         label: Transcription Replace
+      transMargin:
+        label: Transcription Marginalia
     # If the plugin does not provide elements, set this as
     # `elements: false`
     elements:
@@ -46,8 +49,8 @@ emmr_transcribe_plugins:
       - <span class="trxn-caret">
       - <span class="trxn-text">
       - <span class="trxn-retext">
-      - <span class="trxn-margin">
       - <span class="trxn-number">
+      - <s>
       - <s class="trxn-replaced">
     # *Additional configuration properties*
     # conditions: for setting additional criteria that must be met for the

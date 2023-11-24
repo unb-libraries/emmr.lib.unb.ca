@@ -5,6 +5,7 @@ transcribe:
   js:
     js/build/transInsert.js: { preprocess: false, minified: false }
     js/build/transReplace.js: { preprocess: false, minified: false }
+    js/build/transMargin.js: { preprocess: false, minified: false }
     js/emmr_ckeditor_marginalia.js: { }
   dependencies:
     - core/ckeditor5
