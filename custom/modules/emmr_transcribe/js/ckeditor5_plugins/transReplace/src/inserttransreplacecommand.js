@@ -39,20 +39,19 @@ export default class InsertTransReplaceCommand extends Command {
 }
 
 function createTransReplace(writer, selected) {
-  alert(selected);
   // Create instances of the three elements registered with the editor in
   // transreplaceediting.js.
   const transReplace = writer.createElement('transReplace');
   const transReplaceOld = writer.createElement('transReplaceOld');
-  writer.appendText('^', {}, transReplaceOld);
+  writer.appendText(selected, {}, transReplaceOld);
   const transReplaceText = writer.createElement('transReplaceText');
   let replaceText = prompt("Enter transcription replacement text");
   writer.appendText(replaceText, {}, transReplaceText);
 
   // Append the title and description elements to the transReplace, which matches
   // the parent/child relationship as defined in their schemas.
-  writer.append(transReplaceOld, transReplace);
   writer.append(transReplaceText, transReplace);
+  writer.append(transReplaceOld, transReplace);
 
   // Return the element to be added to the editor.
   return transReplace;

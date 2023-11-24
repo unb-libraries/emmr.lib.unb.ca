@@ -12,14 +12,14 @@ import InsertTransReplaceCommand from './inserttransreplacecommand';
  *
  * CKEditor 5 internally interacts with transReplace as this model:
  * <transReplace>
- *    <transReplaceOld></transReplaceOld>
  *    <transReplaceText></transReplaceText>
+ *    <transReplaceOld></transReplaceOld>
  * </transReplace>
  *
  * Which is converted for the browser/user as this markup
  * <trxnrep>
- *   <span class="trxn-replace"></span>
  *   <span class="trxn-retext"></span>
+ *   <s class="trxn-replaced"></s>
  * </trxnrep>
  *
  * This file has the logic for defining the transReplace model, and for how it is
@@ -42,8 +42,8 @@ export default class TransReplaceEditing extends Plugin {
   /*
    * This registers the structure that will be seen by CKEditor 5 as
    * <transReplace>
-   *    <transReplaceOld></transReplaceOld>
    *    <transReplaceText></transReplaceText>
+   *    <transReplaceOld></transReplaceOld>
    * </transReplace>
    *
    * The logic in _defineConverters() will determine how this is converted to
@@ -110,15 +110,15 @@ export default class TransReplaceEditing extends Plugin {
       },
     });
 
-    // If <span class="trxn-caret"> is present in the existing markup
+    // If <s class="trxn-replaced"> is present in the existing markup
     // processed by CKEditor, then CKEditor recognizes and loads it as a
     // <transReplaceOld> model, provided it is a child element of <transReplace>,
     // as required by the schema.
     conversion.for('upcast').elementToElement({
       model: 'transReplaceOld',
       view: {
-        name: 'span',
-        classes: 'trxn-caret',
+        name: 's',
+        classes: 'trxn-replaced',
       },
     });
 
@@ -147,12 +147,12 @@ export default class TransReplaceEditing extends Plugin {
     });
 
     // Instances of <transReplaceOld> are saved as
-    // <span class="trxn-caret">{{inner content}}</span>.
+    // <s class="trxn-replaced">{{inner content}}</s>.
     conversion.for('dataDowncast').elementToElement({
       model: 'transReplaceOld',
       view: {
-        name: 'span',
-        classes: 'trxn-caret',
+        name: 's',
+        classes: 'trxn-replaced',
       },
     });
 
@@ -181,13 +181,13 @@ export default class TransReplaceEditing extends Plugin {
       },
     });
 
-    // Convert the <transReplaceOld> model into an editable <span> widget.
+    // Convert the <transReplaceOld> model into an editable <s> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'transReplaceOld',
       view: (modelElement, { writer: viewWriter }) => {
-        const span = viewWriter.createContainerElement('span', 
+        const span = viewWriter.createContainerElement('s', 
           {
-            class: 'trxn-caret'
+            class: 'trxn-replaced'
           });
         return toWidget(span, viewWriter);
       },

@@ -652,7 +652,8 @@ h1.page-header > a {
 }
 
 /* Transcription */
-trxnin, trxnin + p, p:has(+ trxnin) {
+trxnin, trxnin + p, p:has(+ trxnin), 
+trxnrep, trxnrep + p, p:has(+ trxnrep) {
   display: inline;
 }
 
