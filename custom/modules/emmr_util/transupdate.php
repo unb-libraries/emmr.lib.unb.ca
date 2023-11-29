@@ -64,11 +64,16 @@ foreach ($recipes as $recipe) {
       $trans = str_replace("<trxn>$match</trxn>", $new, $trans, $count);
     }
   }
+
   if ($trans != $recipe->field_recipe_transcription->getValue()[0]['value']) {
-    $recipe->set('field_recipe_transcription', $trans);
+    $recipe->field_recipe_transcription->setValue([
+      'value' => $trans,
+      'format' => 'unb_libraries',
+    ]);
     $recipe->save();
     $title = $recipe->title->getValue()[0]['value'];
     echo "\nUpdated emmr_recipe [$title]";
   }
 }
+
 echo "\n";
