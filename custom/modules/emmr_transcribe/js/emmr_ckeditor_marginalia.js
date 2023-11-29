@@ -3,7 +3,7 @@ jQuery(document).ready(function() {
     if (jQuery("#recipe-details-header").length != 0) {
       // Recipe node view functionality
       // Copy annotations from CKEditor to annotations panel
-      origin = ".field--name-field-recipe-transcription .trxn-margin";
+      origin = ".field--name-field-recipe-transcription trxnmar";
       destin = "#recipe-anno";
   
       // If marginalia found

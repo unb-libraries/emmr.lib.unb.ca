@@ -172,8 +172,9 @@ function emmr_core_preprocess_node(&$variables) {
  * Implements hook_ENTITY_TYPE_presave().
  */
 function emmr_core_node_presave($node) {
-  // Clear imprecise date fields if date not imprecise.
+
   if ($node->bundle() == "emmr_recipe") {
+    // Clear imprecise date fields if date not imprecise.
 
     if (empty($node->get('field_imprecise_date')->getValue()[0]['value'])) {
       $node->get('field_recipe_date_text')->setValue("");
@@ -228,6 +229,32 @@ function emmr_core_node_presave($node) {
     }
 
     $node->get('field_symptoms_index')->setValue($symptoms);
+
+    // Re-number transcription marginalia.
+    $trans = $node->field_recipe_transcription->getValue()[0]['value'];
+    // Find marginalia item matches.
+    preg_match_all('/<trxnmar>(.*?)<\/trxnmar>/', $trans, $matches);
+    // Iterate.
+    foreach ($matches as $key => $marginalia) {
+      // Get full expression match
+      $original = $marginalia[0];
+      // Get number segment.
+      preg_match_all('/<span class="trxn-number">(.*?)<\/span>/', $original, $number);
+      // Build sequential number segment.
+      $i = $key + 1;
+      $new = "<span class='trxn-number'>$i</span>";
+      // Replace original number segment in original match.
+      $replacement = str_replace($number[0], $new, $original, $count);
+      // Replace marginalia segment in transcription.
+      $trans = str_replace($marginalia, $replacement, $trans, $count);
+      // Update field and save.
+      if ($trans != $node->field_recipe_transcription->getValue()[0]['value']) {
+        $node->field_recipe_transcription->setValue([
+          'value' => $trans,
+          'format' => 'unb_libraries',
+        ]);
+      }    
+    }
   }
 }
 

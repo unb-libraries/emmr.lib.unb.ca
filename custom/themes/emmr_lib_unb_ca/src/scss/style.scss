@@ -653,7 +653,8 @@ h1.page-header > a {
 
 /* Transcription */
 trxnin, trxnin + p, p:has(+ trxnin), 
-trxnrep, trxnrep + p, p:has(+ trxnrep) {
+trxnrep, trxnrep + p, p:has(+ trxnrep), 
+trxnmar, trxnmar + p, p:has(+ trxnmar) {
   display: inline;
 }
 
@@ -672,7 +673,7 @@ trxnrep, trxnrep + p, p:has(+ trxnrep) {
   color: $color-red;
 }
 
-#recipe-trans .trxn-replace {
+#recipe-trans .trxn-replaced {
   position: relative;
   bottom: -.9em;
   color: $color-red;
@@ -683,7 +684,8 @@ trxnrep, trxnrep + p, p:has(+ trxnrep) {
   display: inline;
   width: max-content;
   width: -moz-max-content;
-  bottom: 1.5em;
+  line-height: 0;
+  color: $color-red;
 }
 
 #recipe-trans span.emmr-anno {
@@ -695,7 +697,7 @@ trxnrep, trxnrep + p, p:has(+ trxnrep) {
   bottom: 1.1em;
 }
 
-#recipe-trans .trxn-margin > .trxn-text {
+#recipe-trans trxnmar > .trxn-text {
   visibility: hidden !important;
 }
 
