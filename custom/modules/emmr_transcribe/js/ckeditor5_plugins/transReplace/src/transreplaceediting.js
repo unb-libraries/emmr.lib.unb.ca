@@ -75,7 +75,7 @@ export default class TransReplaceEditing extends Plugin {
     schema.register('transReplaceText', {
       isLimit: true,
       allowIn: 'transReplace',
-      allowContentOf: '$root',
+      allowContentOf: '$block',
     });
 
     schema.addChildCheck((context, childDefinition) => {
@@ -130,7 +130,7 @@ export default class TransReplaceEditing extends Plugin {
       model: 'transReplaceText',
       view: {
         name: 'span',
-        classes: 'trxn-text',
+        classes: 'trxn-retext',
       },
     });
 
@@ -162,7 +162,7 @@ export default class TransReplaceEditing extends Plugin {
       model: 'transReplaceText',
       view: {
         name: 'span',
-        classes: 'trxn-text',
+        classes: 'trxn-retext',
       },
    });
 
@@ -198,7 +198,7 @@ export default class TransReplaceEditing extends Plugin {
       model: 'transReplaceText',
       view: (modelElement, { writer: viewWriter }) => {
         const span = viewWriter.createEditableElement('span', {
-          class: 'trxn-text',
+          class: 'trxn-retext',
         });
         return toWidgetEditable(span, viewWriter);
       },
