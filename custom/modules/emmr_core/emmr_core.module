@@ -237,18 +237,18 @@ function emmr_core_node_presave($node) {
     // Iterate.
     foreach ($matches as $key => $marginalia) {
       // Get full expression match
-      $original = $marginalia[0];
-      // Get number segment.
-      preg_match_all('/<span class="trxn-number">(.*?)<\/span>/', $original, $number);
-      // Build sequential number segment.
-      $i = $key + 1;
-      $new = "<span class='trxn-number'>$i</span>";
-      // Replace original number segment in original match.
-      $replacement = str_replace($number[0], $new, $original, $count);
-      // Replace marginalia segment in transcription.
-      $trans = str_replace($marginalia, $replacement, $trans, $count);
-      // Update field and save.
-      if ($trans != $node->field_recipe_transcription->getValue()[0]['value']) {
+      $original = $marginalia[0] ?? NULL;
+      if ($original) {
+        // Get number segment.
+        preg_match_all('/<span class="trxn-number">(.*?)<\/span>/', $original, $number);
+        // Build sequential number segment.
+        $i = $key + 1;
+        $new = "<span class='trxn-number'>$i</span>";
+        // Replace original number segment in original match.
+        $replacement = str_replace($number[0], $new, $original, $count);
+        // Replace marginalia segment in transcription.
+        $trans = str_replace($marginalia, $replacement, $trans, $count);
+        // Update field and save.
         $node->field_recipe_transcription->setValue([
           'value' => $trans,
           'format' => 'unb_libraries',
