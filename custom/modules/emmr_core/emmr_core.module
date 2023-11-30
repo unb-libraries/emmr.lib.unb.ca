@@ -235,14 +235,14 @@ function emmr_core_node_presave($node) {
     // Find marginalia item matches.
     preg_match_all('/<trxnmar>(.*?)<\/trxnmar>/', $trans, $matches);
     // Iterate.
-    foreach ($matches as $key => $marginalia) {
+    foreach ($matches[0] as $key => $marginalia) {
+      $i = $key + 1;
       // Get full expression match
-      $original = $marginalia[0] ?? NULL;
+      $original = $marginalia ?? NULL;
       if ($original) {
-        // Get number segment.
+        // Get numbexr segment.
         preg_match_all('/<span class="trxn-number">(.*?)<\/span>/', $original, $number);
         // Build sequential number segment.
-        $i = $key + 1;
         $new = "<span class='trxn-number'>$i</span>";
         // Replace original number segment in original match.
         $replacement = str_replace($number[0], $new, $original, $count);
@@ -253,7 +253,7 @@ function emmr_core_node_presave($node) {
           'value' => $trans,
           'format' => 'unb_libraries',
         ]);
-      }    
+      }
     }
   }
 }

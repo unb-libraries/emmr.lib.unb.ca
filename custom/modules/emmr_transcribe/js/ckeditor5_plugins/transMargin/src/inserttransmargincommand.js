@@ -40,7 +40,7 @@ function createTransMargin(writer) {
   // transmarginediting.js.
   const transMargin = writer.createElement('transMargin');
   const transMarginNumber = writer.createElement('transMarginNumber');
-  writer.appendText('X', {}, transMarginNumber);
+  writer.appendText('#', {}, transMarginNumber);
   const transMarginText = writer.createElement('transMarginText');
   let marginaliaText = prompt("Enter transcription marginalia text");
   writer.appendText(marginaliaText, {}, transMarginText);
