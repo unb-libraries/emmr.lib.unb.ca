@@ -36,20 +36,26 @@ export default class InsertTransMarginCommand extends Command {
 }
 
 function createTransMargin(writer) {    
-  // Create instances of the three elements registered with the editor in
-  // transmarginediting.js.
-  const transMargin = writer.createElement('transMargin');
-  const transMarginNumber = writer.createElement('transMarginNumber');
-  writer.appendText('#', {}, transMarginNumber);
-  const transMarginText = writer.createElement('transMarginText');
   let marginaliaText = prompt("Enter transcription marginalia text");
-  writer.appendText(marginaliaText, {}, transMarginText);
+  // Return element only if a value is entered in dialog box. 
+  if (marginaliaText) {
+    // Create instances of the three elements registered with the editor in
+    // transmarginediting.js.
+    const transMargin = writer.createElement('transMargin');
+    const transMarginNumber = writer.createElement('transMarginNumber');
+    writer.appendText('#', {}, transMarginNumber);
+    const transMarginText = writer.createElement('transMarginText');
+    writer.appendText(marginaliaText, {}, transMarginText);
 
-  // Append the title and description elements to the transMargin, which matches
-  // the parent/child relationship as defined in their schemas.
-  writer.append(transMarginNumber, transMargin);
-  writer.append(transMarginText, transMargin);
+    // Append the title and description elements to the transMargin, which matches
+    // the parent/child relationship as defined in their schemas.
+    writer.append(transMarginNumber, transMargin);
+    writer.append(transMarginText, transMargin);
 
-  // Return the element to be added to the editor.
-  return transMargin;
+    // Return the element to be added to the editor.
+    return transMargin;
+  }
+  else {
+    return;
+  }
 }
