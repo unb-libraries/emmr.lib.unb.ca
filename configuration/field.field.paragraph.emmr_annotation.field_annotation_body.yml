@@ -9,7 +9,7 @@ id: paragraph.emmr_annotation.field_annotation_body
 field_name: field_annotation_body
 entity_type: paragraph
 bundle: emmr_annotation
-label: Annotation
+label: 'Annotation Description'
 description: ''
 required: false
 translatable: false

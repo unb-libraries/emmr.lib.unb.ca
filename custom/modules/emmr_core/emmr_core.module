@@ -124,7 +124,8 @@ function emmr_core_preprocess_node(&$variables) {
       }
 
       // Highlight alternative spellings.
-      foreach ($annos_alt as $val) {
+      dump($annos_alt);
+      foreach ($annos_alt as $i => $val) {
         $pattern = '/(\b\Q' . $val[1] . '\E\b)/mi';
         $anno_id = 'top-' . $val[0];
 

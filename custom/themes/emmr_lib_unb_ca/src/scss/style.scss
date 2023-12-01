@@ -622,8 +622,12 @@ body > div.dialog-off-canvas-main-canvas > div > div > div > div > nav > ul
     font-weight: 500;
 }
 
-#recipe-anno {
+#recipe-anno:has(div) {
   border-left: 2px solid #e5e5e5;
+
+  trxnmar {
+    display: block;
+  }
 
   .field--items {
     padding-top: 1em;
