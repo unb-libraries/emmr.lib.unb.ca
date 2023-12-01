@@ -652,10 +652,10 @@ h1.page-header > a {
 }
 
 /* Transcription */
-trxnin, trxnin + p, p:has(+ trxnin), 
-trxnrep, trxnrep + p, p:has(+ trxnrep), 
-trxnmar, trxnmar + p, p:has(+ trxnmar) {
-  display: inline;
+trxnin, trxnin span,
+trxnrep, trxnrep span, trxnrep s, 
+trxnmar, trxnmar span {
+  display: inline-block;
 }
 
 #recipe-trans .trxn-caret {
@@ -702,6 +702,8 @@ trxnmar, trxnmar + p, p:has(+ trxnmar) {
 }
 
 .trxn-number {
+  line-height: 2rem;
+  height: 2rem;
   background-color: $color-red;
   color: white;
   padding: 0 3px;
@@ -726,6 +728,13 @@ trxnmar, trxnmar + p, p:has(+ trxnmar) {
 
 #download {
   padding-left: 40px;
+}
+
+/* In-editor */
+trxnin span,
+trxnrep span, trxnrep s,
+trxnmar span {
+  color: $color-red;
 }
 
 /* Adcanced Sources View */

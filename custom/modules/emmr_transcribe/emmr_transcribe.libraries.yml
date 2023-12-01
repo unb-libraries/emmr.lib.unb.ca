@@ -16,3 +16,4 @@ admin:
   css:
     theme:
       css/admin.css: { }
+      css/transcription.css: { }
