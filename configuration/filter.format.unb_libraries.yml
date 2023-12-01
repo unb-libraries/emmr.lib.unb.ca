@@ -35,6 +35,6 @@ filters:
     status: true
     weight: 0
     settings:
-      allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <strong> <em> <s> <sub> <sup> <blockquote> <a href class id> <ul> <ol start> <li> <hr> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <img src alt height width data-caption data-align> <trxnin> <trxnrep> <trxnmar> <span class="trxn-caret trxn-text trxn-replace trxn-retext trxn-margin trxn-number"> <trxn>'
+      allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <strong> <em> <s> <sub> <sup> <blockquote> <a href class id> <ul> <ol start> <li> <hr> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <img src alt height width data-caption data-align> <trxnin> <trxnrep> <trxnmar> <span class> <span id> <trxn>'
       filter_html_help: '0'
       filter_html_nofollow: '0'
