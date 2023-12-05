@@ -12,6 +12,7 @@ echo "\n";
 // Get an array of all 'recipe' node ids.
 $recipe_nids = \Drupal::entityQuery('node')
   ->condition('type', 'emmr_recipe')
+  ->condition('field_recipe_transcription', '<trxn>', 'CONTAINS')
   ->accessCheck(FALSE)->execute();
 
 // Load all the recipes.
