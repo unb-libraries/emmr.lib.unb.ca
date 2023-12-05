@@ -71,8 +71,9 @@ foreach ($recipes as $recipe) {
       'format' => 'unb_libraries',
     ]);
     $recipe->save();
+    $id = $recipe->id();
     $title = $recipe->title->getValue()[0]['value'];
-    echo "\nUpdated emmr_recipe [$title]";
+    echo "\nUpdated emmr_recipe [$id][$title]";
   }
 }
 

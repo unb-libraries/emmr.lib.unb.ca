@@ -10,16 +10,16 @@ use Drupal\node\Entity\Node;
 
 echo "\n";
 // Get an array of all 'recipe' node ids.
-$recipe_nids = [
-  6,
-  11,
-  12,
-];
-
+$recipe_nids = \Drupal::entityQuery('node')
+  ->condition('type', 'emmr_recipe')
+  ->condition('field_recipe_transcription', '<trxn>', 'CONTAINS')
+  ->accessCheck(FALSE)->execute();
 // Load all the recipes.
 $recipes = Node::loadMultiple($recipe_nids);
+$i = 0;
 // Iterate.
 foreach ($recipes as $recipe) {
+  echo $recipe->id();
   // Get transcription value.
   $trans = $recipe->field_recipe_transcription->getValue()[0]['value'];
   // Find transcription item matches.
@@ -73,9 +73,15 @@ foreach ($recipes as $recipe) {
       'format' => 'unb_libraries',
     ]);
     $recipe->save();
+    $id = $recipe->id();
     $title = $recipe->title->getValue()[0]['value'];
-    echo "\nUpdated emmr_recipe [$title]";
+    echo "\nUpdated emmr_recipe [$id][$title]";
+    $i++;
   }
+
+  if ($i > 3) {
+    exit;
+  } 
 }
 
 echo "\n";
