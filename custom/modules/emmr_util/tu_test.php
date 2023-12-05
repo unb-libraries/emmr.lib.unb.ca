@@ -10,9 +10,11 @@ use Drupal\node\Entity\Node;
 
 echo "\n";
 // Get an array of all 'recipe' node ids.
-$recipe_nids = \Drupal::entityQuery('node')
-  ->condition('type', 'emmr_recipe')
-  ->accessCheck(FALSE)->execute();
+$recipe_nids = [
+  6,
+  11,
+  12,
+];
 
 // Load all the recipes.
 $recipes = Node::loadMultiple($recipe_nids);
