@@ -1,6 +1,6 @@
 global-styling:
   css:
-    base:
+    theme:
       dist/css/style.css: {}
       '//fonts.googleapis.com/css?family=Libre+Baskerville': { type: external, minified: true }
       '//fonts.googleapis.com/css?family=Nunito:400,700': { type: external, minified: true }

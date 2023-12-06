@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.unb_libraries
+    - filter.format.unb_libraries_basic
     - node.type.emmr_recipe
     - node.type.emmr_source
     - node.type.page
@@ -27,6 +28,7 @@ permissions:
   - 'edit any page content'
   - 'override emmr_recipe published option'
   - 'use text format unb_libraries'
+  - 'use text format unb_libraries_basic'
   - 'view any unpublished emmr_recipe content'
   - 'view own unpublished content'
   - 'view unpublished paragraphs'

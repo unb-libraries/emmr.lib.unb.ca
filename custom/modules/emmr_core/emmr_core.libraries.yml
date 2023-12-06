@@ -1,0 +1,17 @@
+# This adds the custom JavaScript to the page.
+# cSpell:ignore transcribe
+
+emmr-marginalia:
+  js:
+    js/emmr-marginalia.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+# Loaded in the text format configuration form to provide styling for the icon
+# used in toolbar config.
+admin:
+  css:
+    theme:
+      css/admin.css: { }
+      css/transcription.css: { }

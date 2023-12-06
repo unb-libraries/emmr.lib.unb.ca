@@ -4,20 +4,20 @@ status: true
 dependencies:
   module:
     - ckeditor5_allowed_html
-name: 'UNB Libraries'
+name: 'UNB Libraries EMMR'
 format: unb_libraries
 weight: -50
 filters:
   filter_align:
     id: filter_align
     provider: filter
-    status: true
+    status: false
     weight: 8
     settings: {  }
   filter_caption:
     id: filter_caption
     provider: filter
-    status: true
+    status: false
     weight: 9
     settings: {  }
   filter_html:

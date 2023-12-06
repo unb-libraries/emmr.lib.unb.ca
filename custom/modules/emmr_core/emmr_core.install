@@ -1,7 +1,8 @@
 <?php
 
-use Drupal\taxonomy\Entity\Term;
+use Drupal\path_alias\Entity\PathAlias;
 use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * @file
@@ -75,7 +76,11 @@ function emmr_core_install() {
   $node->save();
 
   $source = '/node/' . $node->get('nid')->value;
-  \Drupal::service('path.alias_storage')->save($source, '/scw', 'en');
+  $path_alias = PathAlias::create([
+  'path' => $source,
+  'alias' => '/scw',
+]);
+  $path_alias->save();
 }
 
 /**

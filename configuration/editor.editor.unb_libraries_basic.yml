@@ -1,12 +1,12 @@
-uuid: 9bc5e3bf-880e-4d4b-9484-03da0e4e7b58
+uuid: 8bbc809e-5898-46f5-9173-e8e764d6a9d7
 langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.unb_libraries
+    - filter.format.unb_libraries_basic
   module:
     - ckeditor5
-format: unb_libraries
+format: unb_libraries_basic
 editor: ckeditor5
 settings:
   toolbar:
@@ -32,10 +32,6 @@ settings:
       - heading
       - '|'
       - sourceEditing
-      - '|'
-      - transInsert
-      - transReplace
-      - transMargin
   plugins:
     ckeditor5_heading:
       enabled_headings:
