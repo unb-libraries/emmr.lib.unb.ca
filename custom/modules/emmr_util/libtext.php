@@ -12,18 +12,21 @@ $nids = Drupal::entityQuery('node')
   ->condition('type', 'emmr_recipe')->accessCheck(FALSE)->execute();
 
 echo "\nStarting unb_libraries text format override...\n\n";
-$i = 1;
 
 // Load and update all anniversaries.
 foreach ($nids as $nid) {
   $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
-  $node->field_abstract->format = 'unb_libraries';
-  $node->field_ingredients_index->format = 'unb_libraries';
-  $node->field_symptoms_index->format = 'unb_libraries';
-  $node->field_recipe_transcription->format = 'unb_libraries';
+  $node->field_abstract->format = 'unb_libraries_basic';
   $node->save();
-  echo "$i recipe records updated.\r";
-  $i++;
+  $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+  $title = $node->title->value;
+
+  if ($node->field_abstract->format != 'unb_libraries_basic') {
+   echo "Could not update field_abstract for [$title]\n"; 
+  }
+  else {
+    echo "Updated field_abstract for [$title]\n";
+  }
 }
 
 echo "\nDone.\n\n";
