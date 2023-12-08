@@ -114,7 +114,7 @@ function emmr_core_preprocess_node(&$variables) {
       // Highlight annotation text.
       foreach ($annos_val as $val) {
         $val = preg_replace('/(^[[:punct:]]|[[:punct:]]$)/', '', $val);
-        $pattern = '/(\b\Q' . $val . '\E\b)/mi';
+        $pattern = '/(?<!<)(?<!\/)(\b\Q' . $val . '\E\b)(?!>)(?!=)/mi';
         $anno_id = 'top-' . $val;
 
         $replacement = '<span id="' . $anno_id .

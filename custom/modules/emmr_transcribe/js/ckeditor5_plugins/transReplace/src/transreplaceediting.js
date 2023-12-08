@@ -56,7 +56,7 @@ export default class TransReplaceEditing extends Plugin {
     schema.register('transReplace', {
       // Behaves like a self-contained object (e.g. an image).
       isObject: true,
-      // Allow in places where other blocks are allowed (e.g. directly in the root).
+      // Allow in places where text is allowed.
       allowWhere: '$text',
     });
 
