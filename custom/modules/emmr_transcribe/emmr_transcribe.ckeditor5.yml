@@ -15,6 +15,7 @@ emmr_transcribe_plugins:
       - transInsert.TransInsert
       - transReplace.TransReplace
       - transMargin.TransMargin
+      - transUndo.TransUndo
     # *Additional configuration properties*
     # config: data sent to the constructor of any CKEditor 5 plugin
     #   editorPluginName:
@@ -36,6 +37,8 @@ emmr_transcribe_plugins:
         label: Transcription Replace
       transMargin:
         label: Transcription Marginalia
+      transUndo:
+        label: Transcription Undo
     # If the plugin does not provide elements, set this as
     # `elements: false`
     elements:
@@ -45,6 +48,7 @@ emmr_transcribe_plugins:
       - <trxnin>
       - <trxnrep>
       - <trxnmar>
+      - <trxnun>
       - <span>
       - <span class="trxn-caret">
       - <span class="trxn-text">

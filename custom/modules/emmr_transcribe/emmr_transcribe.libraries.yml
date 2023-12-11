@@ -3,9 +3,10 @@
 
 transcribe:
   js:
-    js/build/transInsert.js: { preprocess: false, minified: false }
-    js/build/transReplace.js: { preprocess: false, minified: false }
-    js/build/transMargin.js: { preprocess: false, minified: false }
+    js/build/transInsert.js: { preprocess: false, minified: true }
+    js/build/transReplace.js: { preprocess: false, minified: true }
+    js/build/transMargin.js: { preprocess: false, minified: true }
+    js/build/transUndo.js: { preprocess: false, minified: true }
   dependencies:
     - core/ckeditor5
 

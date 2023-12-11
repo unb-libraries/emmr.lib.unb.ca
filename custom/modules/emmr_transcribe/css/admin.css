@@ -7,3 +7,7 @@
 .ckeditor5-toolbar-button-transMargin {
   background-image: url(../icons/transMargin.svg);
 }
+.ckeditor5-toolbar-button-transUndo {
+  background-image: url(../icons/transUndo.svg);
+}
+ 
