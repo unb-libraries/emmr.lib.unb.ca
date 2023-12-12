@@ -12,12 +12,14 @@ import InsertTransInsertCommand from './inserttransinsertcommand';
  *
  * CKEditor 5 internally interacts with transInsert as this model:
  * <transInsert>
+ *    <transInsertSelect></transInsertSelect>
  *    <transInsertCaret></transInsertCaret>
  *    <transInsertText></transInsertText>
  * </transInsert>
  *
  * Which is converted for the browser/user as this markup
  * <trxnin>
+ *   <span class="trxn-select"></span>
  *   <span class="trxn-caret"></span>
  *   <span class="trxn-text"></span>
  * </trxnin>
@@ -42,6 +44,7 @@ export default class TransInsertEditing extends Plugin {
   /*
    * This registers the structure that will be seen by CKEditor 5 as
    * <transInsert>
+   *    <transInsertSelect></transInsertSelect>
    *    <transInsertCaret></transInsertCaret>
    *    <transInsertText></transInsertText>
    * </transInsert>
@@ -58,6 +61,18 @@ export default class TransInsertEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$text',
+    });
+
+    schema.register('transInsertSelect', {
+      // This creates a boundary for external actions such as clicking and
+      // and keypress. For example, when the cursor is inside this box, the
+      // keyboard shortcut for "select all" will be limited to the contents of
+      // the box.
+      isLimit: true,
+      // This is only to be used within transInsert.
+      allowIn: 'transInsert',
+      // Allow content that is allowed in blocks (e.g. text with attributes).
+      allowContentOf: '$block',
     });
 
     schema.register('transInsertCaret', {
@@ -110,6 +125,18 @@ export default class TransInsertEditing extends Plugin {
       },
     });
 
+    // If <span class="trxn-select"> is present in the existing markup
+    // processed by CKEditor, then CKEditor recognizes and loads it as a
+    // <transInsertSelect> model, provided it is a child element of <transInsert>,
+    // as required by the schema.
+    conversion.for('upcast').elementToElement({
+      model: 'transInsertSelect',
+      view: {
+        name: 'span',
+        classes: [ 'trxn-select', 'glyphicon', 'glyphicon-ok-sign' ],
+      },
+    });
+
     // If <span class="trxn-caret"> is present in the existing markup
     // processed by CKEditor, then CKEditor recognizes and loads it as a
     // <transInsertCaret> model, provided it is a child element of <transInsert>,
@@ -143,6 +170,16 @@ export default class TransInsertEditing extends Plugin {
       model: 'transInsert',
       view: {
         name: 'trxnin',
+      },
+    });
+
+    // Instances of <transInsertSelect> are saved as
+    // <span class="trxn-select">{{inner content}}</span>.
+    conversion.for('dataDowncast').elementToElement({
+      model: 'transInsertSelect',
+      view: {
+        name: 'span',
+        classes: [ 'trxn-select', 'glyphicon', 'glyphicon-ok-sign' ],
       },
     });
 
@@ -181,7 +218,19 @@ export default class TransInsertEditing extends Plugin {
       },
     });
 
-    // Convert the <transInsertCaret> model into an editable <span> widget.
+    // Convert the <transInsertSelect> model into a non-editable <span> widget.
+    conversion.for('editingDowncast').elementToElement({
+      model: 'transInsertSelect',
+      view: (modelElement, { writer: viewWriter }) => {
+        const span = viewWriter.createContainerElement('span', 
+          {
+            class: 'trxn-select glyphicon glyphicon-ok-sign'
+          });
+        return toWidget(span, viewWriter);
+      },
+    });
+
+    // Convert the <transInsertCaret> model into a non-editable <span> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'transInsertCaret',
       view: (modelElement, { writer: viewWriter }) => {

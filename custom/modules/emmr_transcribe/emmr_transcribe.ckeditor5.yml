@@ -50,6 +50,9 @@ emmr_transcribe_plugins:
       - <trxnmar>
       - <trxnun>
       - <span>
+      - <span class="glyphicon">
+      - <span class= "glyphicon-ok-sign">
+      - <span class="trxn-select">
       - <span class="trxn-caret">
       - <span class="trxn-text">
       - <span class="trxn-retext">

@@ -17,7 +17,7 @@ export default class TransUndoUI extends Plugin {
 
       // Create the toolbar button.
       buttonView.set({
-        label: editor.t('Transcription Replace'),
+        label: editor.t('Transcription Undo'),
         icon,
         tooltip: true,
       });

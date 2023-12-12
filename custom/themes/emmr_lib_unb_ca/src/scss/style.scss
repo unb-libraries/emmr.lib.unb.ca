@@ -2,6 +2,7 @@
 $color-dark-gray: #4a4a4a;
 $color-red: #c71b1b;
 $color-mint: #dfefdd;
+$color-dim-mint: #9bab99;
 $color-dark-mint: #5f6f5d;
 
 // Global
@@ -664,10 +665,35 @@ h1.page-header > a {
 }
 
 /* Transcription */
+trxnin,
+trxnrep,
+trxnmar {
+  &:hover {
+    outline-color: $color-red !important;
+  }
+  &.ck-widget_selected {
+    outline-color: $color-dim-mint !important;
+    .glyphicon-ok-sign {
+      color: $color-dim-mint;
+    }
+  }
+  span {
+    outline: none !important;
+  }
+}
+
 trxnin, trxnin span,
 trxnrep, trxnrep span, trxnrep s, 
 trxnmar, trxnmar span {
   display: inline-block;
+  .glyphicon-ok-sign {
+    vertical-align: middle;
+    font-size: 1.6rem;
+  }
+}
+
+#recipe-trans .trxn-select {
+  display: none;
 }
 
 #recipe-trans .trxn-caret {
