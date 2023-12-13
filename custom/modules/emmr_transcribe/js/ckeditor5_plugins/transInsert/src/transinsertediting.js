@@ -133,7 +133,7 @@ export default class TransInsertEditing extends Plugin {
       model: 'transInsertSelect',
       view: {
         name: 'span',
-        classes: [ 'trxn-select', 'glyphicon', 'glyphicon-ok-sign' ],
+        classes: [ 'trxn-select', 'glyphicon', 'glyphicon-pencil' ],
       },
     });
 
@@ -179,7 +179,7 @@ export default class TransInsertEditing extends Plugin {
       model: 'transInsertSelect',
       view: {
         name: 'span',
-        classes: [ 'trxn-select', 'glyphicon', 'glyphicon-ok-sign' ],
+        classes: [ 'trxn-select', 'glyphicon', 'glyphicon-pencil' ],
       },
     });
 
@@ -224,7 +224,7 @@ export default class TransInsertEditing extends Plugin {
       view: (modelElement, { writer: viewWriter }) => {
         const span = viewWriter.createContainerElement('span', 
           {
-            class: 'trxn-select glyphicon glyphicon-ok-sign'
+            class: 'trxn-select glyphicon glyphicon-pencil'
           });
         return toWidget(span, viewWriter);
       },

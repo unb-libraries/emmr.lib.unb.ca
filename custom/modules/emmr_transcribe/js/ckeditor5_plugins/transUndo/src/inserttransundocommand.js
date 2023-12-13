@@ -11,7 +11,6 @@ export default class InsertTransUndoCommand extends Command {
     const { model } = this.editor;
     const { selection } = model.document;
     // Get and pass selected text.
-    // const selected = selection.getFirstRange().getItems().next().value.data;
     const selected = selection.getSelectedElement();
 
     model.change((writer) => {
@@ -40,11 +39,24 @@ export default class InsertTransUndoCommand extends Command {
 }
 
 function createTransUndo(writer, selected) {
+  const selection = JSON.stringify(selected, undefined, 2);
+  try {
+  alert(selection);
+  }
+  catch {}
+  if (selection == null) {
+    // alert(selection);
+  }
+  else {
+    return;
+  }
+    /*
   alert(JSON.stringify(selected, undefined, 2));
+  alert(selected.name);
+  alert(JSON.stringify(selected.getChild(2).getChild(0).data));
   return;
   let replaceText = prompt("Enter transcription replacement text");
   // Return element only if a value is entered in dialog box. 
-  if (replaceText) {
     // Create an instance of the unique element registered with the editor in
     // transundoediting.js.
     const transUndo = writer.createElement('transUndo');
@@ -60,4 +72,5 @@ function createTransUndo(writer, selected) {
   else {
     return;
   }
+  */
 }

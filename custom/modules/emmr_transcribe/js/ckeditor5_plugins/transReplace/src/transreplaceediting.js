@@ -12,12 +12,14 @@ import InsertTransReplaceCommand from './inserttransreplacecommand';
  *
  * CKEditor 5 internally interacts with transReplace as this model:
  * <transReplace>
+ *    <transReplaceSelect></transReplaceSelect>
  *    <transReplaceText></transReplaceText>
  *    <transReplaceOld></transReplaceOld>
  * </transReplace>
  *
  * Which is converted for the browser/user as this markup
  * <trxnrep>
+ *   <span class="trxn-select"></span>
  *   <span class="trxn-retext"></span>
  *   <s class="trxn-replaced"></s>
  * </trxnrep>
@@ -42,6 +44,7 @@ export default class TransReplaceEditing extends Plugin {
   /*
    * This registers the structure that will be seen by CKEditor 5 as
    * <transReplace>
+   *    <transReplaceSelect></transReplaceSelect>
    *    <transReplaceText></transReplaceText>
    *    <transReplaceOld></transReplaceOld>
    * </transReplace>
@@ -58,6 +61,18 @@ export default class TransReplaceEditing extends Plugin {
       isObject: true,
       // Allow in places where text is allowed.
       allowWhere: '$text',
+    });
+
+    schema.register('transReplaceSelect', {
+      // This creates a boundary for external actions such as clicking and
+      // and keypress. For example, when the cursor is inside this box, the
+      // keyboard shortcut for "select all" will be limited to the contents of
+      // the box.
+      isLimit: true,
+      // This is only to be used within transReplace.
+      allowIn: 'transReplace',
+      // Allow content that is allowed in blocks (e.g. text with attributes).
+      allowContentOf: '$block',
     });
 
     schema.register('transReplaceOld', {
@@ -110,6 +125,18 @@ export default class TransReplaceEditing extends Plugin {
       },
     });
 
+    // If <span class="trxn-select"> is present in the existing markup
+    // processed by CKEditor, then CKEditor recognizes and loads it as a
+    // <transReplaceSelect> model, provided it is a child element of <transReplace>,
+    // as required by the schema.
+    conversion.for('upcast').elementToElement({
+      model: 'transReplaceSelect',
+      view: {
+        name: 'span',
+        classes: [ 'trxn-select', 'glyphicon', 'glyphicon-pencil' ],
+      },
+    });
+
     // If <s class="trxn-replaced"> is present in the existing markup
     // processed by CKEditor, then CKEditor recognizes and loads it as a
     // <transReplaceOld> model, provided it is a child element of <transReplace>,
@@ -143,6 +170,16 @@ export default class TransReplaceEditing extends Plugin {
       model: 'transReplace',
       view: {
         name: 'trxnrep',
+      },
+    });
+
+    // Instances of <transReplaceSelect> are saved as
+    // <span class="trxn-select">{{inner content}}</span>.
+    conversion.for('dataDowncast').elementToElement({
+      model: 'transReplaceSelect',
+      view: {
+        name: 'span',
+        classes: [ 'trxn-select', 'glyphicon', 'glyphicon-pencil' ],
       },
     });
 
@@ -180,6 +217,18 @@ export default class TransReplaceEditing extends Plugin {
         return toWidget(trxnrep, viewWriter, { label: 'Transcription replacement widget' });
       },
     });
+
+    // Convert the <transReplaceSelect> model into a non-editable <span> widget.
+    conversion.for('editingDowncast').elementToElement({
+      model: 'transReplaceSelect',
+      view: (modelElement, { writer: viewWriter }) => {
+        const span = viewWriter.createContainerElement('span', 
+          {
+            class: 'trxn-select glyphicon glyphicon-pencil'
+          });
+        return toWidget(span, viewWriter);
+      },
+    });    
 
     // Convert the <transReplaceOld> model into an editable <s> widget.
     conversion.for('editingDowncast').elementToElement({

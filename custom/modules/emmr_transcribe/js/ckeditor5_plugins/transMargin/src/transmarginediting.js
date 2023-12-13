@@ -12,12 +12,14 @@ import InsertTransMarginCommand from './inserttransmargincommand';
  *
  * CKEditor 5 internally interacts with transMargin as this model:
  * <transMargin>
+ *    <transMarginSelect></transMarginSelect>
  *    <transMarginNumber></transMarginNumber>
  *    <transMarginText></transMarginText>
  * </transMargin>
  *
  * Which is converted for the browser/user as this markup
  * <trxnmar>
+ *   <span class="trxn-select"></span>
  *   <span class="trxn-number"></span>
  *   <span class="trxn-text"></span>
  * </trxnmar>
@@ -42,6 +44,7 @@ export default class TransMarginEditing extends Plugin {
   /*
    * This registers the structure that will be seen by CKEditor 5 as
    * <transMargin>
+   *    <transMarginSelect></transMarginSelect>
    *    <transMarginNumber></transMarginNumber>
    *    <transMarginText></transMarginText>
    * </transMargin>
@@ -58,6 +61,18 @@ export default class TransMarginEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$text',
+    });
+
+    schema.register('transMarginSelect', {
+      // This creates a boundary for external actions such as clicking and
+      // and keypress. For example, when the cursor is inside this box, the
+      // keyboard shortcut for "select all" will be limited to the contents of
+      // the box.
+      isLimit: true,
+      // This is only to be used within transMargin.
+      allowIn: 'transMargin',
+      // Allow content that is allowed in blocks (e.g. text with attributes).
+      allowContentOf: '$block',
     });
 
     schema.register('transMarginNumber', {
@@ -110,6 +125,18 @@ export default class TransMarginEditing extends Plugin {
       },
     });
 
+    // If <span class="trxn-select"> is present in the existing markup
+    // processed by CKEditor, then CKEditor recognizes and loads it as a
+    // <transMarginSelect> model, provided it is a child element of <transMargin>,
+    // as required by the schema.
+    conversion.for('upcast').elementToElement({
+      model: 'transMarginSelect',
+      view: {
+        name: 'span',
+        classes: [ 'trxn-select', 'glyphicon', 'glyphicon-pencil' ],
+      },
+    });
+
     // If <span class="trxn-number"> is present in the existing markup
     // processed by CKEditor, then CKEditor recognizes and loads it as a
     // <transMarginNumber> model, provided it is a child element of <transMargin>,
@@ -143,6 +170,16 @@ export default class TransMarginEditing extends Plugin {
       model: 'transMargin',
       view: {
         name: 'trxnmar',
+      },
+    });
+
+    // Instances of <transMarginSelect> are saved as
+    // <span class="trxn-select">{{inner content}}</span>.
+    conversion.for('dataDowncast').elementToElement({
+      model: 'transMarginSelect',
+      view: {
+        name: 'span',
+        classes: [ 'trxn-select', 'glyphicon', 'glyphicon-pencil' ],
       },
     });
 
@@ -180,6 +217,18 @@ export default class TransMarginEditing extends Plugin {
         return toWidget(trxnmar, viewWriter, { label: 'Transcription marginalia widget' });
       },
     });
+
+    // Convert the <transMarginSelect> model into a non-editable <span> widget.
+    conversion.for('editingDowncast').elementToElement({
+      model: 'transMarginSelect',
+      view: (modelElement, { writer: viewWriter }) => {
+        const span = viewWriter.createContainerElement('span', 
+          {
+            class: 'trxn-select glyphicon glyphicon-pencil'
+          });
+        return toWidget(span, viewWriter);
+      },
+    });    
 
     // Convert the <transMarginNumber> model into an editable <span> widget.
     conversion.for('editingDowncast').elementToElement({

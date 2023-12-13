@@ -37,11 +37,14 @@ export default class InsertTransMarginCommand extends Command {
 
 function createTransMargin(writer) {    
   let marginaliaText = prompt("Enter transcription marginalia text");
+  
   // Return element only if a value is entered in dialog box. 
   if (marginaliaText) {
     // Create instances of the three elements registered with the editor in
     // transmarginediting.js.
     const transMargin = writer.createElement('transMargin');
+    const transMarginSelect = writer.createElement('transMarginSelect');
+    writer.appendText(' ', {}, transMarginSelect);
     const transMarginNumber = writer.createElement('transMarginNumber');
     writer.appendText('#', {}, transMarginNumber);
     const transMarginText = writer.createElement('transMarginText');
@@ -49,6 +52,7 @@ function createTransMargin(writer) {
 
     // Append the title and description elements to the transMargin, which matches
     // the parent/child relationship as defined in their schemas.
+    writer.append(transMarginSelect, transMargin);
     writer.append(transMarginNumber, transMargin);
     writer.append(transMarginText, transMargin);
 

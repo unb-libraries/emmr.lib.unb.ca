@@ -40,11 +40,14 @@ export default class InsertTransReplaceCommand extends Command {
 
 function createTransReplace(writer, selected) {
   let replaceText = prompt("Enter transcription replacement text");
+
   // Return element only if a value is entered in dialog box. 
   if (replaceText) {
     // Create instances of the three elements registered with the editor in
     // transreplaceediting.js.
     const transReplace = writer.createElement('transReplace');
+    const transReplaceSelect = writer.createElement('transReplaceSelect');
+    writer.appendText(' ', {}, transReplaceSelect);
     const transReplaceOld = writer.createElement('transReplaceOld');
     writer.appendText(selected, {}, transReplaceOld);
     const transReplaceText = writer.createElement('transReplaceText');
@@ -52,6 +55,7 @@ function createTransReplace(writer, selected) {
 
     // Append the title and description elements to the transReplace, which matches
     // the parent/child relationship as defined in their schemas.
+    writer.append(transReplaceSelect, transReplace);
     writer.append(transReplaceText, transReplace);
     writer.append(transReplaceOld, transReplace);
 

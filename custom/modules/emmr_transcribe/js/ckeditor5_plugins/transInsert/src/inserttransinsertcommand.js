@@ -36,24 +36,26 @@ export default class InsertTransInsertCommand extends Command {
 }
 
 function createTransInsert(writer) {    
-  // Create instances of the three elements registered with the editor in
-  // transinsertediting.js.
   let insertText = prompt("Enter transcription insert text");
 
   // Return element only if a value is entered in dialog box. 
   if (insertText) {
+    // Create instances of the three elements registered with the editor in
+    // transmarginediting.js.
     const transInsert = writer.createElement('transInsert');
     const transInsertSelect = writer.createElement('transInsertSelect');
+    writer.appendText(' ', {}, transInsertSelect);
     const transInsertCaret = writer.createElement('transInsertCaret');
-    writer.appendText('', {}, transInsertSelect);
     writer.appendText('^', {}, transInsertCaret);
     const transInsertText = writer.createElement('transInsertText');
     writer.appendText(insertText, {}, transInsertText);
+
     // Append the title and description elements to the transInsert, which matches
     // the parent/child relationship as defined in their schemas.
     writer.append(transInsertSelect, transInsert);
     writer.append(transInsertCaret, transInsert);
     writer.append(transInsertText, transInsert);
+    
     // Return the element to be added to the editor.
     return transInsert;
   }
