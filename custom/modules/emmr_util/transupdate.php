@@ -32,7 +32,7 @@ foreach ($recipes as $recipe) {
       $text = $text[1];
       // Build new transcription item.
       $new = 
-        "<trxnin><span class='trxn-caret'>^</span><span class='trxn-text'>$text</span></trxnin>";
+        "<trxnin><span class='trxn-select glyphicon glyphicon-pencil'>&nbsp;</span><span class='trxn-caret'>^</span><span class='trxn-text'>$text</span></trxnin>";
       // Replace old item with new in transcription.
       $trans = str_replace("<trxn>$match</trxn>", $new, $trans, $count);
     }
@@ -46,7 +46,7 @@ foreach ($recipes as $recipe) {
       $retext = $retext[1];
       // Build new transcription item.
       $new = 
-        "<trxnrep><span class='trxn-retext'>$retext</span><s class='trxn-replaced'>$text</s></trxnrep>";
+        "<trxnrep><span class='trxn-select glyphicon glyphicon-pencil'>&nbsp;</span><span class='trxn-retext'>$retext</span><s class='trxn-replaced'>$text</s></trxnrep>";
       // Replace old item with new in transcription.
       $trans = str_replace("<trxn>$match</trxn>", $new, $trans, $count);
     }
@@ -60,7 +60,7 @@ foreach ($recipes as $recipe) {
       $text = $text[1];
       // Build new transcription item.
       $new = 
-        "<trxnmar><span class='trxn-number'>$num</span><span class='trxn-text'>$text</span></trxnmar>";
+        "<trxnmar><span class='trxn-select glyphicon glyphicon-pencil'>&nbsp;</span><span class='trxn-number'>$num</span><span class='trxn-text'>$text</span></trxnmar>";
       // Replace old item with new in transcription.
       $trans = str_replace("<trxn>$match</trxn>", $new, $trans, $count);
     }
