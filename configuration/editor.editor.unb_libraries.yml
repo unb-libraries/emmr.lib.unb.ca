@@ -36,6 +36,7 @@ settings:
       - transInsert
       - transReplace
       - transMargin
+      - transUndo
   plugins:
     ckeditor5_heading:
       enabled_headings:

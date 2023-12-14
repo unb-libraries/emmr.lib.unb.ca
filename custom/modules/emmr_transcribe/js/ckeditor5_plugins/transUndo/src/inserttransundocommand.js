@@ -39,38 +39,23 @@ export default class InsertTransUndoCommand extends Command {
 }
 
 function createTransUndo(writer, selected) {
-  const selection = JSON.stringify(selected, undefined, 2);
-  try {
-  alert(selection);
-  }
-  catch {}
-  if (selection == null) {
-    // alert(selection);
-  }
-  else {
+  if (selected === null) {
     return;
   }
-    /*
-  alert(JSON.stringify(selected, undefined, 2));
-  alert(selected.name);
-  alert(JSON.stringify(selected.getChild(2).getChild(0).data));
-  return;
-  let replaceText = prompt("Enter transcription replacement text");
-  // Return element only if a value is entered in dialog box. 
-    // Create an instance of the unique element registered with the editor in
-    // transundoediting.js.
-    const transUndo = writer.createElement('transUndo');
-
-    // Append the title and description elements to the transUndo, which matches
-    // the parent/child relationship as defined in their schemas.
-    writer.append(transUndoText, transUndo);
-    writer.append(transUndoOld, transUndo);
-
-    // Return the element to be added to the editor.
-    return transUndo;
-  }
   else {
-    return;
+    // Get transcription widget type.
+    const type = selected.name;
+    const transUndo = writer.createElement('span');
+    
+    if (type === "transReplace") {
+      // Get data without quotations, and leave it after undo.
+      const data = JSON.stringify(selected.getChild(2).getChild(0).data).replace(/["]+/g, '');
+      writer.appendText(data, {}, transUndo);
+      return transUndo;
+    }
+    else {
+      // Insert empty = remove widget.
+      return transUndo;
+    }
   }
-  */
 }

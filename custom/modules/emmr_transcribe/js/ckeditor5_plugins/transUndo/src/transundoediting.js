@@ -52,6 +52,8 @@ export default class TransUndoEditing extends Plugin {
       isObject: true,
       // Allow in places where text is allowed.
       allowWhere: '$text',
+      // Allow content that is allowed in blocks (e.g. text with attributes).
+      allowContentOf: '$block',
     });
   }
 
@@ -97,9 +99,9 @@ export default class TransUndoEditing extends Plugin {
     conversion.for('editingDowncast').elementToElement({
       model: 'transUndo',
       view: (modelElement, { writer: viewWriter }) => {
-        const trxnun = viewWriter.createContainerElement('trxnun', {});
+        const trxnun = viewWriter.createEditableElement('trxnun', {});
 
-        return toWidget(trxnun, viewWriter, { label: 'Transcription undo widget' });
+        return toWidgetEditable(trxnun, viewWriter, { label: 'Transcription undo widget' });
       },
     });
   }
