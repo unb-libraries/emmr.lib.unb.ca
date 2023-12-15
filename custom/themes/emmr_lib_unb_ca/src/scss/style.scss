@@ -2,7 +2,7 @@
 $color-dark-gray: #4a4a4a;
 $color-red: #c71b1b;
 $color-mint: #dfefdd;
-$color-dim-mint: #9bab99;
+$color-bright-mint: #7fcf72;
 $color-dark-mint: #5f6f5d;
 
 // Global
@@ -370,6 +370,10 @@ div.form-item-field-recipe-date-to-value-max {
 }
 
 // Edit Forms
+.form-group {
+  margin-bottom: 3rem;
+}
+
 #edit-field-recipe-date-wrapper,
 #edit-field-imprecise-date-wrapper,
 #edit-field-recipe-date-to-wrapper,
@@ -397,6 +401,10 @@ div.form-item-field-recipe-date-to-value-max {
     font-weight: 700;
     color: #4a4a4a;
   }
+}
+
+.filter-wrapper {
+  display: none;
 }
 
 // Global Search Form
@@ -674,9 +682,9 @@ trxnmar {
     outline-color: $color-red !important;
   }
   &.ck-widget_selected {
-    outline-color: $color-dim-mint !important;
+    outline-color: $color-bright-mint !important;
     .glyphicon-pencil {
-      color: $color-dim-mint;
+      color: $color-bright-mint;
     }
     span, s {
       -webkit-user-drag: none;
@@ -768,8 +776,10 @@ trxnmar, trxnmar span {
 }
 
 #marginalia .trxn-text {
+  display: inline;
   position: relative !important;
   bottom: 0px !important;
+  color: $color-dark-gray;
 }
 
 #marginalia {
@@ -781,6 +791,10 @@ trxnmar, trxnmar span {
 }
 
 /* In-editor */
+.ck.ck-editor__editable.ck-focused {
+  border-color: black !important;
+}
+
 trxnin span,
 trxnrep span, trxnrep s,
 trxnmar span {
