@@ -1087,6 +1087,7 @@ display:
         - 'config:field.storage.node.field_symptoms'
         - 'config:field.storage.paragraph.field_contributor_name'
         - 'config:search_api.index.recipes_emmr_lib_unb_ca'
+        - 'search_api_list:recipes_emmr_lib_unb_ca'
   page_1:
     id: page_1
     display_title: Page
@@ -1385,7 +1386,15 @@ display:
         title: false
         filters: false
         filter_groups: false
-      display_extenders: {  }
+      display_extenders:
+        simple_sitemap_display_extender:
+          variants:
+            views-sitemap:
+              index: true
+              priority: '0.5'
+              changefreq: ''
+              arguments: {  }
+              max_links: 100
       path: search-recipes
     cache_metadata:
       max-age: -1
@@ -1404,6 +1413,7 @@ display:
         - 'config:field.storage.node.field_symptoms'
         - 'config:field.storage.paragraph.field_contributor_name'
         - 'config:search_api.index.recipes_emmr_lib_unb_ca'
+        - 'search_api_list:recipes_emmr_lib_unb_ca'
   page_2:
     id: page_2
     display_title: global_search
@@ -1546,6 +1556,7 @@ display:
         - 'config:field.storage.node.field_symptoms'
         - 'config:field.storage.paragraph.field_contributor_name'
         - 'config:search_api.index.recipes_emmr_lib_unb_ca'
+        - 'search_api_list:recipes_emmr_lib_unb_ca'
   page_3:
     id: page_3
     display_title: all_recipes
@@ -1864,3 +1875,4 @@ display:
         - 'config:field.storage.node.field_symptoms'
         - 'config:field.storage.paragraph.field_contributor_name'
         - 'config:search_api.index.recipes_emmr_lib_unb_ca'
+        - 'search_api_list:recipes_emmr_lib_unb_ca'
