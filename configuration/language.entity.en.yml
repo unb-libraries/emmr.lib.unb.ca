@@ -1,11 +1,1 @@
 uuid: 701aadfc-f18e-4f22-9b0f-48ed56d3d7ae
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: lBXDpdDPXQtrfTJQhr6MjRJJEEyYSoRJ0acdvHLsWeA
-id: en
-label: English
-direction: ltr
-weight: 0
-locked: false
