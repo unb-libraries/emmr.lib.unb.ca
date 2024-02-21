@@ -1,5 +1,5 @@
 services:
   emmr_core.emmr_route_subscriber:
-    class: Drupal\dsets_admin\Routing\RouteSubscriber
+    class: Drupal\emmr_core\Routing\RouteSubscriber
     tags:
       - { name: event_subscriber }
