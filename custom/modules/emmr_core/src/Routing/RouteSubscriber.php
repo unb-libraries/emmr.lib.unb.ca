@@ -18,7 +18,6 @@ class RouteSubscriber extends RouteSubscriberBase {
     $deny_routes = [
       'entity.user.edit_form',
       'user.page',
-      'user.pass',
       'user.pass.http',
       'user.register',
       'user.reset.form',
