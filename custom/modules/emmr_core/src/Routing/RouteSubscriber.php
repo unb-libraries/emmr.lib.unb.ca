@@ -17,7 +17,6 @@ class RouteSubscriber extends RouteSubscriberBase {
     // Restrict user admin routes.
     $deny_routes = [
       'entity.user.edit_form',
-      'user.login',
       'user.page',
       'user.pass',
       'user.pass.http',
