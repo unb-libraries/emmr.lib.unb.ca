@@ -20,7 +20,6 @@ class RouteSubscriber extends RouteSubscriberBase {
       'user.page',
       'user.pass.http',
       'user.register',
-      'user.reset.form',
     ];
 
     // Deny access to non-admins.
