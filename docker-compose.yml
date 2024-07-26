@@ -68,6 +68,8 @@ services:
       - "4093:8025"
     networks:
       - emmr.lib.unb.ca
+    profiles:
+      - mailhog
 networks:
   emmr.lib.unb.ca:
     name: emmr.lib.unb.ca
