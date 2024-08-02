@@ -487,7 +487,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"advanced-source-row\">\r\n<div class=\"advanced-source-title\">{{ title }}</div>\r\n<div class=\"source-desc-recipes\">\r\n<p>{{ field_source_desc }}</p>\r\n<p>\r\n{{ field_institution }}\r\n{{ field_reference }}\r\n{{ field_source_origin }}\r\n{{ field_sublocation }}\r\n</p>\r\n<a data-toggle=\"collapse\" data-target=\"#collapsed-recipes-{{ nid }}\">Recipes from this collection <span class=\"pt-2 glyphicon glyphicon-triangle-right\"></span><span class=\"pt-2 glyphicon glyphicon-triangle-bottom\"></span></a>\r\n<div id=\"collapsed-recipes-{{ nid }}\" class=\"row collapse collapsed-recipes\">\r\n{{ drupal_view('emmr_recipes_by_source', 'block_1', nid) }}\r\n</div>\r\n</div>\r\n"
+            text: "<div class=\"advanced-source-row\">\r\n<div class=\"advanced-source-title\">{{ title }}</div>\r\n<div class=\"source-desc-recipes\">\r\n<p>{{ field_source_desc }}</p>\r\n<p>\r\n{{ field_institution }}\r\n{{ field_reference }}\r\n{{ field_source_origin }}\r\n{{ field_sublocation }}\r\n</p>\r\n<a data-toggle=\"collapse\" data-target=\"#collapsed-recipes-{{ nid }}\">Recipes from this collection <span class=\"pt-2 glyphicon glyphicon-triangle-right\"></span><span class=\"pt-2 glyphicon glyphicon-triangle-bottom\"></span></a>\r\n<div id=\"collapsed-recipes-{{ nid }}\" class=\"row collapse collapsed-recipes\">\r\n{{ drupal_view('emmr_recipes_by_source', 'block_1', nid|e) }}\r\n</div>\r\n</div>\r\n"
             make_link: false
             path: ''
             absolute: false
