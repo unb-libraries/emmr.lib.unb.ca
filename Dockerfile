@@ -2,10 +2,10 @@ FROM ghcr.io/unb-libraries/drupal:10.x-1.x-unblib
 MAINTAINER UNB Libraries <libsupport@unb.ca>
 
 # Install additional OS packages.
-ENV ADDITIONAL_OS_PACKAGES postfix php-ldap php-zip php81-pecl-redis
-ENV DRUPAL_SITE_ID emmr
-ENV DRUPAL_SITE_URI emmr.lib.unb.ca
-ENV DRUPAL_SITE_UUID 9ae92cc6-c0b6-41d0-b619-778b7e928952
+ENV ADDITIONAL_OS_PACKAGES="postfix php-ldap php-zip php81-pecl-redis"
+ENV DRUPAL_SITE_ID="emmr"
+ENV DRUPAL_SITE_URI="emmr.lib.unb.ca"
+ENV DRUPAL_SITE_UUID="9ae92cc6-c0b6-41d0-b619-778b7e928952"
 
 # Build application.
 COPY ./build/ /build/
