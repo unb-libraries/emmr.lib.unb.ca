@@ -96,7 +96,6 @@
     "drupal/paragraphs": "^1",
     "drupal/pathauto": "^1",
     "drupal/quickedit": "^1",
-    "drupal/rdf": "^2",  
     "drupal/redis": "^1",
     "drupal/search_api": "^1",
     "drupal/search_api_solr": "^4",
