@@ -2654,17 +2654,17 @@
         },
         {
             "name": "drupal/search_api_solr",
-            "version": "4.3.8",
+            "version": "4.3.10",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api_solr.git",
-                "reference": "4.3.8"
+                "reference": "4.3.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api_solr-4.3.8.zip",
-                "reference": "4.3.8",
-                "shasum": "6eb8c620c17f37639fd44c78819925ca05e0da47"
+                "url": "https://ftp.drupal.org/files/projects/search_api_solr-4.3.10.zip",
+                "reference": "4.3.10",
+                "shasum": "8d37467f0f2ab34ed6a0b61872ce7ff8e5e64730"
             },
             "require": {
                 "composer-runtime-api": ">=2.0",
@@ -2705,8 +2705,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.3.8",
-                    "datestamp": "1740166987",
+                    "version": "4.3.10",
+                    "datestamp": "1745427496",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7897,16 +7897,16 @@
         },
         {
             "name": "tecnickcom/tcpdf",
-            "version": "6.9.1",
+            "version": "6.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tecnickcom/TCPDF.git",
-                "reference": "ed27e28a4c478f7f4015b5e7e7b1912af9e85f2b"
+                "reference": "d0e8dd17f8a1df3c97b94b9af8356e88e811ed59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/ed27e28a4c478f7f4015b5e7e7b1912af9e85f2b",
-                "reference": "ed27e28a4c478f7f4015b5e7e7b1912af9e85f2b",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/d0e8dd17f8a1df3c97b94b9af8356e88e811ed59",
+                "reference": "d0e8dd17f8a1df3c97b94b9af8356e88e811ed59",
                 "shasum": ""
             },
             "require": {
@@ -7956,7 +7956,7 @@
             ],
             "support": {
                 "issues": "https://github.com/tecnickcom/TCPDF/issues",
-                "source": "https://github.com/tecnickcom/TCPDF/tree/6.9.1"
+                "source": "https://github.com/tecnickcom/TCPDF/tree/6.9.3"
             },
             "funding": [
                 {
@@ -7964,7 +7964,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2025-04-03T06:38:07+00:00"
+            "time": "2025-04-20T15:52:50+00:00"
         },
         {
             "name": "twig/twig",
