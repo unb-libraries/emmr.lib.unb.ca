@@ -1,6 +1,7 @@
 uuid: 6513f08a-2e4f-4e40-94ea-8a11fe43a249
 langcode: en
 status: true
+dependencies: {  }
 name: 'UNB Libraries Basic'
 format: unb_libraries_basic
 weight: 0

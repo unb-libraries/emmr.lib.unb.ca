@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'EMMR Publication Formats'
 vid: emmr_publication_formats
-description: ''
+description: null
 weight: 0
+new_revision: false

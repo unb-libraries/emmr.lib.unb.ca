@@ -1,6 +1,7 @@
 uuid: d3a03413-af8a-4127-a0b9-09b8ce498bd5
 langcode: en
 status: true
+dependencies: {  }
 name: 'UNB Libraries EMMR'
 format: unb_libraries
 weight: -50

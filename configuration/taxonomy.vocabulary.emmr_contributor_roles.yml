@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'EMMR Contributor Roles'
 vid: emmr_contributor_roles
-description: ''
+description: null
 weight: 0
+new_revision: false
