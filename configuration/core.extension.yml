@@ -12,7 +12,6 @@ module:
   contact: 0
   contextual: 0
   datetime: 0
-  dblog: 0
   dynamic_page_cache: 0
   editor: 0
   editor_advanced_link: 0
@@ -20,7 +19,6 @@ module:
   emmr_transcribe: 0
   entity_reference_revisions: 0
   field: 0
-  field_ui: 0
   file: 0
   filter: 0
   google_analytics: 0
@@ -59,7 +57,6 @@ module:
   update: 0
   user: 0
   view_unpublished: 0
-  views_ui: 0
   menu_link_content: 1
   pathauto: 1
   views: 10
