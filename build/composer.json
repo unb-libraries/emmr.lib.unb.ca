@@ -69,6 +69,9 @@
     "patches": {
       "drupal/core": {
         "To correct DerivativeDiscoveryDecorator warning": "https://www.drupal.org/files/issues/patch_empty_fix.patch"
+      },
+      "drupal/bootstrap": {
+        "Add missing schema for bootstrap.settings.schemas": "/build/patches/bootstrap_schema.patch"
       }
     }
   },
