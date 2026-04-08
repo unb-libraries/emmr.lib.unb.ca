@@ -4,6 +4,6 @@ name: EMMR Transcribe
 type: module
 description: "Transcription tools for UNB Libraries site emmr.lib.unb.ca"
 package: CKEditor 5
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^9 || ^10 || ^11 
 dependencies:
   - drupal:ckeditor5
