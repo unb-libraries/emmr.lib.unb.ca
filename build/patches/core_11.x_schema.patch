@@ -1,8 +1,38 @@
 diff --git a/core/modules/system/config/schema/system.schema.yml b/core/modules/system/config/schema/system.schema.yml
-index 99f7d186361..2aeb54b04e8 100644
+index 99f7d186361..52a152f0f43 100644
 --- a/core/modules/system/config/schema/system.schema.yml
 +++ b/core/modules/system/config/schema/system.schema.yml
-@@ -502,3 +502,25 @@ condition.plugin.current_theme:
+@@ -200,6 +200,8 @@ system.performance:
+             max_age:
+               type: integer
+               label: 'Max age'
++            use_internal:
++              type:ignore
+     css:
+       type: mapping
+       label: 'CSS performance settings'
+@@ -236,6 +238,10 @@ system.performance:
+         gzip:
+           type: boolean
+           label: 'Compress JavaScript files.'
++    stale_file_threshold:
++      type: ignore
++    response:
++      type: ignore
+ 
+ system.theme:
+   type: config_object
+@@ -338,6 +344,9 @@ system.file:
+       type: mapping
+       label: 'Path settings'
+       deprecated: "The 'path' config schema is deprecated in drupal:11.2.0 and will be removed from drupal 12.0.0. Use 'file_temp_path' key in settings.php instead. See https://www.drupal.org/node/3039255."
++      mapping:
++        temporary:
++        type: ignore
+     temporary_maximum_age:
+       type: integer
+       label: 'Maximum age for temporary files'
+@@ -502,3 +511,25 @@ condition.plugin.current_theme:
      theme:
        type: string
        label: Theme
