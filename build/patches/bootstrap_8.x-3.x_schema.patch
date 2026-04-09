@@ -8,5 +8,4 @@ index 1d5461a..3b91665 100644
    label: 'Bootstrap settings'
 +  mapping:
 +    schemas:
-+      type: mapping
-+      label: 'Schemas'
++      type: ignore
