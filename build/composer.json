@@ -71,7 +71,10 @@
         "To correct DerivativeDiscoveryDecorator warning": "https://www.drupal.org/files/issues/patch_empty_fix.patch"
       },
       "drupal/bootstrap": {
-        "Add missing schema for bootstrap.settings.schemas": "/build/patches/bootstrap_schema.patch"
+        "Drupal 11 schema fixes": "/build/patches/bootstrap_8.x-3.x_schema.patch"
+      },
+      "drupal/search_api": {
+        "Drupal 11 schema fixes": "/build/patches/search_api_8.x-1.x_schema.patch"
       }
     }
   },

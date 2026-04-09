@@ -1,0 +1,37 @@
+diff --git a/config/schema/search_api.server.schema.yml b/config/schema/search_api.server.schema.yml
+index 99cafafc..63a22639 100644
+--- a/config/schema/search_api.server.schema.yml
++++ b/config/schema/search_api.server.schema.yml
+@@ -19,6 +19,32 @@ search_api.server.*:
+       label: 'Backend Plugin ID'
+     backend_config:
+       type: plugin.plugin_configuration.search_api_backend.[%parent.backend]
++      mapping:
++        retrieve_data:
++          type: boolean
++        skip_schema_check:
++        highlight_data:
++          type: boolean
++        site_hash:
++          type: boolean
++        server_prefix:
++          type: string
++        domain:
++          type: string
++        environment:
++          type: string
++        connector:
++          type: string
++        connector_config:
++          type: ignore
++        optimize:
++          type: boolean
++        disabled_field_types:
++          type: ignore
++        rows:
++          type: integer
++        skip_schema_check:
++          type: boolean
+     langcode:
+       type: string
+       label: 'Language code'
