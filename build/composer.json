@@ -74,6 +74,9 @@
       "drupal/bootstrap": {
         "Drupal 11 schema fixes": "/build/patches/bootstrap_8.x-3.x_schema.patch"
       },
+      "drupal/google_analytics": {
+        "Drupal 11 schema fixes": "/build/patches/google_analytics_4.x_schema.patch"
+      },
       "drupal/search_api": {
         "Drupal 11 schema fixes": "/build/patches/search_api_8.x-1.x_schema.patch"
       }

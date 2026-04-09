@@ -1,0 +1,21 @@
+diff --git a/config/schema/google_analytics.schema.yml b/config/schema/google_analytics.schema.yml
+index 6f6edc4..c8f9783 100644
+--- a/config/schema/google_analytics.schema.yml
++++ b/config/schema/google_analytics.schema.yml
+@@ -108,6 +108,10 @@ google_analytics.settings:
+               value:
+                 type: string
+                 label: Value
++        dimension:
++          type: ignore       
++        metric:
++          type: ignore       
+     codesnippet:
+       type: mapping
+       label: 'Custom code snippets'
+@@ -133,3 +137,5 @@ google_analytics.settings:
+     debug:
+       type: boolean
+       label: 'Load debugging code of Google Universal Analytics'
++    premium:
++      type: ignore
