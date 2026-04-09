@@ -58,3 +58,27 @@ index 99f7d186361..52a152f0f43 100644
 +      type: ignore
 +    channel:
 +      type: ignore
+diff --git a/core/modules/views/config/schema/views.schema.yml b/core/modules/views/config/schema/views.schema.yml
+index 01fbdd20541..2d12f299001 100644
+--- a/core/modules/views/config/schema/views.schema.yml
++++ b/core/modules/views/config/schema/views.schema.yml
+@@ -46,6 +46,10 @@ views.settings:
+             display_embed:
+               type: boolean
+               label: 'Allow embedded displays'
++            advanced_column:
++              type: ignore
++            master_display:
++              type: ignore
+         always_live_preview:
+           type: boolean
+           label: 'Automatically update preview on changes'
+@@ -58,6 +62,8 @@ views.settings:
+       sequence:
+         type: string
+         label: 'Element'
++    skip_cache:
++      type: ignore
+
+ views.view.*:
+   type: config_entity

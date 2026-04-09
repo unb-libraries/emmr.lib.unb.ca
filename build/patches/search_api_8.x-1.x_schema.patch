@@ -8,30 +8,30 @@ index 99cafafc..63a22639 100644
        type: plugin.plugin_configuration.search_api_backend.[%parent.backend]
 +      mapping:
 +        retrieve_data:
-+          type: boolean
++          type: ignore
 +        skip_schema_check:
 +        highlight_data:
-+          type: boolean
++          type: ignore
 +        site_hash:
-+          type: boolean
++          type: ignore
 +        server_prefix:
-+          type: string
++          type: ignore
 +        domain:
-+          type: string
++          type: ignore
 +        environment:
-+          type: string
++          type: ignore
 +        connector:
-+          type: string
++          type: ignore
 +        connector_config:
 +          type: ignore
 +        optimize:
-+          type: boolean
++          type: ignore
 +        disabled_field_types:
 +          type: ignore
 +        rows:
-+          type: integer
++          type: ignore
 +        skip_schema_check:
-+          type: boolean
++          type: ignore
      langcode:
        type: string
        label: 'Language code'
