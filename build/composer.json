@@ -68,7 +68,8 @@
     },
     "patches": {
       "drupal/core": {
-        "To correct DerivativeDiscoveryDecorator warning": "https://www.drupal.org/files/issues/patch_empty_fix.patch"
+        "To correct DerivativeDiscoveryDecorator warning": "https://www.drupal.org/files/issues/patch_empty_fix.patch",
+        "Drupal 11 schema fixes": "/build/patches/core_11.x_schema.patch"
       },
       "drupal/bootstrap": {
         "Drupal 11 schema fixes": "/build/patches/bootstrap_8.x-3.x_schema.patch"
