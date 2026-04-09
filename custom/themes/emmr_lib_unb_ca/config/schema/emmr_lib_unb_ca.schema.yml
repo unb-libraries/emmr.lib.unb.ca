@@ -1,0 +1,29 @@
+emmr_lib_unb_ca.settings:
+  type: theme_settings
+  label: 'Bootstrap settings'
+  mapping:
+    schemas:
+      type: mapping
+      label: 'Schemas'
+      mapping:
+        bootstrap:
+          type: integer
+          label: 'Bootstrap weight'
+        emmr_lib_unb_ca:
+          type: integer
+          label: 'EMMR weight'
+    table_responsive:
+      type: string
+      label: 'Responsive table setting'
+    table:
+      type: string
+      label: 'Table setting'
+    button_colorize:
+      type: string
+      label: 'Label setting'
+    button_iconize:
+      type: string
+      label: 'Button iconize setting'
+    tooltip_enabled:    
+      type: string
+      label: 'Tooltip enabled setting'

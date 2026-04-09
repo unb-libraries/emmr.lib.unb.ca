@@ -64,6 +64,11 @@ function emmr_core_install() {
     'title' => 'Sarah Creighton Wilkins Notebook',
   ]);
 
+  if (!isset($node->getFields()['body'])) {
+    // Handle the absence of the field or return
+    return;
+  }
+  
   $node->set('body', [
     'value' =>
       '<div class="scw">
