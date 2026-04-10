@@ -288,7 +288,7 @@ display:
           settings:
             link_to_entity: true
           group_column: null
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
