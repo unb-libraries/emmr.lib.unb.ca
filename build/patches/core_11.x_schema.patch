@@ -1,5 +1,5 @@
 diff --git a/core/modules/system/config/schema/system.schema.yml b/core/modules/system/config/schema/system.schema.yml
-index 99f7d186361..52a152f0f43 100644
+index 99f7d186..b2594333 100644
 --- a/core/modules/system/config/schema/system.schema.yml
 +++ b/core/modules/system/config/schema/system.schema.yml
 @@ -200,6 +200,8 @@ system.performance:
@@ -32,34 +32,8 @@ index 99f7d186361..52a152f0f43 100644
      temporary_maximum_age:
        type: integer
        label: 'Maximum age for temporary files'
-@@ -502,3 +511,25 @@ condition.plugin.current_theme:
-     theme:
-       type: string
-       label: Theme
-+
-+system.authorize:
-+  type: config_object
-+  constraints:
-+    FullyValidatable: ~
-+  mapping:
-+    filetransfer_default:
-+      type: ignore
-+
-+system.rss:
-+  type: config_object
-+  constraints:
-+    FullyValidatable: ~
-+  mapping:
-+    _core:
-+      type: ignore
-+    langcode:
-+      type: string
-+    items:
-+      type: ignore
-+    channel:
-+      type: ignore
 diff --git a/core/modules/views/config/schema/views.schema.yml b/core/modules/views/config/schema/views.schema.yml
-index 01fbdd20541..2d12f299001 100644
+index 01fbdd20..2d12f299 100644
 --- a/core/modules/views/config/schema/views.schema.yml
 +++ b/core/modules/views/config/schema/views.schema.yml
 @@ -46,6 +46,10 @@ views.settings:
@@ -79,6 +53,6 @@ index 01fbdd20541..2d12f299001 100644
          label: 'Element'
 +    skip_cache:
 +      type: ignore
-
+ 
  views.view.*:
    type: config_entity
