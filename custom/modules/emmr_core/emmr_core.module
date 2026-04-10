@@ -6,6 +6,8 @@
  */
 
 use Drupal\block\Entity\Block;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
 
@@ -262,6 +264,7 @@ function emmr_core_node_presave($node) {
  * Implements hook_FORM_ID_alter().
  */
 function emmr_core_form_alter(&$form, &$form_state, $form_id) {
+  _fix_date_range($form);
   if ($form_id == "node_emmr_recipe_form" ||
   $form_id == "node_emmr_recipe_edit_form") {
 
@@ -370,5 +373,17 @@ function emmr_core_views_query_alter($view, $query) {
 
       $query->where['2']['conditions'][] = $where3;
     }
+  }
+}
+
+/**
+ * Recursively updates #date_year_range on all date elements.
+ */
+function _fix_date_range(array &$elements): void {
+  foreach (Element::children($elements) as $key) {
+    if (isset($elements[$key]['#type']) && in_array($elements[$key]['#type'], ['date', 'datetime', 'datelist'], TRUE)) {
+      $elements[$key]['#date_year_range'] = '1500:2100';
+    }
+    _fix_date_range($elements[$key]);
   }
 }
