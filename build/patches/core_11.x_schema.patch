@@ -2,15 +2,6 @@ diff --git a/core/modules/system/config/schema/system.schema.yml b/core/modules/
 index 99f7d186..b2594333 100644
 --- a/core/modules/system/config/schema/system.schema.yml
 +++ b/core/modules/system/config/schema/system.schema.yml
-@@ -200,6 +200,8 @@ system.performance:
-             max_age:
-               type: integer
-               label: 'Max age'
-+            use_internal:
-+              type:ignore
-     css:
-       type: mapping
-       label: 'CSS performance settings'
 @@ -236,6 +238,10 @@ system.performance:
          gzip:
            type: boolean
