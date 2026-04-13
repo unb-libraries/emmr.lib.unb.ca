@@ -829,6 +829,10 @@ trxnmar span {
       display: inline-block;
     }
   }
+  /* Hide pager from recipes-by-source */
+  .pager {
+    display: none;
+  }
 }
 .advanced-source-title {
   font-size: 18px;
