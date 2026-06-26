@@ -68,11 +68,16 @@ td {
 
 a, a:active, a:focus, a:visited {
   color: $color-red;
-
+  outline: none !important;
+  
   &:hover {
     cursor: pointer !important;
     color: $color-red;
   }
+}
+
+button {
+  outline: none !important;
 }
 
 #navbar {
