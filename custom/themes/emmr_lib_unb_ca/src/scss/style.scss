@@ -66,9 +66,8 @@ td {
   padding: 10px;
 }
 
-a, a:active, a:focus, a:visited {
+a, a:active, a:visited {
   color: $color-red;
-  outline: none !important;
   
   &:hover {
     cursor: pointer !important;
@@ -76,7 +75,8 @@ a, a:active, a:focus, a:visited {
   }
 }
 
-button {
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
   outline: none !important;
 }
 
