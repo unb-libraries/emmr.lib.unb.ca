@@ -27,16 +27,12 @@ ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION
 LABEL ca.unb.lib.generator="drupal11" \
-  com.microscaling.docker.dockerfile="/Dockerfile" \
-  com.microscaling.license="MIT" \
-  org.label-schema.build-date=$BUILD_DATE \
-  org.label-schema.description="emmr.lib.unb.ca examines recipes circulating before 1800 in print and manuscript in the area now defined as Canada's Maritime provinces." \
-  org.label-schema.name="emmr.lib.unb.ca" \
-  org.label-schema.schema-version="1.0" \
-  org.label-schema.url="https://emmr.lib.unb.ca" \
-  org.label-schema.vcs-ref=$VCS_REF \
-  org.label-schema.vcs-url="https://github.com/unb-libraries/emmr.lib.unb.ca" \
-  org.label-schema.vendor="University of New Brunswick Libraries" \
-  org.label-schema.version=$VERSION \
+  org.opencontainers.image.title="emmr.lib.unb.ca" \
+  org.opencontainers.image.description="emmr.lib.unb.ca examines recipes circulating before 1800 in print and manuscript in the area now defined as Canada's Maritime provinces." \
+  org.opencontainers.image.vendor="University of New Brunswick Libraries" \
   org.opencontainers.image.authors="UNB Libraries <libsupport@unb.ca>" \
-  org.opencontainers.image.source="https://github.com/unb-libraries/emmr.lib.unb.ca"
+  org.opencontainers.image.url="https://emmr.lib.unb.ca" \
+  org.opencontainers.image.source="https://github.com/unb-libraries/emmr.lib.unb.ca" \
+  org.opencontainers.image.version="$VERSION" \
+  org.opencontainers.image.revision="$VCS_REF" \
+  org.opencontainers.image.created="$BUILD_DATE"
