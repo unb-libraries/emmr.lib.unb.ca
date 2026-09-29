@@ -99,6 +99,8 @@ button:focus:not(:focus-visible) {
 
   a {
     height: 30px !important;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
   ul {
@@ -106,7 +108,7 @@ button:focus:not(:focus-visible) {
     height: inherit;
 
     a:hover, li.active a, li a[aria-expanded="true"] {
-      color: $color-red;
+      color: $color-red !important;
       background: white;
     }
   }
