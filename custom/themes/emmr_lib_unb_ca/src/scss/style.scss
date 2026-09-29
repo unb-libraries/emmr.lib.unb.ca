@@ -66,12 +66,12 @@ td {
   padding: 10px;
 }
 
-a, a:active, a:visited {
-  color: $color-red !important;
+body a, body a:active, body a:visited {
+  color: $color-red;
 
   &:hover {
     cursor: pointer !important;
-    color: $color-red !important;
+    color: $color-red;
   }
 }
 
