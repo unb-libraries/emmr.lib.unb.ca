@@ -67,11 +67,11 @@ td {
 }
 
 a, a:active, a:visited {
-  color: $color-red;
-  
+  color: $color-red !important;
+
   &:hover {
     cursor: pointer !important;
-    color: $color-red;
+    color: $color-red !important;
   }
 }
 
