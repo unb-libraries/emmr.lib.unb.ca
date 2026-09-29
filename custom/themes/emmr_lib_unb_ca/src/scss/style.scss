@@ -191,6 +191,7 @@ h1.page-header {
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
+  color: #fff !important;
   background-color: $color-dark-mint;
   border-color: $color-dark-mint;
 }
