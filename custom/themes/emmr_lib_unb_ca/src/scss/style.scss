@@ -66,13 +66,21 @@ td {
   padding: 10px;
 }
 
-body a, body a:active, body a:visited {
+a, a:active, a:visited {
   color: $color-red;
 
   &:hover {
     cursor: pointer !important;
     color: $color-red;
   }
+}
+
+// Beat the bootstrap base theme's higher-specificity :visited color.
+// Scoped to :visited only so unrelated overrides (navbar, pagination,
+// page-header) are unaffected unless they also need to survive a
+// visited link, which is handled explicitly below.
+a:visited {
+  color: $color-red !important;
 }
 
 a:focus:not(:focus-visible),
@@ -105,7 +113,7 @@ button:focus:not(:focus-visible) {
 
   a {
     padding-top: 5px !important;
-    color: white;
+    color: white !important;
     font-size: 14px;
     text-transform: uppercase;
   }
@@ -189,13 +197,13 @@ h1.page-header {
 
 .pagination > li > a:hover,
 .pagination > li > a:focus {
-  color: $color-dark-mint;
+  color: $color-dark-mint !important;
 }
 
 
 .pagination > li > a,
 .pagination > li > span {
-  color: $color-dark-mint;
+  color: $color-dark-mint !important;
 }
 
 // Footer
