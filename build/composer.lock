@@ -1162,20 +1162,20 @@
         },
         {
             "name": "drupal/bootstrap",
-            "version": "3.40.0",
+            "version": "3.43.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap.git",
-                "reference": "8.x-3.40"
+                "reference": "8.x-3.43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.40.zip",
-                "reference": "8.x-3.40",
-                "shasum": "dd613d39c4f31c9b6656037948eff5d429ded892"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.43.zip",
+                "reference": "8.x-3.43",
+                "shasum": "b68ffa15b54495a39be6ab15be3244eda1113e65"
             },
             "require": {
-                "drupal/core": "^10.4 || ^11.1",
+                "drupal/core": "^10.5 || ^11.2",
                 "drupal/jquery_ui": "^1.7",
                 "drupal/jquery_ui_draggable": "^2.1",
                 "drupal/jquery_ui_resizable": "^2.1"
@@ -1187,8 +1187,8 @@
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.40",
-                    "datestamp": "1775420242",
+                    "version": "8.x-3.43",
+                    "datestamp": "1791557891",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1287,16 +1287,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "11.4.8",
+            "version": "11.4.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "9e14360e49d9c20957fbe6a1893868596c2a8433"
+                "reference": "cb07269d7829379f0960d469d7a0e6c045facd22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/9e14360e49d9c20957fbe6a1893868596c2a8433",
-                "reference": "9e14360e49d9c20957fbe6a1893868596c2a8433",
+                "url": "https://api.github.com/repos/drupal/core/zipball/cb07269d7829379f0960d469d7a0e6c045facd22",
+                "reference": "cb07269d7829379f0960d469d7a0e6c045facd22",
                 "shasum": ""
             },
             "require": {
@@ -1469,7 +1469,7 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "support": {
-                "source": "https://github.com/drupal/core/tree/11.4.8"
+                "source": "https://github.com/drupal/core/tree/11.4.9"
             },
             "funding": [
                 {
@@ -1477,11 +1477,11 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-09-26T20:35:18+00:00"
+            "time": "2026-10-09T17:44:27+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "11.4.8",
+            "version": "11.4.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -1525,29 +1525,29 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/11.4.8"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/11.4.9"
             },
             "time": "2026-07-09T23:23:24+00:00"
         },
         {
             "name": "drupal/core-recommended",
-            "version": "11.4.8",
+            "version": "11.4.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "3613b444b79a131add84ad608a07e9da390d836a"
+                "reference": "d9a6466e0ed74b87b58761493bf31da75b1bc0f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/3613b444b79a131add84ad608a07e9da390d836a",
-                "reference": "3613b444b79a131add84ad608a07e9da390d836a",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/d9a6466e0ed74b87b58761493bf31da75b1bc0f0",
+                "reference": "d9a6466e0ed74b87b58761493bf31da75b1bc0f0",
                 "shasum": ""
             },
             "require": {
                 "asm89/stack-cors": "~v2.4.0",
                 "composer/semver": "~3.4.4",
                 "doctrine/lexer": "~3.0.1",
-                "drupal/core": "11.4.8",
+                "drupal/core": "11.4.9",
                 "egulias/email-validator": "~4.0.4",
                 "justinrainbow/json-schema": "~6.8.2",
                 "marc-mabe/php-enum": "~v4.7.2",
@@ -1605,9 +1605,9 @@
             ],
             "description": "Core and its dependencies with known-compatible minor versions. Require this project INSTEAD OF drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-recommended/tree/11.4.8"
+                "source": "https://github.com/drupal/core-recommended/tree/11.4.9"
             },
-            "time": "2026-09-26T20:35:18+00:00"
+            "time": "2026-10-09T17:44:27+00:00"
         },
         {
             "name": "drupal/ctools",
@@ -2502,20 +2502,20 @@
         },
         {
             "name": "drupal/search_api",
-            "version": "1.41.0",
+            "version": "1.42.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api.git",
-                "reference": "8.x-1.41"
+                "reference": "8.x-1.42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.41.zip",
-                "reference": "8.x-1.41",
-                "shasum": "bb030951ee9a09fac67e8cde5b495c3b67e2949d"
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.42.zip",
+                "reference": "8.x-1.42",
+                "shasum": "a8f18e5873f50551eadfe03c4454bcb8e85eacce"
             },
             "require": {
-                "drupal/core": "^10.3 || ^11"
+                "drupal/core": "^10.3 || ^11 || ^12"
             },
             "conflict": {
                 "drupal/search_api_solr": "2.* || 3.0 || 3.1"
@@ -2534,8 +2534,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.41",
-                    "datestamp": "1780907071",
+                    "version": "8.x-1.42",
+                    "datestamp": "1791743454",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3777,16 +3777,16 @@
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.3.24",
+            "version": "v0.3.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "5d3cdef29e93ca3b62b1871359db3078cd99908b"
+                "reference": "21b7b49d60fcb700016dd27b582ae739c75de816"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/5d3cdef29e93ca3b62b1871359db3078cd99908b",
-                "reference": "5d3cdef29e93ca3b62b1871359db3078cd99908b",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/21b7b49d60fcb700016dd27b582ae739c75de816",
+                "reference": "21b7b49d60fcb700016dd27b582ae739c75de816",
                 "shasum": ""
             },
             "require": {
@@ -3829,10 +3829,9 @@
             ],
             "description": "Add beautiful and user-friendly forms to your command-line applications.",
             "support": {
-                "issues": "https://github.com/laravel/prompts/issues",
-                "source": "https://github.com/laravel/prompts/tree/v0.3.24"
+                "source": "https://github.com/laravel/prompts/tree/v0.3.25"
             },
-            "time": "2026-08-20T12:55:36+00:00"
+            "time": "2026-10-06T02:25:49+00:00"
         },
         {
             "name": "league/container",
