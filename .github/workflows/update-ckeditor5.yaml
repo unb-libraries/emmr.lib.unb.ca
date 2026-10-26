@@ -1,0 +1,12 @@
+name: Update emmr.lib.unb.ca CKEditor 5 Modules
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '57 6 * * 1,4'
+
+jobs:
+  update:
+    uses: unb-libraries/dockworker/.github/workflows/update-ckeditor5.yaml@6.x
+    secrets:
+      PAT_TOKEN: ${{ secrets.UNBLIBBOT_PAT_TOKEN }}
