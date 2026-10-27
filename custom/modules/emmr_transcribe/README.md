@@ -24,4 +24,18 @@ initial run of `install` may take a few minutes, but subsequent builds will be
 faster.
 
 After installing dependencies, plugins can be built with `yarn build` or `yarn
-watch`. They will be built to `js/build/{pluginNameDirectory}.js`.  co
+watch`. They will be built to `js/build/{pluginNameDirectory}.js`.
+
+`yarn watch` uses webpack dev mode and produces JS files that should not be
+distributed. You should use `yarn build` before committing the `js/build/`
+folder.
+
+
+## Updating dependencies
+
+The CKEditor 5 module update workflow
+(`.github/workflows/update-ckeditor5.yaml`, which calls the shared dockworker
+workflow) runs on a schedule (or manually) and opens a PR with updated
+`package.json`, `yarn.lock` and `js/build`. It pins `ckeditor5` to the version
+Drupal core ships (read from `build/composer.lock`), runs `yarn upgrade` and
+`yarn build`, and lists the changed packages in the PR description.
