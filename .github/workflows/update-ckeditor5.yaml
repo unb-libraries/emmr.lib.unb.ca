@@ -7,6 +7,8 @@ on:
 
 jobs:
   update:
-    uses: unb-libraries/dockworker/.github/workflows/update-ckeditor5.yaml@6.x
+    uses: unb-libraries/github-workflows/.github/workflows/update-ckeditor5.yaml@updaters
+    with:
+      pr-branch: updater-test-pr
     secrets:
       PAT_TOKEN: ${{ secrets.UNBLIBBOT_PAT_TOKEN }}
