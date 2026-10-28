@@ -5,8 +5,3 @@ global-styling:
       '//fonts.googleapis.com/css?family=Libre+Baskerville': { type: external, minified: true }
       '//fonts.googleapis.com/css?family=Nunito:400,700': { type: external, minified: true }
       '//use.fontawesome.com/releases/v5.2.0/css/all.css': { type: external, minified: true }
-
-print-styling:
-  css:
-    theme:
-      css/print-style.css: {}

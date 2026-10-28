@@ -275,24 +275,6 @@ function emmr_core_form_alter(&$form, &$form_state, $form_id) {
     $form['field_recipe_date_text']['#states']['invisible'][':input[name="field_imprecise_date[value]"]']
       = ['checked' => FALSE];
   }
-
-  // Add exact-match checkbox for keyword search.
-  if ($form_id == "views_exposed_form") {
-    $view = $form_state->getStorage('view');
-
-    if ($view['view']->id() == 'emmr_browse_recipes' and $view['view']->current_display == 'page_1') {
-
-      $form['exact_keyword'] = [
-        '#type' => 'checkbox',
-        '#title' => t('Exact match'),
-        '#required' => FALSE,
-        '#default_value' => FALSE,
-        '#weight' => 0,
-      ];
-    }
-
-    array_unshift($form['#submit'], 'search_exact_match');
-  }
 }
 
 /**
@@ -326,53 +308,6 @@ function validate_date_text(&$form, $form_state) {
   if ($imp_date && $date_txt == "") {
     $form_state->setErrorByName('field_recipe_date_text',
       t('Imprecise dates must contain a date description.'));
-  }
-}
-
-/**
- * Callback exact-match function for keyword search.
- */
-function search_exact_match(&$form, $form_state) {
-  $keyword = $form_state->getValue('combine');
-  $title = $form_state->getValue('title');
-  $contributor = $form_state->getValue('field_contributor_name_value');
-  $exact = $form_state->getValue('exact_keyword');
-
-  if ($exact) {
-    if (!empty($keyword) and !in_array($keyword[0], ['"', "'"])) {
-      $form_state->setValue('combine', '" ' . $keyword . ' "');
-    }
-  }
-
-}
-
-/**
- * Implements hook_views_query_alter().
- */
-function emmr_core_views_query_alter($view, $query) {
-  $view = $query->view;
-  $view_id = $view->id();
-  $view_disp = $view->current_display;
-
-  if ($view_id == "emmr_browse_recipes" && $view_disp == "page_1") {
-    $date_where = $query->where['2']['conditions'];
-    $date_min = date('c',
-      strtotime($query->view->exposed_data['field_recipe_date_value']['min']));
-
-    if (count($date_where)) {
-      $where2 = str_replace('date', 'date_to',
-        $date_where[0]);
-      $query->where['2']['conditions'][] = $where2;
-
-      $where3 = $date_where[0];
-      $where3['field'] =
-        "DATE_FORMAT('" . $date_min . "', '%Y-%m-%d')
-        BETWEEN
-        DATE_FORMAT(node__field_recipe_date.field_recipe_date_value, '%Y-%m-%d')
-        AND DATE_FORMAT(node__field_recipe_date_to.field_recipe_date_to_value, '%Y-%m-%d')";
-
-      $query->where['2']['conditions'][] = $where3;
-    }
   }
 }
 

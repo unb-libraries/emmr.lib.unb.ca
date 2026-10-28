@@ -105,45 +105,6 @@ function emmr_core_update_8101() {
   addTerms('emmr_source_institutions', $src_institutions);
 }
 
-function custom_update_8002() {
-  // Get an array of all 'recipe' node ids.
-  $article_nids = \Drupal::entityQuery('node')
-    ->condition('type', 'emmr_recipe')
-    ->accessCheck(FALSE)->execute();
-
-  // Load all the articles.
-  $articles = Node::loadMultiple($article_nids);
-  foreach ($articles as $article) {
-    $article->save();
-  }
-}
-
-function custom_update_8003() {
-  // Get an array of all 'recipe' node ids.
-  $article_nids = \Drupal::entityQuery('node')
-    ->condition('type', 'emmr_recipe')
-    ->accessCheck(FALSE)->execute();
-
-  // Load all the articles.
-  $articles = Node::loadMultiple($article_nids);
-  foreach ($articles as $article) {
-    $article->save();
-  }
-}
-
-function custom_update_8004() {
-  // Get an array of all 'recipe' node ids.
-  $article_nids = \Drupal::entityQuery('node')
-    ->condition('type', 'emmr_recipe')
-    ->accessCheck(FALSE)->execute();
-
-  // Load all the articles.
-  $articles = Node::loadMultiple($article_nids);
-  foreach ($articles as $article) {
-    $article->save();
-  }
-}
-
 function addTerms($voc, $terms) {
 
   foreach ($terms as $term) {

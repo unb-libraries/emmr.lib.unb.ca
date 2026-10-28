@@ -6,10 +6,8 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor5: 0
-  color: 0
   comment: 0
   config: 0
-  contact: 0
   contextual: 0
   datetime: 0
   dynamic_page_cache: 0
@@ -24,7 +22,6 @@ module:
   google_analytics: 0
   health_check: 0
   help: 0
-  history: 0
   image: 0
   jquery_ui: 0
   jquery_ui_draggable: 0
@@ -39,7 +36,6 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
-  quickedit: 0
   redis: 0
   search: 0
   search_api: 0
@@ -64,7 +60,6 @@ module:
 theme:
   stable9: 0
   bootstrap: 0
-  olivero: 0
   emmr_lib_unb_ca: 0
   claro: 0
 profile: minimal
