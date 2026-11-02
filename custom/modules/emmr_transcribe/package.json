@@ -9,7 +9,7 @@
     "build": "webpack"
   },
   "devDependencies": {
-    "ckeditor5": "~47.6.2",
+    "ckeditor5": "~47.7.4",
     "terser-webpack-plugin": "^5.3.14",
     "webpack": "^5.51.1",
     "webpack-cli": "^6.0.0"
